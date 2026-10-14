@@ -1,0 +1,48 @@
+{
+    "suggested_loggers": [{            
+            "category": "org.cmdbuild.webapp",
+            "description": "web filters, security"
+        }, {            
+            "category": "org.cmdbuild.scheduler",
+            "description": "scheduler (core)"
+        }, {            
+            "category": "org.cmdbuild.jobs",
+            "description": "scheduler (user jobs)"
+        }, {            
+            "category": "org.cmdbuild.dao",
+            "description": "database"
+        }, {            
+            "category": "org.cmdbuild.email",
+            "description": "email"
+        }, {            
+            "category": "org.cmdbuild.workflow",
+            "description": "workflow"
+        }, {            
+            "category": "org.cmdbuild.auth",
+            "description": "authentication, users, roles"
+        }, {            
+            "category": "org.cmdbuild.cluster",
+            "description": "cluster"
+        }, {            
+            "category": "org.cmdbuild.easytemplate",
+            "description": "template processing (email template, etc)"
+        }, {            
+            "category": "org.cmdbuild.report",
+            "description": "report"
+        }, {            
+            "category": "org.cmdbuild.dms",
+            "description": "dms (alfresco, etc)"
+        }, {            
+            "category": "org.cmdbuild.gis",
+            "description": "gis"
+        }, {            
+            "category": "org.cmdbuild.bim",
+            "description": "bim"
+        }, {            
+            "category": "org.cmdbuild.sql",
+            "description": "SPECIAL: sql trace"
+        }, {            
+            "category": "org.cmdbuild.sql_ddl",
+            "description": "SPECIAL: ddl trace"
+        }]
+}

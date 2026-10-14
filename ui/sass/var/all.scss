@@ -1,0 +1,215 @@
+@import 'font-poppins';
+/*
+ * Statuses colors
+ */
+$cmdbuild-status-success: dynamic(#109006);
+$cmdbuild-status-success-light: dynamic(#c2f0cd);
+$cmdbuild-status-warning: dynamic(#fab450);
+$cmdbuild-status-warning-light: dynamic(#fff1dc);
+$cmdbuild-status-error: dynamic(#c93100);
+$cmdbuild-status-error-light: dynamic(#fcd3cc);
+$form-field-invalid-border-color: dynamic(#c93100);
+/*
+ * This is is imported by virtue of "sass.var" in "app.json".
+ */
+$enable-font-icons: dynamic(true);
+$enable-font-awesome: dynamic(true);
+
+/**
+ * Font family
+ */
+$font-family: dynamic('Poppins', sans-serif);
+$font-size: dynamic(14px);
+$line-height: dynamic(21px);
+$tip-body-font-size: dynamic(12px);
+$button-small-font-size: dynamic($font-size);
+$button-small-line-height: dynamic(18px);
+
+/**
+ * Base font weight
+ */
+$font-weight: dynamic(400);
+
+/**
+ * @var {string}
+ */
+$components-border-radius: dynamic(4px);
+$components-border-radius-l: dynamic(6px);
+$components-border-radius-xl: dynamic(8px);
+$components-shadow: dynamic(0px 0px 0px 0px $main-neutral-black);
+
+/**
+ * Forms
+ */
+$form-label-font-color: dynamic($color);
+$form-label-font-weight: dynamic(600);
+$form-label-vertical-spacing: dynamic(5px);
+
+$form-field-border-color: dynamic($main-neutral-gray-5);
+$form-field-focus-border-color: dynamic($main-color-primary-over);
+$form-text-field-border-radius: dynamic($components-border-radius);
+$form-trigger-background-color: dynamic(transparent);
+$form-trigger-border-width: dynamic(0 0 0 1px);
+$form-trigger-border-color: dynamic($form-field-border-color);
+$form-trigger-border-style: dynamic(solid);
+
+/**
+ * Load mask opacity
+ */
+$loadmask-page-opacity: 0.35;
+
+/**
+ * Form item margin bottom
+ */
+$form-item-margin-bottom: dynamic(3px);
+
+/**
+* Grid outline
+*/
+$grid-row-cell-focus-border-width: dynamic(0);
+
+/**
+ * Grid cell inner padding
+ */
+$grid-header-padding: dynamic(6px 5px 5px);
+$grid-cell-inner-padding: dynamic(6px 5px 5px);
+
+/**
+ * Grid row selected
+ */
+$grid-row-cell-selected-background-color: dynamic($main-color-selection);
+
+/**
+ * Grid action column
+ */
+$grid-actioncolumn-icon-height: dynamic(17px);
+$grid-actioncolumn-icon-width: dynamic(17px);
+
+/**
+ * Panel header
+ */
+$panel-header-padding: dynamic(8px 12px 9px);
+$cmdbuild-header-icon-color: dynamic(mix(#fff, $color, 40%));
+
+/**
+ * Nav tree items
+ */
+$treelist-item-line-height: dynamic(30px);
+
+/**
+ * BoundList (combo menu)
+ */
+$boundlist-item-font-size: dynamic($button-small-font-size);
+$boundlist-item-height: dynamic(22px);
+$boundlist-item-over-text-color: dynamic($color);
+$boundlist-item-selected-text-color: dynamic($color);
+$boundlist-item-over-background-color: dynamic($main-color-selection);
+$boundlist-item-selected-background-color: dynamic($main-color-selection);
+
+/**
+ * Menu list
+ */
+$menu-item-active-background-color: dynamic($main-color-selection);
+$menu-item-active-text-color: dynamic($color);
+$menu-item-active-glyph-color: dynamic($color);
+$menu-glyph-color: dynamic($color);
+$menu-border-width: dynamic(2px 0 0 0);
+$menu-border-color: dynamic($main-color-primary);
+
+/**
+ * Date picker
+ */
+$datepicker-item-font-size: dynamic($button-small-font-size);
+
+/**
+ * @var {string/list}
+ * Glyph for the group title's "expand" group icon when {@link Global_CSS#$enable-font-icons} is `true`.
+ */
+$grid-grouped-title-expand-glyph: dynamic(
+    $fa-var-plus-square-o $grid-grouped-title-glyph-font-size $font-icon-font-family
+);
+
+/**
+  * @var {string/list}
+  * Glyph for the group title's "collapse" group icon when {@link Global_CSS#$enable-font-icons} is `true`.
+  */
+$grid-grouped-title-collapse-glyph: dynamic(
+    $fa-var-minus-square-o $grid-grouped-title-glyph-font-size $font-icon-font-family
+);
+
+/**
+ * @var {number}
+ * The size of resizer handles
+ */
+$resizer-handle-size: dynamic(3px);
+
+/**
+ * @var {number}
+ */
+$notification-item-padding: dynamic(10px 15px);
+
+/**
+ * @var {string}
+ */
+$notification-item-border-color: dynamic(mix(#000, $neutral-light-color, 10%));
+
+/**
+ * @var {string}
+ */
+$notification-item-title-color: dynamic($form-label-font-color);
+
+/**
+ * @var {string}
+ */
+$notification-item-title-close: $cmdbuild-header-icon-color;
+
+/**
+ * @var {string}
+ */
+$notification-alert-color: dynamic(#cc0000);
+
+/**
+ * @var {string}
+ */
+$chat-incomming-messages-background: dynamic($main-color-selection);
+
+/**
+ * @var {string}
+ */
+$chat-outgoing-messages-background: dynamic(mix(#000, $neutral-light-color, 10%));
+
+/**
+ * @var {string}
+ */
+$chat-date-color: dynamic($form-label-font-color);
+
+/**
+ * @var {string}
+ */
+$chat-avatar-color: dynamic($base-color);
+
+/**
+ * @var {string}
+ */
+$form-messages-padding: dynamic(10px 15px 10px 55px);
+
+/**
+ * @var {string}
+ */
+$form-messages-margin-bottom: dynamic($cmdbuildui-statuses-progressbar-margin-bottom);
+
+/**
+ * @var {string}
+ */
+$filter-block-inset: dynamic(10px);
+
+/**
+ * @var {string}
+ */
+$toolbar-footer-background-color: dynamic(#ffffff);
+
+/**
+ * @var {string}
+ * Border layout background color
+ */
+$border-layout-ct-background-color: dynamic(#fff);

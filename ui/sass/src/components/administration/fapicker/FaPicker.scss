@@ -1,0 +1,79 @@
+/**
+* Buttons inside fontawesome picker
+*/
+@include extjs-button-ui(
+    $ui: 'administration-fapicker-btn',
+
+    $border-color: $administration-action-color,
+
+    $padding: $button-small-padding,
+    $text-padding: $button-small-text-padding,
+    $background-color: #fff,
+    $background-color-over:  #fff,
+    $background-color-focus: #fff,
+    $background-color-pressed:  #fff,
+    $background-color-focus-over:  #fff,
+    $background-color-focus-pressed:  #fff,
+    $background-color-disabled:  #fff,
+
+    $color: $administration-base-color,
+    $color-over: $administration-base-color,
+    $color-focus: $administration-base-color,
+    $color-pressed: $administration-base-color,
+    $color-focus-over: $administration-base-color,
+    $color-focus-pressed: $administration-base-color,
+    $color-disabled: $administration-base-color,
+
+    $font-size: $button-small-font-size,
+    $font-size-over: $button-small-font-size-over,
+    $font-size-focus: $button-small-font-size-focus,
+    $font-size-pressed: $button-small-font-size-pressed,
+    $font-size-focus-over: $button-small-font-size-focus-over,
+    $font-size-focus-pressed: $button-small-font-size-focus-pressed,
+    $font-size-disabled: $button-small-font-size-disabled,
+
+    $font-weight: $button-small-font-weight,
+    $font-weight-over: $button-small-font-weight-over,
+    $font-weight-focus: $button-small-font-weight-focus,
+    $font-weight-pressed: $button-small-font-weight-pressed,
+    $font-weight-focus-over: $button-small-font-weight-focus-over,
+    $font-weight-focus-pressed: $button-small-font-weight-focus-pressed,
+    $font-weight-disabled: $button-small-font-weight-disabled,
+
+    $font-family: $button-small-font-family,
+    $font-family-over: $button-small-font-family-over,
+    $font-family-focus: $button-small-font-family-focus,
+    $font-family-pressed: $button-small-font-family-pressed,
+    $font-family-focus-over: $button-small-font-family-focus-over,
+    $font-family-focus-pressed: $button-small-font-family-focus-pressed,
+    $font-family-disabled: $button-small-font-family-disabled,
+
+    $icon-size: $button-small-icon-size,
+    $glyph-font-size: $button-small-icon-size,
+    $line-height: $button-small-line-height,
+    $icon-spacing: $button-small-icon-spacing,
+    $glyph-color: $button-default-color,
+    $glyph-opacity: $button-default-glyph-opacity,
+    $arrow-width: $button-small-arrow-width,
+    $arrow-height: $button-small-arrow-height,
+    $arrow-glyph: $button-small-arrow-glyph,
+    $arrow-glyph-color: $button-default-color,
+    $split-width: $button-small-split-width,
+    $split-height: $button-small-split-height,
+    $split-line-width: $button-small-split-line-width,
+    $split-line-color: $button-default-split-line-color,
+    $opacity-disabled: $button-opacity-disabled,
+    $inner-opacity-disabled: $button-inner-opacity-disabled
+);
+
+.x-column.x-btn-administration-fapicker-btn-small {
+    height: 35px;
+    width: 35px;
+    line-height: 25px;
+    font-size: 25px;
+}
+
+
+.x-column.x-btn-administration-fapicker-btn-small.active,.x-column.x-btn-administration-fapicker-btn-small:hover {
+    background-color: lighten($administration-action-color, 25);
+}

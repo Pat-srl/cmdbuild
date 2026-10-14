@@ -1,0 +1,62 @@
+.dashboard-list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dashboard-list-item {
+    background-color: $main-neutral-gray-bg;
+    color: $main-color-dark;
+
+    padding: 10px 10px 10px 20px;
+
+    border-radius: 10px;
+    border: solid 1px $main-neutral-gray-7;
+    border-left: solid 5px $main-color-primary;
+
+    transition: background-color 0.15s ease;
+    &.dashboard-list-item-link:hover {
+        background-color: darken($main-color-selection, 1%);
+        cursor: pointer;
+    }
+
+    // removes outline on item click
+    &:focus,
+    &.x-view-item-focused,
+    &.x-dataview-item-focused {
+        outline: none !important;
+    }
+
+    .row-space-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 13px;
+        font-weight: 600;
+        color: $main-color-dark;
+    }
+
+    .meta {
+        font-style: italic;
+        font-size: 13px;
+        color: $main-neutral-gray-3;
+    }
+
+    .tag {
+        font-size: 13px;
+        padding: 2px 6px;
+        background-color: $main-neutral-white;
+        border: solid 1px $main-neutral-gray-7;
+        border-radius: 6px;
+    }
+
+    .description {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-top: 8px;
+    }
+}

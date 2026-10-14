@@ -1,0 +1,22 @@
+.#{$prefix}buffered-select-all {
+    background-color: rgba(0, 0, 0, 0.04);
+    text-align: center;
+    padding: $grid-cell-inner-padding;
+
+    .#{$prefix}btn-secondary-action-small {
+        font-size: 90%;
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        .#{$prefix}btn-icon-el-secondary-action-small {
+            font-size: 14px;
+        }
+    }
+}
+.#{$prefix}grid-body-selectall {
+    .#{$prefix}grid-cell.#{$prefix}selmodel-column.#{$prefix}item-disabled {
+        .#{$prefix}grid-checkcolumn::after {
+            content: "\e613";
+        }
+    }
+}

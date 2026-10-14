@@ -1,0 +1,182 @@
+.x-ux-calendar-default {
+    .fc-toolbar {
+        h2 {
+            font-size: 1em;
+            margin: 0;
+            font-weight: 500;
+        }
+    }
+
+    .fc-button.fc-button-primary {
+        color: $main-neutral-gray-4;
+        background-color: $main-neutral-white;
+        border-color: $main-neutral-gray-6;
+
+        &:disabled {
+            color: $main-color-dark;
+            background-color: $main-neutral-white;
+            border-color: $main-neutral-gray-6;
+        }
+
+        &:hover {
+            color: $main-color-dark;
+            background-color: $main-neutral-gray-7;
+            border-color: $main-neutral-gray-6;
+        }
+
+        &:not(:disabled) {
+            &:active,
+            &.fc-button-active {
+                color: $main-color-dark;
+                background-color: $main-neutral-gray-7;
+                border-color: $main-neutral-gray-6;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    // Buttons
+    .fc-button {
+        border: none !important;
+        box-shadow: none !important;
+        transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease;
+    }
+
+    // Week days intestations
+    .fc-col-header-cell {
+        background-color: $main-neutral-gray-6;
+
+        .fc-col-header-cell-cushion {
+            display: inline-block;
+            padding: 4px 4px;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: $main-neutral-gray-4;
+            letter-spacing: 0.03em;
+        }
+    }
+
+    // Day cells
+    .fc-daygrid-day {
+        background-color: white;
+
+        &.fc-day-today {
+            background-color: white;
+
+            .fc-daygrid-day-number {
+                color: $main-color-dark;
+                font-weight: 700;
+            }
+        }
+
+        .fc-daygrid-day-top {
+            opacity: 1;
+        }
+
+        &.fc-day-other .fc-daygrid-day-number {
+            color: $main-neutral-gray-4;
+        }
+
+        .fc-daygrid-day-number {
+            padding: 4px 6px;
+            position: relative;
+            z-index: 4;
+            font-size: 12px;
+        }
+    }
+
+    // Events
+    .fc-daygrid-event-harness {
+        margin-bottom: 2px;
+
+        .fc-event {
+            border-radius: 6px;
+            border-width: 1px;
+            padding: 0 2px;
+            margin: 0 2px;
+            font-size: 12px;
+            font-weight: 500;
+            box-shadow: none;
+            transition:
+                transform 0.1s ease,
+                box-shadow 0.1s ease;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .fc-event-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    // Link "+N more"
+    .fc-daygrid-more-link {
+        font-size: 11px;
+        font-weight: 500;
+        color: $main-neutral-gray-4;
+        padding: 1px 4px;
+        margin-bottom: 4px;
+
+        &:hover {
+            color: $main-color-dark;
+            text-decoration: none;
+        }
+    }
+
+    // Popover "+N more"
+    .fc-popover {
+        border-radius: 6px;
+        border-color: $main-neutral-gray-6;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        .fc-popover-header {
+            background-color: $main-neutral-gray-7;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 8px;
+        }
+
+        .fc-popover-body .fc-daygrid-event-harness .fc-event {
+            margin: 2px 0;
+        }
+    }
+
+    // List view
+    .fc-list-event {
+        &:hover td {
+            background-color: $main-neutral-gray-bg;
+        }
+    }
+
+    .fc-list-day-cushion {
+        background-color: $main-neutral-gray-7 !important;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .fc-list-event-time {
+        font-size: 12px;
+        color: $main-neutral-gray-4;
+    }
+
+    .fc-list-event-title {
+        font-size: 12px;
+    }
+
+    table.fc-scrollgrid,
+    .fc-scrollgrid td,
+    .fc-scrollgrid th {
+        border-color: $main-neutral-gray-6;
+    }
+}

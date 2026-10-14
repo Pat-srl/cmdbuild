@@ -1,0 +1,238 @@
+/**
+ * Creates a visual theme for checkboxes and radio buttons.  Note this mixin only provides
+ * styling for the checkbox/radio button and its {@link #boxLabel}, The {@link #fieldLabel}
+ * and error icon/message are styled by {@link #extjs-label-ui}.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. Can not included spaces or special punctuation
+ * (used in CSS class names).
+ *
+ * @param {number} [$ui-field-height=$form-field-height]
+ * The height of the field body that the checkbox must fit within.  This does not set the
+ * height of the field, only allows the checkbox to be centered inside the field body.
+ * (The height of the field body is determined by {@link #extjs-label-ui}).
+ *
+ * @param {number} [$ui-checkbox-size=$form-checkbox-size]
+ * The size of the checkbox
+ *
+ * @param {string} [$ui-checkbox-background-image=$form-checkbox-background-image]
+ * The background-image of the checkbox
+ *
+ * @param {string/list} [$ui-checkbox-glyph=$form-checkbox-glyph]
+ * The glyph for the checkbox when {@link Global_CSS#$enable-font-icons} is `true`.
+ *
+ * @param {string/list} [$ui-checkbox-checked-glyph=$form-checkbox-checked-glyph]
+ * The glyph for the checkbox in "checked" state when {@link Global_CSS#$enable-font-icons} is `true`.
+ *
+ * @param {color} [$ui-checkbox-glyph-color=$form-checkbox-glyph-color]
+ * The color of the checkbox when {@link Global_CSS#$enable-font-icons} is `true`.
+ *
+ * @param {color} [$ui-checkbox-glyph-focus-color=$form-checkbox-glyph-focus-color]
+ * The color of the checkbox in "focused" state when {@link Global_CSS#$enable-font-icons} is `true`.
+ *
+ * @param {string} [$ui-radio-background-image=$form-radio-background-image]
+ * The background-image of the radio button
+ *
+ * @param {string/list} [$ui-radio-glyph=$form-radio-glyph]
+ * The glyph for the radio button when {@link Global_CSS#$enable-font-icons} is `true`.
+ *
+ * @param {string/list} [$ui-radio-checked-glyph=$form-radio-checked-glyph]
+ * The glyph for the radio button in "checked" state when {@link Global_CSS#$enable-font-icons} is `true`.
+ *
+ * @param {color} [$ui-radio-glyph-color=$form-radio-glyph-color]
+ * The color of the radio button when {@link Global_CSS#$enable-font-icons} is `true`.
+ *
+ * @param {color} [$ui-radio-glyph-focus-color=$form-radio-glyph-focus-color]
+ * The color of the radio button in "focused" state when {@link Global_CSS#$enable-font-icons} is `true`.
+ *
+ * @param {color} [$ui-label-color=$form-checkbox-label-color]
+ * The color of the checkbox's {@link #boxLabel}
+ *
+ * @param {string} [$ui-label-font-weight=$form-checkbox-label-font-weight]
+ * The font-weight of the checkbox's {@link #boxLabel}
+ *
+ * @param {string} [$ui-label-font-size=$form-checkbox-label-font-size]
+ * The font-size of the checkbox's {@link #boxLabel}
+ *
+ * @param {string} [$ui-label-font-family=$form-checkbox-label-font-family]
+ * The font-family of the checkbox's {@link #boxLabel}
+ *
+ * @param {string} [$ui-label-line-height=$form-checkbox-label-line-height]
+ * The line-height of the checkbox's {@link #boxLabel}
+ *
+ * @param {number} [$ui-label-spacing=$form-checkbox-label-spacing]
+ * The space between the boxLabel and the checkbox.
+ *
+ * @member Ext.form.field.Checkbox
+ */
+@mixin extjs-threestatecheckbox-ui($ui: null,
+    $ui-field-height: $form-field-height,
+    $ui-checkbox-size: $form-checkbox-size,
+    $ui-checkbox-background-image: $form-checkbox-background-image,
+    $ui-checkbox-glyph: $form-checkbox-glyph,
+    $ui-checkbox-checked-glyph: $form-checkbox-checked-glyph,
+    $ui-checkbox-glyph-color: $form-checkbox-glyph-color,
+    $ui-checkbox-glyph-focus-color: $form-checkbox-glyph-focus-color,
+    $ui-radio-background-image: $form-radio-background-image,
+    $ui-radio-glyph: $form-radio-glyph,
+    $ui-radio-checked-glyph: $form-radio-checked-glyph,
+    $ui-radio-glyph-color: $form-radio-glyph-color,
+    $ui-radio-glyph-focus-color: $form-radio-glyph-focus-color,
+    $ui-label-color: $form-checkbox-label-color,
+    $ui-label-font-weight: $form-checkbox-label-font-weight,
+    $ui-label-font-size: $form-checkbox-label-font-size,
+    $ui-label-font-family: $form-checkbox-label-font-family,
+    $ui-label-line-height: $form-checkbox-label-line-height,
+    $ui-label-spacing: $form-checkbox-label-spacing) {
+    .#{$prefix}form-tscb-wrap-#{$ui} {
+        height: $ui-field-height;
+        // The checkbox field's body element must be at least the width of the checkbox.
+        // This min-width prevents the width from collapsing to 0 when there is no boxLabel
+        // since the checkbox-containing element itself is absolutely positioned.
+        // See EXTJS-18430
+        min-width: $ui-checkbox-size;
+    }
+
+    .#{$prefix}form-tscb-#{$ui} {
+        // vertically center the checkbox
+        margin-top: round(($ui-field-height - $ui-checkbox-size) / 2);
+    }
+
+    .#{$prefix}form-checkbox-#{$ui}.#{$prefix}form-tscb-#{$ui} {
+        @include font-icon($fa-var-square);
+        color: $form-field-border-color;
+
+        .#{$prefix}form-tscb-readonly & {
+            &::before {
+                content: " ";
+            }
+        }
+
+        .#{$prefix}form-tscb-checked & {
+            color: $ui-checkbox-glyph-color;
+            @include font-icon($ui-checkbox-checked-glyph);
+        }
+
+        .#{$prefix}form-tscb-unchecked & {
+            color: $ui-checkbox-glyph-color;
+            @include font-icon($ui-checkbox-glyph);
+        }
+
+        .#{$prefix}form-invalid & {
+            @include font-icon($ui-checkbox-glyph, $pseudo: after);
+            &::after {
+                color: $form-field-invalid-border-color;
+                position: absolute;
+                left: 0;
+                font-size: $form-checkbox-size;
+            }
+        }
+    }
+
+    .#{$prefix}form-tscb-label-#{$ui} {
+        margin-top: round(($ui-field-height - $ui-label-line-height) / 2);
+        font: $ui-label-font-weight #{$ui-label-font-size}/#{$ui-label-line-height} $ui-label-font-family;
+        color: $ui-label-color;
+
+        &.#{$prefix}form-tscb-label-before {
+            padding-right: $ui-label-spacing + $ui-checkbox-size;
+
+            @if $include-rtl {
+                &.#{$prefix}rtl {
+                    padding-right: 0;
+                    padding-left: $ui-label-spacing + $ui-checkbox-size;
+                }
+            }
+        }
+
+        &.#{$prefix}form-tscb-label-after {
+            padding-left: $ui-label-spacing + $ui-checkbox-size;
+        }
+
+        @if $include-rtl {
+            &.#{$prefix}rtl {
+                padding-left: 0;
+                padding-right: $ui-label-spacing + $ui-checkbox-size;
+            }
+        }
+    }
+
+    // Checkbox field or subclass inside cell - calculate top/bottom padding to keep row height correct
+    @if $include-ext-grid-column-widget or $include-ext-grid-plugin-editing {
+        .#{$prefix}checkbox-#{$ui}-cell>.#{$prefix}grid-cell-inner {
+            padding-top: max(ceil(($grid-row-height - $ui-field-height) / 2), 0);
+            padding-bottom: max(floor(($grid-row-height - $ui-field-height) / 2), 0);
+        }
+    }
+}
+
+@include extjs-threestatecheckbox-ui($ui: "default"
+);
+
+
+.#{$prefix}form-tscb-wrap {
+    vertical-align: top;
+}
+
+.#{$prefix}form-tscb-wrap-inner {
+    position: relative;
+}
+
+.#{$prefix}form-tscb {
+    position: absolute;
+    left: 0;
+    right: auto;
+    vertical-align: top;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+}
+
+.#{$prefix}form-tscb-input {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+    @include opacity(0);
+}
+
+@if $include-rtl {
+    .#{$prefix}rtl.#{$prefix}form-tscb {
+        right: 0;
+        left: auto;
+    }
+}
+
+/* allow for the component to be positioned after the label */
+.#{$prefix}form-tscb-after {
+    left: auto;
+    right: 0;
+}
+
+@if $include-rtl {
+    .#{$prefix}rtl.#{$prefix}form-tscb-after {
+        left: 0;
+        right: auto;
+    }
+}
+
+/* some browsers like IE 10 need a block element to be able to measure
+the height of a multi-line element */
+.#{$prefix}form-tscb-label {
+    display: inline-block;
+
+    &.#{$prefix}form-tscb-no-box-label {
+        display: none;
+    }
+}

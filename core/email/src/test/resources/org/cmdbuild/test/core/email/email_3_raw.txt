@@ -1,0 +1,182 @@
+Delivered-To: crm@cmdbuild.org
+Received: by 2002:a19:f50d:0:0:0:0:0 with SMTP id j13csp255507lfb;
+        Tue, 28 Jan 2020 23:25:48 -0800 (PST)
+X-Received: by 2002:a05:6830:110a:: with SMTP id w10mr19913999otq.300.1580282748176;
+        Tue, 28 Jan 2020 23:25:48 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1580282748; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=C9pu2hTTXYvejoEblzge2TUfgCY9DL30SUF+uNssRbjP0uZ6rYB+lCQ0KMzSmhpekf
+         WyPTPNnf8gFxGi2MrPhaFXOdR3TcfwjWyIgYSxl2ONr4Y7CaQRFTzBZIBFDBi36JeemR
+         8TBi8swYt/gnwGrMP100SGkV7Fu7WEFSA5w3ui0Wgi7ffjg1JMJtslkn1dXk4Tn+0hnF
+         Xx5tnTstWgLoHbJnoAG86kWY3ey9q5UhnwPDdE5/rxPlhZxOfvMrGUS/f8RHCz9Qkmol
+         H0V6x07A0WATZUpgP52OylQF7H/CcujWoMEVKluFiU+ICrr2q3wdtdHhXEcLTn0ukK2R
+         +Nqg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:date:subject:from:content-transfer-encoding:mime-version
+         :message-id:dkim-signature:delivered-to;
+        bh=rYBnF1BRza/IONlxUtjIE6YLEsAHICvtEpHgPcLC0Xk=;
+        b=DSFLs9mbqXOvNy7lwAFJ6FdpIY3YEeN8/adn9tfwIjANh8dmC9zsxTvMRAPAeULeaE
+         2qVkF+87dq7hUxT9r5st5S1gK/bqOcIqGH6nG+nL3oeoCITON40kFG6E2oguqd0mUg2J
+         IjLIrT3ZlHt/WhZ41tUkVJI8mi16qvjYdc6SOP8Kr8EL5x3it1R0tJPIrOqaej8MZNPr
+         wPIEqPs3VdcsCckKhSwyHazSvu1Xy/TLE9HRFklkWM1E/WC/nT1s8CcGgWDvEsOPwb6Y
+         EYXpBYUebHOrQfm5tHA3DSj15umkbJCBGEWOgiJlvBuo4vSBb7LFfhKgOSLtYWWhODmA
+         j6Jw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@tecnoteca.com header.s=s1 header.b=QlCsXobF;
+       arc=pass (i=1 spf=pass spfdomain=em5990.tecnoteca.com dkim=pass dkdomain=tecnoteca.com);
+       spf=pass (google.com: domain of crm+caf_=crm=cmdbuild.org@tecnoteca.com designates 209.85.220.41 as permitted sender) smtp.mailfrom="crm+caf_=crm=cmdbuild.org@tecnoteca.com"
+Return-Path: <crm+caf_=crm=cmdbuild.org@tecnoteca.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d63sor519149otb.174.2020.01.28.23.25.47
+        for <crm@cmdbuild.org>
+        (Google Transport Security);
+        Tue, 28 Jan 2020 23:25:48 -0800 (PST)
+Received-SPF: pass (google.com: domain of crm+caf_=crm=cmdbuild.org@tecnoteca.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@tecnoteca.com header.s=s1 header.b=QlCsXobF;
+       arc=pass (i=1 spf=pass spfdomain=em5990.tecnoteca.com dkim=pass dkdomain=tecnoteca.com);
+       spf=pass (google.com: domain of crm+caf_=crm=cmdbuild.org@tecnoteca.com designates 209.85.220.41 as permitted sender) smtp.mailfrom="crm+caf_=crm=cmdbuild.org@tecnoteca.com"
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:dkim-signature:message-id
+         :mime-version:content-transfer-encoding:from:subject:date:to;
+        bh=rYBnF1BRza/IONlxUtjIE6YLEsAHICvtEpHgPcLC0Xk=;
+        b=o879NJDDQMxTLQ1IlP5p7iCMUAayiXfxvVWnDyZBxYF3un0GAm9LWem1iMZ2OP5Baz
+         2bb4BuNX6MrsgrW5kgp2L2v/py8TvXHeLLKy3lAUhxjLMwIEpCXdbQxh4MFNTnhRfyzQ
+         2qDs9CFHtC16Jz4KuFydc7IQ10RFlNVZjWOEZSYdQZLg07hQHkqTZY8zxq0sSCBYd4uO
+         4LOORIXAtxMtiQZ9fbhCbn65lXfZJl0UwvPq9hMfRekeG5s/q4/R7N38I2wVeAejE/Kp
+         PKqvxYC2Orv3sGPK+8n9fs5zEZNuzMZ+Xzl9xxSAnNychXEd0GFv2ut2AG3mbMcrqhXO
+         uOGg==
+X-Gm-Message-State: APjAAAV6Co3pCc9an7hWcjnafwzvnn70TvH2iCCOA4htsj1VBOCO3dU1
+	nlnNyfhXA8DwgsWCYOheTRhpLbhJavZ/eCeswe6uqabfELp3P+i12A==
+X-Received: by 2002:a05:6830:200d:: with SMTP id e13mr8236988otp.364.1580282746969;
+        Tue, 28 Jan 2020 23:25:46 -0800 (PST)
+X-Forwarded-To: crm@cmdbuild.org, interna@tecnoteca.com, a.pasqualini@tecnoteca.com
+X-Forwarded-For: crm@tecnoteca.com crm@cmdbuild.org, interna@tecnoteca.com, a.pasqualini@tecnoteca.com
+Delivered-To: crm@tecnoteca.com
+Received: by 2002:a4a:d019:0:0:0:0:0 with SMTP id h25csp245137oor;
+        Tue, 28 Jan 2020 23:25:45 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyO9xvL1g6gEFIiOg6CfgmjouAeEzixzr1tJ+de4FSM1CRDjmdJbS2zOGHVVexwZH+VmKzM
+X-Received: by 2002:a17:906:814a:: with SMTP id z10mr6043638ejw.62.1580282744827;
+        Tue, 28 Jan 2020 23:25:44 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1580282744; cv=none;
+        d=google.com; s=arc-20160816;
+        b=tb4KldvQ/nhTpyRSN32xPD0PmOGmlQcxNtVKfK+gChheSZgYuXte2s3HdCG569EaQX
+         X/j4TkUDBRGBAlGuxwKAvs9jb424j2/WQqgDH+Ot9WYg8xrSiHLDFeuPV33xUJoAXgVx
+         lJiTbBJvDv55mUcBlqjJgkHf82Z8zi652/KAJSyGpm28JqVDPvYbfVEmIh+nqoyPSj0X
+         qaMu/s6XtRVRh/yEoPuzvoVF4J+Bof8D3hFmVnXurr0YLDATIhoYpUwnu4ANdzQHrXBN
+         Ptc1LrwmDRKHd0W28tUN6YqYUeWoVAW9a6zbb/dr6KhAWcRQoqMRmaf4kArOKKbBBNqa
+         lfWw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:date:subject:from:content-transfer-encoding:mime-version
+         :message-id:dkim-signature;
+        bh=rYBnF1BRza/IONlxUtjIE6YLEsAHICvtEpHgPcLC0Xk=;
+        b=DeqB0WCBHYm+0wPT5EsvHXjJno1IoSyqBEgOOJ3J2po+jPkOnSc7DJ/WqIkB0995t1
+         oGn6jxAYHlcr2vkUWt4oznkml4BQuwJQ1NqKsNAgZlaWCY0NlAN4Ih5DY+OQ6SD69s9D
+         ajdsU85URm2KvhFP38BfQpY7XZUF403wM8/CdXJv6QSIXivoYYq+p9tZ+Ttr6dqnotcm
+         exVsDrLIqiC8PYif1FIVKkLDqZ063vYji+p2HlSv7CsBvTaHYjY50SoQUOQZll17nYRe
+         G3hzPJLF39KP+cBFaFOCmpkGWfkTzUPZBLjHtE+BeYHxZ6mNymajyARAir35McDyZZ7p
+         tJKQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@tecnoteca.com header.s=s1 header.b=QlCsXobF;
+       spf=pass (google.com: domain of bounces+1930826-dc4a-crm=tecnoteca.com@em5990.tecnoteca.com designates 167.89.100.13 as permitted sender) smtp.mailfrom="bounces+1930826-dc4a-crm=tecnoteca.com@em5990.tecnoteca.com"
+Return-Path: <bounces+1930826-dc4a-crm=tecnoteca.com@em5990.tecnoteca.com>
+Received: from o1.3n.shared.sendgrid.net (o1.3n.shared.sendgrid.net. [167.89.100.13])
+        by mx.google.com with ESMTPS id dc8si660943edb.261.2020.01.28.23.25.43
+        for <crm@tecnoteca.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+        Tue, 28 Jan 2020 23:25:44 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+1930826-dc4a-crm=tecnoteca.com@em5990.tecnoteca.com designates 167.89.100.13 as permitted sender) client-ip=167.89.100.13;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tecnoteca.com;
+	h=content-type:mime-version:content-transfer-encoding:from:subject:to;
+	s=s1; bh=rYBnF1BRza/IONlxUtjIE6YLEsAHICvtEpHgPcLC0Xk=;
+	b=QlCsXobFTS1U2C7P0vup63NtJkcme2KrzR9DbfBg+2F7qhlmiwJ+s57JgJzzLIRpYNl6
+	kavWkYKeXrWSHQP3gnrL3JXtivhF+o3yK/ovmWWxxVIi5kXOJSvnx1+BSDubsRmtDoQ6Z1
+	yJlh/YmCC/WPhzohSYRVixpzdaTAhkgog=
+Received: by filterdrecv-p3mdw1-56c97568b5-bclrh with SMTP id filterdrecv-p3mdw1-56c97568b5-bclrh-18-5E313375-4A
+        2020-01-29 07:25:42.062834655 +0000 UTC m=+3739355.240768758
+Received: from tecnoteca-sites.tecnoteca.com (unknown [178.32.142.69])
+	by ismtpd0004p1lon1.sendgrid.net (SG) with ESMTP id kpOBL4sWSROyTwvehUAGhQ
+	for <crm@tecnoteca.com>; Wed, 29 Jan 2020 07:25:41.936 +0000 (UTC)
+Received: from [10.0.0.51] (localhost6.localdomain6 [IPv6:::1])
+	by tecnoteca-sites.tecnoteca.com (Postfix) with ESMTPS id A059D42009C
+	for <crm@tecnoteca.com>; Wed, 29 Jan 2020 08:25:41 +0100 (CET)
+Message-Id: <20200129082539.26667.1721521915@tecnoteca-sites>
+Content-Type: text/plain; charset=iso-8859-1
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+From: tecnoteca@tecnoteca.com
+Subject: Form contatti inglese openMAINT.org
+X-HTTP_X_FORWARDED_FOR: 194.157.174.82, 10.0.0.3
+X-REMOTE_ADDR: 127.0.0.1
+X-PATH_INFO: /VirtualHostBase/https/www.openmaint.org:443/www_openmaint_org/VirtualHostRoot/en/contacts/contact
+Date: Wed, 29 Jan 2020 07:25:42 +0000 (UTC)
+X-SG-EID: 
+ =?us-ascii?Q?md+P66+HfT=2F4dLLTXNH0sXMezCPyflUM09ntTdWYw3Rc5q68AxTISfLV2J749w?=
+ =?us-ascii?Q?rnVC+xH0sLsrQPcZoIF6bJ3WjcBsK2h4j8SGvYb?=
+ =?us-ascii?Q?Mh1Tp1UNTJULl4XCmkUxyMQGsEirXSC+icA1EQh?=
+ =?us-ascii?Q?6XHP1wAHYMTFKa0pQYbV2RAr5H2bCls57h2RjE6?=
+ =?us-ascii?Q?ORoNQ6lyxavN2IEcmxIPsmLO+4shZtnuaFRCoHe?=
+ =?us-ascii?Q?EVf3TLyjtqUYp=2FoSg=3D?=
+To: crm@tecnoteca.com
+
+Richiesta informazioni in inglese dal sito www.openmaint.org
+   =20
+ * First name: Peedro=20
+ * Last name: Sepp=E4l=E4=20
+ * Form of address: MR=20
+ * Your email: peedro.seppala@cellfoam.fi=20
+ * Your phone number: +358458572270=20
+ * You are a/an: O=20
+ * Your Company/Organization: NMC Cellfoam Oy=20
+ * City: Tampere=20
+ * Country: FIN=20
+ * Web site: www.cellfoam.fi=20
+ * Scope of use: To get first CMMS to factory=20
+ * Subject: We are taking new steps in maintenance=20
+ * Message: We have a couple offers from local cmms vendors, but we would l=
+ike to have your product pricing also.=20
+ * What is the number of people employed at the site(s) in question?: 50=20
+ * What is the number of people that will operate with the tool?: 1-2=20
+ * What is the current status of your project?: None in the short term=20
+ * When would you like to start implementing the solution?: Within 3 months=
+=20
+ * Language: en
+ * Web site: www.openmaint.org
+ * Form: Information request
+   =20
+
+
+
+---
+
+<key>Nome</key><value>Peedro</value>
+<key>Cognome</key><value>Sepp=E4l=E4</value>
+<key>Appellativo</key><value>MR</value>
+<key>Email</key><value>peedro.seppala@cellfoam.fi</value>
+<key>Telefono</key><value>+358458572270</value>
+<key>Ruolo</key><value>O</value>
+<key>Organizzazione</key><value>NMC Cellfoam Oy</value>
+<key>Citta</key><value>Tampere</value>
+<key>Nazione</key><value>FIN</value>
+<key>SitoAziendale</key><value>www.cellfoam.fi</value>
+<key>AmbitoUtilizzo</key><value>To get first CMMS to factory</value>
+<key>OggettoRichiesta</key><value>We are taking new steps in maintenance</v=
+alue>
+<key>DescrizioneRichiesta</key><value>We have a couple offers from local cm=
+ms vendors, but we would like to have your product pricing also.</value>
+<key>q_01</key><value>50</value>
+<key>q_02</key><value>1-2</value>
+<key>q_03</key><value>None in the short term</value>
+<key>q_04</key><value>Within 3 months</value>
+<key>TipoServizio</key><value>openMAINT - Richiesta informazioni</value>
+<key>Lingua</key><value>en</value>
+<key>Sito</key><value>www.openmaint.org</value>
+<key>Form</key><value>Information request</value>
+<key>DettaglioInformazioni</key><value><p><strong>What is the number of peo=
+ple employed at the site(s) in question?</strong><br /><span>50</span></p><=
+p><strong>What is the number of people that will operate with the tool?</st=
+rong><br /><span>1-2</span></p><p><strong>What is the current status of you=
+r project?</strong><br /><span>None in the short term</span></p><p><strong>=
+When would you like to start implementing the solution?</strong><br /><span=
+>Within 3 months</span></p></value>

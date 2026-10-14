@@ -1,0 +1,114 @@
+{
+    "_id": "RackTree",
+    "name": "RackTree",
+    "description": "Rack tree",
+    "_description_translation": "Rack tree",
+    "active": true,
+    "type": "menu",
+    "nodes": [
+        {
+            "_id": "2qvtts2tumcj5lx7yds9bnuq",
+            "filter": "",
+            "targetClass": "Complex",
+            "recursionEnabled": false,
+            "domain": "",
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": ""
+        },
+        {
+            "_id": "z17dw0k4vb48gg3ywcq0510n",
+            "filter": "",
+            "targetClass": "Building",
+            "recursionEnabled": false,
+            "domain": "ComplexBuilding",
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": "",
+            "parent": "2qvtts2tumcj5lx7yds9bnuq",
+            "direction": "_2"
+        },
+        {
+            "_id": "41kdooj6ufowwmn5fpi2zwpl",
+            "filter": "",
+            "targetClass": "Floor",
+            "recursionEnabled": false,
+            "domain": "BuildingFloor",
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": "",
+            "parent": "z17dw0k4vb48gg3ywcq0510n",
+            "direction": "_2"
+        },
+        {
+            "_id": "zt3q5ut669d7u81ujtdr7o0h",
+            "filter": "",
+            "targetClass": "Room",
+            "recursionEnabled": false,
+            "domain": "FloorRoom",
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": "",
+            "parent": "41kdooj6ufowwmn5fpi2zwpl",
+            "direction": "_2"
+        },
+        {
+            "_id": "ljke102vm38vnj60h1hmxn60",
+            "filter": "",
+            "targetClass": "Rack",
+            "recursionEnabled": false,
+            "domain": "RoomCI",
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": "",
+            "parent": "zt3q5ut669d7u81ujtdr7o0h",
+            "direction": "_2"
+        },
+        {
+            "_id": "7127lo2s5q6vi85art3keiw3",
+            "filter": "",
+            "targetClass": "ServerHW",
+            "recursionEnabled": false,
+            "domain": "RackServerHW",
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": "",
+            "parent": "ljke102vm38vnj60h1hmxn60",
+            "direction": "_2"
+        },
+        {
+            "_id": "l18ahqdrrvuw8tgrs4pcplu0",
+            "filter": "from Hardware where Id in (/( SELECT \"Id\" FROM \"Hardware\" WHERE \"IdClass\" != '\"Rack\"'::regclass )/)",
+            "targetClass": "Hardware",
+            "recursionEnabled": false,
+            "domain": "RoomCI",
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": "",
+            "ecqlFilter": {
+                "id": "f7eo8e0kyu3dw0pn2d5xnvqxcqqfqbfoh5at6omfc7frka4lg3ywfeq12qtlmj",
+                "bindings": {
+                    "server": [],
+                    "client": []
+                }
+            },
+            "parent": "zt3q5ut669d7u81ujtdr7o0h",
+            "direction": "_2"
+        }
+    ],
+    "icon_font": ""
+}

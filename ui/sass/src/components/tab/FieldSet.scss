@@ -1,0 +1,64 @@
+@if $include-fieldset-default-ui {
+    @include extjs-fieldset-ui(
+        $ui: 'formpagination',
+        $ui-header-font-size: $font-size,
+        $ui-header-font-weight: 400,
+        $ui-header-color: $color-light,
+        $ui-border-color: $color-light,
+        $ui-border-width: 0,
+        $ui-padding: 0,
+        $ui-tool-expand-glyph: $fa-var-caret-up,
+        $ui-tool-collapse-glyph: $fa-var-caret-down,
+        // $ui-collapse-tool-margin: 2px 0 0 4px,
+        $ui-tool-glyph-color: $color-light
+    );
+}
+
+.#{$prefix}fieldset-formpagination {
+    background: transparent;
+    border-top-color: $color-light;
+
+    .#{$prefix}fieldset-header {
+        text-transform: uppercase;
+    }
+}
+
+@include extjs-fieldset-ui(
+    $ui: 'groupingfieldset',
+    $ui-header-font-size: $grid-grouped-title-font-size,
+    $ui-header-line-height: $grid-grouped-title-line-height,
+    $ui-header-font-weight: 600,
+    $ui-header-color: $grid-grouped-title-color,
+    $ui-header-padding: 6px 10px !important,
+    $ui-border-width: 0,
+    $ui-padding: 0,
+    $ui-margin: 0,
+    $ui-collapse-tool-margin: 0 11px 0 0,
+    $ui-tool-expand-glyph: $fa-var-minus-square-o,
+    $ui-tool-collapse-glyph: $fa-var-plus-square-o
+);
+
+.#{$prefix}fieldset-groupingfieldset {
+    border-top: 0 !important;
+
+    &.#{$prefix}fieldset-collapsed {
+        border: 0;
+    }
+
+    .#{$prefix}fieldset-header-groupingfieldset {
+        background-color: lighten($neutral-color, 12%);
+        width: 100%;
+
+        & > .#{$prefix}fieldset-header-text {
+            font-style: italic;
+            position: unset;
+        }
+
+        .#{$prefix}fieldset-header-tool-groupingfieldset > .#{$prefix}tool-toggle {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: $grid-grouped-title-line-height;
+            opacity: 1;
+        }
+    }
+}

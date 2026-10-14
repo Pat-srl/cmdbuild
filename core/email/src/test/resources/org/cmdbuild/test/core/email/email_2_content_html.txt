@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	</head>
+	<body style="font-family: arial; font-size: 16px"><img width="1" height="1" src="https://www.amazon.it/gp/r.html?C=2G3LZ6RRUIYAJ&K=10JXI4OQ6IYR2&M=urn:rtn:msg:20191016100247defc8f2dc27d4f32bf905f6145d0p0eu&R=1SSCMAAMIC5CF&T=O&U=https%3A%2F%2Fimages-eu.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&H=AQHA7TVYR6NJ8OMUCYUTISO1VPAA&ref_=pe_2616521_125428911_opens" />
+		<p><img style="align: left;height: auto;max-width:125px !important;" width="125" src="http://g-ec2.images-amazon.com/images/G/01/SellerPerformance/MRE/Amazon-logo-RGB._V300632413_.png" alt="Amazon"/></p>
+		<hr>
+		<p>Ciao,</p>
+		<p>Abbiamo notato che di recente hai richiesto un reso per l'ordine Marketplace <a href="https://www.amazon.it/gp/f.html?C=2G3LZ6RRUIYAJ&K=10JXI4OQ6IYR2&M=urn:rtn:msg:20191016100247defc8f2dc27d4f32bf905f6145d0p0eu&R=3Q4OGKXFIHRP6&T=C&U=http%3A%2F%2Famazon.it%2Fgp%2Fyour-account%2Forder-details%3Fie%3DUTF8%26orderID%3D405-2346992-6402727&H=B7IH2EARCG0CYM2LBZNTAIOHYRCA">405-2346992-6402727</a></p>
+
+		<p style="font-size: 20px margin-top:25px; padding-top:25px;"><b>Il venditore ha risolto il tuo problema?</b></p>
+		<span>
+			<!--[if mso]>
+				<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.amazon.it/gp/help/survey?p=ABT5HQFG855HZ&k=hy" style="height:40px;v-text-anchor:middle;width:100px;display:inline-block;" arcsize="10%" strokecolor="#bcc1c8" fillcolor="#e7e9ec">
+					<w:anchorlock/>
+					<center style="color:#000000;font-family:sans-serif;font-size:13px;font-weight:bold;display:inline-block;">Sì</center>
+				</v:roundrect>
+			<![endif]-->
+			<a href="https://www.amazon.it/gp/f.html?C=2G3LZ6RRUIYAJ&K=10JXI4OQ6IYR2&M=urn:rtn:msg:20191016100247defc8f2dc27d4f32bf905f6145d0p0eu&R=23S9GUSK0PQBS&T=C&U=https%3A%2F%2Fwww.amazon.it%2Fgp%2Fhelp%2Fsurvey%3Fp%3DABT5HQFG855HZ%26k%3Dhy%26ref_%3Dpe_2616521_125428911&H=MJB1N58XX4YY3U8Z8PFGD2TDFP0A&ref_=pe_2616521_125428911" style="background-color:#e7e9ec;border:1px solid #bcc1c8;border-radius:4px;color:#000000;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:100px;-webkit-text-size-adjust:none;mso-hide:all;">
+			Sì
+			</a>
+		</span>
+		<span style="margin-left:10px; padding-left:10px;">
+			<!--[if mso]>
+				<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.amazon.it/gp/help/survey?p=ABT5HQFG855HZ&k=hn" style="height:40px;v-text-anchor:middle;width:100px;display:inline-block;margin-left:10px;" arcsize="10%" strokecolor="#bcc1c8" fillcolor="#e7e9ec">
+					<w:anchorlock/>
+					<center style="color:#000000;font-family:sans-serif;font-size:13px;font-weight:bold;display:inline-block;">No</center>
+				</v:roundrect>
+			<![endif]-->
+		<a href="https://www.amazon.it/gp/f.html?C=2G3LZ6RRUIYAJ&K=10JXI4OQ6IYR2&M=urn:rtn:msg:20191016100247defc8f2dc27d4f32bf905f6145d0p0eu&R=2CN13MIDLNECS&T=C&U=https%3A%2F%2Fwww.amazon.it%2Fgp%2Fhelp%2Fsurvey%3Fp%3DABT5HQFG855HZ%26k%3Dhn%26ref_%3Dpe_2616521_125428911&H=CJ4ESXZFQ5B0MCRJC5IVELV7SR4A&ref_=pe_2616521_125428911" style="background-color:#e7e9ec;border:1px solid #bcc1c8;border-radius:4px;color:#000000;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:100px;-webkit-text-size-adjust:none;mso-hide:all;">
+			No
+		</a>
+		</span>
+		<p style="font-size:12px">	(Condivideremo questo feedback con il venditore per aiutarlo a migliorare il suo servizio in futuro)</p>
+		
+<img width="1" height="1" src="https://www.amazon.it/gp/r.html?C=2G3LZ6RRUIYAJ&K=10JXI4OQ6IYR2&M=urn:rtn:msg:20191016100247defc8f2dc27d4f32bf905f6145d0p0eu&R=TCCAS5DZW5OJ&T=E&U=https%3A%2F%2Fimages-eu.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&H=APAXWK5WBS0IMEN1EALRG9QSGFQA&ref_=pe_2616521_125428911_open" /></body>
+</html>

@@ -1,0 +1,27 @@
+I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on 
+"<p>" that you need to set the MIME type(I guess you are using it in your response).
+I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on I don't think you can detect the mime type without extension , you would need to 
+know which system is writing the file and what kind of file is expected to be there and based on 
+

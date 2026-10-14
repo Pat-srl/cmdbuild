@@ -1,0 +1,99 @@
+@include extjs-tab-panel-ui(
+    $ui: "tabandtools",
+
+    // bar
+    $ui-bar-background-color: transparent,
+    $ui-bar-border-color: mix(#000, $neutral-light-color, 10%),
+    $ui-bar-border-width: 0 0 1px 0 !important,
+    $ui-bar-padding: 8px 8px 0 8px,
+
+    // tab border
+    $ui-tab-border-width: 1px,
+    $ui-tab-border-color: mix(#000, $neutral-light-color, 10%),
+    $ui-tab-border-color-focus: mix(#000, $neutral-light-color, 10%),
+    $ui-tab-border-color-over: mix(#000, $neutral-light-color, 10%),
+    $ui-tab-border-color-focus-over: mix(#000, $neutral-light-color, 10%),
+    $ui-tab-border-color-disabled: mix(#000, $neutral-light-color, 10%),
+    $ui-tab-border-color-active: mix(#000, $neutral-light-color, 10%) mix(#000, $neutral-light-color, 10%) #fff
+        mix(#000, $neutral-light-color, 10%),
+    $ui-tab-border-color-focus-active: mix(#000, $neutral-light-color, 10%) mix(#000, $neutral-light-color, 10%) #fff
+        mix(#000, $neutral-light-color, 10%),
+    // tab font color
+    $ui-tab-color: mix(#fff, $color, 15%),
+    $ui-tab-color-focus: mix(#fff, $color, 15%),
+    $ui-tab-color-over: mix(#fff, $color, 10%),
+    $ui-tab-color-focus-over: mix(#fff, $color, 10%),
+    $ui-tab-color-disabled: mix(#fff, $color, 40%),
+    $ui-tab-color-active: $color,
+    $ui-tab-color-focus-active: $color,
+
+    // tab font weight
+    $ui-tab-font-weight-active: bold,
+    $ui-tab-font-weight-focus-active: bold,
+
+    // outline
+    $ui-tab-outline-width-focus: 0,
+
+    // tab padding
+    $ui-tab-padding: 4px 7px 4px 7px,
+
+    // tab background opacity
+    $ui-tab-background-opacity-over: 0.04,
+    $ui-tab-background-opacity-active: 0.06
+);
+
+.#{$prefix}tab-bar-horizontal > .#{$prefix}tab-bar-body-tabandtools {
+    margin-bottom: -1px;
+}
+
+.#{$prefix}box-scroller-tab-bar-administration-tabandtools {
+    background-color: $administration-base-color !important;
+}
+.#{$prefix}box-scroller-tab-bar-tabandtools {
+    color: mix(#fff, $color, 40%);
+}
+/**
+ * Tool style
+ */
+.#{$prefix}tool-tabandtools {
+    padding: 4px;
+
+    .#{$prefix}tool-tool-el {
+        color: $color;
+    }
+}
+.#{$prefix}tool.management-tool {
+    .#{$prefix}tool-tool-el {
+        color: $color;
+        min-width: 20px; // custom icon need more space
+        &.#{$prefix}fa {
+            // FontAwesome in firefox has plus 1 px in icons height
+            .#{$prefix}gecko & {
+                font-size: $tool-size - 1px;
+            }
+        }
+    }
+
+    &.no-action {
+        .#{$prefix}tool-tool-el {
+            color: $main-neutral-gray-3;
+        }
+    }
+
+    &.#{$prefix}tool-disabled {
+        opacity: 0.5;
+        .#{$prefix}mask {
+            background-color: transparent;
+        }
+    }
+}
+
+.hidden-tab {
+    .#{$prefix}tab-bar-tabandtools-top {
+        border-bottom-width: 0 !important;
+    }
+
+    .#{$prefix}tab-bar-horizontal > .#{$prefix}tab-bar-body-tabandtools .#{$prefix}tab {
+        display: none;
+    }
+}

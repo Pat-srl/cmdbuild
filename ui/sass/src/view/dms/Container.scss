@@ -1,0 +1,17 @@
+.#{$prefix}container-messagewarning {
+    border: 1px solid $cmdbuild-status-warning;
+    background: lighten($cmdbuild-status-warning, 55%);
+    padding: $form-messages-padding;
+    margin-bottom: $form-messages-margin-bottom;
+    color: darken($color: $cmdbuild-status-warning, $amount: 20%);
+
+    &::before {
+        content: $fa-var-exclamation-triangle;
+        color: $cmdbuild-status-warning;
+        font-family: "Font Awesome 5 Free" !important;
+        font-size: 2em;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+}

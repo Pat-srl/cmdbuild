@@ -1,0 +1,88 @@
+@include extjs-window-ui(
+    $ui: 'administration',
+    $ui-header-color: $base-color,
+    $ui-border-color: $main-color-selection,
+    $ui-header-background-color: $main-color-selection,
+    $ui-header-font-weight: 600
+);
+
+.#{$prefix}window-header-administration {
+    .#{$prefix}tool-tool-el {
+        color: $base-color;
+    }
+}
+
+.#{$prefix}panel-header-administration {
+    .#{$prefix}tool-tool-el {
+        color: $main-neutral-white;
+    }
+}
+
+@include extjs-tab-panel-ui(
+    $ui: 'administration',
+    // bar
+    $ui-bar-background-color: #fff,
+    $ui-bar-border-color: $main-neutral-gray-5,
+    $ui-bar-border-width: 0 0 1px 0 !important,
+    // tab border
+    $ui-tab-border-width: 0 0 2px 0,
+    $ui-tab-border-color: transparent,
+    $ui-tab-border-color-focus: $main-neutral-gray-5,
+    $ui-tab-border-color-over: $main-neutral-gray-5,
+    $ui-tab-border-color-focus-over: $main-neutral-gray-5,
+    $ui-tab-border-color-disabled: transparent,
+    $ui-tab-border-color-active: $administration-action-color,
+    $ui-tab-border-color-focus-active: $administration-action-color,
+
+    // tab font color
+    $ui-tab-color: $color-light,
+    $ui-tab-color-focus: $color-light,
+    $ui-tab-color-over: $color-light,
+    $ui-tab-color-focus-over: $color-light,
+    $ui-tab-color-disabled: mix(#fff, $color-light, 10%),
+    $ui-tab-color-active: $administration-action-color,
+    $ui-tab-color-focus-active: $administration-action-color,
+
+    // tab font weight
+    $ui-tab-font-weight: 500,
+    $ui-tab-font-weight-focus: 500,
+    $ui-tab-font-weight-over: 500,
+    $ui-tab-font-weight-active: 500,
+    $ui-tab-font-weight-focus-over: 500,
+    $ui-tab-font-weight-focus-active: 500,
+    $ui-tab-font-weight-disabled: 500,
+    // tab icon color
+    $ui-tab-glyph-color: $main-neutral-gray-4,
+    $ui-tab-glyph-color-focus: $main-neutral-gray-4,
+    $ui-tab-glyph-color-over: $main-neutral-gray-3,
+    $ui-tab-glyph-color-focus-over: $main-neutral-gray-3,
+    $ui-tab-glyph-color-disabled: $main-neutral-gray-6,
+    $ui-tab-glyph-color-active: $main-neutral-gray-2,
+    $ui-tab-glyph-color-focus-active: $main-neutral-gray-2,
+    // outline
+    $ui-tab-outline-width-focus: 0,
+    // tab padding
+    $ui-tab-padding: 4px 7px 4px 7px,
+    // tab background opacity
+    $ui-tab-background-opacity: 0,
+    $ui-tab-background-opacity-focus: 0,
+    $ui-tab-background-opacity-over: 0,
+    $ui-tab-background-opacity-active: 0,
+    $ui-tab-background-opacity-focus-over: 0,
+    $ui-tab-background-opacity-focus-active: 0,
+    $ui-tab-background-opacity-disabled: 0
+);
+
+@include extjs-panel-ui(
+    $ui: 'administration',
+
+    $ui-header-color: $panel-header-color,
+    $ui-header-border-color: $administration-base-color,
+    $ui-header-background-color: $administration-base-color
+);
+@include extjs-panel-ui(
+    $ui: 'administration-actionpanel',
+
+    $ui-header-border-color: $administration-action-color,
+    $ui-header-background-color: $administration-action-color
+);

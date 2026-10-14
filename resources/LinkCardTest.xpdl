@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xpdl:Package xmlns:xpdl="http://www.wfmc.org/2008/XPDL2.1" xmlns="http://www.wfmc.org/2008/XPDL2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="Package_incidentmgt" xsi:schemaLocation="http://www.wfmc.org/2008/XPDL2.1 http://www.wfmc.org/standards/docs/bpmnxpdl_31.xsd">
+    <xpdl:PackageHeader>
+        <xpdl:XPDLVersion>2.1</xpdl:XPDLVersion>
+        <xpdl:Vendor/>
+        <xpdl:Created/>
+    </xpdl:PackageHeader>
+    <xpdl:Script Type="text/java"/>
+    <xpdl:TypeDeclarations>
+        <xpdl:TypeDeclaration Id="Reference">
+            <xpdl:ExternalReference location="org.cmdbuild.workflow.type.ReferenceType"/>
+        </xpdl:TypeDeclaration>
+        <xpdl:TypeDeclaration Id="References">
+            <xpdl:ExternalReference location="org.cmdbuild.workflow.type.ReferenceType&lt;&gt;"/>
+        </xpdl:TypeDeclaration>
+        <xpdl:TypeDeclaration Id="Lookup">
+            <xpdl:ExternalReference location="org.cmdbuild.workflow.type.LookupType"/>
+        </xpdl:TypeDeclaration>
+        <xpdl:TypeDeclaration Id="Lookups">
+            <xpdl:ExternalReference location="org.cmdbuild.workflow.type.LookupType&lt;&gt;"/>
+        </xpdl:TypeDeclaration>
+    </xpdl:TypeDeclarations>
+    <xpdl:Participants>
+        <xpdl:Participant Id="System">
+            <xpdl:ParticipantType Type="SYSTEM"/>
+        </xpdl:Participant>
+        <xpdl:Participant Id="SuperUser">
+            <xpdl:ParticipantType Type="ROLE"/>
+        </xpdl:Participant>
+        <xpdl:Participant Id="Test">
+            <xpdl:ParticipantType Type="ROLE"/>
+        </xpdl:Participant>
+    </xpdl:Participants>
+    <xpdl:Pools>
+        <xpdl:Pool BoundaryVisible="true" Id="Package_incidentmgt_pool1" MainPool="true" Name="Process_incidentmgt" Orientation="HORIZONTAL" Process="Process_test">
+            <xpdl:Lanes>
+                <xpdl:Lane Id="Package_incidentmgt_pool1_lan1" Name="Guest">
+                    <xpdl:NodeGraphicsInfos>
+                        <xpdl:NodeGraphicsInfo BorderColor="0,0,0" FillColor="220,220,220" IsVisible="true" ToolId="JaWE"/>
+                        <xpdl:NodeGraphicsInfo BorderColor="0,0,0" FillColor="220,220,220" IsVisible="true" ToolId="JaWE"/>
+                    </xpdl:NodeGraphicsInfos>
+                    <xpdl:Performers>
+                        <xpdl:Performer>Test</xpdl:Performer>
+                    </xpdl:Performers>
+                </xpdl:Lane>
+            </xpdl:Lanes>
+            <xpdl:NodeGraphicsInfos>
+                <xpdl:NodeGraphicsInfo BorderColor="0,0,0" FillColor="255,255,215" IsVisible="true" ToolId="JaWE"/>
+            </xpdl:NodeGraphicsInfos>
+        </xpdl:Pool>
+    </xpdl:Pools>
+    <xpdl:WorkflowProcesses>
+        <xpdl:WorkflowProcess AccessLevel="PUBLIC" Id="Process_test">
+            <xpdl:ProcessHeader/>
+            <xpdl:DataFields>
+                <xpdl:DataField Id="Comuni" IsArray="false">
+                    <xpdl:DataType>
+                        <xpdl:DeclaredType Id="References"/>
+                    </xpdl:DataType>
+                </xpdl:DataField>
+                <xpdl:DataField Id="Description" IsArray="false">
+                    <xpdl:DataType>
+                        <xpdl:BasicType Type="STRING"/>
+                    </xpdl:DataType>
+                </xpdl:DataField>
+            </xpdl:DataFields>
+            <xpdl:Activities>
+                <xpdl:Activity Id="IM01-Start" Name="IM01 - Start">
+                    <xpdl:Implementation>
+                        <xpdl:No/>
+                    </xpdl:Implementation>
+                    <xpdl:Performers>
+                        <xpdl:Performer>Test</xpdl:Performer>
+                    </xpdl:Performers>
+                    <xpdl:ExtendedAttributes>
+                        <xpdl:ExtendedAttribute Name="VariableToProcess_UPDATE" Value="Description"/>
+                    </xpdl:ExtendedAttributes>
+                    <xpdl:NodeGraphicsInfos>
+                        <xpdl:NodeGraphicsInfo BorderColor="0,0,0" FillColor="187,247,190" Height="60" IsVisible="true" LaneId="Package_incidentmgt_pool1_lan1" ToolId="JaWE" Width="90">
+                            <xpdl:Coordinates XCoordinate="127" YCoordinate="72"/>
+                        </xpdl:NodeGraphicsInfo>
+                    </xpdl:NodeGraphicsInfos>
+                </xpdl:Activity>
+                <xpdl:Activity Id="Process_incidentmgt_act4">
+                    <xpdl:Event>
+                        <xpdl:StartEvent Trigger="None"/>
+                    </xpdl:Event>
+                    <xpdl:NodeGraphicsInfos>
+                        <xpdl:NodeGraphicsInfo BorderColor="0,0,0" FillColor="102,204,51" Height="31" IsVisible="true" LaneId="Package_incidentmgt_pool1_lan1" ToolId="JaWE" Width="31">
+                            <xpdl:Coordinates XCoordinate="74" YCoordinate="84"/>
+                        </xpdl:NodeGraphicsInfo>
+                    </xpdl:NodeGraphicsInfos>
+                </xpdl:Activity>
+                <xpdl:Activity Id="SYS01-Script" Name="SYS01 - Script">
+                    <xpdl:Implementation>
+                        <xpdl:Task>
+                            <xpdl:TaskScript>
+                                <xpdl:Script ScriptType="groovy">Description = "Hello " + Comuni.collect { it.description } .join(",");</xpdl:Script>
+                            </xpdl:TaskScript>
+                        </xpdl:Task>
+                    </xpdl:Implementation>
+                    <xpdl:Performers>
+                        <xpdl:Performer/>
+                    </xpdl:Performers>
+                    <xpdl:NodeGraphicsInfos>
+                        <xpdl:NodeGraphicsInfo BorderColor="0,0,0" FillColor="255,255,204" Height="60" IsVisible="true" LaneId="Package_incidentmgt_pool1_lan1" ToolId="JaWE" Width="90">
+                            <xpdl:Coordinates XCoordinate="366" YCoordinate="72"/>
+                        </xpdl:NodeGraphicsInfo>
+                    </xpdl:NodeGraphicsInfos>
+                </xpdl:Activity>
+                <xpdl:Activity Id="Process_incidentmgt_act1">
+                    <xpdl:Event>
+                        <xpdl:EndEvent Result="None"/>
+                    </xpdl:Event>
+                    <xpdl:NodeGraphicsInfos>
+                        <xpdl:NodeGraphicsInfo BorderColor="0,0,0" FillColor="236,120,98" Height="31" IsVisible="true" LaneId="Package_incidentmgt_pool1_lan1" ToolId="JaWE" Width="31">
+                            <xpdl:Coordinates XCoordinate="639" YCoordinate="88"/>
+                        </xpdl:NodeGraphicsInfo>
+                    </xpdl:NodeGraphicsInfos>
+                </xpdl:Activity>
+                <xpdl:Activity Id="IM03-End" Name="IM03 - End">
+                    <xpdl:Implementation>
+                        <xpdl:No/>
+                    </xpdl:Implementation>
+                    <xpdl:Performers>
+                        <xpdl:Performer>Test</xpdl:Performer>
+                    </xpdl:Performers>
+                    <xpdl:ExtendedAttributes>
+                        <xpdl:ExtendedAttribute Name="VariableToProcess_VIEW" Value="Description"/>
+                    </xpdl:ExtendedAttributes>
+                    <xpdl:NodeGraphicsInfos>
+                        <xpdl:NodeGraphicsInfo BorderColor="0,0,0" FillColor="187,247,190" Height="60" IsVisible="true" LaneId="Package_incidentmgt_pool1_lan1" ToolId="JaWE" Width="90">
+                            <xpdl:Coordinates XCoordinate="474" YCoordinate="73"/>
+                        </xpdl:NodeGraphicsInfo>
+                    </xpdl:NodeGraphicsInfos>
+                </xpdl:Activity>
+                <xpdl:Activity Id="IM02-Link" Name="IM02 - Link">
+                    <xpdl:Implementation>
+                        <xpdl:No/>
+                    </xpdl:Implementation>
+                    <xpdl:Performers>
+                        <xpdl:Performer>Test</xpdl:Performer>
+                    </xpdl:Performers>
+                    <xpdl:ExtendedAttributes>
+                        <xpdl:ExtendedAttribute Name="linkCards" Value="ClassName=&quot;Comune&quot;&#13;&#10;ButtonLabel=&quot;Comuni&quot;&#13;&#10;&#13;&#10;Comuni"/>
+                    </xpdl:ExtendedAttributes>
+                    <xpdl:NodeGraphicsInfos>
+                        <xpdl:NodeGraphicsInfo BorderColor="0,0,0" FillColor="187,247,190" Height="60" IsVisible="true" LaneId="Package_incidentmgt_pool1_lan1" ToolId="JaWE" Width="90">
+                            <xpdl:Coordinates XCoordinate="242" YCoordinate="72"/>
+                        </xpdl:NodeGraphicsInfo>
+                    </xpdl:NodeGraphicsInfos>
+                </xpdl:Activity>
+            </xpdl:Activities>
+            <xpdl:Transitions>
+                <xpdl:Transition From="Process_incidentmgt_act4" Id="Process_incidentmgt_tra4" To="IM01-Start">
+                    <xpdl:ConnectorGraphicsInfos>
+                        <xpdl:ConnectorGraphicsInfo FillColor="0,0,0" IsVisible="true" Style="NO_ROUTING_SPLINE" ToolId="JaWE"/>
+                    </xpdl:ConnectorGraphicsInfos>
+                </xpdl:Transition>
+                <xpdl:Transition From="SYS01-Script" Id="Process_incidentmgt_tra1" To="IM03-End">
+                    <xpdl:ConnectorGraphicsInfos>
+                        <xpdl:ConnectorGraphicsInfo FillColor="0,0,0" IsVisible="true" Style="NO_ROUTING_SPLINE" ToolId="JaWE"/>
+                    </xpdl:ConnectorGraphicsInfos>
+                </xpdl:Transition>
+                <xpdl:Transition From="IM03-End" Id="Process_incidentmgt_tra2" To="Process_incidentmgt_act1">
+                    <xpdl:ConnectorGraphicsInfos>
+                        <xpdl:ConnectorGraphicsInfo FillColor="0,0,0" IsVisible="true" Style="NO_ROUTING_SPLINE" ToolId="JaWE"/>
+                    </xpdl:ConnectorGraphicsInfos>
+                </xpdl:Transition>
+                <xpdl:Transition From="IM01-Start" Id="Process_test_tra1" To="IM02-Link">
+                    <xpdl:ConnectorGraphicsInfos>
+                        <xpdl:ConnectorGraphicsInfo FillColor="0,0,0" IsVisible="true" Style="NO_ROUTING_SPLINE" ToolId="JaWE"/>
+                    </xpdl:ConnectorGraphicsInfos>
+                </xpdl:Transition>
+                <xpdl:Transition From="IM02-Link" Id="Process_test_tra2" To="SYS01-Script">
+                    <xpdl:ConnectorGraphicsInfos>
+                        <xpdl:ConnectorGraphicsInfo FillColor="0,0,0" IsVisible="true" Style="NO_ROUTING_SPLINE" ToolId="JaWE"/>
+                    </xpdl:ConnectorGraphicsInfos>
+                </xpdl:Transition>
+            </xpdl:Transitions>
+            <xpdl:ExtendedAttributes>
+                <xpdl:ExtendedAttribute Name="cmdbuildBindToClass" Value="LinkCardTest"/>
+            </xpdl:ExtendedAttributes>
+        </xpdl:WorkflowProcess>
+    </xpdl:WorkflowProcesses>
+    <xpdl:ExtendedAttributes>
+        <xpdl:ExtendedAttribute Name="EDITING_TOOL" Value="Together Workflow Editor"/>
+        <xpdl:ExtendedAttribute Name="EDITING_TOOL_VERSION" Value="4.4-1-20120111-0622"/>
+        <xpdl:ExtendedAttribute Name="JaWE_CONFIGURATION" Value="default"/>
+    </xpdl:ExtendedAttributes>
+</xpdl:Package>

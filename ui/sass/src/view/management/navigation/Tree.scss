@@ -1,0 +1,47 @@
+.#{$prefix}treelist-item-contextmenu {
+    background-color: rgba($main-color-selection, 0.2);
+}
+
+@include treelist-ui(
+    $ui: 'navigation-mgt',
+    $item-icon-color: white,
+    $item-expander-color: white,
+    $item-text-color: white,
+    $row-selected-background-color: $main-color-primary,
+    $row-over-background-color: rgba($main-color-selection, 0.2)
+);
+
+.#{$prefix}treelist-navigation-mgt {
+    background-color: $base-color;
+    margin: 0 10px;
+
+    .#{$prefix}treelist-row {
+        margin-bottom: 2px;
+    }
+
+    .#{$prefix}treelist-item-selected > .#{$prefix}treelist-row,
+    .#{$prefix}treelist-item-over > .#{$prefix}treelist-row {
+        border-radius: $components-border-radius;
+    }
+}
+
+.#{$prefix}treelist-navigation-mgt .#{$prefix}treelist-item-selected > .#{$prefix}treelist-row {
+    .#{$prefix}treelist-item-text {
+        color: $main-color-primary-text;
+    }
+    .#{$prefix}treelist-item-icon {
+        color: $main-color-primary-text;
+    }
+    .#{$prefix}treelist-item-expander {
+        color: $main-color-primary-text;
+    }
+}
+.#{$prefix}navigation-search-input {
+    .#{$prefix}form-trigger-wrap-default {
+        border: none !important;
+    }
+    .#{$prefix}form-text-default {
+        border-radius: 4px;
+        border: 1px solid $main-neutral-gray-5;
+    }
+}

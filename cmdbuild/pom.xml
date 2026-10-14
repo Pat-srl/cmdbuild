@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.cmdbuild</groupId>
+        <artifactId>cmdbuild-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../parent</relativePath>
+    </parent>
+    <artifactId>cmdbuild</artifactId>
+    <packaging>war</packaging>
+
+    <properties>
+    </properties>
+
+    <dependencies>
+        <!-- For cmdbuild.easytemplate.FtlUtils -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-core-template</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-core-everything</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-services-rest-v4</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-services-rest-v3</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-services-rest-v2</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-utils-crypto</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-utils-ws3</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.classpath-explorer</groupId>
+            <artifactId>classpath-explorer</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- Spring Dependencies -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+        </dependency>
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-ext</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-dao-sql</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-ui</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.cmdbuild</groupId>
+            <artifactId>cmdbuild-cli</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-utils-json</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-websocket</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-messaging</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-artifact</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>cmdbuild</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-sql</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>cmdbuild-dao-sql</artifactId>
+                                    <type>zip</type>
+                                    <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>list-system-libs</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>list</goal>
+                        </goals>
+                        <configuration>
+                            <outputFile>${project.build.directory}/${project.build.finalName}/WEB-INF/lib/systemlibs.list.raw</outputFile>
+                            <includeScope>runtime</includeScope>
+                            <outputAbsoluteArtifactFilename>true</outputAbsoluteArtifactFilename>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Implementation-Changeset>${git.commit.id}</Implementation-Changeset>
+                            <CMDBuild-Version>${revision}</CMDBuild-Version>
+                            <Main-Class>org.cmdbuild.webapp.cli.Main</Main-Class>
+                        </manifestEntries>
+                    </archive>
+                    <webResources>
+                        <resource>
+                            <directory>target/classes</directory>
+                            <includes>
+                                <include>**/Main.class</include>
+                            </includes>
+                        </resource>
+                        <resource>
+                            <directory>../</directory>
+                            <includes>
+                                <include>COPYING*</include>
+                                <include>CHANGELOG*</include>
+                                <include>README*</include>
+                            </includes>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>groovy-maven-plugin</artifactId>
+                <version>2.1</version>
+                <executions>
+                    <execution>
+                        <id>cm-custom-config</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source>
+                                File file = new File("${project.build.directory}/${project.build.finalName}/WEB-INF/classes/org/cmdbuild/config/default_config.properties");
+                                file.parentFile.mkdirs()
+                                file.append '\n'
+                                System.properties.each{ k, v ->  if ( k.startsWith('org.cmdbuild.build.config.') ) { file.append k.replaceFirst('org.cmdbuild.build.config.','org.cmdbuild.') + '=' + v + '\n' }}
+                                file.append '\n'
+                            </source>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>cm-info</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source>
+                                File file = new File("${project.build.directory}/${project.build.finalName}/WEB-INF/classes/org/cmdbuild/version.properties");
+                                file.parentFile.mkdirs()
+                                file.append '\n'
+                                file.append 'org.cmdbuild.version=${revision}'
+                                file.append '\n'
+                                file.append 'org.cmdbuild.vert.name=${cmdbuild.vert.name}'
+                                file.append '\n'
+                                file.append 'org.cmdbuild.vert.version=${cmdbuild.vert.version}'
+                                file.append '\n'
+                            </source>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>cm-git-issues</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source>
+                                def sout = new StringBuilder(), serr = new StringBuilder()
+                                def proc = ["/bin/bash","${project.basedir}/utils/export_git_issues.sh"].execute()
+                                proc.consumeProcessOutput(sout, serr)
+                                proc.waitFor()
+
+                                File file = new File("${project.build.directory}/${project.build.finalName}/WEB-INF/classes/org/cmdbuild/fixed_issues_list.txt");
+                                file.parentFile.mkdirs()
+                                file.append sout
+                            </source>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>cm-system-libs-list</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source>
+                                File source = new File("${project.build.directory}/${project.build.finalName}/WEB-INF/lib/systemlibs.list.raw");
+                                def list = []
+                                println "processing libs"
+                                source.eachLine { String line ->
+                                def matcher = line =~ /\s+[^:]+:[^:]+:[^:]+:[^:]+:[^:]+:([^:]+)/
+                                if(matcher.matches()){
+                                list.add new File(matcher[0][1]).getName()
+                                }
+                                }
+                                source.delete()
+                                File file = new File("${project.build.directory}/${project.build.finalName}/WEB-INF/lib/systemlibs.list");
+                                list.sort()
+                                list.each { line ->
+                                file.append line
+                                file.append '\n'
+                                }
+                            </source>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <executions>
+                    <execution>
+                        <id>run-cli-packager</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>org.cmdbuild.utils.cli.packager.CliPackagerUtils</mainClass>
+                            <arguments>
+                                <argument>${project.build.directory}/${project.build.finalName}.war</argument>
+                                <argument>${project.build.directory}/cmdbuild.sh</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.basepom.maven</groupId>
+                <artifactId>duplicate-finder-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skip>true</skip><!-- TODO -->
+                    <checkCompileClasspath>true</checkCompileClasspath>
+                    <checkRuntimeClasspath>true</checkRuntimeClasspath>
+                    <checkTestClasspath>false</checkTestClasspath>
+                    <failBuildInCaseOfDifferentContentConflict>true</failBuildInCaseOfDifferentContentConflict>
+                    <ignoredResourcePatterns>
+                        <ignoredResourcePattern>.*</ignoredResourcePattern>
+                    </ignoredResourcePatterns>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.cyclonedx</groupId>
+                <artifactId>cyclonedx-maven-plugin</artifactId>
+                <version>${plugin.maven.cyclonedx.version}</version>
+
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>makeAggregateBom</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <projectType>library</projectType>
+                    <schemaVersion>1.6</schemaVersion>
+                    <includeBomSerialNumber>true</includeBomSerialNumber>
+                    <includeCompileScope>true</includeCompileScope>
+                    <includeProvidedScope>true</includeProvidedScope>
+                    <includeRuntimeScope>true</includeRuntimeScope>
+                    <includeSystemScope>true</includeSystemScope>
+                    <includeTestScope>false</includeTestScope>
+                    <includeLicenseText>false</includeLicenseText>
+                    <outputReactorProjects>true</outputReactorProjects>
+                    <outputFormat>all</outputFormat>
+                    <outputName>CMDBuild-Sbom</outputName>
+                    <!--<skip>true</skip>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

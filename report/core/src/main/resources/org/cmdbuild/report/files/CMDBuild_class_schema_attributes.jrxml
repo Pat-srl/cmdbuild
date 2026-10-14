@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="class_schema_attributes" pageWidth="545" pageHeight="842" columnWidth="545" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ad217c19-5817-4755-900f-46e1ede31183">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="class" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{class}]]></defaultValueExpression>
+	</parameter>
+	<queryString language="plsql">
+		<![CDATA[SELECT
+name,
+(comment ->> 'INDEX')::INT as index,
+unique_constraint as isunique,
+not_null_constraint as isnotnull,
+CASE WHEN COALESCE(comment ->> 'ACTIVE', 'true') = 'true' THEN true ELSE false END as isactive,
+CASE
+WHEN sql_type ~* '_int(8)$' THEN CONCAT('LOOKUPARRAY', ' (', comment ->> 'LOOKUP', ')') --|| REGEXP_REPLACE(sql_type, '^int([0-9]+)$', '\1')
+WHEN comment ->> 'LOOKUP' IS NOT NULL THEN CONCAT('LOOKUP', ' (', comment ->> 'LOOKUP', ')')
+WHEN comment ->> 'REFERENCEDOM' IS NOT NULL THEN CONCAT('REFERENCE', ' (', comment ->> 'REFERENCEDOM',')')
+WHEN sql_type ~* '^varchar$' AND metadata ->> 'cm_password' = 'true' THEN 'PASSWORD'
+WHEN sql_type ~* '^varchar(\([0-9]+\))?$' THEN 'VARCHAR ' || REGEXP_REPLACE(sql_type, '^varchar(\(([0-9]+)\))?$', '\1')
+WHEN sql_type ~* '^int([0-9]+)$' THEN 'INTEGER' --|| REGEXP_REPLACE(sql_type, '^int([0-9]+)$', '\1')
+WHEN sql_type ~* '^bool$' THEN 'BOOLEAN'
+WHEN sql_type ~* '^numeric\(.+\)$' THEN 'DECIMAL'
+WHEN sql_type ~* '^inet$' THEN 'IP'
+WHEN sql_type ~* '^timestamptz$' THEN 'TIMESTAMP'
+WHEN sql_type ~* '^bpchar\(.+\)$' THEN 'CHAR'
+ELSE UPPER(sql_type) END as cmdbuildtype
+FROM _cm3_attribute_list_detailed(_cm3_utils_name_to_regclass($P{class}))
+WHERE comment ->> 'MODE' in ('write', 'read', 'protected', 'hidden')
+UNION
+SELECT
+_cm3_class_features_get(_cm3_utils_name_to_regclass($P{class}), k) AS name,
+(SELECT v ->> CONCAT('cm_virtual_attributes___', _cm3_class_features_get(_cm3_utils_name_to_regclass($P{class}), k), '___cm_index') FROM _cm3_class_features_get(_cm3_utils_name_to_regclass($P{class})) v)::INT AS index,
+CASE WHEN (SELECT v ->> CONCAT('cm_virtual_attributes___', _cm3_class_features_get(_cm3_utils_name_to_regclass($P{class}), k), '___cm_unique') FROM _cm3_class_features_get(_cm3_utils_name_to_regclass($P{class})) v)  = 'true' THEN true ELSE false END AS isunique,
+CASE WHEN (SELECT v ->> CONCAT('cm_virtual_attributes___', _cm3_class_features_get(_cm3_utils_name_to_regclass($P{class}), k), '___cm_mandatory') FROM _cm3_class_features_get(_cm3_utils_name_to_regclass($P{class})) v)  = 'true' THEN true ELSE false END AS isnotnull,
+CASE WHEN (SELECT v ->> CONCAT('cm_virtual_attributes___', _cm3_class_features_get(_cm3_utils_name_to_regclass($P{class}), k), '___cm_active') FROM _cm3_class_features_get(_cm3_utils_name_to_regclass($P{class})) v) = 'true' THEN true ELSE false END AS isactive,
+CONCAT('FORMULA', ' (',(SELECT v ->> CONCAT('cm_virtual_attributes___', _cm3_class_features_get(_cm3_utils_name_to_regclass($P{class}), k), '___cm_formulaType') FROM _cm3_class_features_get(_cm3_utils_name_to_regclass($P{class})) v),')') as cmdbuildtype
+FROM jsonb_object_keys(_cm3_class_features_get(_cm3_utils_name_to_regclass($P{class}))) k
+WHERE k ~* '^cm_virtual_attributes___([a-zA-Z0-9]+)___cm_description$'
+ORDER BY index;]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+	</field>
+	<field name="index" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="index"/>
+		<property name="com.jaspersoft.studio.field.label" value="index"/>
+	</field>
+	<field name="isunique" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="isunique"/>
+		<property name="com.jaspersoft.studio.field.label" value="isunique"/>
+	</field>
+	<field name="isnotnull" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="isnotnull"/>
+		<property name="com.jaspersoft.studio.field.label" value="isnotnull"/>
+	</field>
+	<field name="isactive" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="isactive"/>
+		<property name="com.jaspersoft.studio.field.label" value="isactive"/>
+	</field>
+	<field name="cmdbuildtype" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cmdbuildtype"/>
+		<property name="com.jaspersoft.studio.field.label" value="cmdbuildtype"/>
+	</field>
+	<pageHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="9" width="544" height="18" forecolor="#030303" backcolor="#969696" uuid="71623669-aed9-4ed7-a843-061df9dedd40">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Attribute list]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="117" y="0" width="232" height="20" forecolor="#030000" backcolor="#005CA9" uuid="97df9130-d86d-4421-b0c9-1000877441df">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="117" height="20" forecolor="#030000" backcolor="#005CA9" uuid="12109108-8266-4b17-b453-c251572494e2">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="544" height="1" uuid="c110502b-28a9-421b-b2bd-61e05ea3797e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="424" y="0" width="60" height="20" forecolor="#030000" backcolor="#005CA9" uuid="cd75255c-5f70-4fa9-a74a-90eb707e83d7">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Unique]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="353" y="0" width="70" height="20" forecolor="#030000" backcolor="#005CA9" uuid="40269c65-b375-4710-9395-6de7503e4218">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Mandatory]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="544" height="1" uuid="ef78b278-2c28-49eb-a1a2-1fb761f67bc0"/>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="484" y="1" width="60" height="20" forecolor="#030000" backcolor="#005CA9" uuid="609b4cbd-5ab0-4626-bf62-cc0d5fba0220">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Active]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="116" height="20" uuid="7603a17f-52aa-4112-9f63-74709b1c799a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<paragraph firstLineIndent="5" spacingBefore="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="117" y="0" width="232" height="20" uuid="5679d8b3-8313-4bec-9311-9e2b00c732a9"/>
+				<textElement>
+					<paragraph firstLineIndent="5" spacingBefore="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cmdbuildtype}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="384" y="3" width="22" height="14" uuid="e4c000ab-39c7-4d67-8aec-6ee178e2d813">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["checked-checkbox-50.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="448" y="3" width="22" height="14" uuid="d6919ba0-3ed1-4da8-b299-0e83a70fe003">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[$F{isunique}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["checked-checkbox-50.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="508" y="3" width="22" height="14" uuid="2b02c562-2967-4cdc-8663-a64ead8c67fa">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[$F{isactive}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["checked-checkbox-50.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="384" y="3" width="22" height="14" uuid="c3fc54fe-c708-489f-86a8-5e1a9cb188fa">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[!$F{isnotnull}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["unchecked-checkbox-50.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="448" y="3" width="22" height="14" uuid="71fc6077-b359-4eb0-aa88-740b1d95f72a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[!$F{isunique}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["unchecked-checkbox-50.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="508" y="3" width="22" height="14" uuid="942ee26e-604c-43ee-bfdd-3610e3b54af7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[!$F{isactive}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["unchecked-checkbox-50.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: org.cmdbuild.utils.netbeans
+OpenIDE-Module-Localizing-Bundle: org/cmdbuild/utils/netbeans/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

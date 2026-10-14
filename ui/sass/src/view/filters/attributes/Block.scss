@@ -1,0 +1,79 @@
+.#{$prefix}container-filters-attributes-block {
+    margin: $filter-block-inset $filter-block-inset $filter-block-inset 0;
+    padding: $filter-block-inset 0 $filter-block-inset $filter-block-inset;
+    background-color: #fff;
+
+    .#{$prefix}filters-attributes-block-itemsct {
+        margin-left: $filter-block-inset;
+    }
+
+    &::before {
+        content: " ";
+        background-color: $form-field-border-color;
+        width: 2px;
+        position: absolute;
+        top: $filter-block-inset;
+        bottom: $filter-block-inset + 3px;
+        left: $filter-block-inset * 2;
+    }
+
+    .#{$prefix}container-filters-attributes-block {
+        margin-right: 0;
+        margin-left: $filter-block-inset;
+        overflow: visible;
+
+        &::after {
+            content: " ";
+            background-color: $form-field-border-color;
+            height: 2px;
+            width: $filter-block-inset;
+            position: absolute;
+            top: calc(50% - 1px);
+            left: -$filter-block-inset;
+        }
+    }
+
+    &.#{$prefix}filters-attributes-block-gray {
+        background-color: lighten($color: $form-field-border-color, $amount: 12%);
+    }
+
+    .#{$prefix}filters-attributes-row {
+        margin: $filter-block-inset 0 $filter-block-inset $filter-block-inset;
+        padding-left: $filter-block-inset;
+    }
+    .#{$prefix}filters-attributes-row-body::before {
+        content: " ";
+        background-color: $form-field-border-color;
+        height: 2px;
+        width: $filter-block-inset;
+        position: absolute;
+        top: calc(50% - 1px);
+        left: - $filter-block-inset;
+    }
+
+    .#{$prefix}filters-attributes-block-operatorct {
+        margin-bottom: $filter-block-inset;
+    }
+
+    .#{$prefix}filters-attributes-block-addct {
+        margin-top: $filter-block-inset;
+    }
+
+    .#{$prefix}filters-attributes-removebutton {
+        margin-right: $filter-block-inset;
+        margin-top: $filter-block-inset / 2;
+
+        .#{$prefix}tool-tool-el {
+            color: $main-color-secondary;
+        }
+        &.#{$prefix}masked {
+            .#{$prefix}mask {
+                background-color: transparent;
+            }
+
+            .#{$prefix}tool-tool-el {
+                opacity: 0.5;
+            }
+        }
+    }
+}

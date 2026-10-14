@@ -1,0 +1,623 @@
+::-ms-clear {
+    display: none;
+}
+
+.management .#{$prefix}form-display-field.#{$prefix}form-display-field-default {
+    margin-top: 0 !important;
+    min-height: 24px !important;
+    word-break: break-word;
+
+    .#{$prefix}filefield-renderer {
+        overflow: hidden;
+    }
+}
+
+.management .field-with-top-margin .#{$prefix}form-display-field.#{$prefix}form-display-field-default {
+    margin-top: 8px !important;
+}
+
+.#{$prefix}field.#{$prefix}item-disabled label {
+    .#{$prefix}tool {
+        pointer-events: all;
+
+        * {
+            pointer-events: all;
+            cursor: inherit;
+        }
+    }
+}
+
+.#{$prefix}form-checkboxgroup.#{$prefix}item-disabled,
+.#{$prefix}form-fieldcontainer.#{$prefix}item-disabled {
+    .#{$prefix}form-item-label {
+        .#{$prefix}tool {
+            pointer-events: all;
+
+            * {
+                pointer-events: all;
+                cursor: inherit;
+            }
+        }
+    }
+}
+
+//For safary browser to fix #6338 fieldsets do not toggle on Safari
+.#{$prefix}safari {
+    .#{$prefix}fieldset {
+        overflow: visible;
+    }
+}
+
+.#{$prefix}form-item-label-default .#{$prefix}form-item-label-help {
+    position: absolute;
+    right: 0;
+    cursor: help;
+}
+
+.#{$prefix}form-text-default.#{$prefix}form-textarea {
+    resize: none;
+}
+
+.#{$prefix}form-file-wrap {
+    .#{$prefix}form-trigger-wrap.#{$prefix}form-trigger-wrap-focus .#{$prefix}form-text {
+        border-color: $form-toolbar-text-field-focus-border-color;
+    }
+
+    .#{$prefix}form-trigger-wrap.#{$prefix}form-trigger-wrap-invalid .#{$prefix}form-text {
+        border-color: $form-text-field-invalid-border-color;
+    }
+}
+
+.#{$prefix}grid-cell-inner.#{$prefix}grid-cell-inner-treecolumn {
+    text-align: left !important;
+}
+
+.#{$prefix}grid-item-focused .#{$prefix}grid-cell-inner:before {
+    border: 0;
+}
+
+.#{$prefix}tip .#{$prefix}tip-bodyWrap .#{$prefix}autocontainer-innerCt > *:last-child {
+    margin-bottom: 0;
+}
+
+.#{$prefix}tip .#{$prefix}tip-bodyWrap .#{$prefix}autocontainer-innerCt > *:first-child {
+    margin-top: 0;
+}
+
+.#{$prefix}toast {
+    .#{$prefix}autocontainer-innerCt {
+        word-break: break-word;
+    }
+}
+
+.#{$prefix}field.#{$prefix}resizable {
+    .#{$prefix}form-text-field-body.#{$prefix}form-textarea-body {
+        display: table-row;
+        width: 100%;
+    }
+}
+
+/**
+* Management Light Tab Panel
+*/
+@include extjs-tab-panel-ui(
+    $ui: 'managementlighttabpanel',
+    // bar
+    $ui-bar-background-color: #fff,
+    $ui-bar-border-color: $main-neutral-gray-5,
+    $ui-bar-border-width: 0 0 1px 0 !important,
+    // tab border
+    $ui-tab-border-width: 0 0 2px 0,
+    $ui-tab-border-color: transparent,
+    $ui-tab-border-color-focus: $main-neutral-gray-5,
+    $ui-tab-border-color-over: $main-neutral-gray-5,
+    $ui-tab-border-color-focus-over: $main-neutral-gray-5,
+    $ui-tab-border-color-disabled: transparent,
+    $ui-tab-border-color-active: $main-color-primary,
+    $ui-tab-border-color-focus-active: $main-color-primary,
+
+    // tab font color
+    $ui-tab-color: $color-light,
+    $ui-tab-color-focus: $color-light,
+    $ui-tab-color-over: $color-light,
+    $ui-tab-color-focus-over: $color-light,
+    $ui-tab-color-disabled: mix(#fff, $color-light, 10%),
+    $ui-tab-color-active: $main-color-primary,
+    $ui-tab-color-focus-active: $main-color-primary,
+
+    // tab font weight
+    $ui-tab-font-weight: 500,
+    $ui-tab-font-weight-focus: 500,
+    $ui-tab-font-weight-over: 500,
+    $ui-tab-font-weight-active: 500,
+    $ui-tab-font-weight-focus-over: 500,
+    $ui-tab-font-weight-focus-active: 500,
+    $ui-tab-font-weight-disabled: 500,
+    // tab icon color
+    $ui-tab-glyph-color: $main-neutral-gray-4,
+    $ui-tab-glyph-color-focus: $main-neutral-gray-4,
+    $ui-tab-glyph-color-over: $main-neutral-gray-3,
+    $ui-tab-glyph-color-focus-over: $main-neutral-gray-3,
+    $ui-tab-glyph-color-disabled: $main-neutral-gray-6,
+    $ui-tab-glyph-color-active: $main-color-dark,
+    $ui-tab-glyph-color-focus-active: $main-color-dark,
+    // outline
+    $ui-tab-outline-width-focus: 0,
+    // tab padding
+    $ui-tab-padding: 4px 7px 4px 7px,
+    // tab background opacity
+    $ui-tab-background-opacity: 0,
+    $ui-tab-background-opacity-focus: 0,
+    $ui-tab-background-opacity-over: 0,
+    $ui-tab-background-opacity-active: 0,
+    $ui-tab-background-opacity-focus-over: 0,
+    $ui-tab-background-opacity-focus-active: 0,
+    $ui-tab-background-opacity-disabled: 0
+);
+
+@include extjs-panel-ui($ui: 'managementlighttabpanel');
+
+.#{$prefix}tab-bar-managementlighttabpanel {
+    .badge {
+        font-size: 80%;
+        color: #fff;
+        background: $main-neutral-gray-3;
+        border-radius: 50%;
+        padding: 0 5px;
+        line-height: 16px;
+        margin-left: 5px;
+    }
+    .#{$prefix}tab-active .badge {
+        background: $main-color-primary;
+    }
+}
+
+/**
+* Tab panel with tools
+*/
+.tabbarwithtools {
+    .#{$prefix}tab-bar {
+        .management-tool {
+            margin: 10px 4px auto 4px;
+        }
+    }
+}
+
+// Fix custom icon overflow
+.cmdbuildicon-relgraph {
+    font-size: 17px;
+    overflow: visible;
+    width: 20px;
+}
+
+.cmdbuildicon-fix {
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+/**
+ * BoundList
+ */
+.x-boundlist {
+    border-radius: 0 0 $components-border-radius-xl $components-border-radius-xl;
+}
+.#{$prefix}-css-shadow {
+    border-radius: $components-border-radius-xl;
+}
+/**
+* Management menu
+*/
+@include extjs-menu-ui(
+    $ui: 'actionmenu',
+    $ui-glyph-color: $main-color-primary,
+    $ui-item-active-background-color: $main-color-primary
+);
+
+.#{$prefix}menu-default {
+    box-shadow: $components-shadow;
+    border-radius: 0 0 $components-border-radius-xl $components-border-radius-xl;
+}
+
+.#{$prefix}tab-bar-horizontal.#{$prefix}tab-bar-managementlighttabpanel-top {
+    margin-bottom: 1px;
+
+    & > .#{$prefix}tab-bar-body-managementlighttabpanel {
+        margin-bottom: -1px;
+    }
+}
+
+.#{$prefix}panel-body-managementlighttabpanel {
+    margin-top: -1px;
+}
+
+.#{$prefix}box-scroller-tab-bar-managementlighttabpanel {
+    color: mix(#fff, $color, 40%);
+}
+
+/**
+ * SSO fieldset
+ */
+.#{$prefix}sso-fieldset.#{$prefix}fieldset-formpagination {
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+
+    .#{$prefix}fieldset-header {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+// fix scrollbar color for Firefox
+* {
+    scrollbar-width: auto;
+    scrollbar-color: mix(#000, $neutral-light-color, 20%) mix(#000, $neutral-light-color, 2%);
+}
+
+.#{$prefix}panel-bold-header {
+    .#{$prefix}panel-header-title-default,
+    .#{$prefix}panel-header-title-administration {
+        font-weight: 600;
+    }
+}
+
+/** grid header **/
+.#{$prefix}grid.import-errors-grid {
+    .#{$prefix}panel-header {
+        background-color: lighten($neutral-color, 12%);
+
+        .#{$prefix}panel-header-title-default {
+            color: $grid-grouped-title-color;
+        }
+    }
+}
+
+.#{$prefix}grid-cell.#{$prefix}numericcell {
+    .#{$prefix}cell-content {
+        text-align: right;
+    }
+}
+
+.#{$prefix}tool-gray .#{$prefix}tool-tool-el {
+    color: $cmdbuild-header-icon-color;
+}
+
+.#{$prefix}tool-primary .#{$prefix}tool-tool-el {
+    color: $main-color-primary;
+}
+
+/** link **/
+.x-btn-inner-link-small {
+    color: mix(#fff, $color, 30%);
+    line-height: $button-small-line-height;
+}
+
+.unitOfMesure {
+    cursor: default;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.unitOfMesure::before {
+    content: attr(unitOfMesure);
+    margin-right: 7px;
+}
+
+.#{$prefix}form-item-body.#{$prefix}html-editor-wrap.#{$prefix}masked-relative {
+    display: block;
+}
+
+.#{$prefix}form-item {
+    .#{$prefix}form-item-body-default {
+        // set form item body min-height to 0 in IE 10+
+        @if $include-ie {
+            .#{$prefix}ie10p &,
+            .#{$prefix}ie11 & {
+                min-height: 0;
+            }
+        }
+    }
+}
+
+/**
+ * Field container used as field
+ */
+.#{$prefix}form-fieldcontainer {
+    padding-right: 10px;
+
+    .#{$prefix}form-trigger-wrap {
+        height: 100%;
+    }
+
+    &.#{$prefix}form-invalid {
+        .#{$prefix}form-trigger-wrap,
+        .#{$prefix}form-file-wrap .#{$prefix}form-trigger-wrap .#{$prefix}form-text {
+            border-color: $form-field-invalid-border-color;
+        }
+    }
+}
+
+/**
+ * Field label
+ */
+.#{$prefix}form-item-label-default.#{$prefix}form-item-label-top > .#{$prefix}form-item-label-inner {
+    padding-top: $font-size;
+}
+
+.#{$prefix}form-trigger-wrap-invalid .#{$prefix}form-trigger-default,
+.#{$prefix}form-trigger-wrap-invalid .#{$prefix}form-trigger-default.#{$prefix}form-trigger-focus {
+    border-color: $form-field-invalid-border-color;
+}
+/**
+ * Add style for mask button.
+ */
+.#{$prefix}mask-button {
+    &::before {
+        position: absolute;
+        -webkit-animation: fa-spin 2s infinite linear;
+        animation: fa-spin 2s infinite linear;
+        font-family: 'Font Awesome 5 Free' !important;
+        content: $fa-var-spinner !important;
+
+        font-size: $button-small-icon-size;
+        width: $button-small-icon-size;
+        height: $button-small-icon-size;
+        line-height: $button-small-line-height;
+        color: $button-default-color;
+
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.#{$prefix}order-columns-grid {
+    padding: 5px;
+
+    .#{$prefix}box-inner {
+        height: 22px !important;
+
+        .#{$prefix}tool-tool-el {
+            width: 22px;
+            height: 22px;
+            padding: 3px;
+            line-height: 16px;
+            color: #919191;
+        }
+    }
+}
+
+.#{$prefix}separator-order-columns-grid {
+    padding: 6px 0px 0px 0px;
+
+    .#{$prefix}menu-item-separator {
+        height: 1px;
+        width: inherit;
+        border-top: solid 1px #d0d0d0;
+        background-color: #fff;
+    }
+}
+
+.#{$prefix}column-tool-pressed {
+    background-color: darken($color: $toolbar-footer-background-color, $amount: 6%);
+}
+
+.#{$prefix}column-header-sort-ASC .#{$prefix}column-header-text-inner:after {
+    content: '\f15d';
+}
+
+.#{$prefix}column-header-sort-DESC .#{$prefix}column-header-text-inner:after {
+    content: '\f15e';
+}
+.#{$prefix}menu-item-empty {
+    height: 32px;
+}
+
+.reports-container {
+    .#{$prefix}box-target {
+        height: 100%;
+    }
+}
+
+/**
+ * Commons
+ */
+.#{$prefix}mt-1 {
+    margin-top: $font-size;
+}
+.#{$prefix}mt-2 {
+    margin-top: $font-size * 2;
+}
+.#{$prefix}mt-3 {
+    margin-top: $font-size * 3;
+}
+.#{$prefix}mb-1 {
+    margin-bottom: $font-size;
+}
+.#{$prefix}mb-2 {
+    margin-bottom: $font-size * 2;
+}
+.#{$prefix}mb-3 {
+    margin-bottom: $font-size * 3;
+}
+
+.#{$prefix}checkReject {
+    .x-column-header-checkbox.x-column-header-checkbox:after,
+    .x-grid-checkcolumn:after {
+        font-family: 'Font Awesome 5 Free' !important;
+        content: '\f057' !important;
+    }
+    &.#{$prefix}grid-hd-checker-on .#{$prefix}column-header-checkbox:after {
+        color: red;
+    }
+}
+
+.#{$prefix}checkAccept {
+    .x-column-header-checkbox.x-column-header-checkbox:after,
+    .x-grid-checkcolumn:after {
+        font-family: 'Font Awesome 5 Free' !important;
+        content: '\f058' !important;
+    }
+    &.#{$prefix}grid-hd-checker-on .#{$prefix}column-header-checkbox:after {
+        color: green;
+    }
+}
+
+.#{$prefix}diff-icon-reject {
+    &::before {
+        font-family: 'Font Awesome 5 Free' !important;
+        content: '\f057' !important;
+    }
+    &&.select {
+        color: red;
+    }
+}
+
+.#{$prefix}diff-icon-accept {
+    &::before {
+        font-family: 'Font Awesome 5 Free' !important;
+        content: '\f058' !important;
+    }
+    &&.select {
+        color: green;
+    }
+}
+
+.#{$prefix}panel.#{$prefix}panel-datasetMobileAdmin.#{$prefix}grid {
+    .#{$prefix}grid-group-hd {
+        background-color: lighten($neutral-color, 6%);
+        border-bottom: 0;
+        padding: 6px 10px;
+        .#{$prefix}grid-group-title {
+            font-style: italic;
+            font-weight: 600;
+            &::before {
+                font-style: normal;
+            }
+        }
+    }
+}
+
+.alertCls {
+    .x-btn-icon-el-header-small {
+        color: yellow;
+    }
+}
+
+.#{$prefix}pluginTag {
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    background: $administration-action-color;
+    color: #fff;
+    padding: 2px 10px;
+    font-size: 90%;
+    text-transform: lowercase;
+
+    &&.ready {
+        background: $cmdbuild-status-success;
+    }
+    &&.error {
+        background: $cmdbuild-status-error;
+    }
+}
+
+.expandDiff {
+    .x-panel-header {
+        background-color: $main-neutral-gray-3;
+    }
+
+    .x-panel-header-title {
+        text-align: center;
+    }
+
+    .htmlDiff {
+        padding-left: 10px;
+    }
+}
+
+.x-tip.x-layer {
+    z-index: 999999 !important;
+}
+
+// load mask
+.#{$prefix}mask-msg {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+// Button in Ext.Msg / Ext.window.Window opened via CMDBuildUI.util.Msg
+.x-btn-default-small {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+// Tip
+.x-tip-default {
+    border-radius: 6px;
+}
+
+.nodeSelected {
+    fill: $main-color-selection;
+}
+
+.nodesPath {
+    fill: #f6f6f6;
+}
+
+.normalNode {
+    fill: white;
+}
+
+.#{$prefix}field.homepage-search-input {
+    .#{$prefix}form-trigger-wrap-default {
+        background-color: $main-neutral-white;
+        border-color: $main-neutral-gray-5;
+        border-radius: 4px;
+
+        .#{$prefix}form-text-default {
+            background-color: transparent;
+            color: $main-neutral-gray-1;
+            caret-color: $main-neutral-gray-1;
+        }
+
+        .#{$prefix}form-empty-field {
+            color: rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    .#{$prefix}form-trigger-default {
+        color: $main-neutral-gray-5;
+        background-color: transparent;
+    }
+}
+
+/**
+ * Style for Boot's Containers and Panels (Patch, ConfigureDB)
+ */
+.#{$prefix}boot-main-container {
+    background-color: $main-neutral-gray-6;
+    .#{$prefix}panel {
+        border-radius: 10px;
+        .x-mask.x-focus {
+            border-color: transparent;
+        }
+    }
+    .#{$prefix}grid-item {
+        padding: 0px 0px 0px 8px;
+    }
+}
+
+/**
+* Styles for message boxes, windows (dialogs, details window, toasts)
+* and popups opened via CMDBuildUI.util.Utilities.openPopup
+*/
+.#{$prefix}window,
+.cmdbuild-popup {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 1px;
+}

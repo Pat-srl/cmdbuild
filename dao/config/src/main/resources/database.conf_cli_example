@@ -1,0 +1,10 @@
+#database connection url
+db.url=jdbc:postgresql://localhost:5432/cmdbuild_30
+
+#default user
+db.username=cmdbuild
+db.password=cmdbuild
+
+#admin user (used for create db, drop db)
+db.admin.username=postgres
+db.admin.password=postgres

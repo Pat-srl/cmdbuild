@@ -1,0 +1,9 @@
+
+This package contains legacy code. Probably serialized around. 
+
+In order to avoid breaking serialized stuff and compatibility,
+
+ * DO NOT CHANGE CLASS CODE !
+
+ * DO NOT CHANGE CLASS PACKAGE !
+

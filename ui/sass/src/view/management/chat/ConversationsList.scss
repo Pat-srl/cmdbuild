@@ -1,0 +1,42 @@
+.#{$prefix}chat-user {
+    &.#{$prefix}chat-user-unreadmsgs {
+        &::after {
+            content: "\f111";
+            font-family: "Font Awesome 5 Free";
+            position: absolute;
+            right: 4px;
+            font-size: 9px;
+            top: calc(50% - 9px);
+            color: $notification-alert-color;
+        }
+
+        .#{$prefix}chat-user-description {
+            font-weight: bold;
+        }
+    }
+
+    .#{$prefix}chat-user-avatar {
+        span {
+            display: inline-block;
+            background: $chat-avatar-color;
+            background-size: cover;
+            background-position: center center;
+            color: #fff;
+            line-height: 32px;
+            font-size: 24px;
+            width: 32px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: sub;
+        }
+    }
+}
+.chat-title-counter {
+    background: rgba(#fff, 0.85);
+    color: $panel-header-background-color;
+    font-size: 80%;
+    padding: 0 5px;
+    border-radius: 50%;
+    margin-left: 5px;
+}

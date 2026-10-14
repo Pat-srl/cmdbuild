@@ -1,0 +1,74 @@
+<div style="height: 100%;">
+
+    <style type="text/css" scoped="">
+        .cm_chatplugin_hidden {
+            display: none !important;
+        }
+        .cm_chatplugin_button {
+            position: relative;
+            display: inline-block;
+            font-family: FontAwesome;
+            cursor: pointer;            
+            margin: 0 5px; 
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .cm_chatplugin_button > span{
+            position: absolute;
+            display: block;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 50px;
+        }
+        .cm_chatplugin_button > span:first-of-type {
+            z-index: 20;
+            font-size: 24px;
+            color: white;
+        }
+        .cm_chatplugin_button > span:last-of-type {
+            z-index: 10;
+            font-size: 48px;
+        }
+    </style>
+
+    <script src="app/view/custompages/chatplugin/adapter.js"></script> 
+
+    <div style="height: 100%">
+
+        <div style="float: right; color: lightgrey; padding: 5px; font-size: smaller;"><span id="cm_chatplugin_clientInfoContainer">WAITING FOR SESSION INFO...</span></div>
+
+        <div id="cm_chatplugin_chatContainer" class="cm_chatplugin_hidden" style="background-color: black; width: 100%; height: 100%; padding-top: 30px">
+            <div  style="padding: 40px 10px">
+                <div style="position: relative; width: 720px; height: 540px; margin: 0 auto">
+                    <div style="position: absolute; top: 10px; right: 10px; border: 4px lightgray; z-index: 30">
+                        <video id="cm_chatplugin_localVideo" playsinline autoplay muted width="144" height="108" style="transform: scale(-1, 1);  -webkit-transform: scale(-1, 1);"></video>
+                    </div>
+                    <div>
+                        <div id="cm_chatplugin_noVideo" style="position: absolute; top: 50px; left: 60px; width: 600px; height: 400px; z-index: 10">
+                            <div style="font-family: FontAwesome; font-size: 400px; color: gray; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);">&#xf007;</div>                                
+                        </div>
+                        <video id="cm_chatplugin_remoteVideo" playsinline autoplay width="720" height="540" style="position: relative; z-index: 20"></video>
+                    </div>
+                </div></div>
+            <div style="padding: 40px 10px; text-align: center;">                
+                <span id="cm_chatplugin_audioOnButton" class="cm_chatplugin_button"  title="unmute"><span>&#xf131;</span><span style="color: red">&#xf111;</span></span>
+                <span id="cm_chatplugin_audioOffButton" class="cm_chatplugin_button" title="mute"><span>&#xf130;</span><span style="color: green">&#xf111;</span></span>
+
+                <span id="cm_chatplugin_closeButton" class="cm_chatplugin_button" title="hang up"><span>&#xf095;</span><span style="color: red">&#xf111;</span></span> 
+
+                <span id="cm_chatplugin_videoOnButton" class="cm_chatplugin_button" title="start video"><span>&#xf03d;</span><span style="color: red">&#xf111;</span></span>
+                <span id="cm_chatplugin_videoOffButton" class="cm_chatplugin_button" title="stop video"><span>&#xf03d;</span><span style="color: green">&#xf111;</span></span>
+            </div>
+        </div>
+
+        <div id="cm_chatplugin_communityExtContainer" style="padding: 30px 20px">
+            <div>contacts online: </div>
+            <br />
+            <div id="cm_chatplugin_communityContainer" style="margin-left:20px;">WAITING FOR CONTACTS...</div>
+        </div>
+
+    </div>
+</div>

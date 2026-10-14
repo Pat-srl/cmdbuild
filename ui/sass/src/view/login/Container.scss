@@ -1,0 +1,39 @@
+.#{$prefix}login-main-container {
+    background-color: #f2f2f2;
+}
+
+.#{$prefix}login-form-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.#{$prefix}login-bottom-container {
+    color: $main-neutral-gray-3;
+    padding-top: 10px;
+    position: relative;
+    a {
+        color: $main-neutral-gray-3;
+    }
+}
+
+.#{$prefix}language-selector {
+    font-size: larger;
+}
+
+.#{$prefix}language-selector:after {
+    font-family: 'Font Awesome 5 Free' !important;
+    content: '\f0d7';
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+    font-size: 90%;
+    color: $main-neutral-gray-3;
+}
+
+@include extjs-button-small-ui(
+    $ui: 'language-selector',
+    $color: $main-neutral-gray-3,
+    $glyph-color: $main-neutral-gray-3,
+    $background-color: transparent,
+    $border-width: 0
+);

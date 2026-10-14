@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.cmdbuild</groupId>
+        <artifactId>cmdbuild-core-main</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>cmdbuild-core-email</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.cmdbuild</groupId>
+            <artifactId>cmdbuild-core-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- For TemplateProcessorHanlderImpl and ExpressionInputData classes -->
+        <dependency>
+            <groupId>org.cmdbuild</groupId>
+            <artifactId>cmdbuild-core-template</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- For handling translations -->
+        <dependency>
+            <groupId>org.cmdbuild</groupId>
+            <artifactId>cmdbuild-core-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.cmdbuild</groupId>
+            <artifactId>cmdbuild-auth-session</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.cmdbuild</groupId>
+            <artifactId>cmdbuild-dms-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.cmdbuild</groupId>
+            <artifactId>cmdbuild-etl-gate</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-utils-json</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-jobs-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-workflow-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- For DaoService, RefAttrHelperServiceExt -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-dao-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- For ReportService -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-report-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- For FILE card attribute handling -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-services-serialization</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+        <!-- Gmail Google API and authentication -->
+        <dependency>
+            <groupId>com.google.auth</groupId>
+            <artifactId>google-auth-library-oauth2-http</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+        <!-- MSGraph API and authentication -->
+        <dependency>
+            <groupId>com.microsoft.graph</groupId>
+            <artifactId>microsoft-graph</artifactId>
+            <version>6.65.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.graph</groupId>
+            <artifactId>microsoft-graph-core</artifactId>
+            <version>3.6.6</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.projectreactor</groupId>
+                    <artifactId>reactor-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.8.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.kiota</groupId>
+            <artifactId>microsoft-kiota-http-okHttp</artifactId>
+            <version>1.9.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-identity</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.azure</groupId>
+                    <artifactId>azure-core-http-netty</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-core-http-okhttp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>msal4j</artifactId>
+            <version>1.25.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

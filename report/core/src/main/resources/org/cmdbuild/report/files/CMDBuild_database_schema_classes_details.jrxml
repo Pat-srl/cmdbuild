@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="database_schema_classes_details" pageWidth="545" pageHeight="842" columnWidth="545" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a238d840-09d2-4ed2-b6d2-3e8d2c6fa7cb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<queryString language="plsql">
+		<![CDATA[SELECT 
+ table_name as classname
+ FROM _cm3_class_list_detailed() where features ->> 'MODE' NOT IN ('protected', 'reserved')]]>
+	</queryString>
+	<field name="classname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="classname"/>
+		<property name="com.jaspersoft.studio.field.label" value="classname"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="10" width="545" height="30" uuid="b9d2e6bf-71e7-4272-b7df-158705579638"/>
+				<subreportParameter name="class">
+					<subreportParameterExpression><![CDATA[$F{classname}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["CMDBuild_class_schema_properties.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<subreport>
+				<reportElement x="0" y="10" width="545" height="30" uuid="480a258b-4ee9-443e-afb5-556d8e7b4885"/>
+				<subreportParameter name="class">
+					<subreportParameterExpression><![CDATA[$F{classname}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["CMDBuild_class_schema_attributes.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<subreport>
+				<reportElement x="0" y="10" width="545" height="30" uuid="27116afa-8279-4bd2-ac17-3c93777ea52a"/>
+				<subreportParameter name="class">
+					<subreportParameterExpression><![CDATA[$F{classname}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["CMDBuild_class_schema_domains.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="22">
+			<line>
+				<reportElement x="1" y="21" width="545" height="1" uuid="93d2be1c-081f-4887-9cc9-acac15e4d2ee"/>
+			</line>
+			<line>
+				<reportElement x="1" y="15" width="545" height="1" uuid="4cdc6c87-e96a-4f0b-9e3a-3a06ae733f84">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="17"/>
+	</summary>
+</jasperReport>

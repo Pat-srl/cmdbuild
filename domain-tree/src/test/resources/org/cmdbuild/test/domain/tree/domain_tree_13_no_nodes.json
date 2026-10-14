@@ -1,0 +1,9 @@
+{
+    "_id": "RackTreeDefaultId",
+    "name": "RackTreeDefault",
+    "description": "Rack tree",
+    "_description_translation": "Rack tree",
+    "active": true,
+    "type": "default",
+    "nodes": []
+}

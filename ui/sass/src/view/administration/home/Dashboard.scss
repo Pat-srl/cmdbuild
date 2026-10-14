@@ -1,0 +1,53 @@
+@include extjs-panel-ui(
+    $ui: "admindashboard",
+
+    $ui-header-color: $color,
+    $ui-header-border-color: $administration-base-color,
+    $ui-header-border-width: 1px,
+    $ui-header-background-color: transparent,
+    $ui-header-text-padding: 9px 5px,
+    $ui-tool-glyph-color: lighten($color, 15%),
+    $ui-tool-spacing: 10px
+);
+
+.#{$prefix}administration-home-widgets-systemstatus-nodestatus {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.#{$prefix}panel-header-admindashboard-horizontal.#{$prefix}header-noborder {
+    padding: 0;
+    border-bottom-width: 1px !important;
+}
+
+.#{$prefix}admin-home-nodestats {
+    padding: 0 25px 0 15px;
+    h3 {
+        margin: 20px 0 0;
+    }
+    small, strong {
+        color: $administration-base-color;
+    }
+
+    .admin-home-stats-row {
+        margin-bottom: 12px;
+
+        .slider {
+            margin-top: 3px;
+            height: 5px;
+            background-color: $form-field-border-color;
+            div {
+                height: 5px;
+                background-color: lighten($administration-action-color, 10);
+            }
+
+            &.danger div {
+                background-color: lighten($cmdbuild-status-error, 15);
+            }
+
+            &.warning div {
+                background-color: $cmdbuild-status-warning;
+            }
+        }
+    }
+}

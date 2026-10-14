@@ -1,0 +1,208 @@
+Delivered-To: helpdesk@xxxxxxx.it
+Received: by 2002:a05:6a10:e2d3:0:0:0:0 with SMTP id j19csp1229226pxy;
+        Thu, 23 Jul 2020 05:56:37 -0700 (PDT)
+X-Received: by 2002:adf:fe4b:: with SMTP id m11mr3914331wrs.36.1595508997623;
+        Thu, 23 Jul 2020 05:56:37 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1595508997; cv=none;
+        d=google.com; s=arc-20160816;
+        b=RGgXwO5Az5J+cwOWRyinev64p8aTBll0tAKhEg/sPjMpAZKCGD7HXrfEsTN0RHE0oy
+         Pt1tphQCP5la8lbxkxovjC8d39+tk02Hn1vAIf/tFvbMHPEKEZIhRCfyldJuU0JxoAwF
+         8k2vPTFcFupY0UhUWW6yKRldOYrM90XxMPt6Vm8s3d4QC6mXS4fmgHtFM1TqBWVhRuWx
+         qH7z5DcrXHTAbq5dIJaRSYEDWYs7YQM6KTX/CLw0R3ZqwtdjaCORtDkAgtPQYIBod8tB
+         bChGVTkCS6hA+lINJNqyVfrEOTeY6U2YZ8JUScN6JOV71vkBtMPCBURetHHf4LqRDL2F
+         I94A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=references:in-reply-to:subject:organization:message-id:date:to:from
+         :mime-version:dkim-signature;
+        bh=rrDg01Qcwz83Gth4tSahhhHHomhO4CMKC9DARzQcCuY=;
+        b=kVTjU5QGLPqxpOA3HHDmmYrSq4E9z6Y9yqaMqXMhc6hhickjf3JP2HQPyU17lNINDr
+         AxUMZEPoTrMKiV8PLuCui8uK0SCKLNBZSHhoIBeC1Dgy5snNSCZsguUpGu/Fe32XCYGV
+         YDvDjwDGA9DNJ1Iox3ykgRV98RbX/YaMmgUT8nT0JXizSX7FJQTpEUkzQCT3dJ9aRPx5
+         yA+nCPhUtF8xUhSBe3XKJa4aXlQH98BPmndBAVT5sJrsy4HOYNNhROcTMpejxDXNxPTr
+         lWjrUhdve2bNjtEXt/su7MEzWdRvaO/ucEmGZs7Czc6tBzmnVAEBR3K8tqU/jnI0zBBH
+         etig==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@xxxxxxxxx.biz header.s=google header.b=mwCR8zE+;
+       spf=pass (google.com: domain of help@xxxxxxxxx.biz designates 209.85.220.41 as permitted sender) smtp.mailfrom=help@xxxxxxxxx.biz;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=xxxxxxxxx.biz
+Return-Path: <help@xxxxxxxxx.biz>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id u2sor1848372wmj.19.2020.07.23.05.56.37
+        for <helpdesk@xxxxxxx.it>
+        (Google Transport Security);
+        Thu, 23 Jul 2020 05:56:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of help@xxxxxxxxx.biz designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@xxxxxxxxx.biz header.s=google header.b=mwCR8zE+;
+       spf=pass (google.com: domain of help@xxxxxxxxx.biz designates 209.85.220.41 as permitted sender) smtp.mailfrom=help@xxxxxxxxx.biz;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=guglielmo.biz
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=guglielmo.biz; s=google;
+        h=mime-version:from:to:date:message-id:organization:subject
+         :in-reply-to:references;
+        bh=rrDg01Qcwz83Gth4tSahhhHHomhO4CMKC9DARzQcCuY=;
+        b=mwCR8zE+OYnLIKNOMGqkxJ+bbfTeB9Ta4KycayH/AeIZHEScSV2JbSXda51Gt4BxmR
+         62baWoooyyOl+u+7U/Sc2DZBqFG6+LIiRhJ6JOrH/LGyTVeJFGDRKyZS4m36KBGbSbuM
+         lGPRbaO8ZfRLkpTre5rErcITD0UenIEZdx0WKg5DyYviZHkh116/czQLjja0YDQtXQj/
+         P0WjrPxJkfeP2oPm05vEKc4fRfL9ie0GZTqgo+ZMC21vcbBrFu+lI1xV6V+yBAM0GL+b
+         nLD5lsVZnUtdybayp7PjD8izUJeKL7juUKO3QFDRwp5XK2jZ8A/r/+od6l9DPp3j5ZfA
+         ByjA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:to:date:message-id
+         :organization:subject:in-reply-to:references;
+        bh=rrDg01Qcwz83Gth4tSahhhHHomhO4CMKC9DARzQcCuY=;
+        b=Kl38CEB2Lex4+VNjIv9ahkzROgTDlUSEDQ8byuY76Kh+LCPQiYG8zccVqI/JLZNwsG
+         dLFrG3jEjEDCsakpwsJGcKhgECvlPvHRZsf8u18YaMEyUFURkXcfTI36cClrpRGSFVM8
+         QjXadamr1e2ZDQEI0337HJW+MvI/R0fpf9plMRA4lHoxb9b7YnxiHnwB4xoMbhHDEk6T
+         GjiwoyDLFstbpogTatV6/G9BVQ4z0yNl5aze3IudASWFJXqSOqB1iTJxOg3jbhG+nMJf
+         ULaOLcdeusdYJBlq+V32JHeM8QV08cepdiOhxm0BVFtfuAjTvij6cMJZ7v6ETjL1eEOD
+         Ci3Q==
+X-Gm-Message-State: AOAM530vbNOfFs9HlzoqVVoZajsl+13ujzbHix0z0KH5lWsE+mL4pvde
+	3a58+vfVzaz7Dbd1j7Qc7rUBcesjakk=
+X-Google-Smtp-Source: ABdhPJxLtDuJLkMdBab5cP8yaCPCe/2blVp7RtPGeoQcHhtFYCYriwL0smKWfsRZNG8TTD2sigwkVQ==
+X-Received: by 2002:a1c:238d:: with SMTP id j135mr3923668wmj.71.1595508996770;
+        Thu, 23 Jul 2020 05:56:36 -0700 (PDT)
+Return-Path: <help@xxxxxxxxx.biz>
+Received: from 192.168.54.200 (host-77-238-25-242.business.telecomitalia.it. [77.238.25.242])
+        by smtp.gmail.com with ESMTPSA id e16sm1916496wrx.30.2020.07.23.05.56.35
+        for <helpdesk@xxxxxxx.it>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 23 Jul 2020 05:56:35 -0700 (PDT)
+MIME-Version: 1.0
+From: help desk xxxxxxxxx <help@xxxxxxxxx.biz>
+To: helpdesk@xxxxxxx.it
+Date: Thu, 23 Jul 2020 14:56:33 +0200
+Message-ID: <1595508993.19567.1032188136@192.168.54.200>
+Organization: xxxxxxxxx SRL
+X-Powered-BY: OTRS (https://otrs.com/)
+Subject: Fwd: [Ticket#_Pxxxxxxxxxxxxxxx81] Down -xxxxxx Wifi - xxxxxxxxxxx
+ Sede Centro Storico_xxxxxxxxxxx - Master
+X-Mailer: OTRS Mail Service (5.0.12)
+In-Reply-To: <2020072xxxxx22890.3887442C1FB62F11@hostmonitor>
+References: <2020072xxxxxxx890.3887442C1FB62F11@hostmonitor>
+Content-Type: multipart/alternative; boundary="----------=_1595508993-8777-6"
+
+This is a multi-part message in MIME format...
+
+------------=_1595508993-8777-6
+Content-Type: text/plain; charset="utf-8"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Location:=C2=A0xxxxxx WiFi - xxxxxxxxxxx Sede Centro Storico
+
+Salve,=C2=A0
+con la seguente mail segnaliamo la mancata raggiungibilit=C3=A0 da remoto d=
+ella
+antenna=C2=A0NanoStxxxxxxx=C2=A0che si chiama "xxxxxxxxxxx - Master" e che =
+=C3=A8 posizionata
+presso la=C2=A0su ZTL xxxxxxxxxxxxxxx.
+Chiediamo cortesemente di verificare se =C3=A8 alimentata, altrimenti di pr=
+ovvedere
+ad un riavvio.
+Cordiali saluti
+
+xxxxxxxxxxxxxx
+xxxxxxxxx Srl
+Help Desk xxxxxxxxx
+
+Via xxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx - Italy
+mailto:help@xxxxxxxxx.biz
+web:[1]http://help.xxxxxxxxx.biz
+=C2=A0=C2=A0
+[2]Follow xxxxxxxxxxxxPage On FB
+---- Messaggio inoltrato da monitor@xxxxxxxxx.biz ---
+=C2=A0 Da: monitor@xxxxxxxxx.biz
+A: help@xxxxxxxxx.biz
+Oggetto: Down -xxxxxxxxxxx - xxxxxxxxxde Sede Centro Storico_xxxxxxxxxxx -
+Master
+Data: 2020-07-23 12:40:20
+
+Message from HostMonitor (host xxxxxxxxxxxx- Master=C2=A0=C2=A0is down)
+
+Test=C2=A0=C2=A0=C2=A0=C2=A0 : xxxxxxxWifi_xxxxxxxxxxxxSede Centro Storico_=
+xxxxxxxxxxx - Master
+Status Changed At: 23/07/2020 00:55:30
+Method: TCP (port - 60212)
+Status=C2=A0=C2=A0: No answer
+Date=C2=A0=C2=A0=C2=A0=C2=A0: 23/07/2020 12:36:22
+Reply=C2=A0=C2=A0 :
+
+Recurrences : 24
+Last status: No answer
+Total tests: 75229
+Alive ratio : 97,82 %
+Dead ratio: 2,11 %
+
+Folder: xxxxxxxxxxx Sede Centro Storico
+=20
+---- Fine messaggio inoltrato ---
+
+
+[1] http://help.xxxxxxxxx.biz
+[2] https://www.facebook.com/pages/xxxxxxxxxxWi-Fi/xxxxxxxxxxxx
+
+------------=_1595508993-8777-6
+Content-Type: text/html; charset="utf-8"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3Dutf-8"/></head><body style=3D"font-family:Geneva,Helvetic=
+a,Arial,sans-serif; font-size: 12px;">Location:&nbsp;xxxxxx WiFi - xxxxx xx=
+xxx Sede Centro Storico<br />
+<br />
+Salve,&nbsp;<br />
+con la seguente mail segnaliamo la mancata raggiungibilit=C3=A0 da remoto d=
+ella antenna&nbsp;Nxxxxxxxxxxxx&nbsp;che si chiama "xxxxxxxxxxx - Master" e=
+ che =C3=A8 posizionata presso la&nbsp;su xxxxxxxxxxxxxxxxxxx.<br />
+Chiediamo cortesemente di verificare se =C3=A8 alimentata, altrimenti di pr=
+ovvedere ad un riavvio.<br />
+Cordiali saluti<br />
+<br />
+xxxxxxxxxxxxxx<br />
+<strong>xxxxxxxxx Srl</strong><br />
+Help Desk xxxxxxxxx<br />
+<br />
+xxxxxxxxxxxxxxxxxxx<br />
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx - Italy<br />
+mailto:help@xxxxxxxxx.biz<br />
+web:<a href=3D"http://help.xxxxxxxxx.biz" target=3D"_blank">http://help.xxx=
+xxxxxx.biz</a><br />
+&nbsp;&nbsp;<br />
+<strong><u><a href=3D"https://www.facebook.com/pages/xxxxxxxxxxxxxFi/xxxxxx=
+xxxxxx" target=3D"_blank">Follow xxxxxxxxxxx Page On FB</a></u></strong><br=
+ />
+---- Messaggio inoltrato da monitor@xxxxxxxxx.biz ---<br />
+&nbsp;
+<div style=3D"border:none;border-left:solid blue 1.5pt;padding:0cm 0cm 0cm =
+4.0pt" type=3D"cite">Da: monitor@xxxxxxxxx.biz<br />
+A: help@xxxxxxxxx.biz<br />
+Oggetto: Down -xxxxxxxxxxxx- xxxxxxxxxxxxxxxe Centro Storico_xxxxxxxxxxx - =
+Master<br />
+Data: 2020-07-23 12:40:20<br />
+<br />
+Message from HostMonitor (host xxxxxxxxxxx - Master&nbsp;&nbsp;is down)<br =
+/>
+<br />
+Test&nbsp;&nbsp;&nbsp;&nbsp; : xxxxxxxWifi_xxxxxxxxxxx Sede Centro Storico_=
+xxxxxxxxxxx - Master<br />
+Status Changed At: 23/07/2020 00:55:30<br />
+Method: TCP (port - 60212)<br />
+Status&nbsp;&nbsp;: No answer<br />
+Date&nbsp;&nbsp;&nbsp;&nbsp;: 23/07/2020 12:36:22<br />
+Reply&nbsp;&nbsp; :<br />
+<br />
+Recurrences : 24<br />
+Last status: No answer<br />
+Total tests: 75229<br />
+Alive ratio : 97,82 %<br />
+Dead ratio: 2,11 %<br />
+<br />
+Folder: xxxxxxxxxxx Sede Centro Storico</div>
+<br />
+---- Fine messaggio inoltrato ---</body></html>=
+
+------------=_1595508993-8777-6--

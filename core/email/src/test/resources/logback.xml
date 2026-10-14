@@ -1,0 +1,30 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{YYYY-MM-dd'T'HH:mm:ss.SSSXXX} [%X{cm_id:-system}] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SQL" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%n%msg%n%n</pattern>
+        </encoder>
+    </appender>
+
+  
+    <logger name="org.springframework.jdbc" level="WARN"/>
+   
+    <!--<logger name="org.cmdbuild" level="INFO"/>-->
+    
+    <!-- Uncomment the following line to view email template processing debug messages -->
+<!--    <logger name="org.cmdbuild.email.template" level="DEBUG"/>
+    <logger name="org.cmdbuild.template" level="DEBUG"/>-->
+    
+    <!-- Uncomment the following line to view JavaMai/Google/Microsoft debug messages -->
+<!--    <logger name="org.cmdbuild.email.mta" level="DEBUG"/>
+    <logger name="com.microsoft.graph" level="DEBUG"/>-->
+  
+    <root level="WARN">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

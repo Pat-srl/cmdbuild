@@ -1,0 +1,7 @@
+{
+    "org.cmdbuild.dms.service.oracleucm.user": "Utente",
+    "org.cmdbuild.dms.service.oracleucm.url": "Url",
+    "org.cmdbuild.dms.service.oracleucm.securityGroup": "Gruppo di sicurezza",
+    "org.cmdbuild.dms.service.oracleucm.timeout": "Timeout",
+    "org.cmdbuild.dms.service.oracleucm.model.descriptionColumn": "Descrizione colonna"
+}

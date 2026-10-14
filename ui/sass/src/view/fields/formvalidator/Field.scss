@@ -1,0 +1,28 @@
+.#{$prefix}form-error-message {
+    margin-top: 15px;
+
+    border: 1px solid $cmdbuild-status-error;
+    background: lighten($cmdbuild-status-error, 65%);
+    padding: $form-messages-padding;
+    margin-bottom: $form-messages-margin-bottom;
+    color: darken($color: $cmdbuild-status-error, $amount: 20%);
+    position: relative;
+
+    &::before {
+        font-family: "Font Awesome 5 Free" !important;
+        content: $fa-var-exclamation-circle;
+        color: $cmdbuild-status-error;
+        font-size: 2em;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+}
+
+.#{$prefix}formvalidator-field-action-button {
+    cursor: pointer;
+    float: right;
+    text-decoration: underline;
+    color: black;
+    font-size: 12px;
+}

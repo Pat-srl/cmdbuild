@@ -1,0 +1,1182 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://cmdbuild.org/etl/waterway/config/v1/schema",
+    "title": "Waterway Config V1",
+    "description": "Waterway Config V1",
+    "type": "object",
+    "properties": {
+        "descriptor": {
+            "description": "Bus Descriptor code (unique descriptor identifier); must match file name and/or record code",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]+$"
+        },
+        "description": {
+            "description": "Bus Descriptor description (optional)",
+            "type": ["string", "null"]
+        },
+        "notes": {
+            "description": "Bus Descriptor notes (optional)",
+            "type": ["string", "null"]
+        },
+        "tag": {
+            "description": "Bus Descriptor tag[s] (optional)",
+            "type": ["string", "null"]
+        },
+        "items": {
+            "type": "array",
+            "description": "Bus Descriptor items (gates, templates etc)",
+            "items": {
+                "type": "object",
+                "oneOf": [{
+                        "description": "gate item",
+                        "required": ["gate", "handlers"],
+                        "additionalProperties": true,
+                        "properties": {
+                            "gate": {
+                                "description": "Gate code (unique gate identifier)",
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "description": {
+                                "description": "Gate description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "Gate notes (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "subscribe": {
+                                "description": "subscribe to a bus (listen for messages from that bus)",
+                                "oneOf": [{
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }, {
+                                        "type": ["string", "null"]
+                                    }]
+                            },
+                            "access": {
+                                "description": "Access control",
+                                "enum": ["public", "private"],
+                                "default": "private"
+                            },
+                            "useCurrentUser": {
+                                "description": "gate uses current session",
+                                "enum": ["true", "false", true, false, null],
+                                "default": false
+                            },
+                            "sessionUser": {
+                                "description": "gate uses the user defined",
+                                "type": ["string", "null"]
+                            },
+                            "processing": {
+                                "description": "Processing mode",
+                                "enum": ["realtime", "batch", "grid", "noop"],
+                                "default": "realtime"
+                            },  
+                            "storage": {
+                                "description": "Message storage",
+                                "type": ["string", "null"]
+                            },  
+                            "softTimeout": {
+                                "description": "soft job timeout (will print warning and send event if a job is still running after this time); system default is `PT40M`",
+                                "type": ["string", "null"]
+                            },  
+                            "hardTimeout": {
+                                "description": "hard job timeout (will print warning and send event if a job is still running after this time); system default is `PT1H`",
+                                "type": ["string", "null"]
+                            },
+                            "on_warning_throwError": {
+                                "enum": ["true", "false", true, false, null],
+                                "default": false
+                            },  
+                            "on_error_retry": {
+                                "enum": ["true", "false", true, false, null],
+                                "default": false
+                            },  
+                            "on_fail_throwSuccess": {
+                                "enum": ["true", "false", true, false, null],
+                                "default": false
+                            },  
+                            "on_success_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_success_forward": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_warning_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_warning_forward": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_error_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_error_forward": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_fail_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_fail_forward": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_error_retry_delay": {
+                                "type": ["string", "null"],
+                                "default": "PT10M"
+                            },  
+                            "on_error_retry_count": {
+                                "type": ["string", "null"],
+                                "default": 5
+                            },
+                            "handlers": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "oneOf": [{
+                                            "description": "import template handler",
+                                            "required": ["type"],
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "type": {
+                                                    "enum": ["template"]
+                                                },
+                                                "templates": {
+                                                    "oneOf": [{
+                                                            "type": "array",
+                                                            "minItems": 1,
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        }, {
+                                                            "type": "string"
+                                                        }]
+                                                },
+                                                "outputMode": {
+                                                    "description": "output attachment mode",
+                                                    "enum": ["replace", "split", "attach", "append"],
+                                                    "default": "replace"
+                                                }
+                                            }
+                                        }, {
+                                            "description": "script handler",
+                                            "required": ["type", "script"],
+                                            "properties": {
+                                                "type": {
+                                                    "enum": ["script"]
+                                                },
+                                                "script": {
+                                                    "type": "string"
+                                                },
+                                                "language": {
+                                                    "description": "define the script language",
+                                                    "enum": ["groovy", "python"],
+                                                    "default": "groovy"
+                                                },
+                                                "classpath": {
+                                                    "description": "jar[s] for custom script classpath (from uploads or custom lib folder or script component)",
+                                                    "type": ["string", "null"]
+                                                },
+                                                "output": {
+                                                    "description": "output attachment name",
+                                                    "type": ["string", "null"],
+                                                    "default": "output"
+                                                },
+                                                "outputMode": {
+                                                    "description": "output attachment mode",
+                                                    "enum": ["replace", "split", "attach", "append"],
+                                                    "default": "replace"
+                                                }
+                                            }
+                                        }, {
+                                            "description": "ifc import handler",
+                                            "required": ["type"],
+                                            "patternProperties": {
+                                                "^(bimserver_project_mode|bimserver_project_import_code|bimserver_project_master_card_id|bimserver_project_master_card_mode|bimserver_project_has_parent|bimserver_subproject_code_suffix|bimserver_project_master_card_target_class|bimserver_project_master_card_key_source|bimserver_project_master_card_key_attr|bimserver_project_objects_import_enabled)$": {
+                                                    "type": ["string", "null"] 
+                                                }
+                                            },
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "type": {
+                                                    "enum": ["ifc"]
+                                                },
+                                                "templates": {
+                                                    "oneOf": [{
+                                                            "type": "array",
+                                                            "minItems": 1,
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        }, {
+                                                            "type": "string"
+                                                        }]
+                                                } 
+                                            }
+                                        }, {
+                                            "description": "cad import handler",
+                                            "required": ["type"],
+                                            "patternProperties": {
+                                                "^(shape_import_enabled|shape_import_target_class|shape_import_target_attr|shape_import_key_source|shape_import_key_attr|shape_import_key_mode|shape_import_transformation_rules|shape_import_target_reference_system|shape_import_replace_existing|shape_import_source_layers_include|shape_import_source_layers_exclude|master_card_filter_mode|master_card_target_class|master_card_key_source|master_card_key_attr|master_card_key_mode)$": {
+                                                    "type": ["string", "null"] 
+                                                }
+                                            },
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "type": {
+                                                    "enum": ["cad"]
+                                                },
+                                                "templates": {
+                                                    "oneOf": [{
+                                                            "type": "array", 
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        }, {
+                                                            "type": ["string", "null"]
+                                                        }]
+                                                } 
+                                            }
+                                        }, {
+                                            "description": "gate import handler",
+                                            "required": ["type", "target"],
+                                            "patternProperties": {
+                                                "^config_.+$": { 
+                                                    "description": "gate config override",
+                                                    "type": ["integer", "string", "null"] 
+                                                }
+                                            },
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "type": {
+                                                    "enum": ["gate"]
+                                                },
+                                                "target": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }, {
+                                            "description": "file reader import handler",
+                                            "required": ["type"],
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "type": {
+                                                    "enum": ["filereader"]
+                                                },
+                                                "directory": {
+                                                    "description": "source directory",
+                                                    "type": "string"
+                                                },
+                                                "filePattern": {
+                                                    "description": "source file pattern (regexp)",
+                                                    "type": ["string", "null"]
+                                                },
+                                                "postImportAction": {
+                                                    "enum": ["delete_files", "disable_files", "move_files", "do_nothing"]
+                                                },
+                                                "targetDirectory": {
+                                                    "description": "target directory (for `move_files` post import action)",
+                                                    "type": ["string", "null"]
+                                                },
+                                                "failOnMissingSourceData": {
+                                                    "enum": ["true", "false", true, false, null],
+                                                    "default": true
+                                                },
+                                                "outputMode": {
+                                                    "description": "output attachment mode",
+                                                    "enum": ["replace", "split", "attach", "append"],
+                                                    "default": "replace"
+                                                }
+                                            }
+                                        }, {
+                                            "description": "directory reader import handler",
+                                            "required": ["type"],
+                                            "additionalProperties": true,
+                                            "patternProperties": {
+                                                "^externaldms_(sharepoint|cmis)_.+$": { 
+                                                    "description": "gate config override",
+                                                    "type": ["integer", "string", "null"] 
+                                                }
+                                            },
+                                            "properties": {
+                                                "type": {
+                                                    "enum": ["directoryreader"]
+                                                },
+                                                "source": {
+                                                    "enum": ["filesystem", "externaldms", "internaldms"]
+                                                },
+                                                "externaldms_type": { 
+                                                    "enum": ["cmis", "sharepoint_online"]
+                                                },
+                                                "path": {
+                                                    "description": "source path",
+                                                    "type": "string"
+                                                },
+                                                "filePattern": {
+                                                    "description": "source file pattern (regexp)",
+                                                    "type": ["string", "null"]
+                                                },
+                                                "recursive": {
+                                                    "enum": ["true", "false", true, false, null],
+                                                    "default": true
+                                                },
+                                                "postImportAction": {
+                                                    "enum": ["delete_files", "disable_files", "move_files", "do_nothing"],
+                                                    "default": "do_nothing"
+                                                },
+                                                "excludePattern": {
+                                                    "description": "source file exclusion pattern (regexp)",
+                                                    "type": ["string", "null"]
+                                                },
+                                                "targetDirectory": {
+                                                    "description": "target directory (for `move_files` post import action)",
+                                                    "type": ["string", "null"]
+                                                },
+                                                "skipNextOnNoData": {
+                                                    "enum": ["true", "false", true, false, null],
+                                                    "default": false
+                                                },
+                                                "outputMode": {
+                                                    "description": "output attachment mode",
+                                                    "enum": ["replace", "split", "attach", "append"],
+                                                    "default": "replace"
+                                                }
+                                            }
+                                        }, {
+                                            "description": "database import handler",
+                                            "required": ["type"],
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "type": {
+                                                    "enum": ["database"]
+                                                },
+                                                "sourceType": {
+                                                    "enum": ["jdbc"],
+                                                    "default": "jdbc"
+                                                },
+                                                "jdbcDriverClassName": { 
+                                                    "type": "string"
+                                                },
+                                                "jdbcUrl": { 
+                                                    "type": "string"
+                                                },
+                                                "jdbcUsername": { 
+                                                    "type": "string"
+                                                },
+                                                "jdbcPassword": { 
+                                                    "type": "string"
+                                                },
+                                                "jdbcTestQuery": { 
+                                                    "type": ["string", "null"]
+                                                },
+                                                "jdbcConnectionProperties": {
+                                                    "type": ["string", "null"]
+                                                },
+                                                "mode": { 
+                                                    "description": "handler mode: `import` is load to cmdbuild db, `load` is load data for later processing, `auto` switch mode based on template type",
+                                                    "enum": ["import", "load", "auto"],
+                                                    "default": "auto"
+                                                },
+                                                "templates": {
+                                                    "oneOf": [{
+                                                            "type": "array",
+                                                            "minItems": 1,
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        }, {
+                                                            "type": "string"
+                                                        }]
+                                                } 
+                                            }
+                                        }, {
+                                            "description": "url reader import handler",
+                                            "required": ["type"],
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "type": {
+                                                    "enum": ["urlreader"]
+                                                },
+                                                "urlParam": {
+                                                    "description": "source url param (url, or name of param/metadata containing the actual url)",
+                                                    "type": ["string", "null"],
+                                                    "default": "url"
+                                                },
+                                                "url": {
+                                                    "description": "url value (for fixed url)",
+                                                    "type": ["string", "null"]
+                                                },
+                                                "outputMode": {
+                                                    "description": "output attachment mode",
+                                                    "enum": ["replace", "split", "attach", "append"],
+                                                    "default": "replace"
+                                                }
+                                            } 
+                                        }, {
+                                            "description": "no operation import handler",
+                                            "required": ["type"],
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "type": {
+                                                    "enum": ["noop"]
+                                                },
+                                                "outputMode": {
+                                                    "description": "output attachment mode",
+                                                    "enum": ["replace", "split", "attach", "append"],
+                                                    "default": "replace"
+                                                }
+                                            }
+                                        }, {
+                                            "description": "custom import handler (plugin)",
+                                            "required": ["type"],
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "type": {
+                                                    "oneOf": [{
+                                                            "type": "string",
+                                                            "pattern": "^[a-z0-9_]+$"
+                                                        }, {
+                                                            "enum": ["template", "script", "ifc", "cad", "gate", "filereader", "directoryreader", "database", "urlreader", "noop"]
+                                                        }]
+                                                }
+                                            }
+                                        }]
+                                }
+                            }
+                        }
+                    }, {
+                        "description": "Import/Export Template item",
+                        "required": ["template", "columns"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "template": {
+                                "description": "Import/Export Template unique identifier",
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "description": {
+                                "description": "Import/Export Template description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "Import/Export Template notes (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "mode": { 
+                                "enum": ["import", "export", "import_export"],
+                                "default": "import"
+                            },
+                            "filter": { 
+                                "type": ["string", "null"]
+                            },
+                            "importFilter": { 
+                                "type": ["string", "null"]
+                            },
+                            "exportFilter": { 
+                                "type": ["string", "null"]
+                            },
+                            "referenceFilter": { 
+                                "type": ["string", "null"]
+                            },
+                            "format": { 
+                                "enum": ["csv", "xls", "xlsx", "other", "ifc", "cad", "database", null],
+                                "default": "other"
+                            },
+                            "source": { 
+                                "type": ["string", "null"]
+                            },
+                            "charset": { 
+                                "type": ["string", "null"]
+                            }, 
+                            "dataRow": { 
+                                "type": ["integer", "string", "null"]
+                            }, 
+                            "firstCol": { 
+                                "type": ["integer", "string", "null"]
+                            }, 
+                            "headerRow": { 
+                                "type": ["integer", "string", "null"]
+                            }, 
+                            "mergeMode": { 
+                                "enum": ["leave_missing", "delete_missing", "update_attr_on_missing", "no_merge"]
+                            }, 
+                            "useHeader": { 
+                                "enum": ["true", "false", true, false, null]
+                            },
+                            "dateTimeMode": {
+                                "description": "default is `extjs`, change this to `java` to use java formatter",
+                                "enum": ["extjs", "java", null]
+                            },
+                            "dateFormat": { 
+                                "type": ["string", "null"]
+                            },
+                            "timeFormat": { 
+                                "type": ["string", "null"]
+                            },
+                            "dateTimeFormat": { 
+                                "type": ["string", "null"]
+                            },
+                            "decimalSeparator": { 
+                                "type": ["string", "null"]
+                            },
+                            "thousandsSeparator": { 
+                                "type": ["string", "null"]
+                            },
+                            "targetName": { 
+                                "type": ["string", "null"]
+                            },
+                            "targetType": { 
+                                "description": "default to `class` if targetName is set, `record` otherwise; targetName is required for all values except `record`",
+                                "enum": ["class", "process", "domain", "view", "record", null]
+                            }, 
+                            "csvSeparator": { 
+                                "type": ["string", "null"]
+                            },
+                            "enableCreate": { 
+                                "description": "if set to false disable card creation (will throw error if input cards does not match an existing card); skip is the same as false, but will not throw an error; required for superclass record import (update)",
+                                "enum": ["true", "false", true, false, null, "skip"]
+                            }, 
+                            "ignoreColumnOrder": { 
+                                "enum": ["true", "false", true, false, null]
+                            }, 
+                            "handleMissingRecordsOnError": { 
+                                "enum": ["true", "false", true, false, null]
+                            }, 
+                            "importKeyAttributes": { 
+                                "oneOf": [{
+                                        "type": "array", 
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }, {
+                                        "type": ["string", "null"]
+                                    }]
+                            }, 
+                            "attributeNameForUpdateAttrOnMissing": { 
+                                "type": ["string", "null"]
+                            },
+                            "attributeValueForUpdateAttrOnMissing": { 
+                                "type": ["string", "null"]
+                            },
+                            "attributeModeForUpdateAttrOnMissing": {
+                                "description": "handle value of reference or lookup as id or as code, set to `code` if you want to force it",
+                                "type": ["string", "null"]
+                            },
+                            "availableAttrsForScriptOnMissing": { 
+                                "oneOf": [{
+                                        "type": "array", 
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }, {
+                                        "type": ["string", "null"]
+                                    }]
+                            },
+                            "scriptForUpdateAttrOnMissing": {
+                                "description": "script to execute for every record not found. Has all the attributes of the card as context that can be modified by changing their value and another parameter `_markDirty` that can be set to true to always consider the record as deleted in the final report",
+                                "type": ["string", "null"]
+                            },
+                            "scriptOnCreated": {
+                                "description": "script to execute for every created record. Has the Id of the card and the provided record as context (`record`)",
+                                "type": ["string", "null"]
+                            },
+                            "scriptOnModified": {
+                                "description": "script to execute for every modified record. Has the Id of the card and the template attributes of the previous (`previous`) and new (`record`) card as context",
+                                "type": ["string", "null"]
+                            },
+                            "scriptOnUnmodified": {
+                                "description": "script to execute for every unmodified record. Has the Id of the card and the template attributes of the card as context (`record`)",
+                                "type": ["string", "null"]
+                            },
+                            "errorAccount": { 
+                                "type": ["string", "null"]
+                            },
+                            "errorTemplate": { 
+                                "type": ["string", "null"]
+                            },
+                            "notificationTemplate": { 
+                                "type": ["string", "null"]
+                            },
+                            "notificationAccount": { 
+                                "type": ["string", "null"]
+                            },
+                            "classpath": {
+                                "description": "jar[s] for custom script classpath (from uploads or custom lib folder)",
+                                "type": ["string", "null"]
+                            },
+                            "callback": {
+                                "description": "callback script for custom processing of records",
+                                "type": ["string", "null"]
+                            },
+                            "onRecordError": { 
+                                "enum": ["fail", "log_error", "log_warning"]
+                            },
+                            "columns": {
+                                "type": "array", 
+                                "items": {
+                                    "type": "object", 
+                                    "additionalProperties": false,
+                                    "properties": { 
+                                        "mode": { 
+                                            "enum": ["default", "code", "description", "code_caseinsensitive", "description_caseinsensitive", "description_translated", "id", "ignore", "recordid", null],
+                                            "default": "default"
+                                        }, 
+                                        "default": { 
+                                            "type": ["string", "null"]
+                                        },
+                                        "columnName": {
+                                            "type": ["string", "null"]
+                                        },
+                                        "attributeName": { 
+                                            "type": ["string", "null"]
+                                        },
+                                        "attributeType": { 
+                                            "description": "when attribute type = `relation`, attribute name is target domain; input value is processed as if it was a reference with that domain",
+                                            "enum": ["default", "relation", null],
+                                            "default": "default"
+                                        },
+                                        "relationDirection": {
+                                            "description": "relation direction, when attribute type = `relation`",
+                                            "enum": ["direct", "inverse", null],
+                                            "default": "direct"
+                                        },
+                                        "onErrorAction": { 
+                                            "enum": ["fail", "log", "ignore", null],
+                                            "default": "fail"
+                                        }, 
+                                        "onMissingRefAction": { 
+                                            "enum": ["error", "create", "ignore", null],
+                                            "default": "error"
+                                        },
+                                        "requiredAttrMode": { 
+                                            "enum": ["required", "auto", "none", null],
+                                            "default": "auto"
+                                        },
+                                        "dateTimeMode": {
+                                            "description": "default is `extjs`, change this to `java` to use java formatter",
+                                            "enum": ["extjs", "java", null]
+                                        },
+                                        "dateFormat": { 
+                                            "type": ["string", "null"]
+                                        },
+                                        "timeFormat": { 
+                                            "type": ["string", "null"]
+                                        },
+                                        "dateTimeFormat": { 
+                                            "type": ["string", "null"]
+                                        },
+                                        "decimalSeparator": { 
+                                            "type": ["string", "null"]
+                                        },
+                                        "thousandsSeparator": { 
+                                            "type": ["string", "null"]
+                                        },
+                                        "classpath": {
+                                            "description": "jar[s] for custom script classpath (from uploads or custom lib folder)",
+                                            "type": ["string", "null"]
+                                        },
+                                        "expr": { 
+                                            "description": "expression for source value computation (alternative to column name)",
+                                            "type": ["string", "null"]
+                                        },
+                                        "referenceTemplate": {
+                                            "description": "template for reference import",
+                                            "type": ["string", "null"]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }, {
+                        "description": "Import/Export Template item (dynamic template)",
+                        "required": ["template", "dynamic"],
+                        "additionalProperties": true,
+                        "properties": {
+                            "template": {
+                                "description": "Import/Export Template unique identifier",
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "description": {
+                                "description": "Import/Export Template description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "Import/Export Template notes (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "dynamic": { 
+                                "enum": [true]
+                            }
+                        }
+                    }, {
+                        "description": "Notification template item",
+                        "required": ["notification"],
+                        "additionalProperties": true,
+                        "properties": {
+                            "notification": {
+                                "description": "Notification template unique identifier",
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "description": {
+                                "description": "Notification template description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "Notification template notes (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "from": {
+                                "type": ["string", "null"]
+                            },
+                            "to": {
+                                "type": ["string", "null"]
+                            },
+                            "cc": {
+                                "type": ["string", "null"]
+                            },
+                            "bcc": {
+                                "type": ["string", "null"]
+                            },
+                            "subject": {
+                                "type": ["string", "null"]
+                            },
+                            "content": {
+                                "type": ["string", "null"]
+                            },
+                            "account": {
+                                "type": ["string", "null"]
+                            },
+                            "delay": {
+                                "type": ["integer", "string", "null"]
+                            },
+                            "meta": {
+                                "type": ["object", "null"]
+                            },
+                            "contentType": {
+                                "type": ["string", "null"],
+                                "default": "application/octet-stream"
+                            },
+                            "reports": {
+                                "oneOf": [{
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }, {
+                                        "type": ["string", "null"]
+                                    }]
+                            },
+                            "signature": {
+                                "type": ["string", "null"]
+                            },
+                            "provider": {
+                                "description": "some providers are email, chat",
+                                "type": ["string", "null"],
+                                "default": "email"
+                            } 
+                        }
+                    }, {
+                        "description": "Collector item",
+                        "required": ["collector", "target"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "collector": {
+                                "description": "Collector unique identifier",
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "description": {
+                                "description": "Collector description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "Collector notes (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "storage": {
+                                "description": "Message storage",
+                                "type": ["string", "null"]
+                            },  
+                            "subscribe": {
+                                "description": "subscribe to a bus (listen for messages from that bus)",
+                                "oneOf": [{
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }, {
+                                        "type": ["string", "null"]
+                                    }]
+                            },
+                            "processing": {
+                                "description": "Processing mode",
+                                "enum": ["realtime", "batch"],
+                                "default": "realtime"
+                            },  
+                            "target": {
+                                "description": "Collector target (consumer for collected messages)",
+                                "type": ["string"]
+                            },  
+                            "rule": {
+                                "description": "Collector aggregation rule",
+                                "enum": ["default", "expr"],
+                                "default": "default"
+                            },
+                            "aggregationKeyParam": {
+                                "description": "Message attr used as key for message aggregation",
+                                "type": ["string", "null"],
+                                "default": "aggregationId"
+                            },
+                            "aggregationKeyExpr": {
+                                "description": "Expr (script) to extract aggregation key from a message",
+                                "type": ["string", "null"]
+                            },
+                            "aggregationCount": {
+                                "description": "Number of messages to aggregate",
+                                "type": ["integer", "string", "null"]
+                            },
+                            "aggregationCountParam": {
+                                "description": "Message attr used as param for number of messages to aggregate (all messages in a set MUST contain the same value)",
+                                "type": ["string", "null"],
+                                "default": "aggregationCount"
+                            },
+                            "aggregationCountExpr": {
+                                "description": "Expr (script) to extract aggregation count from a message",
+                                "type": ["string", "null"]
+                            },
+                            "expr": {
+                                "description": "Custom script to process new messages and message queue, and aggregate messages",
+                                "type": ["string", "null"]
+                            },  
+                            "softTimeout": {
+                                "description": "soft collector timeout (will print warning and send event if messages are still queued after this time); system default is `PT1D`",
+                                "type": ["string", "null"]
+                            },  
+                            "hardTimeout": {
+                                "description": "hard collector timeout (will print warning and send event if messages are still queued after this time)",
+                                "type": ["string", "null"]
+                            },
+                            "on_warning_throwError": {
+                                "enum": ["true", "false", true, false, null],
+                                "default": false
+                            },
+                            "on_fail_throwSuccess": {
+                                "enum": ["true", "false", true, false, null],
+                                "default": false
+                            },  
+                            "on_success_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_success_forward": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_warning_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_warning_forward": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_error_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_error_forward": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_fail_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_fail_forward": {
+                                "type": ["string", "null"]
+                            }
+                        }
+                    }, {
+                        "description": "Bus item",
+                        "required": ["bus"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "bus": {
+                                "description": "Bus unique identifier",
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "description": {
+                                "description": "Bus description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "Bus notes (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "subscribe": {
+                                "description": "subscribe to another bus (listen for messages from that bus)",
+                                "oneOf": [{
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }, {
+                                        "type": ["string", "null"]
+                                    }]
+                            },
+                            "access": {
+                                "description": "Access control",
+                                "enum": ["public", "private"],
+                                "default": "private"
+                            },
+                            "processing": {
+                                "description": "Processing mode",
+                                "enum": ["realtime", "batch"],
+                                "default": "realtime"
+                            },  
+                            "storage": {
+                                "description": "Message storage",
+                                "type": ["string", "null"]
+                            },   
+                            "timeout": {
+                                "description": "time to live for persistent messages; system default is `PT10D` (global config TODO)",
+                                "type": ["string", "null"]
+                            },
+                            "persistence": {
+                                "enum": ["volatile", "pesistent"]
+                            },  
+                            "on_success_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_success_forward": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_error_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_error_forward": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_fail_notify": {
+                                "type": ["string", "null"]
+                            },  
+                            "on_fail_forward": {
+                                "type": ["string", "null"]
+                            }
+                        }
+                    }, {
+                        "description": "Storage item",
+                        "required": ["storage"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "storage": {
+                                "description": "Storage unique identifier",
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "description": {
+                                "description": "Storage description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "Storage notes (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "provider": {
+                                "description": "Storage provider, for example `database`, `runtime` or `grid`",
+                                "type": ["string", "null"],
+                                "default": "database"
+                            }
+                        }
+                    }, {
+                        "description": "trigger item (job trigger)",
+                        "required": ["trigger", "target", "cronExpression"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "trigger": {
+                                "description": "Trigger unique identifier",
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "description": {
+                                "description": "Job description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "Job notes (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "target": {
+                                "description": "Job target (gate or other consumer code)",
+                                "type": ["string", "null"]
+                            },
+                            "persistRun": {
+                                "enum": ["true", "false", true, false, null],
+                                "default": true
+                            },
+                            "cronExpression": {
+                                "description": "cron expression, es: `*/1 * * * ?`",
+                                "type": ["string", "null"]
+                            }, 
+                            "cronExpressionHasSeconds": {
+                                "enum": ["true", "false", true, false, null],
+                                "default": false
+                            },
+                            "clusterMode": {
+                                "description": "cluster mode",
+                                "enum": ["run_on_all_nodes", "run_on_single_node", null],
+                                "default": "run_on_single_node"
+                            },
+                            "clusterBalancingStrategy": {
+                                "description": "default is `pin_job_to_node` (this is actually a system config); this is less balanced, but avoid synchronization warnings when running overlapping (long running) jobs on cluster; use `auto` balancing to spread load",
+                                "enum": ["pin_job_to_node", "auto", null],
+                                "default": "pin_job_to_node"
+                            },
+                            "workgroup": {
+                                "description": "trigger workgroup (optional, only useful for `run_on_single_node` scheduled triggers)",
+                                "type": ["string", "null"]
+                            }
+                        }
+                    }, {
+                        "description": "trigger item (event trigger)",
+                        "required": ["trigger", "target", "event"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "trigger": {
+                                "description": "Trigger unique identifier",
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "description": {
+                                "description": "Job description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "Job notes (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "target": {
+                                "description": "Job target (gate or other consumer code)",
+                                "type": ["string", "null"]
+                            },
+                            "event": {
+                                "oneOf": [{
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "items": { 
+                                            "enum": ["card_create_after", "card_update_after", "card_delete_after", "job_timeout_soft", "job_timeout_hard", "wy_after_processing"]
+                                        }
+                                    }, {
+                                        "enum": ["card_create_after", "card_update_after", "card_delete_after", "job_timeout_soft", "job_timeout_hard", "wy_after_processing"]
+                                    }]
+                            },
+                            "filter": {
+                                "type": ["string", "null"]
+                            }
+                        } 
+                    }, {
+                        "description": "webhook item",
+                        "required": ["webhook", "url", "event"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "webhook": {
+                                "description": "Webhook unique identifier",
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "description": {
+                                "description": "webhook description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "webhook notes (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "target": {
+                                "description": "webhook target",
+                                "type": ["string", "null"]
+                            },
+                            "url": {
+                                "description": "url target",
+                                "type": ["string", "null"]
+                            },
+                            "method": {
+                                "description": "method to use, default is get",
+                                "enum": ["get", "post", "put", "delete", null],
+                                "default": "get"
+                            },
+                            "headers": {
+                                "description": "headers to send, set it as json",
+                                "type": ["string", "null"]
+                            },
+                            "body": {
+                                "description": "body to send",
+                                "type": ["string", "null"]
+                            },
+                            "lang": {
+                                "description": "language to serialize data",
+                                "type": ["string", "null"]
+                            },
+                            "event": {
+                                "oneOf": [{
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "items": { 
+                                            "enum": ["card_create_after", "card_update_after", "card_delete_after", "after_advance"]
+                                        }
+                                    }, {
+                                        "enum": ["card_create_after", "card_update_after", "card_delete_after", "after_advance"]
+                                    }]
+                            },
+                            "filter": {
+                                "type": ["string", "null"]
+                            }
+                        } 
+                    }, {
+                        "description": "prepared function",
+                        "required": ["function", "data"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "function": {
+                                "description": "function code",
+                                "type": "string"
+                            },
+                            "data": {
+                                "description": "function data",
+                                "type": "string"
+                            },
+                            "description": {
+                                "description": "function description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "function notes (optional)",
+                                "type": ["string", "null"]
+                            }
+                        }
+                    }, {
+                        "description": "script",
+                        "required": ["script", "data"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "script": {
+                                "description": "script code",
+                                "type": "string"
+                            },
+                            "data": {
+                                "description": "script data",
+                                "type": "string"
+                            },
+                            "description": {
+                                "description": "script description (optional)",
+                                "type": ["string", "null"]
+                            },
+                            "notes": {
+                                "description": "script notes (optional)",
+                                "type": ["string", "null"]
+                            }
+                        }
+                    }]  
+            }
+        }
+    }
+}
+

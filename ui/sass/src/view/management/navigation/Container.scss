@@ -1,0 +1,44 @@
+// main-navigation
+@include extjs-panel-ui($ui: "main-navigation", $ui-body-background-color: $base-color, $ui-body-color: #fff);
+
+@include extjs-toolbar-ui($ui: "navigation-search", $background-color: $base-color, $horizontal-spacing: 14px);
+
+@include extjs-toolbar-ui(
+    $ui: "admin-navigation-search",
+    $background-color: $administration-base-color,
+    $horizontal-spacing: 14px
+);
+
+.#{$prefix}panel-header-main-navigation {
+    .#{$prefix}tool-collapse-left:before {
+        content: $fa-var-close;
+    }
+    .#{$prefix}tool-expand-right:before {
+        content: $fa-var-bars;
+    }
+}
+
+.#{$prefix}splitter.#{$prefix}splitter-management {
+    background-color: $main-color-dark-border;
+
+    &&.aiChat {
+        background-color: $main-neutral-gray-5;
+    }
+
+    .#{$prefix}collapse-el {
+        background-color: $main-color-dark-border;
+        color: #ffffff;
+    }
+
+    &.#{$prefix}splitter-collapsed {
+        .#{$prefix}collapse-el {
+            color: $base-color;
+        }
+        .#{$prefix}layout-split-left {
+            padding-left: 0;
+        }
+    }
+    &.#{$prefix}splitter-focus:after {
+        border: 0;
+    }
+}

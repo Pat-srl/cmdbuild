@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=http://team.cmdbuild.org/resources/cmdbuild/etl/waterway/config/v1/schema.json
+descriptor: test
+description: My Test Config
+notes: 
+ my notes !!!
+items:
+    -
+        gate: MyItem
+        description: My Item
+        notes: something           
+        tt_customConfig1: CONF_1_OVERRIDE
+        tt_customConfig3: CONF_3
+        tt_customConfig4: CONF_4
+        templates: three
+        handlers:
+            - type: script
+              script: something
+              tt_customConfig3: CONF_3_OVERRIDE
+              tt_customConfig5: CONF_5  
+            - type: template
+              templates: [ one, two ]
+    -
+        gate: MyOtherItem
+        handlers: []
+    -
+        function: _cm3_dashboard_model_stats
+        data: |
+            -- COMMENT TYPE: function
+            CREATE OR REPLACE FUNCTION _cm3_dashboard_model_stats() RETURNS TABLE (type varchar, count bigint) AS $$ BEGIN
+                RETURN QUERY SELECT x."type"::varchar, x."count" FROM (
+                    SELECT 'class' "type", (SELECT COALESCE(COUNT(*),0) count FROM _cm3_class_list() c WHERE NOT _cm3_class_is_process(c) AND _cm3_class_features_get(c, 'MODE') IN ('default', 'all'))
+                    UNION ALL SELECT 'processclass' "type", (SELECT COALESCE(COUNT(*),0) count FROM _cm3_class_list() c WHERE _cm3_class_is_process(c) AND _cm3_class_is_superclass(c) = false AND (_cm3_class_features_get(c, 'MODE') = 'default' OR _cm3_class_features_get(c, 'MODE') = 'all'))
+                    UNION ALL SELECT 'domain' "type", (SELECT COALESCE(COUNT(*),0) count FROM _cm3_domain_list() d)
+                    UNION ALL SELECT 'report' "type", (SELECT COALESCE(COUNT(*),0) count FROM "_Report" WHERE "Status" = 'A')
+                    UNION ALL SELECT 'dashboard' "type", (SELECT COALESCE(COUNT(*),0) count FROM "_Dashboard" WHERE "Status" = 'A')
+                    UNION ALL SELECT 'view' "type", (SELECT COALESCE(COUNT(*),0) count FROM "_View" WHERE "Status" = 'A' AND "Shared"=true)
+                    UNION ALL SELECT 'custompage' "type", (SELECT COALESCE(COUNT(*),0) count FROM "_UiComponent" WHERE "Status" = 'A' AND "Type" = 'custompage')
+                    ) x ORDER BY x.count DESC;
+            END $$ LANGUAGE PLPGSQL;
+        description: Fun
+        notes: fu fu
+  
+    - trigger: MyScheduledTrigger
+      target: MyItem  
+      cronExpression: '*/2 * * * ?'
+  
+    - trigger: MyEventTrigger
+      target: MyItem  
+      event: card_create_after

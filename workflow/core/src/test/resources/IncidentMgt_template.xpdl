@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Package xmlns="http://www.wfmc.org/2008/XPDL2.1" xmlns:ns2="http://www.wfmc.org/2002/XPDL1.0" Id="Package_incidentmgt">
+    <PackageHeader>
+        <XPDLVersion>2.1</XPDLVersion>
+        <Vendor/>
+        <Created/>
+    </PackageHeader>
+    <Script Type="text/java"/>
+    <TypeDeclarations>
+        <TypeDeclaration Id="Reference">
+            <ExternalReference location="org.cmdbuild.workflow.type.ReferenceType"/>
+        </TypeDeclaration>
+        <TypeDeclaration Id="References">
+            <ExternalReference location="org.cmdbuild.workflow.type.ReferenceType&lt;&gt;"/>
+        </TypeDeclaration>
+        <TypeDeclaration Id="Lookup">
+            <ExternalReference location="org.cmdbuild.workflow.type.LookupType"/>
+        </TypeDeclaration>
+        <TypeDeclaration Id="Lookups">
+            <ExternalReference location="org.cmdbuild.workflow.type.LookupType&lt;&gt;"/>
+        </TypeDeclaration>
+    </TypeDeclarations>
+    <Participants>
+        <Participant Id="System">
+            <ParticipantType Type="SYSTEM"/>
+        </Participant>
+        <Participant Id="SuperUser">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="Guest">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="Connectors">
+            <ParticipantType Type="ROLE"/>
+        </Participant>
+    </Participants>
+    <WorkflowProcesses>
+        <WorkflowProcess Id="Process_incidentmgt">
+            <ProcessHeader/>
+            <DataFields>
+                <DataField Id="Code" IsArray="false">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                </DataField>
+                <DataField Id="Description" IsArray="false">
+                    <DataType>
+                        <BasicType Type="STRING"/>
+                    </DataType>
+                </DataField>
+                <DataField Id="FlowStatus" IsArray="false">
+                    <DataType>
+                        <DeclaredType Id="Lookup"/>
+                    </DataType>
+                </DataField>
+                <DataField Id="CreationTimestamp" IsArray="false">
+                    <DataType>
+                        <BasicType Type="DATETIME"/>
+                    </DataType>
+                </DataField>
+            </DataFields>
+            <ExtendedAttributes>
+                <ExtendedAttribute Name="cmdbuildBindToClass" Value="IncidentMgt"/>
+            </ExtendedAttributes>
+        </WorkflowProcess>
+    </WorkflowProcesses>
+</Package>

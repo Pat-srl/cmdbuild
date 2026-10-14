@@ -1,0 +1,18 @@
+{
+    "CMDBuildUI.locales.Locales.administration.bim.ifcfile": "CMDBuild.Translation.ifc_file",
+    "CMDBuildUI.locales.Locales.administration.bim.lastcheckin": "CMDBuild.Translation.last_checkin",
+    "CMDBuildUI.locales.Locales.administration.common.actions.download": "CMDBuild.download",
+    "CMDBuildUI.locales.Locales.administration.searchfilters.texts.fromfilter": "CMDBuild.filterView",
+    "CMDBuildUI.locales.Locales.administration.searchfilters.texts.fromsql": "CMDBuild.sqlView",
+    "CMDBuildUI.locales.Locales.administration.importexport.texts.importexport": "CMDBuild.importExport",
+    "CMDBuildUI.locales.Locales.administration.navigation.gisnavigation": "CMDBuild.administration.modcartography.navigationTree.title",
+    "CMDBuildUI.locales.Locales.administration.bim.projects": "CMDBuild.projects",
+    "CMDBuildUI.locales.Locales.administration.navigation.layers": "CMDBuild.administration.modClass.layers",
+    "CMDBuildUI.locales.Locales.administration.common.strings.string": "CMDBuild.administration.modDashboard.charts.inputTypes.STRING",
+    "CMDBuildUI.locales.Locales.administration.common.labels.status": "CMDBuild.status",
+    "CMDBuildUI.locales.Locales.administration.bim.addproject": "CMDBuild.addProject",
+    "CMDBuildUI.locales.Locales.administration.emails.addaccount": "CMDBuild.addAccount",
+    "CMDBuildUI.locales.Locales.administration.gis.addlayer": "CMDBuild.administration.modcartography.geoserver.add_layer",
+    "CMDBuildUI.locales.Locales.administration.groupandpermissions.texts.addgroup": "CMDBuild.addGroup",
+    "CMDBuildUI.locales.Locales.administration.common.labels.note": "CMDBuild.note"
+}

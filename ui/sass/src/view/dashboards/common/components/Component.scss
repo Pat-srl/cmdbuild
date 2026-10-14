@@ -1,0 +1,230 @@
+@include extjs-panel-ui(
+    $ui: 'managementdashboard',
+
+    $ui-header-color: $color,
+    $ui-header-background-color: transparent,
+    $ui-header-font-size: (
+        $panel-header-font-size * 1.1
+    ),
+    $ui-tool-glyph-color: lighten($color, 15%)
+);
+
+.#{$prefix}panel-managementdashboard,
+.#{$prefix}panel-body-managementdashboard {
+    background-color: $main-neutral-white;
+    background: $main-neutral-white;
+    border: solid 1px $main-neutral-gray-6;
+    border-radius: 10px;
+}
+.#{$prefix}panel-header-horizontal {
+    padding: 20px 20px 20px 20px;
+}
+.#{$prefix}panel-body-managementdashboard {
+    padding: 0px 20px 20px 20px;
+}
+
+.#{$prefix}panel-header-managementdashboard-horizontal {
+    .#{$prefix}panel-header-title-managementdashboard,
+    .#{$prefix}title-text-managementdashboard {
+        line-height: 30px;
+    }
+
+    &.#{$prefix}header-noborder {
+        border-bottom-width: 0px;
+        padding: 20px;
+    }
+
+    .#{$prefix}tool.#{$prefix}management-tool {
+        .#{$prefix}tool-tool-el {
+            color: $main-color-secondary;
+            line-height: 16px;
+            position: relative;
+        }
+
+        &.active {
+            .#{$prefix}far:after {
+                content: ' ';
+                position: absolute;
+                width: 16px;
+                height: 2px;
+                left: 0px;
+                top: 6px;
+                background: $main-color-secondary;
+                border-bottom: 1px solid $main-neutral-white;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    .#{$prefix}tool-after-title {
+        .#{$prefix}mask {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+}
+
+@include extjs-fieldset-ui(
+    $ui: 'managementdashboard',
+    $ui-header-font-size: 12,
+    $ui-header-color: $main-neutral-gray-4,
+    $ui-border-width: 0,
+    $ui-tool-expand-glyph: $fa-var-chevron-up,
+    $ui-tool-collapse-glyph: $fa-var-chevron-down,
+    $ui-collapse-tool-margin: 2px 0 0 4px
+);
+
+.#{$prefix}dashboard-params-fieldset {
+    background: none;
+    border-radius: 10px;
+    padding: 0;
+
+    &.#{$prefix}fieldset {
+        border-top: none !important;
+        background: none;
+    }
+
+    > .#{$prefix}fieldset-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+
+        .#{$prefix}fieldset-header-text {
+            color: $main-neutral-gray-4;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .#{$prefix}fieldset-header-text-collapsible {
+            border-bottom: none;
+        }
+
+        .#{$prefix}tool-tool-el {
+            color: $main-neutral-gray-4;
+            margin-right: 4px;
+            font-size: 12px;
+        }
+    }
+
+    > .#{$prefix}fieldset-body {
+        padding: 0 14px 0 14px;
+        background-color: $main-neutral-gray-7;
+        border-radius: 10px;
+    }
+}
+
+.#{$prefix}dashboard-params-form {
+    > .#{$prefix}panel-bodyWrap > .#{$prefix}panel-body {
+        background-color: transparent !important;
+    }
+
+    .#{$prefix}btn-management-primary-outline-small,
+    .#{$prefix}btn-management-primary-outline-small.#{$prefix}btn-over,
+    .#{$prefix}btn-management-primary-outline-small.#{$prefix}btn-focus,
+    .#{$prefix}btn-management-primary-outline-small.#{$prefix}btn-pressed {
+        background-color: $main-neutral-white;
+        background-image: none;
+    }
+
+    .#{$prefix}form-item-label-text {
+        color: $main-color-secondary;
+        font-weight: 500;
+        font-size: 12px;
+    }
+}
+
+.#{$prefix}dashboard-parameters-grid {
+    .#{$prefix}action-col-icon {
+        color: $main-color-dark;
+        opacity: 0.8;
+        font-size: 16px;
+    }
+}
+
+.#{$prefix}dashboard-applied-params {
+    .#{$prefix}form-display-field-body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 4px 0 8px;
+    }
+
+    .#{$prefix}dashboard-applied-param {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 4px;
+        max-width: 100%;
+        margin: 0 5px 4px 0;
+        padding: 4px 10px;
+        color: $main-neutral-gray-3;
+        font-size: 12px;
+        line-height: 18px;
+        background-color: $main-neutral-gray-7;
+        border-radius: 8px;
+    }
+
+    .#{$prefix}dashboard-applied-param-label {
+        color: $main-color-secondary;
+        font-weight: 600;
+    }
+
+    .#{$prefix}dashboard-applied-param-value {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+}
+
+.#{$prefix}dashboard-component-popup {
+    &.#{$prefix}panel-managementdashboard {
+        border: none;
+    }
+}
+
+.#{$prefix}dashboard-params-flat {
+    padding: 0 14px 10px 14px;
+    background-color: $main-neutral-gray-7;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.#{$prefix}dashboard-component-no-header {
+    .#{$prefix}panel-body {
+        padding-top: 20px;
+    }
+}
+
+.#{$prefix}dashboard-component-no-background {
+    &.#{$prefix}panel-managementdashboard {
+        .#{$prefix}panel-body-managementdashboard {
+            background: transparent !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 20px !important;
+        }
+    }
+}
+
+.#{$prefix}fieldset-managementdashboard {
+    .#{$prefix}form-trigger-wrap-default {
+        border-radius: $components-border-radius;
+        overflow: hidden;
+
+        .#{$prefix}form-trigger-default {
+            background-color: #ffffff;
+        }
+    }
+}
+
+.#{$prefix}cmdbuild-dashboard-component {
+    .#{$prefix}panel-body,
+    .#{$prefix}autocontainer-innerCt,
+    .#{$prefix}grid-view,
+    .dashboard-list-view {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+
+        &:hover {
+            scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
+        }
+    }
+}

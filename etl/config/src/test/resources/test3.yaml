@@ -1,0 +1,2 @@
+# yaml-language-server: $schema=http://team.cmdbuild.org/resources/cmdbuild/etl/waterway/config/v1/schema.json
+{"gate":"MyEtlIfcTestGate2","description":"MyEtlIfcTestGate2","processing":"realtime","access":"private","handlers":[{"type":"urlreader","url":"bimserver:project/356/ifc"},{"type":"ifc","bimserver_project_master_card_target_class":"MyBuilding2","bimserver_project_master_card_id":"355"}]}

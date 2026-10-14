@@ -1,0 +1,39 @@
+.#{$prefix}widgetsfieldset {
+    &.#{$prefix}fieldset-error {
+        border-top-color: $form-field-invalid-border-color !important;
+
+        .#{$prefix}fieldset-header-formpagination {
+            & > .x-fieldset-header-text {
+                background-image: theme-background-image('form/exclamation');
+                background-repeat: no-repeat;
+                background-position: center left;
+                padding-left: 22px;
+            }
+        }
+    }
+
+    .#{$prefix}field.management-input {
+        .#{$prefix}form-trigger-wrap-default {
+            border-color: $main-color-secondary;
+        }
+        .#{$prefix}form-trigger-default {
+            color: $main-color-secondary;
+        }
+    }
+
+    .#{$prefix}window-management & .#{$prefix}fieldset,
+    .#{$prefix}panel-management & .#{$prefix}fieldset {
+        border-top-color: lighten($form-label-font-color, 20%) !important;
+
+        .#{$prefix}fieldset-header-formpagination {
+            & > .x-fieldset-header-text {
+                color: $form-label-font-color;
+            }
+        }
+        .#{$prefix}fieldset-header-tool-formpagination {
+            & > .#{$prefix}tool-toggle {
+                color: $form-label-font-color;
+            }
+        }
+    }
+}

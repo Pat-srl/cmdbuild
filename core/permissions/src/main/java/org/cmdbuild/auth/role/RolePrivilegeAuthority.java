@@ -1,0 +1,125 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package org.cmdbuild.auth.role;
+
+public class RolePrivilegeAuthority {
+
+    /* BEGIN */
+    public static final String ADMIN_ALL_AUTHORITY = "ADMIN_ALL";
+    public static final String ADMIN_ALL_READONLY_AUTHORITY = "ADMIN_ALL_READONLY";
+    public static final String BASE_ALL_AUTHORITY = "BASE_ALL";
+    public static final String IMPERSONATE_ALL_AUTHORITY = "IMPERSONATE_ALL";
+    public static final String BASE_ACCESS_AUTHORITY = "BASE_ACCESS";
+    public static final String ADMIN_ACCESS_AUTHORITY = "ADMIN_ACCESS";
+    public static final String SYSTEM_ACCESS_AUTHORITY = "SYSTEM_ACCESS";
+    public static final String DATA_ALL_READ_AUTHORITY = "DATA_ALL_READ";
+    public static final String DATA_ALL_WRITE_AUTHORITY = "DATA_ALL_WRITE";
+    public static final String PROCESS_ALL_EXEC_AUTHORITY = "PROCESS_ALL_EXEC";
+    public static final String REPORT_ALL_READ_AUTHORITY = "REPORT_ALL_READ";
+    public static final String VIEW_ALL_READ_AUTHORITY = "VIEW_ALL_READ";
+    public static final String DATA_ALL_TENANT_AUTHORITY = "DATA_ALL_TENANT";
+    public static final String ETLGATE_ALL_AUTHORITY = "ETLGATE_ALL";
+    public static final String CQL_ALL_AUTHORITY = "CQL_ALL";
+    public static final String BULKUPDATE_ACCESS_AUTHORITY = "BULKUPDATE_ACCESS";
+    public static final String CHANGEPASSWORD_ACCESS_AUTHORITY = "CHANGEPASSWORD_ACCESS";
+    public static final String CLASS_ACCESS_AUTHORITY = "CLASS_ACCESS";
+    public static final String CUSTOMPAGES_ACCESS_AUTHORITY = "CUSTOMPAGES_ACCESS";
+    public static final String DASHBOARD_ACCESS_AUTHORITY = "DASHBOARD_ACCESS";
+    public static final String DATAVIEW_ACCESS_AUTHORITY = "DATAVIEW_ACCESS";
+    public static final String EXPORTCSV_ACCESS_AUTHORITY = "EXPORTCSV_ACCESS";
+    public static final String IMPORTCSV_ACCESS_AUTHORITY = "IMPORTCSV_ACCESS";
+    public static final String PROCESS_ACCESS_AUTHORITY = "PROCESS_ACCESS";
+    public static final String REPORT_ACCESS_AUTHORITY = "REPORT_ACCESS";
+    public static final String CALENDAR_ACCESS_AUTHORITY = "CALENDAR_ACCESS";
+    public static final String CALENDAR_EVENT_CREATE_AUTHORITY = "CALENDAR_EVENT_CREATE";
+    public static final String GIS_ACCESS_AUTHORITY = "GIS_ACCESS";
+    public static final String BIM_ACCESS_AUTHORITY = "BIM_ACCESS";
+    public static final String RELGRAPH_ACCESS_AUTHORITY = "RELGRAPH_ACCESS";
+    public static final String ETLGATE_ACCESS_AUTHORITY = "ETLGATE_ACCESS";
+    public static final String CHAT_ACCESS_AUTHORITY = "CHAT_ACCESS";
+    public static final String MOBILE_APP_ACCESS_AUTHORITY = "MOBILE_APP_ACCESS";
+    public static final String HOMEPAGE_ACCESS_AUTHORITY = "HOMEPAGE_ACCESS";
+    public static final String DEPENDENCYTREE_ACCESS_AUTHORITY = "DEPENDENCYTREE_ACCESS";
+    public static final String BULK_EDIT_AUTHORITY = "BULK_EDIT";
+    public static final String BULK_DELETE_AUTHORITY = "BULK_DELETE";
+    public static final String CARD_TAB_ATTACHMENT_ACCESS_READ_AUTHORITY = "CARD_TAB_ATTACHMENT_ACCESS_READ";
+    public static final String CARD_TAB_DETAIL_ACCESS_READ_AUTHORITY = "CARD_TAB_DETAIL_ACCESS_READ";
+    public static final String CARD_TAB_EMAIL_ACCESS_READ_AUTHORITY = "CARD_TAB_EMAIL_ACCESS_READ";
+    public static final String CARD_TAB_HISTORY_ACCESS_READ_AUTHORITY = "CARD_TAB_HISTORY_ACCESS_READ";
+    public static final String CARD_TAB_NOTE_ACCESS_READ_AUTHORITY = "CARD_TAB_NOTE_ACCESS_READ";
+    public static final String CARD_TAB_RELATION_ACCESS_READ_AUTHORITY = "CARD_TAB_RELATION_ACCESS_READ";
+    public static final String CARD_TAB_SCHEDULE_ACCESS_READ_AUTHORITY = "CARD_TAB_SCHEDULE_ACCESS_READ";
+    public static final String CARD_TAB_ATTACHMENT_ACCESS_WRITE_AUTHORITY = "CARD_TAB_ATTACHMENT_ACCESS_WRITE";
+    public static final String CARD_TAB_DETAIL_ACCESS_WRITE_AUTHORITY = "CARD_TAB_DETAIL_ACCESS_WRITE";
+    public static final String CARD_TAB_EMAIL_ACCESS_WRITE_AUTHORITY = "CARD_TAB_EMAIL_ACCESS_WRITE";
+    public static final String CARD_TAB_HISTORY_ACCESS_WRITE_AUTHORITY = "CARD_TAB_HISTORY_ACCESS_WRITE";
+    public static final String CARD_TAB_NOTE_ACCESS_WRITE_AUTHORITY = "CARD_TAB_NOTE_ACCESS_WRITE";
+    public static final String CARD_TAB_RELATION_ACCESS_WRITE_AUTHORITY = "CARD_TAB_RELATION_ACCESS_WRITE";
+    public static final String CARD_TAB_SCHEDULE_ACCESS_WRITE_AUTHORITY = "CARD_TAB_SCHEDULE_ACCESS_WRITE";
+    public static final String FLOW_TAB_ATTACHMENT_ACCESS_READ_AUTHORITY = "FLOW_TAB_ATTACHMENT_ACCESS_READ";
+    public static final String FLOW_TAB_DETAIL_ACCESS_READ_AUTHORITY = "FLOW_TAB_DETAIL_ACCESS_READ";
+    public static final String FLOW_TAB_EMAIL_ACCESS_READ_AUTHORITY = "FLOW_TAB_EMAIL_ACCESS_READ";
+    public static final String FLOW_TAB_HISTORY_ACCESS_READ_AUTHORITY = "FLOW_TAB_HISTORY_ACCESS_READ";
+    public static final String FLOW_TAB_NOTE_ACCESS_READ_AUTHORITY = "FLOW_TAB_NOTE_ACCESS_READ";
+    public static final String FLOW_TAB_RELATION_ACCESS_READ_AUTHORITY = "FLOW_TAB_RELATION_ACCESS_READ";
+    public static final String FLOW_TAB_ATTACHMENT_ACCESS_WRITE_AUTHORITY = "FLOW_TAB_ATTACHMENT_ACCESS_WRITE";
+    public static final String FLOW_TAB_DETAIL_ACCESS_WRITE_AUTHORITY = "FLOW_TAB_DETAIL_ACCESS_WRITE";
+    public static final String FLOW_TAB_EMAIL_ACCESS_WRITE_AUTHORITY = "FLOW_TAB_EMAIL_ACCESS_WRITE";
+    public static final String FLOW_TAB_HISTORY_ACCESS_WRITE_AUTHORITY = "FLOW_TAB_HISTORY_ACCESS_WRITE";
+    public static final String FLOW_TAB_NOTE_ACCESS_WRITE_AUTHORITY = "FLOW_TAB_NOTE_ACCESS_WRITE";
+    public static final String FLOW_TAB_RELATION_ACCESS_WRITE_AUTHORITY = "FLOW_TAB_RELATION_ACCESS_WRITE";
+    public static final String ADMIN_CLASSES_VIEW_AUTHORITY = "ADMIN_CLASSES_VIEW";
+    public static final String ADMIN_CLASSES_MODIFY_AUTHORITY = "ADMIN_CLASSES_MODIFY";
+    public static final String ADMIN_PROCESSES_VIEW_AUTHORITY = "ADMIN_PROCESSES_VIEW";
+    public static final String ADMIN_PROCESSES_MODIFY_AUTHORITY = "ADMIN_PROCESSES_MODIFY";
+    public static final String ADMIN_DOMAINS_VIEW_AUTHORITY = "ADMIN_DOMAINS_VIEW";
+    public static final String ADMIN_DOMAINS_MODIFY_AUTHORITY = "ADMIN_DOMAINS_MODIFY";
+    public static final String ADMIN_LOOKUPS_VIEW_AUTHORITY = "ADMIN_LOOKUPS_VIEW";
+    public static final String ADMIN_LOOKUPS_MODIFY_AUTHORITY = "ADMIN_LOOKUPS_MODIFY";
+    public static final String ADMIN_VIEWS_VIEW_AUTHORITY = "ADMIN_VIEWS_VIEW";
+    public static final String ADMIN_VIEWS_MODIFY_AUTHORITY = "ADMIN_VIEWS_MODIFY";
+    public static final String ADMIN_DASHBOARDS_VIEW_AUTHORITY = "ADMIN_DASHBOARDS_VIEW";
+    public static final String ADMIN_DASHBOARDS_MODIFY_AUTHORITY = "ADMIN_DASHBOARDS_MODIFY";
+    public static final String ADMIN_REPORTS_VIEW_AUTHORITY = "ADMIN_REPORTS_VIEW";
+    public static final String ADMIN_REPORTS_MODIFY_AUTHORITY = "ADMIN_REPORTS_MODIFY";
+    public static final String ADMIN_MENUS_VIEW_AUTHORITY = "ADMIN_MENUS_VIEW";
+    public static final String ADMIN_MENUS_MODIFY_AUTHORITY = "ADMIN_MENUS_MODIFY";
+    public static final String ADMIN_NAVTREES_VIEW_AUTHORITY = "ADMIN_NAVTREES_VIEW";
+    public static final String ADMIN_NAVTREES_MODIFY_AUTHORITY = "ADMIN_NAVTREES_MODIFY";
+    public static final String ADMIN_ROLES_VIEW_AUTHORITY = "ADMIN_ROLES_VIEW";
+    public static final String ADMIN_ROLES_MODIFY_AUTHORITY = "ADMIN_ROLES_MODIFY";
+    public static final String ADMIN_USERS_VIEW_AUTHORITY = "ADMIN_USERS_VIEW";
+    public static final String ADMIN_USERS_MODIFY_AUTHORITY = "ADMIN_USERS_MODIFY";
+    public static final String ADMIN_JOBS_VIEW_AUTHORITY = "ADMIN_JOBS_VIEW";
+    public static final String ADMIN_JOBS_MODIFY_AUTHORITY = "ADMIN_JOBS_MODIFY";
+    public static final String ADMIN_EMAIL_VIEW_AUTHORITY = "ADMIN_EMAIL_VIEW";
+    public static final String ADMIN_EMAIL_MODIFY_AUTHORITY = "ADMIN_EMAIL_MODIFY";
+    public static final String ADMIN_UICOMPONENTS_VIEW_AUTHORITY = "ADMIN_UICOMPONENTS_VIEW";
+    public static final String ADMIN_UICOMPONENTS_MODIFY_AUTHORITY = "ADMIN_UICOMPONENTS_MODIFY";
+    public static final String ADMIN_CORECOMPONENTS_VIEW_AUTHORITY = "ADMIN_CORECOMPONENTS_VIEW";
+    public static final String ADMIN_CORECOMPONENTS_MODIFY_AUTHORITY = "ADMIN_CORECOMPONENTS_MODIFY";
+    public static final String ADMIN_CALENDAR_VIEW_AUTHORITY = "ADMIN_CALENDAR_VIEW";
+    public static final String ADMIN_CALENDAR_MODIFY_AUTHORITY = "ADMIN_CALENDAR_MODIFY";
+    public static final String ADMIN_ETL_VIEW_AUTHORITY = "ADMIN_ETL_VIEW";
+    public static final String ADMIN_ETL_MODIFY_AUTHORITY = "ADMIN_ETL_MODIFY";
+    public static final String ADMIN_LOCALIZATION_VIEW_AUTHORITY = "ADMIN_LOCALIZATION_VIEW";
+    public static final String ADMIN_LOCALIZATION_MODIFY_AUTHORITY = "ADMIN_LOCALIZATION_MODIFY";
+    public static final String ADMIN_GIS_VIEW_AUTHORITY = "ADMIN_GIS_VIEW";
+    public static final String ADMIN_GIS_MODIFY_AUTHORITY = "ADMIN_GIS_MODIFY";
+    public static final String ADMIN_BIM_VIEW_AUTHORITY = "ADMIN_BIM_VIEW";
+    public static final String ADMIN_BIM_MODIFY_AUTHORITY = "ADMIN_BIM_MODIFY";
+    public static final String ADMIN_SYSCONFIG_VIEW_AUTHORITY = "ADMIN_SYSCONFIG_VIEW";
+    public static final String ADMIN_SYSCONFIG_MODIFY_AUTHORITY = "ADMIN_SYSCONFIG_MODIFY";
+    public static final String ADMIN_SEARCHFILTERS_VIEW_AUTHORITY = "ADMIN_SEARCHFILTERS_VIEW";
+    public static final String ADMIN_SEARCHFILTERS_MODIFY_AUTHORITY = "ADMIN_SEARCHFILTERS_MODIFY";
+    public static final String ADMIN_DMS_VIEW_AUTHORITY = "ADMIN_DMS_VIEW";
+    public static final String ADMIN_DMS_MODIFY_AUTHORITY = "ADMIN_DMS_MODIFY";
+    public static final String ADMIN_OFFLINE_VIEW_AUTHORITY = "ADMIN_OFFLINE_VIEW";
+    public static final String ADMIN_OFFLINE_MODIFY_AUTHORITY = "ADMIN_OFFLINE_MODIFY";
+    public static final String ADMIN_HOMEPAGES_VIEW_AUTHORITY = "ADMIN_HOMEPAGES_VIEW";
+    public static final String ADMIN_HOMEPAGES_MODIFY_AUTHORITY = "ADMIN_HOMEPAGES_MODIFY";
+    /* END */
+}

@@ -1,0 +1,27 @@
+.relationgraph {
+    & .x-grid-group-hd-collapsible {
+        .x-grid-group-title {
+
+            &::before{
+                // &:before {
+                    content: ""
+                    // }
+                }
+            }
+    }
+
+    & .x-grid-group-hd-collapsed {
+        .x-grid-group-title {
+
+            &::before{
+                // &:before {
+                    content:  "\f196"
+                    // }
+                }
+            }
+    }
+
+    & .x-grid-group-hd{
+        cursor: default;
+    }
+}

@@ -1,0 +1,7 @@
+$cmdbuildui-calendar-border-style: solid;
+$cmdbuildui-calendar-border-width: 1px;
+$cmdbuildui-calendar-border-color: dynamic(mix(#000, $neutral-light-color, 10%));
+
+$cmdbuildui-calendar-default-event-background: dynamic($main-color-primary);
+$cmdbuildui-calendar-default-event-border-color: dynamic($main-color-primary);
+$cmdbuildui-calendar-default-event-color: #FFF;

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.cmdbuild</groupId>
+        <artifactId>cmdbuild-services-rest</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>cmdbuild-services-rest-commons</artifactId>
+
+    <dependencies>
+
+        <!-- for components: EasyuploadService, UserCardService, UserDomainService; for permissions -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-core-all</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <!-- For serialization in WS Responses -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-services-serialization</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-bim-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-report-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.cmdbuild</groupId>
+            <artifactId>cmdbuild-gis-api</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-dms-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <!-- authorization --> 
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-core-permissions</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <!-- swagger -->
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>2.2.41</version>
+        </dependency>
+        <dependency>
+            <groupId>org.cmdbuild</groupId>
+            <artifactId>cmdbuild-core-homepage</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

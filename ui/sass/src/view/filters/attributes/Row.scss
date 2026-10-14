@@ -1,0 +1,8 @@
+.#{$prefix}filters-attributes-removebutton {
+    margin-right: $filter-block-inset;
+    margin-top: $filter-block-inset / 2;
+
+    .#{$prefix}tool-tool-el {
+        color: $main-color-secondary;
+    }
+}

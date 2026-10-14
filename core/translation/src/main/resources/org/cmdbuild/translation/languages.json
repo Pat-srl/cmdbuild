@@ -1,0 +1,138 @@
+[
+	{
+		"code": "ar",
+		"description": "العربية"
+	},
+	{
+		"code": "bg",
+		"description": "Български"
+	},
+	{
+		"code": "cs",
+		"description": "Čeština"
+	},
+	{
+		"code": "da",
+		"description": "Dansk"
+	},
+	{
+		"code": "de",
+		"description": "Deutsch"
+	},
+	{
+		"code": "el_GR",
+		"description": "Ελληνικά"
+	},
+	{
+		"code": "en",
+		"description": "English"
+	},
+	{
+		"code": "es",
+		"description": "Español"
+	},
+	{
+		"code": "fa",
+		"description": "Persian"
+	},
+	{
+		"code": "fr",
+		"description": "Français"
+	},
+	{
+		"code": "hr",
+		"description": "Hrvatski"
+	},
+	{
+		"code": "hu",
+		"description": "Hungarian"
+	},
+	{
+		"code": "id",
+		"description": "Bahasa Indonesia"
+	},
+	{
+		"code": "it",
+		"description": "Italiano"
+	},
+	{
+		"code": "ja",
+		"description": "日本語"
+	},
+	{
+		"code": "ko",
+		"description": "한국어"
+	},
+	{
+		"code": "mn",
+		"description": "Монгол"
+	},
+	{
+		"code": "ms",
+		"description": "Bahasa Melayu"
+	},
+	{
+		"code": "nl",
+		"description": "Nederlands"
+	},
+	{
+		"code": "no",
+		"description": "Norsk"
+	},
+	{
+		"code": "pl",
+		"description": "Polski"
+	},
+	{
+		"code": "pt_BR",
+		"description": "Português Brasil"
+	},
+	{
+		"code": "pt_PT",
+		"description": "Português Portugal"
+	},
+	{
+		"code": "ro",
+		"description": "Română"
+	},
+	{
+		"code": "ru",
+		"description": "Русский"
+	},
+	{
+		"code": "sk",
+		"description": "Slovenčina"
+	},
+	{
+		"code": "sl",
+		"description": "Slovenščina"
+	},
+	{
+		"code": "sr",
+		"description": "Srpski"
+	},
+	{
+		"code": "sr_RS",
+		"description": "Српски"
+	},
+	{
+		"code": "th",
+		"description": "ภาษาไทย"
+	},
+	{
+		"code": "tr",
+		"description": "Türkçe"
+	},
+	{
+		"code": "ua",
+		"description": "Українська"
+	},
+	{
+		"code": "vn",
+		"description": "Tiếng Việt"
+	},
+	{
+		"code": "zh_CN",
+		"description": "中文"
+	}
+]

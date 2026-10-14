@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>
+GitLab
+</title>
+
+
+<style>img {
+max-width: 100%; height: auto;
+}
+</style>
+</head>
+<body>
+<div class="content">
+<div>
+<p dir="auto">In seguito ai startup improvement fatti con commit <a href="http://gitlab.example.com/cmdbuild/cmdbuild/commit/5afb444a0e6871ed93878a279df016ae0e000e19" data-original="5afb444a0e6871ed93878a279df016ae0e000e19" data-link="false" data-project="8" data-commit="5afb444a0e6871ed93878a279df016ae0e000e19" data-reference-type="commit" data-container="body" data-placement="bottom" title="skip jar scanning, improve tomcat startup time" class="gfm gfm-commit has-tooltip">5afb444a</a>
+i tempi di esecuzione sono:</p>
+
+<ul dir="auto">
+<li>Caso 1:</li>
+</ul>
+
+<pre class="code highlight js-syntax-highlight plaintext" lang="plaintext" v-pre="true"><code><span id="LC1" class="line" lang="plaintext">____________________________ RESULTS _______________________________</span>
+<span id="LC2" class="line" lang="plaintext">the execution time with java 8 hotspot was: 28 seconds</span>
+<span id="LC3" class="line" lang="plaintext">the execution time with java 9 hotspot was: 31 seconds</span>
+<span id="LC4" class="line" lang="plaintext">the execution time with java 11 hotspot was: 31 seconds</span>
+<span id="LC5" class="line" lang="plaintext">the execution time with java 8 openj9 was: 35 seconds</span>
+<span id="LC6" class="line" lang="plaintext">the execution time with java 9 openj9 was: 36 seconds</span>
+<span id="LC7" class="line" lang="plaintext">the execution time with java 11 openj9 was: 35 seconds</span>
+<span id="LC8" class="line" lang="plaintext"></span></code></pre>
+<ul dir="auto">
+<li>Caso 2:</li>
+</ul>
+
+<pre class="code highlight js-syntax-highlight plaintext" lang="plaintext" v-pre="true"><code><span id="LC1" class="line" lang="plaintext">____________________________ RESULTS _______________________________</span>
+<span id="LC2" class="line" lang="plaintext">the execution time with java 8 hotspot was: 30 seconds</span>
+<span id="LC3" class="line" lang="plaintext">the execution time with java 9 hotspot was: 32 seconds</span>
+<span id="LC4" class="line" lang="plaintext">the execution time with java 11 hotspot was: 28 seconds</span>
+<span id="LC5" class="line" lang="plaintext">the execution time with java 8 openj9 was: 33 seconds</span>
+<span id="LC6" class="line" lang="plaintext">the execution time with java 9 openj9 was: 35 seconds</span>
+<span id="LC7" class="line" lang="plaintext">the execution time with java 11 openj9 was: 34 seconds</span>
+<span id="LC8" class="line" lang="plaintext"></span></code></pre>
+<ul dir="auto">
+<li>Caso 3:</li>
+</ul>
+
+<pre class="code highlight js-syntax-highlight plaintext" lang="plaintext" v-pre="true"><code><span id="LC1" class="line" lang="plaintext">____________________________ RESULTS _______________________________</span>
+<span id="LC2" class="line" lang="plaintext">the execution time with java 8 hotspot was: 29 seconds</span>
+<span id="LC3" class="line" lang="plaintext">the execution time with java 9 hotspot was: 29 seconds</span>
+<span id="LC4" class="line" lang="plaintext">the execution time with java 11 hotspot was: 28 seconds</span>
+<span id="LC5" class="line" lang="plaintext">the execution time with java 8 openj9 was: 34 seconds</span>
+<span id="LC6" class="line" lang="plaintext">the execution time with java 9 openj9 was: 34 seconds</span>
+<span id="LC7" class="line" lang="plaintext">the execution time with java 11 openj9 was: 34 seconds</span>
+<span id="LC8" class="line" lang="plaintext"></span></code></pre>
+</div>
+
+
+</div>
+<div class="footer" style="margin-top: 10px;">
+<p style="font-size: small; color: #777;">
+-
+<br>
+<a href="http://gitlab.example.com/cmdbuild/cmdbuild/issues/1493#note_10636">View it on GitLab</a>.
+<br>
+You're receiving this email because of your account on gitlab.example.com.
+If you'd like to receive fewer emails, you can
+<a href="http://gitlab.example.com/sent_notifications/a4ec9dee226ddf79015b23731bc7b5f0/unsubscribe">unsubscribe</a>
+from this thread or
+adjust your notification settings.
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"EmailMessage","action":{"@type":"ViewAction","name":"View Issue","url":"http://gitlab.example.com/cmdbuild/cmdbuild/issues/1493#note_10636"}}</script>
+</p>
+</div>
+</body>
+</html>

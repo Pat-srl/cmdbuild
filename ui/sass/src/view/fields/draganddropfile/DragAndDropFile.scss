@@ -1,0 +1,65 @@
+.#{$prefix}draganddropfilefield {
+    .#{$prefix}grid {
+        border: 1px solid transparent;
+        margin-bottom: 8px;
+        margin-left: 1px;
+        margin-right: 1px;
+
+        .#{$prefix}panel-body-default {
+            background-color: transparent !important;
+        }
+
+        .#{$prefix}grid-empty {
+            background-color: $neutral-light-color;
+            color: $main-neutral-gray-3;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .status-ready {
+            color: $cmdbuild-status-success;
+        }
+        .status-warning {
+            color: $cmdbuild-status-warning;
+        }
+        .status-error {
+            color: $cmdbuild-status-error;
+        }
+        .status-done {
+            color: lighten($color: $color, $amount: 30%);
+        }
+    }
+
+    &.#{$prefix}error {
+        .#{$prefix}grid {
+            border-color: $form-field-invalid-border-color;
+        }
+    }
+
+    &.#{$prefix}drag-over {
+        &::before {
+            content: ' ';
+            border: 2px dashed $form-field-border-color;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: $neutral-light-color;
+        }
+
+        &.#{$prefix}error {
+            &::before {
+                border-color: $form-field-invalid-border-color;
+            }
+
+            .#{$prefix}grid {
+                border-color: transparent;
+            }
+        }
+
+        .#{$prefix}grid-empty {
+            background-color: transparent;
+        }
+    }
+}

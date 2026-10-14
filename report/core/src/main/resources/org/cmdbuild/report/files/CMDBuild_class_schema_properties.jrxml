@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CMDBuild_class_schema_properties" pageWidth="545" pageHeight="842" columnWidth="545" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="19384ec7-85e5-4ad0-8d5d-9ce93931abe2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<parameter name="class" class="java.lang.String"/>
+	<queryString language="plsql">
+		<![CDATA[SELECT 
+ table_name as classname,
+_cm3_class_description_get(_cm3_utils_name_to_regclass(table_name)) as classdescription, 
+_cm3_class_is_process(_cm3_utils_name_to_regclass(table_name)) as classisprocess,
+ _cm3_class_description_get(_cm3_utils_name_to_regclass(parent_name)) as classsuperclass,
+_cm3_class_is_superclass(_cm3_utils_name_to_regclass(table_name)) as classissuperclass
+ FROM _cm3_class_list_detailed() WHERE table_name = $P{class}]]>
+	</queryString>
+	<field name="classname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="classname"/>
+		<property name="com.jaspersoft.studio.field.label" value="classname"/>
+	</field>
+	<field name="classdescription" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="classdescription"/>
+		<property name="com.jaspersoft.studio.field.label" value="classdescription"/>
+	</field>
+	<field name="classisprocess" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="classisprocess"/>
+		<property name="com.jaspersoft.studio.field.label" value="classisprocess"/>
+	</field>
+	<field name="classsuperclass" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="classsuperclass"/>
+		<property name="com.jaspersoft.studio.field.label" value="classsuperclass"/>
+	</field>
+	<field name="classissuperclass" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="classissuperclass"/>
+		<property name="com.jaspersoft.studio.field.label" value="classissuperclass"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="6" width="545" height="22" isPrintWhenDetailOverflows="true" backcolor="#969696" uuid="f39e9c12-45f1-4deb-bc72-d33594585762">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[General properties]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="28" width="544" height="1" uuid="ffd69b71-d499-4010-8bec-d579f35b0924"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="88" width="94" height="16" forecolor="#030303" backcolor="#FFFFFF" uuid="c0b7c428-5f26-4a74-9b13-042d534e5e37"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Is superclass:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="95" y="70" width="257" height="16" uuid="283adbe9-eef5-435d-b70c-3ff3a25d9b80">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classsuperclass}.contentEquals( "Class" )||$F{classsuperclass}.contentEquals( "Activity" )? "Default": $F{classsuperclass}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="70" width="94" height="16" forecolor="#030303" backcolor="#FFFFFF" uuid="84f7a192-048c-48cf-a9b8-420f1e8149a2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Inherits:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="99" y="89" width="22" height="14" uuid="fcfd990c-0ca3-4b03-8596-2b5a1fd388a7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[$F{classissuperclass}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["checked-checkbox-50.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="34" width="94" height="16" forecolor="#030303" backcolor="#FFFFFF" uuid="de1178f8-e8fb-4e20-8b68-afb7f9a1c343">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Name:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="95" y="34" width="257" height="16" uuid="ab4c17d9-fb18-427e-b019-23c44af188b3">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classdescription}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="99" y="89" width="22" height="14" uuid="4b19c544-5d46-483b-b73a-7c1b112ebdb4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[!$F{classissuperclass}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["unchecked-checkbox-50.png"]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="95" y="52" width="257" height="16" uuid="edd6a794-312a-4d9a-bb83-b0f8a1f07567">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classdescription}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="52" width="94" height="16" forecolor="#030303" backcolor="#FFFFFF" uuid="8327d822-7c2d-497b-8874-5265fafa6a3e">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Description:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

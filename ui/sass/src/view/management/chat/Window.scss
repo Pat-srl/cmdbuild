@@ -1,0 +1,53 @@
+.#{$prefix}chat-grid {
+    .#{$prefix}grid-cell-inner {
+        white-space: normal;
+        padding: 4px;
+
+        .#{$prefix}chat-message {
+            display: flex;
+            flex-direction: column;
+
+            &.#{$prefix}chat-message-outgoing {
+                align-items: flex-end;
+
+                .#{$prefix}chat-message-text {
+                    background-color: $chat-outgoing-messages-background;
+                    border-bottom-right-radius: 0;
+                    margin-left: 20px;
+                }
+            }
+
+            &.#{$prefix}chat-message-incoming {
+                align-items: flex-start;
+
+                .#{$prefix}chat-message-text {
+                    background-color: $chat-incomming-messages-background;
+                    border-bottom-left-radius: 0;
+                    margin-right: 20px;
+                }
+            }
+
+            &.#{$prefix}chat-message-first {
+                border-top: 1px dashed $chat-outgoing-messages-background;
+            }
+
+            .#{$prefix}chat-message-text {
+                padding: 4px 7px;
+                border-radius: 10px;
+                word-break: break-word;
+            }
+
+            .#{$prefix}chat-message-date {
+                color: $chat-date-color;
+                z-index: 101;
+            }
+        }
+    }
+
+    .#{$prefix}grid-item-alt {
+        background-color: transparent;
+    }
+    .#{$prefix}grid-item-over {
+        background-color: transparent;
+    }
+}

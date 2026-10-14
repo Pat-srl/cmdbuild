@@ -1,0 +1,19 @@
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+   
+<!--	 Uncomment the following line to view details on cad stuff 
+        <logger name="org.cmdbuild.utils.cad" level="TRACE"/>
+	<logger name="org.cmdbuild.utils.cad" level="TRACE"/>
+
+        <logger name="org.cmdbuild.utils.exec" level="DEBUG"/>
+	<logger name="org.kabeja" level="DEBUG"/>-->
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

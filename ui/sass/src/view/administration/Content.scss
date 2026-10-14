@@ -1,0 +1,878 @@
+@if $include-fieldset-default-ui {
+    @include extjs-fieldset-ui(
+        $ui: 'administration-formpagination',
+        $ui-header-font-size: $font-size,
+        $ui-header-font-weight: bold,
+        $ui-header-color: $administration-base-color,
+        $ui-border-width: 0,
+        $ui-tool-expand-glyph: $fa-var-angle-up,
+        $ui-tool-collapse-glyph: $fa-var-angle-down,
+        $ui-collapse-tool-margin: 2px 0 0 4px
+    );
+}
+
+.x-fieldset-header-tool-administration-formpagination > .x-tool-img,
+.x-fieldset-header-tool-administration-formpagination > .x-tool-img:hover,
+.x-fieldset-header-tool-administration-formpagination > .x-tool-img:focus {
+    color: $administration-base-color;
+    opacity: 1;
+}
+
+.administration .#{$prefix}fieldset-administration-formpagination {
+    background: #fff;
+
+    .#{$prefix}fieldset-header {
+        margin-left: 10px;
+    }
+}
+
+.#{$prefix}fieldset-header-administration-formpagination .#{$prefix}fieldset-header-tool-administration-formpagination {
+    float: right;
+}
+
+.administration .#{$prefix}form-item.#{$prefix}column {
+    &:first-of-type {
+        padding-right: 15px;
+    }
+
+    &.ignore-first-type-rule {
+        padding-right: 0 !important;
+    }
+}
+
+@include extjs-button-ui(
+    $ui: 'administration-action-small',
+
+    $border-radius: $components-border-radius,
+    $border-width: 1px,
+
+    $border-color: $administration-action-color,
+    $border-color-over: button-default-border-color-over($administration-action-color),
+    $border-color-focus: button-default-border-color-focus($administration-action-color),
+    $border-color-pressed: button-default-border-color-pressed($administration-action-color),
+    $border-color-focus-over: button-default-border-color-over($administration-action-color),
+    $border-color-focus-pressed: button-default-border-color-pressed($administration-action-color),
+    $border-color-disabled: button-default-border-color-disabled($administration-action-color),
+    $padding: $button-small-padding,
+    $text-padding: $button-small-text-padding,
+
+    $background-color: $administration-action-color,
+    $background-color-over: button-default-background-color-over($administration-action-color),
+    $background-color-focus: button-default-background-color-focus($administration-action-color),
+    $background-color-pressed: button-default-background-color-pressed($administration-action-color),
+    $background-color-focus-over: button-default-background-color-over($administration-action-color),
+    $background-color-focus-pressed: button-default-background-color-pressed($administration-action-color),
+    $background-color-disabled: button-default-background-color-disabled($administration-action-color),
+    $color: $button-default-color,
+    $color-over: $button-default-color-over,
+    $color-focus: $button-default-color-focus,
+    $color-pressed: $button-default-color-pressed,
+    $color-focus-over: $button-default-color-focus-over,
+    $color-focus-pressed: $button-default-color-focus-pressed,
+    $color-disabled: $button-default-color-disabled,
+
+    $font-size: $button-small-font-size,
+    $font-size-over: $button-small-font-size-over,
+    $font-size-focus: $button-small-font-size-focus,
+    $font-size-pressed: $button-small-font-size-pressed,
+    $font-size-focus-over: $button-small-font-size-focus-over,
+    $font-size-focus-pressed: $button-small-font-size-focus-pressed,
+    $font-size-disabled: $button-small-font-size-disabled,
+
+    $font-weight: $button-small-font-weight,
+    $font-weight-over: $button-small-font-weight-over,
+    $font-weight-focus: $button-small-font-weight-focus,
+    $font-weight-pressed: $button-small-font-weight-pressed,
+    $font-weight-focus-over: $button-small-font-weight-focus-over,
+    $font-weight-focus-pressed: $button-small-font-weight-focus-pressed,
+    $font-weight-disabled: $button-small-font-weight-disabled,
+
+    $font-family: $button-small-font-family,
+    $font-family-over: $button-small-font-family-over,
+    $font-family-focus: $button-small-font-family-focus,
+    $font-family-pressed: $button-small-font-family-pressed,
+    $font-family-focus-over: $button-small-font-family-focus-over,
+    $font-family-focus-pressed: $button-small-font-family-focus-pressed,
+    $font-family-disabled: $button-small-font-family-disabled,
+
+    $icon-size: $button-small-icon-size,
+    $glyph-font-size: $button-small-icon-size,
+    $line-height: $button-small-line-height,
+    $icon-spacing: $button-small-icon-spacing,
+    $glyph-color: $button-default-color,
+    $glyph-opacity: $button-default-glyph-opacity,
+    $arrow-width: $button-small-arrow-width,
+    $arrow-height: $button-small-arrow-height,
+    $arrow-glyph: $button-small-arrow-glyph,
+    $arrow-glyph-color: $button-default-color,
+    $split-width: $button-small-split-width,
+    $split-height: $button-small-split-height,
+    $split-line-width: $button-small-split-line-width,
+    $split-line-color: $button-default-split-line-color,
+    $opacity-disabled: $button-opacity-disabled,
+    $inner-opacity-disabled: $button-inner-opacity-disabled
+);
+
+@include extjs-button-ui(
+    $ui: 'administration-primary-outline-small',
+
+    $border-radius: $components-border-radius,
+    $border-width: 1px,
+
+    $border-color: $administration-action-color,
+    $border-color-over: button-default-border-color-over($administration-action-color),
+    $border-color-focus: button-default-border-color-focus($administration-action-color),
+    $border-color-pressed: button-default-border-color-pressed($administration-action-color),
+    $border-color-focus-over: button-default-border-color-over($administration-action-color),
+    $border-color-focus-pressed: button-default-border-color-pressed($administration-action-color),
+    $border-color-disabled: button-default-border-color-disabled($administration-action-color),
+    $padding: $button-small-padding,
+    $text-padding: $button-small-text-padding,
+
+    $background-color: transparent,
+    $background-color-over: transparent,
+    $background-color-focus: transparent,
+    $background-color-pressed: transparent,
+    $background-color-focus-over: transparent,
+    $background-color-focus-pressed: transparent,
+    $background-color-disabled: transparent,
+
+    $color: $administration-action-color,
+    $color-over: button-default-border-color-over($administration-action-color),
+    $color-focus: button-default-border-color-focus($administration-action-color),
+    $color-pressed: button-default-border-color-pressed($administration-action-color),
+    $color-focus-over: button-default-border-color-over($administration-action-color),
+    $color-focus-pressed: button-default-border-color-pressed($administration-action-color),
+    $color-disabled: button-default-border-color-disabled($administration-action-color),
+    $font-size: $button-small-font-size,
+    $font-size-over: $button-small-font-size-over,
+    $font-size-focus: $button-small-font-size-focus,
+    $font-size-pressed: $button-small-font-size-pressed,
+    $font-size-focus-over: $button-small-font-size-focus-over,
+    $font-size-focus-pressed: $button-small-font-size-focus-pressed,
+    $font-size-disabled: $button-small-font-size-disabled,
+
+    $font-weight: 600,
+    $font-weight-over: 600,
+    $font-weight-focus: 600,
+    $font-weight-pressed: 600,
+    $font-weight-focus-over: 600,
+    $font-weight-focus-pressed: 600,
+    $font-weight-disabled: 600,
+
+    $font-family: $button-small-font-family,
+    $font-family-over: $button-small-font-family-over,
+    $font-family-focus: $button-small-font-family-focus,
+    $font-family-pressed: $button-small-font-family-pressed,
+    $font-family-focus-over: $button-small-font-family-focus-over,
+    $font-family-focus-pressed: $button-small-font-family-focus-pressed,
+    $font-family-disabled: $button-small-font-family-disabled,
+
+    $icon-size: $button-small-icon-size,
+    $glyph-font-size: $button-small-icon-size,
+    $line-height: $button-small-line-height,
+    $icon-spacing: $button-small-icon-spacing,
+    $glyph-color: $button-default-color,
+    $glyph-opacity: $button-default-glyph-opacity,
+    $arrow-width: $button-small-arrow-width,
+    $arrow-height: $button-small-arrow-height,
+    $arrow-glyph: $button-small-arrow-glyph,
+    $arrow-glyph-color: $administration-action-color,
+    $split-width: $button-small-split-width,
+    $split-height: $button-small-split-height,
+    $split-line-width: $button-small-split-line-width,
+    $split-line-color: $button-default-split-line-color,
+    $opacity-disabled: $button-opacity-disabled,
+    $inner-opacity-disabled: $button-inner-opacity-disabled
+);
+
+@include extjs-button-ui(
+    $ui: 'administration-secondary-action-small',
+
+    $border-radius: $components-border-radius,
+    $border-width: 1px,
+
+    $border-color: $administration-secondary-action-color,
+    $border-color-over: button-default-border-color-over($administration-secondary-action-color),
+    $border-color-focus: button-default-border-color-focus($administration-secondary-action-color),
+    $border-color-pressed: button-default-border-color-pressed($administration-secondary-action-color),
+    $border-color-focus-over: button-default-border-color-over($administration-secondary-action-color),
+    $border-color-focus-pressed: button-default-border-color-pressed($administration-secondary-action-color),
+    $border-color-disabled: button-default-border-color-disabled($administration-secondary-action-color),
+    $padding: $button-small-padding,
+    $text-padding: $button-small-text-padding,
+
+    $background-color: transparent,
+    $background-color-over: transparent,
+    $background-color-focus: transparent,
+    $background-color-pressed: transparent,
+    $background-color-focus-over: transparent,
+    $background-color-focus-pressed: transparent,
+    $background-color-disabled: transparent,
+
+    $color: $administration-secondary-action-color,
+    $color-over: button-default-border-color-over($administration-secondary-action-color),
+    $color-focus: button-default-border-color-focus($administration-secondary-action-color),
+    $color-pressed: button-default-border-color-pressed($administration-secondary-action-color),
+    $color-focus-over: button-default-border-color-over($administration-secondary-action-color),
+    $color-focus-pressed: button-default-border-color-pressed($administration-secondary-action-color),
+    $color-disabled: button-default-border-color-disabled($administration-secondary-action-color),
+    $font-size: $button-small-font-size,
+    $font-size-over: $button-small-font-size-over,
+    $font-size-focus: $button-small-font-size-focus,
+    $font-size-pressed: $button-small-font-size-pressed,
+    $font-size-focus-over: $button-small-font-size-focus-over,
+    $font-size-focus-pressed: $button-small-font-size-focus-pressed,
+    $font-size-disabled: $button-small-font-size-disabled,
+
+    $font-weight: $button-small-font-weight,
+    $font-weight-over: $button-small-font-weight-over,
+    $font-weight-focus: $button-small-font-weight-focus,
+    $font-weight-pressed: $button-small-font-weight-pressed,
+    $font-weight-focus-over: $button-small-font-weight-focus-over,
+    $font-weight-focus-pressed: $button-small-font-weight-focus-pressed,
+    $font-weight-disabled: $button-small-font-weight-disabled,
+
+    $font-family: $button-small-font-family,
+    $font-family-over: $button-small-font-family-over,
+    $font-family-focus: $button-small-font-family-focus,
+    $font-family-pressed: $button-small-font-family-pressed,
+    $font-family-focus-over: $button-small-font-family-focus-over,
+    $font-family-focus-pressed: $button-small-font-family-focus-pressed,
+    $font-family-disabled: $button-small-font-family-disabled,
+
+    $icon-size: $button-small-icon-size,
+    $glyph-font-size: $button-small-icon-size,
+    $line-height: $button-small-line-height,
+    $icon-spacing: $button-small-icon-spacing,
+    $glyph-color: $button-default-color,
+    $glyph-opacity: $button-default-glyph-opacity,
+    $arrow-width: $button-small-arrow-width,
+    $arrow-height: $button-small-arrow-height,
+    $arrow-glyph: $button-small-arrow-glyph,
+    $arrow-glyph-color: $button-default-color,
+    $split-width: $button-small-split-width,
+    $split-height: $button-small-split-height,
+    $split-line-width: $button-small-split-line-width,
+    $split-line-color: $button-default-split-line-color,
+    $opacity-disabled: $button-opacity-disabled,
+    $inner-opacity-disabled: $button-inner-opacity-disabled
+);
+
+@include extjs-button-ui(
+    $ui: 'administration-secondary-outline-small',
+
+    $border-radius: $components-border-radius,
+    $border-width: 1px,
+
+    $border-color: $administration-secondary-action-color,
+    $border-color-over: button-default-border-color-over($administration-secondary-action-color),
+    $border-color-focus: button-default-border-color-focus($administration-secondary-action-color),
+    $border-color-pressed: button-default-border-color-pressed($administration-secondary-action-color),
+    $border-color-focus-over: button-default-border-color-over($administration-secondary-action-color),
+    $border-color-focus-pressed: button-default-border-color-pressed($administration-secondary-action-color),
+    $border-color-disabled: button-default-border-color-disabled($administration-secondary-action-color),
+    $padding: $button-small-padding,
+    $text-padding: $button-small-text-padding,
+
+    $color: $color,
+    $color-over: mix(#000, $color, 8%),
+    $color-focus: $color,
+    $color-pressed: mix(#000, $color, 25%),
+    $color-focus-over: mix(#000, $color, 8%),
+    $color-focus-pressed: mix(#000, $color, 25%),
+    $color-disabled: $color,
+
+    $font-size: $button-small-font-size,
+    $font-size-over: $button-small-font-size-over,
+    $font-size-focus: $button-small-font-size-focus,
+    $font-size-pressed: $button-small-font-size-pressed,
+    $font-size-focus-over: $button-small-font-size-focus-over,
+    $font-size-focus-pressed: $button-small-font-size-focus-pressed,
+    $font-size-disabled: $button-small-font-size-disabled,
+
+    $font-weight: $button-small-font-weight,
+    $font-weight-over: $button-small-font-weight-over,
+    $font-weight-focus: $button-small-font-weight-focus,
+    $font-weight-pressed: $button-small-font-weight-pressed,
+    $font-weight-focus-over: $button-small-font-weight-focus-over,
+    $font-weight-focus-pressed: $button-small-font-weight-focus-pressed,
+    $font-weight-disabled: $button-small-font-weight-disabled,
+
+    $font-family: $button-small-font-family,
+    $font-family-over: $button-small-font-family-over,
+    $font-family-focus: $button-small-font-family-focus,
+    $font-family-pressed: $button-small-font-family-pressed,
+    $font-family-focus-over: $button-small-font-family-focus-over,
+    $font-family-focus-pressed: $button-small-font-family-focus-pressed,
+    $font-family-disabled: $button-small-font-family-disabled,
+
+    $icon-size: $button-small-icon-size,
+    $glyph-font-size: $button-small-icon-size,
+    $line-height: $button-small-line-height,
+    $icon-spacing: $button-small-icon-spacing,
+
+    $glyph-color: $color,
+    $glyph-opacity: $button-default-glyph-opacity,
+    $arrow-width: $button-small-arrow-width,
+    $arrow-height: $button-small-arrow-height,
+    $arrow-glyph: $button-small-arrow-glyph,
+    $arrow-glyph-color: $color,
+    $split-width: $button-small-split-width,
+    $split-height: $button-small-split-height,
+    $split-line-width: $button-small-split-line-width,
+    $split-line-color: $button-default-split-line-color,
+    $opacity-disabled: $button-opacity-disabled,
+    $inner-opacity-disabled: $button-inner-opacity-disabled
+);
+
+@include extjs-button-ui(
+    $ui: 'administration-warning-action-small',
+
+    $background-color: transparent,
+
+    $color: #4c3d00,
+    $color-over: button-default-background-color-over(#4c3d00),
+    $color-focus: button-default-background-color-focus(#4c3d00),
+    $color-pressed: button-default-background-color-pressed(#4c3d00),
+    $color-focus-over: button-default-background-color-over(#4c3d00),
+    $color-focus-pressed: button-default-background-color-pressed(#4c3d00),
+    $color-disabled: button-default-background-color-disabled(#4c3d00),
+    $font-size: $button-small-font-size,
+    $font-size-over: $button-small-font-size-over,
+    $font-size-focus: $button-small-font-size-focus,
+    $font-size-pressed: $button-small-font-size-pressed,
+    $font-size-focus-over: $button-small-font-size-focus-over,
+    $font-size-focus-pressed: $button-small-font-size-focus-pressed,
+    $font-size-disabled: $button-small-font-size-disabled,
+
+    $font-weight: $button-small-font-weight,
+    $font-weight-over: $button-small-font-weight-over,
+    $font-weight-focus: $button-small-font-weight-focus,
+    $font-weight-pressed: $button-small-font-weight-pressed,
+    $font-weight-focus-over: $button-small-font-weight-focus-over,
+    $font-weight-focus-pressed: $button-small-font-weight-focus-pressed,
+    $font-weight-disabled: $button-small-font-weight-disabled,
+
+    $font-family: $button-small-font-family,
+    $font-family-over: $button-small-font-family-over,
+    $font-family-focus: $button-small-font-family-focus,
+    $font-family-pressed: $button-small-font-family-pressed,
+    $font-family-focus-over: $button-small-font-family-focus-over,
+    $font-family-focus-pressed: $button-small-font-family-focus-pressed,
+    $font-family-disabled: $button-small-font-family-disabled,
+
+    $icon-size: $button-small-icon-size,
+    $glyph-font-size: $button-small-icon-size,
+    $line-height: $button-small-line-height,
+    $icon-spacing: $button-small-icon-spacing,
+    $glyph-color: $button-default-color,
+    $glyph-opacity: $button-default-glyph-opacity,
+    $arrow-width: $button-small-arrow-width,
+    $arrow-height: $button-small-arrow-height,
+    $arrow-glyph: $button-small-arrow-glyph,
+    $arrow-glyph-color: $button-default-color,
+    $split-width: $button-small-split-width,
+    $split-height: $button-small-split-height,
+    $split-line-width: $button-small-split-line-width,
+    $split-line-color: $button-default-split-line-color,
+    $opacity-disabled: $button-opacity-disabled,
+    $inner-opacity-disabled: $button-inner-opacity-disabled
+);
+
+.x-btn-administration-warning-action-small {
+    text-decoration: underline;
+    text-decoration-color: #4c3d00;
+    float: right;
+}
+
+/**
+*
+*/
+@include extjs-toolbar-ui(
+    $ui: 'administration-formtoolbar',
+
+    // bar
+    $background-color: #fff,
+    $border-color: $administration-action-color,
+
+    $tool-glyph-color: $administration-action-color
+);
+
+/**
+* Toolbar style
+*/
+
+.#{$prefix}tool.administration-tool.#{$prefix}box-item,
+.#{$prefix}tool.administration-tool.#{$prefix}box-item > .#{$prefix}fa {
+    height: 32px !important;
+}
+
+.administration-tool.btn-as-tool {
+    height: 20px !important;
+    padding: 4px;
+    font-size: 16px;
+    background: white;
+    border-color: white;
+    &.x-btn-menu-active,
+    &.x-btn-pressed,
+    &.x-focus {
+        background: white !important;
+        border-color: white !important;
+        box-shadow: none;
+    }
+    & > .#{$prefix}btn-wrap-administration-tabandtools-small.#{$prefix}btn-arrow {
+        width: 16px !important;
+        height: 16px !important;
+    }
+}
+
+.administration .#{$prefix}toolbar-footer {
+    padding: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 0;
+    background-image: none;
+    background-color: #ececec;
+}
+
+/**
+ * Tool style
+ */
+
+.#{$prefix}tool.administration-tool {
+    .#{$prefix}tool-tool-el {
+        color: $base-color;
+    }
+}
+.#{$prefix}btn.administration-tool {
+    .#{$prefix}btn-icon > .#{$prefix}btn-icon-el {
+        color: $base-color;
+    }
+}
+
+.#{$prefix}panel-administration-tabandtools {
+    .#{$prefix}tab-bar {
+        .administration-tool {
+            margin: 10px 4px auto 4px;
+        }
+    }
+}
+
+.#{$prefix}panel.administration.#{$prefix}panel-default {
+    padding-bottom: 5px;
+}
+
+.#{$prefix}field.administration-input {
+    .#{$prefix}form-trigger-wrap-default {
+        border-color: $administration-secondary-action-color;
+        border-radius: $components-border-radius;
+
+        .#{$prefix}form-text-default {
+            background-color: transparent;
+        }
+    }
+    .#{$prefix}form-trigger-default {
+        color: $color;
+        background-color: transparent;
+    }
+}
+
+/**
+* localization btn
+*/
+.#{$prefix}btn.administration-field-container-btn,
+.#{$prefix}btn.administration-field-container-btn:active {
+    background-color: #fff;
+    border: 0;
+    padding: 8px 0;
+    width: 35px !important;
+
+    &.x-btn-menu-active,
+    &.x-btn-pressed,
+    &.x-focus {
+        background: #fff !important;
+        box-shadow: none !important;
+    }
+
+    .#{$prefix}btn-wrap .#{$prefix}btn-button .#{$prefix}btn-icon-el-default-small {
+        color: $administration-base-color;
+    }
+}
+
+.#{$prefix}btn.administration-field-container-btn .#{$prefix}btn-button-center {
+    text-align: left !important;
+    -webkit-box-pack: left !important;
+    -ms-flex-pack: left !important;
+    justify-content: left !important;
+}
+
+/**
+* Lookup value img container
+*/
+.administration .img-container .#{$prefix}panel-body {
+    border-width: 0;
+}
+
+/**
+* Containers
+*/
+.administration .container-border-1 {
+    border-width: 1px;
+    border-color: #d0d0d0;
+    border-style: solid;
+}
+
+/**
+* Tree panel
+*/
+.administration .tree-noborder .#{$prefix}grid-body {
+    border-top-width: 0;
+}
+
+.#{$prefix}panel-default-outer-border-trbl {
+    border-width: 0px !important;
+}
+
+/**
+* TO CHANGE
+*/
+
+.administration-inline-label-textfield .#{$prefix}form-display-field.#{$prefix}form-display-field-default {
+    margin-top: 8px !important;
+}
+
+.administration span.x-form-item-label-inner.x-form-item-label-inner-default {
+    width: 100%;
+}
+
+/**
+* Grouped combo
+*/
+.#{$prefix}list-plain .#{$prefix}boundlist-item {
+    padding: 5px 3px 5px 10px;
+}
+
+.#{$prefix}list-plain .group-header {
+    padding: 4px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+/**
+* Panel settings
+*/
+.administration .#{$prefix}panel-body-administration-tabandtools > .#{$prefix}panel-body {
+    padding: 0px 10px 0px 10px;
+    overflow: auto;
+    left: 0px;
+    top: 0px;
+}
+
+.administration-mainview-tabpanel {
+    padding: 0px !important;
+}
+
+.administration-mainview-subtabpanel {
+    padding: 0px 0px 0px 0px !important;
+
+    .#{$prefix}tab-bar-body-administration-tabandtools {
+        padding: 8px 4px 0 20px !important;
+    }
+}
+
+[id^='administration-content-menus-treepanels-destinationpanel-'] .#{$prefix}tree-view {
+    padding-bottom: 20px;
+}
+
+.#{$prefix}panel-administration-outer-border-trl {
+    border-top-color: #606060 !important;
+    border-top-width: 1px !important;
+    border-right-color: #606060 !important;
+    border-right-width: 1px !important;
+    border-left-color: #606060 !important;
+    border-left-width: 1px !important;
+}
+
+.#{$prefix}panel-administration-outer-border-rl {
+    border-right-color: #606060 !important;
+    border-right-width: 1px !important;
+    border-left-color: #606060 !important;
+    border-left-width: 1px !important;
+}
+
+.administration-reorder-grid .#{$prefix}action-col-icon {
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.fieldset-fullwidth {
+    padding: 0;
+}
+.administration-reorder-grid [data-componentid^='actioncolumn-'] {
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+}
+.administration-reorder-grid .x-grid-header-ct {
+    border: 0px;
+}
+
+.administration .margin-right5 {
+    margin-right: 5px;
+}
+
+.administration .margin-left5 {
+    margin-left: 5px;
+}
+
+.x-grid-item .x-panel-administration-tabandtools .x-fieldset-administration-formpagination {
+    border-top-width: 0 !important;
+}
+
+.x-grid-item .x-panel-administration-tabandtools .x-fieldset .x-fieldset.x-fieldset-administration-formpagination {
+    margin-top: 15px;
+    border-color: #d0d0d0 !important;
+    border-top-width: 1px !important;
+}
+
+.#{$prefix}grid-item
+    .#{$prefix}panel-administration-tabandtools
+    .#{$prefix}fieldset-header-administration-formpagination {
+    padding: 0 0px 0px;
+    display: none !important;
+}
+
+.#{$prefix}grid-item
+    .#{$prefix}panel-administration-tabandtools
+    .#{$prefix}fieldset
+    .#{$prefix}fieldset
+    .#{$prefix}fieldset-header-administration-formpagination {
+    // padding: 0 0px 0px;
+    display: block !important;
+}
+
+.#{$prefix}grid-item
+    .#{$prefix}panel-administration-tabandtools
+    .#{$prefix}fieldset-administration-formpagination
+    .#{$prefix}fieldset-administration-formpagination {
+    padding: 0px;
+}
+
+.#{$prefix}form-item-default.#{$prefix}item-disabled {
+    //-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    opacity: 0.6;
+}
+
+.with-tool label .#{$prefix}tool {
+    margin-right: 15px;
+}
+.with-tool-nomargin label .#{$prefix}tool {
+    margin-right: 0px;
+}
+.administration .with-tool-nomargin.x-form-item.x-column:first-of-type {
+    padding-right: 0;
+}
+
+.formmode-view label {
+    .required-field-placeholder {
+        // .x-fas.fa-flag {
+        display: none;
+    }
+}
+
+@mixin fieldsmanagements-attribute-source {
+    background-color: #fff !important;
+    flex: 1;
+    margin: 5px;
+    border: 1px solid #c3c3c3;
+    cursor: move;
+    padding: 6px;
+    border-radius: 4px;
+    transition: background-color 0.15s ease-in-out;
+
+    &:hover {
+        background-color: #f2f2f2 !important;
+    }
+}
+
+@mixin fieldsmanagements-attribute-column {
+    min-height: 40px;
+    padding: 0px;
+    margin: 0px;
+    flex: 1;
+    border-style: dashed;
+    border: 1px dashed #c3c3c3;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    text-align: start;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+}
+
+.cmdbuild-fieldsmanagements-row {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    user-select: none;
+    min-height: 40px;
+    margin: 5px;
+    padding: 5px;
+    display: block;
+
+    && .cmdbuild-fieldsmanagements-column {
+        @include fieldsmanagements-attribute-column;
+
+        && .attribute-source {
+            @include fieldsmanagements-attribute-source;
+        }
+    }
+
+    && .#{$prefix}btn.administration-tool .#{$prefix}btn-icon > .#{$prefix}btn-icon-el {
+        color: #919191;
+    }
+}
+
+.attribute-source.is-disabled {
+    color: #a0a0a0 !important;
+
+    * {
+        color: #a0a0a0 !important;
+    }
+
+    opacity: 0.65;
+}
+
+.x-panel .administration-reorder-grid table,
+.x-panel .administration-reorder-grid .x-column-header .x-column-header-over {
+    background-color: unset !important;
+    border: unset !important;
+}
+
+.cmdbuild-fieldsmanagements-column {
+    @include fieldsmanagements-attribute-column;
+
+    && .attribute-source {
+        @include fieldsmanagements-attribute-source;
+    }
+}
+
+.#{$prefix}dashboard-builder-column {
+    .#{$prefix}tool.administration-tool .#{$prefix}tool-tool-el {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+        line-height: 1;
+        overflow: visible;
+    }
+}
+
+.#{$prefix}form-cb-default.#{$prefix}form-invalid-field::before {
+    color: $form-field-invalid-border-color;
+}
+
+.button-mask {
+    background: rgba(200, 54, 54, 0.1) !important;
+    right: -1px !important;
+    left: -1px !important;
+    top: -4px !important;
+}
+
+.tasks-grid-action {
+    // margin: 0 3px;
+    color: $administration-action-color;
+}
+.tasks-grid-action-disabled.fa-square,
+.tasks-grid-action-play.fa-square {
+    cursor: initial !important;
+}
+.x-action-col-icon.x-action-col-2.tasks-grid-action-play {
+    padding-right: 25px;
+}
+.tasks-grid-action-play.enabled {
+    color: #33cc00;
+}
+
+.tasks-grid-action-stop.enabled {
+    color: #f81503;
+}
+
+.tasks-grid-action-stop.disabled,
+.tasks-grid-action-play.disabled {
+    color: '#595959';
+}
+
+.x-fieldcontainer-default-cell {
+    && .x-grid-widgetcolumn-cell-inner {
+        padding: unset;
+    }
+}
+
+.grid-displayfield-container {
+    && .x-vbox-form-item {
+        margin-bottom: unset;
+    }
+
+    && .x-form-display-field-default {
+        margin-top: unset;
+        min-height: unset;
+    }
+}
+
+.input-action-button {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    padding: 0px !important;
+    font-size: 16px !important;
+    font-weight: 400;
+
+    && .x-btn-icon-el::before {
+        color: #686868;
+    }
+}
+
+.input-action-button-light {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    padding: 0px !important;
+    font-size: 16px !important;
+    font-weight: 400;
+
+    && .x-btn-icon-el::before {
+        color: #919191;
+    }
+}
+
+.#{$prefix}form-readonly .ace_gutter {
+    /* IE 8 */
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+
+    /* IE 5-7 */
+    filter: alpha(opacity=50);
+
+    /* Netscape */
+    -moz-opacity: 0.5;
+
+    /* Safari 1.x */
+    -khtml-opacity: 0.5;
+
+    /* Good browsers */
+    opacity: 0.5;
+}
+
+.x-form-invalid-ace-field-default .x-form-item-body {
+    border: 1px #cf4c35 solid;
+}
+.administration
+    .x-displayfieldwithtriggers
+    .x-form-trigger-wrap-default.x-form-trigger-wrap-display
+    .x-form-trigger-default {
+    background: transparent;
+    line-height: 30px;
+}
+.readonly-as-disabled .x-form-readonly .x-form-checkbox-default {
+    color: #c0c0c0 !important;
+}
+.readonly-as-disabled .x-form-checkbox-default {
+    width: 100%;
+}

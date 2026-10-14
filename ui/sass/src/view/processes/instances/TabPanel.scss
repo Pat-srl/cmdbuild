@@ -1,0 +1,28 @@
+// Process action field
+.#{$prefix}field.#{$prefix}process-action-field {
+    &.#{$prefix}form-readonly {
+        .#{$prefix}form-trigger-wrap-default {
+            border: 0;
+        }
+    }
+    .#{$prefix}form-display-field.#{$prefix}form-display-field-default {
+        margin-top: round(($form-field-height - $form-display-field-line-height) / 2) !important;
+    }
+}
+
+.#{$prefix}container-messageinfo {
+    border: 1px solid $main-color-selection;
+    background: $main-color-selection;
+    padding: $form-messages-padding;
+    margin-bottom: $form-messages-margin-bottom;
+
+    &::before {
+        content: $fa-var-info-circle;
+        color: $base-color;
+        font-family: "Font Awesome 5 Free" !important;
+        font-size: 2em;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+}

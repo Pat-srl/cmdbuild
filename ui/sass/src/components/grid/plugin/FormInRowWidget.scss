@@ -1,0 +1,66 @@
+// Default background color applied at table level - each row is its own separate table
+.#{$prefix}grid-item .x-grid-rowbody-tr {
+  background-color: $grid-row-cell-background-color;
+}
+
+.#{$prefix}grid-item-alt .x-grid-rowbody-tr {
+  background-color: $grid-row-cell-background-color;
+}
+
+.#{$prefix}grid-item .x-grid-rowbody-tr .#{$prefix}panel-body-default {
+  background-color: transparent;
+}
+
+.#{$prefix}grid-rowbody {
+  padding: 0;
+
+  .#{$prefix}tab-bar-tabandtools {
+    border-color: $base-color;
+    z-index: 1;
+
+    .#{$prefix}tab-tabandtools {
+      border-bottom-color: $base-color;
+
+      &.#{$prefix}tab-focus.#{$prefix}tab-over {
+        border-bottom-color: $base-color;
+      }
+    }
+
+    .#{$prefix}tab.#{$prefix}tab-active.#{$prefix}tab-tabandtools {
+      border-color: $base-color $base-color #fff $base-color;
+
+      .#{$prefix}tab-inner-tabandtools {
+        color: $base-color;
+      }
+    }
+  }
+
+  >.#{$prefix}panel {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+
+}
+
+.administration {
+  .#{$prefix}grid-rowbody {
+    >.#{$prefix}panel {
+      margin-bottom: 10px;
+      border-bottom-width: 1px;
+      border-bottom: 1px solid mix(#FFF, $administration-base-color, $administration-mix-white-percentage) !important;
+    }
+  }
+  
+  .#{$prefix}tool-administration-tabandtools.#{$prefix}tool-disabled {
+    .#{$prefix}tool-tool-el {
+      color: mix(#FFF, $administration-action-color, 60%) !important;
+    }
+
+    .#{$prefix}mask {
+      background-color: transparent !important;
+    }
+  }
+}
+.administration .tab-hidden .x-tab{
+  visibility: hidden;
+}

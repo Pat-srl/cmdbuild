@@ -1,0 +1,17 @@
+.#{$prefix}panel.panel-with-gray-background {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-color: $form-field-border-color;
+    border-width: 1px 0;
+    border-style: solid;
+
+    .#{$prefix}panel-body {
+        background-color: transparent !important;
+    }
+}
+
+.mycls, .mycls .x-tool-tool-el {
+    background-color: white;
+    color:grey;
+}

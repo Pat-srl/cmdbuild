@@ -1,0 +1,41 @@
+.relations-grid-action {
+    margin: 0 3px;
+}
+
+.#{$prefix}panel-cmdbuildgrouping.#{$prefix}grid {
+    .#{$prefix}grid-group-hd {
+        background-color: lighten($neutral-color, 12%);
+        border-bottom: 0;
+        padding: 6px 10px;
+        .#{$prefix}grid-group-title {
+            font-style: italic;
+            font-weight: 600;
+            &::before {
+                font-style: normal;
+            }
+        }
+    }
+    .#{$prefix}grid-item.#{$prefix}grid-item-selected {
+        background-color: transparent;
+        border-color: $grid-row-border-color;
+    }
+    .#{$prefix}grid-item.#{$prefix}grid-item-selected+.#{$prefix}grid-item {
+        border-color: $grid-row-border-color;
+    }
+    .#{$prefix}grid-item.#{$prefix}grid-item-over {
+        background-color: transparent;
+        border-color: $grid-row-border-color;
+    }
+    .#{$prefix}grid-item.#{$prefix}grid-item-over+.#{$prefix}grid-item {
+        border-color: $grid-row-border-color;
+    }
+    .#{$prefix}grid-item-alt {
+        background-color: transparent;
+    }
+}
+
+.#{$prefix}cell-error {
+    border-color: $form-field-invalid-border-color;
+    border-style: solid;
+    border-width: 1px;
+}

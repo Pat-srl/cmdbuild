@@ -1,0 +1,88 @@
+@mixin cmdbuildui-statuses-progressbar-ui(
+    $ui: null,
+    $ui-backgroud-color: $main-neutral-white,
+    $ui-line-height: $line-height,
+    $ui-padding: 10px 0,
+    $ui-margin: 0 0 15px 0,
+    $ui-text-color: $main-neutral-gray-4,
+    $ui-text-color-done: $main-neutral-gray-4,
+    $ui-text-color-current: $color,
+    $ui-step-background-color: $main-neutral-gray-4,
+    $ui-step-background-color-done: $cmdbuild-status-success,
+    $ui-step-background-color-current: $main-color-primary,
+    $ui-step-color: $main-neutral-white,
+    $ui-step-color-done: $main-neutral-white,
+    $ui-step-color-current: $main-neutral-white,
+    $ui-step-border-width: 5px,
+    $ui-step-border-color: $main-neutral-white,
+    $ui-step-border-color-done: $main-neutral-white,
+    $ui-step-border-color-current: $main-color-primary-disabled,
+    $ui-step-padding: 1px,
+    $ui-step-spacing: 2px
+) {
+    .#{$prefix}statuses-progress-bar-#{$ui} {
+        display: flex;
+        flex-direction: row;
+        line-height: $ui-line-height;
+        color: $ui-text-color;
+        background-color: $ui-backgroud-color;
+        padding: $ui-padding;
+        margin: $ui-margin;
+
+        .#{$prefix}statuses-progress-bar-item {
+            flex: 1 1 0px;
+            text-align: center;
+            .#{$prefix}statuses-progress-bar-item-selector {
+                position: relative;
+                padding: $ui-step-spacing;
+                span {
+                    width: $ui-line-height;
+                    background: $ui-step-background-color;
+                    color: $ui-step-color;
+                    box-sizing: content-box;
+                    display: inline-block;
+                    border-radius: 50%;
+                    padding: $ui-step-padding;
+                    font-size: 90%;
+                    border-width: $ui-step-border-width;
+                    border-style: solid;
+                    border-color: $ui-step-border-color;
+                }
+                &::before,
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    top: calc(50% - 1px);
+                    bottom: 50%;
+                    height: 1px;
+                    background: $ui-step-background-color;
+                }
+                &::before {
+                    left: 0;
+                    right: calc(50% + #{round($ui-line-height / 2)});
+                }
+                &::after {
+                    right: 0;
+                    left: calc(50% + #{round($ui-line-height / 2)});
+                }
+            }
+            .#{$prefix}statuses-progress-bar-item-current {
+                color: $ui-text-color-current;
+                .#{$prefix}statuses-progress-bar-item-selector {
+                    span {
+                        background-color: $ui-step-background-color-current;
+                        color: $ui-step-color-current;
+                        border-color: $ui-step-border-color-current;
+                    }
+                    &::before {
+                        right: calc(50% + #{round($ui-line-height / 2)} + #{$ui-step-border-width});
+                    }
+                    &::after {
+                        left: calc(50% + #{round($ui-line-height / 2)} + #{$ui-step-border-width});
+                    }
+                }
+            }
+        }
+    }
+}
+@include cmdbuildui-statuses-progressbar-ui($ui: "default");

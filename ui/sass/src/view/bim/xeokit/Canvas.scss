@@ -1,0 +1,17 @@
+.#{$prefix}bim-tool-pressed {
+    background-color: darken($color: $toolbar-footer-background-color, $amount: 12%);
+}
+
+.#{$prefix}tool.management-tool.bim-xeokit-tool {
+    font-size: 24px;
+    line-height: 32px;
+
+    .#{$prefix}tool-tool-el {
+        width: 32px;
+        height: 32px;
+    }
+
+    .cmdbuildicon-default-bim {
+        width: 32px !important;
+    }
+}

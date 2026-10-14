@@ -1,0 +1,192 @@
+.ai-chat-style {
+    .titleChat {
+        font-size: 18px;
+        color: #909090;
+    }
+
+    .x-toolbar-footer {
+        background-color: #ffffff;
+    }
+
+    .x-tool.management-tool .x-tool-tool-el {
+        color: #909090;
+        padding-right: 10px;
+    }
+
+    .newChatButton.x-btn-management-primary-small {
+        padding: 3px 4px 3px 6px;
+    }
+
+    .newChatButton .x-btn-icon-el-management-primary-small {
+        font-size: 12px;
+    }
+
+    .introText {
+        width: 70% !important;
+        margin: auto !important;
+        min-width: 180px;
+        text-align: center;
+        line-height: 1.25;
+    }
+
+    .sendMessageContainer {
+        border: 1px solid #909090;
+        border-radius: 15px;
+    }
+
+    .sendMsgTextArea .x-form-trigger-wrap-default {
+        border: none !important;
+    }
+
+    .sendMsgTextArea .x-form-textarea {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .sendButton {
+        border-radius: 20px;
+    }
+
+    .ai-assistant-target-summary {
+        margin: 10px 16px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        background-color: #f2f6fb;
+        border-left: 4px solid #157fcc;
+    }
+
+    .ai-assistant-target-summary-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #1f2937;
+    }
+
+    .ai-assistant-target-summary-details {
+        margin-top: 4px;
+        color: #64748b;
+        font-size: 12px;
+    }
+
+    .ai-typing-indicator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px 10px 0;
+    }
+
+    .#{$prefix}conversation-message-loading {
+        text-align: left;
+        padding-left: 16px;
+    }
+
+    .ai-typing-bubble {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        min-width: 48px;
+        padding: 10px 12px;
+        border-radius: 12px 12px 12px 2px;
+        background-color: #eef4fb;
+    }
+
+    .ai-typing-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $main-color-secondary;
+        animation: ai-typing-pulse 1.2s infinite ease-in-out;
+    }
+
+    .ai-typing-dot:nth-child(2) {
+        animation-delay: 0.15s;
+    }
+
+    .ai-typing-dot:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .x-chat-conversation .x-conversation-container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .x-chat-conversation .x-conversation-container .x-conversation-message {
+        margin-bottom: 15px;
+        align-items: flex-start;
+        outline: none !important;
+
+        p {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+
+    .x-chat-conversation .x-conversation-container .x-conversation-message .x-conversation-message-content {
+        display: inline-block;
+        padding: 12px 16px;
+        text-align: left;
+        max-width: 90%;
+        border-radius: 10px;
+    }
+
+    .x-chat-conversation .x-conversation-container .x-conversation-message .x-conversation-message-content u {
+        cursor: pointer;
+        color: #157fcc;
+    }
+
+    .ai-message-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .ai-message-action {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: #909090;
+        cursor: pointer;
+    }
+
+    .ai-message-action:hover {
+        opacity: 0.9;
+    }
+
+    .ai-message-action-sent,
+    .ai-message-action-sent:hover {
+        color: #2e7d32;
+        cursor: default;
+        opacity: 1;
+    }
+
+    .x-chat-conversation .x-conversation-container .x-conversation-message-user {
+        text-align: right;
+    }
+
+    .x-chat-conversation .x-conversation-container .x-conversation-message-user .x-conversation-message-content {
+        background-color: #d6e9ff;
+        border-radius: 10px 10px 0 10px;
+        margin-left: 20%;
+    }
+
+    .x-chat-conversation .x-conversation-container .x-conversation-message-ai .x-conversation-message-content {
+        border-radius: 10px 10px 10px 0;
+        margin-right: 20%;
+    }
+}
+
+@keyframes ai-typing-pulse {
+    0%,
+    60%,
+    100% {
+        opacity: 0.35;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}

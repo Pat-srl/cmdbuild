@@ -1,0 +1,9 @@
+
+This package contains legacy code. It is used by legacy xpdl processes. 
+
+In order to avoid breaking xpdl scripts and compatibility,
+
+ * DO NOT CHANGE CLASS CODE !
+
+ * DO NOT CHANGE CLASS PACKAGE !
+

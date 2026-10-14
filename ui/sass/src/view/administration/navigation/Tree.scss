@@ -1,0 +1,38 @@
+@include treelist-ui(
+    $ui: 'administration-navigation-tree',
+
+    $background-color: $administration-base-color,
+    $item-icon-color: #fff,
+    $item-expander-color: #fff,
+    $item-text-color: #fff,
+    $row-selected-background-color: lighten($administration-base-color, 10%),
+    $row-over-background-color: #595959
+);
+
+.#{$prefix}treelist-administration-navigation-tree .#{$prefix}treelist-item-selected > .#{$prefix}treelist-row {
+    .#{$prefix}treelist-item-text,
+    .#{$prefix}treelist-item-icon,
+    .#{$prefix}treelist-item-expander {
+        color: #fff;
+    }
+}
+
+.x-administration-navigation-tree .x-treelist-item-selected > .x-treelist-row {
+    background-color: $administration-action-color;
+    .x-treelist-item-text {
+        font-weight: 500;
+    }
+}
+.x-panel-administration .x-grid-item-selected {
+    background-color: lighten($administration-base-color, 50%);
+}
+.x-panel-administration-navigation-tree {
+    .x-tree-expander,
+    .x-tree-icon,
+    .x-tree-node-text {
+        color: $administration-base-color !important;
+    }
+}
+.x-treelist-row.disabled * {
+    color: lighten($administration-base-color, 25%) !important;
+}

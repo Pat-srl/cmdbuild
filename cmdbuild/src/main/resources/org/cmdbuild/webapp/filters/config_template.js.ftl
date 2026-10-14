@@ -1,0 +1,3 @@
+[#ftl]
+
+window.cmdbuildConfig = ${configJsonStr};

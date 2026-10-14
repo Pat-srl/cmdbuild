@@ -1,0 +1,293 @@
+Delivered-To: davide.imbriaco@gmail.com
+Received: by 2002:a2e:a411:0:0:0:0:0 with SMTP id p17csp19234166ljn;
+        Fri, 3 Jan 2020 01:07:07 -0800 (PST)
+X-Received: by 2002:a1f:1144:: with SMTP id 65mr48848931vkr.77.1578042427095;
+        Fri, 03 Jan 2020 01:07:07 -0800 (PST)
+ARC-Seal: i=3; a=rsa-sha256; t=1578042427; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=w5Lw7JmbYmBZwYEFgxxQDIIcmkEvsSDjqIzTsqVE9EpLbpv4Nz5NL/bI1utFmdSGpk
+         R4uHwimUduzQBRxc1O7cEFjo+uucNIu9OCkLMwTVVsN/wfLup2cMvaW8/H+3KWD6970a
+         UbCNIwMtTIXDAZvlYXLVUjVaxP17gz6416Nowv8gGLvxTu4L5ITv5Kv1WoR0bQAHAicx
+         c07GYg/0KLtFcsBOddIc0N69Xe5Vqo9qVNG15Tv7HOq206EgXQwnJP9tMWH5BB20zWg2
+         dnmfga2PpdVEI5ScE12TH0wmPTA9QjU4jUs3uxwZPUMpR+pMFQWVji5Oj+8jMcMtACGb
+         zEXA==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:delivered-to;
+        bh=ssyxOB1cCsQ5cYIsdxzgyqLSMrlt0w2Rh/jhfCqOZJQ=;
+        b=FwBZE+d4Rx+JBTpyYKOejw1p5Z8/q6EyJaxy2NFbuURIPnAzTDy5ET4colF13lmKML
+         MuQh4oHOtFncjVOqLnogdI7bFQYgBprebkh47hrHI7D6/yUxG4Je2fYFiraiUo7BKCs4
+         vDqokK9CHLnpbxnXFXj0OrOv74MhTLmZZbgJIZ95n5bvVmRpBfCZrbpH7F/BY0n8RvnM
+         +cRLi72Z2zCDIRhy3oUbhXqvxXwkoIQnlOuo/hI+pvqpb0vUFn7qRAQnp4fK69RScwtC
+         t8AioXoA/zlpifNY6MCMdyRpTbTBaPe7c99YmjRFz4v9zXrq8NfYKbx4x3cNS1KDfQxZ
+         alWQ==
+ARC-Authentication-Results: i=3; mx.google.com;
+       arc=pass (i=2 spf=pass spfdomain=hotmail.it dmarc=pass fromdomain=hotmail.it);
+       spf=pass (google.com: domain of d.imbriaco+caf_=davide.imbriaco=gmail.com@tecnoteca.com designates 209.85.220.41 as permitted sender) smtp.mailfrom="d.imbriaco+caf_=davide.imbriaco=gmail.com@tecnoteca.com";
+       dmarc=fail (p=NONE sp=NONE dis=NONE arc=pass) header.from=hotmail.it
+Return-Path: <d.imbriaco+caf_=davide.imbriaco=gmail.com@tecnoteca.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id g2sor16194899vsa.84.2020.01.03.01.07.06
+        for <davide.imbriaco@gmail.com>
+        (Google Transport Security);
+        Fri, 03 Jan 2020 01:07:07 -0800 (PST)
+Received-SPF: pass (google.com: domain of d.imbriaco+caf_=davide.imbriaco=gmail.com@tecnoteca.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       arc=pass (i=2 spf=pass spfdomain=hotmail.it dmarc=pass fromdomain=hotmail.it);
+       spf=pass (google.com: domain of d.imbriaco+caf_=davide.imbriaco=gmail.com@tecnoteca.com designates 209.85.220.41 as permitted sender) smtp.mailfrom="d.imbriaco+caf_=davide.imbriaco=gmail.com@tecnoteca.com";
+       dmarc=fail (p=NONE sp=NONE dis=NONE arc=pass) header.from=hotmail.it
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-original-authentication-results:x-gm-message-state:delivered-to
+         :from:to:subject:thread-topic:thread-index:date:message-id
+         :accept-language:content-language:mime-version;
+        bh=ssyxOB1cCsQ5cYIsdxzgyqLSMrlt0w2Rh/jhfCqOZJQ=;
+        b=p296SSl5ALYsjRbGk1fizdulW4jssENz5NukD2/N42sjOYGN6425mFx7nQmwxLDnZg
+         Fz5xPE/1fsz67gUmDMZ2z9C4twEqGfP/8KRl//7VkfbfByk0VBNDmVuFVYO0Qlx8P9ZB
+         qvjQMgtNKfLuWG2cJDCVF5hO9wy15y90YONuzRfnBSBP/PQvyQrdG2y/Xc2rINMmLoLS
+         n6dwWNTkhZl9miz3g9Nz47QHuZfd9W9sGqJAyPdr9zfqkeGE/8b4t0s9ezqoGnVkbFUK
+         uRzp0C7aXWSk/PWSC/MmX6bXMufEbG2lCFFRbTVVEJ8i6l4iiAXDhwBPklLx3uoszuqb
+         TeYA==
+X-Original-Authentication-Results: mx.google.com;       arc=pass (i=1);       spf=pass (google.com: domain of alisciando.ale@hotmail.it designates 40.92.69.71 as permitted sender) smtp.mailfrom=alisciando.ale@hotmail.it;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hotmail.it
+X-Gm-Message-State: APjAAAXR+tf7gF3JcwK4TAoAkztTWe78mrsjejqsGdOKMFfFy9dq2M73
+	0BcVFH7Cp2p54gekERSUCOmEx4HkeKEmN5ranznPA2bbQMpQlAEdceKE
+X-Received: by 2002:a67:fc5a:: with SMTP id p26mr43178804vsq.71.1578042426805;
+        Fri, 03 Jan 2020 01:07:06 -0800 (PST)
+X-Forwarded-To: davide.imbriaco@gmail.com
+X-Forwarded-For: d.imbriaco@tecnoteca.com davide.imbriaco@gmail.com
+Delivered-To: d.imbriaco@tecnoteca.com
+Received: by 2002:ab0:2402:0:0:0:0:0 with SMTP id f2csp381794uan;
+        Fri, 3 Jan 2020 01:07:05 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyBjjdNBIKAvicorDYJ+o/t4X2PmqCEC1gDeuCycmGWp+7o/ZW9BIs3xLeKqktS7OaFaoob
+X-Received: by 2002:a05:6830:4c2:: with SMTP id s2mr101066508otd.144.1578042425560;
+        Fri, 03 Jan 2020 01:07:05 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1578042425; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=GJ60N2rTF7r28TbIDQ0JOOnYvbhgPXOWWflg4yWNFqD538Ru8Dnv71XsYjiUUgGBDE
+         10mvDAl4z9DPy1FDF+gRavsIYwJJoIv0qhgs9CR1yilEwFaHH/W29cuzE4L8zPDIxAi0
+         Xlz0DWJqcSxZQ161zxqfiUMu23B78N2L7WefwAFewkq0aLhg+kDm4kUcSdKuaBYAeDge
+         N1uYJ2V4Cl+NOaRaTYyai7ZSeV1xE4DfH2PfSxQjlYHk+EhMxr1qYh3/hEL3PNAoL82G
+         74FEf12gKw1IlYMc1uB5QjGMvsQSkhcOKvw8oDH4OzFbEu5ljBRqI5JgPpDbmjZL7aYW
+         N6Dg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from;
+        bh=ssyxOB1cCsQ5cYIsdxzgyqLSMrlt0w2Rh/jhfCqOZJQ=;
+        b=1Gzml6kZ2Ji+czG9IjhWEFMs9172/fzODX3VzluMO5HdDJPkgXUjXFVgHAlgxQlXPp
+         dMCkvInfm8JZRHcW/1WXmg5U96Leu7kQCjdgYtA8qwmB5mZ5Ju5J6smBUCdvllb4jiGH
+         cKrRI4JRTTaiDeYO5sV6DsaIcARt0hfOBNTSE/zfAgQwWcfVavUaLGlzloFJow1OET9y
+         8fPBpkPd28uaK4jhEbWAKMN7yeZQgZXkUXfru0Dw+b+5UonSd0gwGORgX4PGqDjm+Vxd
+         WYlXoAmtxReYZ71vFaqEyEB3XWvasjiSDwYLvg1xSR8V4nH9PdM5bMEdSwJtg/yaju4X
+         gNxA==
+ARC-Authentication-Results: i=2; mx.google.com;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of alisciando.ale@hotmail.it designates 40.92.69.71 as permitted sender) smtp.mailfrom=alisciando.ale@hotmail.it;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hotmail.it
+Return-Path: <alisciando.ale@hotmail.it>
+Received: from EUR02-VE1-obe.outbound.protection.outlook.com (mail-oln040092069071.outbound.protection.outlook.com. [40.92.69.71])
+        by mx.google.com with ESMTPS id l6si24034031otq.132.2020.01.03.01.07.05
+        for <d.imbriaco@tecnoteca.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 03 Jan 2020 01:07:05 -0800 (PST)
+Received-SPF: pass (google.com: domain of alisciando.ale@hotmail.it designates 40.92.69.71 as permitted sender) client-ip=40.92.69.71;
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=EAvZAKgkDl4uEAf0Zaj6Temb4X/w3P4YihmYxawA4TBOZ/rQJNoATjq8rf6D+wnkXqX9Hm7wunH052R/RZ0PTE5IVPEEw0LRbnj329jPwa3aNfYMlLW4kHzB8e+N1q/gbdXIoWK2sRLeCZJOsJmCXhV1zTTS3PWL3CobZY3HO9eSLul5I5GynnBMGRrD5GipbjVnveKsWfWCOtRV/UEPiBUMOM5VOf3rFf8DtEITIQearz4hbhbWXmmXNh6w6eDV3DHkJniLwZ4gbAhUCpbqXMzNztsiSQcItbbjY7/mqflbCSTYeIfA0lr5gSXFG09y2GIDM6zzqaI0CpWq/jm4sQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ssyxOB1cCsQ5cYIsdxzgyqLSMrlt0w2Rh/jhfCqOZJQ=;
+ b=DykqfYri3nhi3T5Ce9Mu1o6NZr3Cs6qizp7DkwRB9eBoK4VtuUeURHUdx3vS7sHqvwjbtLCB/yPqwlwT2ZC3FjlbUpVIfg+6ge2oLwVqaJsBb4wKEuKcb5Xg4KO1OGGgDkNqU73+d9uHl2CM3zY2eTCG/Mq9Fao+30X7xfAsFbAzKS3KZPxbn/Z2PkSYM+RPDEdTX+VQjnZJYYg94mkHRRuwx4wa/whRKMysvnOzY8gODiWQmZHkdp/9ZAKXzeJ8GNZDbR3L0P9rXbk62yV5wD/sQS/rnPL/HvsvWTgTcCnaHo6MuHwKKtf1aKkmKYdiSsJcQ2zfj/FzLcLugl2toQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from HE1EUR02FT057.eop-EUR02.prod.protection.outlook.com
+ (10.152.10.59) by HE1EUR02HT229.eop-EUR02.prod.protection.outlook.com
+ (10.152.11.63) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2602.11; Fri, 3 Jan
+ 2020 09:07:03 +0000
+Received: from AM6PR04MB5510.eurprd04.prod.outlook.com (10.152.10.55) by
+ HE1EUR02FT057.mail.protection.outlook.com (10.152.11.220) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.11 via Frontend Transport; Fri, 3 Jan 2020 09:07:03 +0000
+Received: from AM6PR04MB5510.eurprd04.prod.outlook.com
+ ([fe80::31ed:6dc9:a3d4:7e04]) by AM6PR04MB5510.eurprd04.prod.outlook.com
+ ([fe80::31ed:6dc9:a3d4:7e04%3]) with mapi id 15.20.2602.012; Fri, 3 Jan 2020
+ 09:07:03 +0000
+From: Alessandro Taboga <alisciando.ale@hotmail.it>
+To: "d.imbriaco@tecnoteca.com" <d.imbriaco@tecnoteca.com>
+Subject: Test inline image
+Thread-Topic: Test inline image
+Thread-Index: AQHVwhT57/glb2S8nkibvnS0ylBF+w==
+Date: Fri, 3 Jan 2020 09:07:03 +0000
+Message-ID:
+ <AM6PR04MB5510FED1B1C2D3678062CB40F2230@AM6PR04MB5510.eurprd04.prod.outlook.com>
+Accept-Language: it-IT, en-US
+Content-Language: it-IT
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+x-incomingtopheadermarker:
+ OriginalChecksum:73B5EB5293C5FF54BE6AF555E1A1E5D68E1FC7B096C244CEA7080C1721513742;UpperCasedChecksum:6D07791E176705455AFAA8D1D6A0F692A7B810487087F25C656E5650F853E00A;SizeAsReceived:6729;Count:43
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [rnAQCHNb4Pse1XxO8Qb2WeokfsJxS4q7]
+x-ms-publictraffictype: Email
+x-incomingheadercount: 43
+x-eopattributedmessage: 0
+x-ms-office365-filtering-correlation-id: f8f90f55-f83e-45b9-b5c5-08d7902c4cb4
+x-ms-traffictypediagnostic: HE1EUR02HT229:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ cUbyap8OpDgMwcniShieNKhPTieZiXGqrpxKbd3Zy6aihtlVgnZXBvxL2e0qpTwk
+x-ms-exchange-transport-forked: True
+Content-Type: multipart/related;
+	boundary="_004_AM6PR04MB5510FED1B1C2D3678062CB40F2230AM6PR04MB5510eurp_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: f8f90f55-f83e-45b9-b5c5-08d7902c4cb4
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jan 2020 09:07:03.5327
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1EUR02HT229
+
+--_004_AM6PR04MB5510FED1B1C2D3678062CB40F2230AM6PR04MB5510eurp_
+Content-Type: multipart/alternative;
+	boundary="_000_AM6PR04MB5510FED1B1C2D3678062CB40F2230AM6PR04MB5510eurp_"
+
+--_000_AM6PR04MB5510FED1B1C2D3678062CB40F2230AM6PR04MB5510eurp_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+test
+
+[cid:496e7b56-d13e-4ede-a82e-1da9ccf24e2d]
+
+inline
+
+--_000_AM6PR04MB5510FED1B1C2D3678062CB40F2230AM6PR04MB5510eurp_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div style=3D"font-family: Calibri, Helvetica, sans-serif; font-size: 12pt;=
+ color: rgb(0, 0, 0);">
+test</div>
+<div style=3D"font-family: Calibri, Helvetica, sans-serif; font-size: 12pt;=
+ color: rgb(0, 0, 0);">
+<br>
+</div>
+<div style=3D"font-family: Calibri, Helvetica, sans-serif; font-size: 12pt;=
+ color: rgb(0, 0, 0);">
+<img size=3D"4378" contenttype=3D"image/png" unselectable=3D"on" tabindex=
+=3D"-1" style=3D"max-width: 100%; user-select: none;" data-outlook-trace=3D=
+"F:1|T:1" src=3D"cid:496e7b56-d13e-4ede-a82e-1da9ccf24e2d"><br>
+</div>
+<div style=3D"font-family: Calibri, Helvetica, sans-serif; font-size: 12pt;=
+ color: rgb(0, 0, 0);">
+<br>
+</div>
+<div style=3D"font-family: Calibri, Helvetica, sans-serif; font-size: 12pt;=
+ color: rgb(0, 0, 0);">
+inline</div>
+</body>
+</html>
+
+--_000_AM6PR04MB5510FED1B1C2D3678062CB40F2230AM6PR04MB5510eurp_--
+
+--_004_AM6PR04MB5510FED1B1C2D3678062CB40F2230AM6PR04MB5510eurp_
+Content-Type: image/png; name="Screenshot from 2019-12-13 18-03-59.png"
+Content-Description: Screenshot from 2019-12-13 18-03-59.png
+Content-Disposition: inline;
+	filename="Screenshot from 2019-12-13 18-03-59.png"; size=4378;
+	creation-date="Fri, 03 Jan 2020 09:06:37 GMT";
+	modification-date="Fri, 03 Jan 2020 09:06:37 GMT"
+Content-ID: <496e7b56-d13e-4ede-a82e-1da9ccf24e2d>
+Content-Transfer-Encoding: base64
+
+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
+
+--_004_AM6PR04MB5510FED1B1C2D3678062CB40F2230AM6PR04MB5510eurp_--

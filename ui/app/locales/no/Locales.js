@@ -1,0 +1,1173 @@
+(function () {
+    Ext.define('CMDBuildUI.locales.no.Locales', {
+        requires: ['CMDBuildUI.locales.no.LocalesAdministration'],
+        override: 'CMDBuildUI.locales.Locales',
+        singleton: true,
+        localization: 'no',
+        administration: CMDBuildUI.locales.no.LocalesAdministration.administration,
+        ai: {
+            clearconversation: 'Tøm samtalen',
+            clearconversationmessage: 'Er du sikker på at du vil tømme den gjeldende samtalen?',
+            copiedtoclipboard: '<em>Message copied to clipboard</em>',
+            erroranswer: 'Beklager, det oppstod problemer med svaret',
+            headertooltip: 'CMDBuild-chatbot',
+            introtextbody: 'For å begynne å chatte beskriver du forespørselen din i det aktuelle feltet',
+            introtexttitle: 'Hvordan kan jeg hjelpe deg?',
+            loading: 'Laster ...',
+            newchat: 'Ny chat',
+            newchattooltip: 'Start en ny samtale',
+            questionemptytext: 'Skriv inn spørsmålet ditt her ...',
+            resources: 'Kilder',
+            viewrelatedcard: 'Vis relatert kort',
+            viewresource: 'Vis ressurs'
+        },
+        arialabels: {
+            buttonplaceholder: 'Knapp',
+            iframeplaceholder: 'Tekstredigering',
+            languageselector: 'Språkvelger',
+            resizepanel: {
+                horizontally: 'Endre størrelse på paneler horisontalt',
+                vertically: 'Endre størrelse på paneler vertikalt'
+            },
+            usermenu: 'Brukermeny'
+        },
+        attachments: {
+            add: 'Legg til vedlegg',
+            attachmenthistory: 'Vedleggshistorikk',
+            author: 'Forfatter',
+            authordescription: 'Forfatterbeskrivelse',
+            browse: 'Bla igjennom',
+            category: 'Kategori',
+            code: 'Kode',
+            creationdate: 'Opprettelsesdato',
+            deleteattachment: 'Slett vedlegg',
+            deleteattachment_confirmation: 'Er du sikker på at du vil slette vedlegget?',
+            description: 'Beskrivelse',
+            download: 'Last ned',
+            dropfiles: 'Slipp filer hit',
+            editattachment: 'Endre vedlegg',
+            errordms: 'DMS er deaktivert og kan derfor ikke lagre filer',
+            file: 'Fil',
+            filealreadyinlist: 'Filen {0} er allerede i listen.',
+            filename: 'Filnavn',
+            fileview: 'Vis vedlegg',
+            invalidfiles: 'Fjern ugyldige filer',
+            majorversion: 'Hovedversjon',
+            maxsize: 'Maksimum filstørrelse er {0} MB.',
+            metadata: 'Metadata',
+            modificationdate: 'Endringsdato',
+            new: 'Nytt vedlegg',
+            nocategory: 'Ukategorisert',
+            preview: 'Forhåndsvisning',
+            removefile: 'Fjern fil',
+            statuses: {
+                empty: 'Tom fil',
+                error: 'Feil',
+                extensionNotAllowed: 'Filendelsen er ikke tillatt',
+                loaded: 'Lastet',
+                ready: 'Klar',
+                toolarge: 'For stor'
+            },
+            successupload: '{0} vedlegg lastet opp.',
+            uploadfile: 'Last opp fil…',
+            version: 'Versjon',
+            viewhistory: 'Vis vedleggshistorikk',
+            viewmetadata: 'Vis metadata fra vedlegg',
+            warningmessages: {
+                atleast:
+                    '{0}: Det har blitt lastet opp {1} vedlegg av typen "{2}". Kategorien forventet minst {3} vedlegg',
+                exactlynumber:
+                    '{0}: Det har blitt lastet opp {1} vedlegg av typen "{2}". Kategorien forventet {3} vedlegg',
+                maxnumber:
+                    '{0}: Det har blitt lastet opp {1} vedlegg av typen "{2}". Kategorien forventet maks {3} vedlegg'
+            },
+            wrongfileextension: '{0} filendelsen er ikke tillatt'
+        },
+        bim: {
+            bimViewer: 'Bim visning',
+            card: {
+                label: 'Kort'
+            },
+            ifcproperties: {
+                BOUNDING_BOX_SIZE_ALONG_X: 'Størrelse på avgrensningsboks langs X-aksen',
+                BOUNDING_BOX_SIZE_ALONG_Y: 'Størrelse på avgrensningsboks langs Y-aksen',
+                BOUNDING_BOX_SIZE_ALONG_Z: 'Størrelse på avgrensningsboks langs Z-aksen',
+                calculated: 'Kalkulert',
+                description: 'Beskrivelse',
+                guid: 'GUID',
+                label: 'Egenskaper',
+                name: 'Navn',
+                type: 'Type',
+                uuid: 'UUID'
+            },
+            layers: {
+                label: 'Lag',
+                menu: {
+                    hideAll: 'Skjul alle',
+                    hideAllLayers: 'Skjule alle lag',
+                    hideAllXeokit: 'Skjul alle {0}',
+                    showAll: 'Vis alle',
+                    showAllLayers: 'Vis alle lag',
+                    showAllXeokit: 'Vis alle {0}'
+                },
+                name: 'Navn',
+                quantity: 'Mengde',
+                visibility: 'Synlighet'
+            },
+            menu: {
+                camera: 'Kamera',
+                disableslice: 'Deaktiver objektdeling',
+                enableslice: 'Aktiver objektdeling',
+                frontView: 'Frontvisning',
+                mod: 'Visningskontroller',
+                ortho: 'Bytt til ortogonal-visning',
+                orthographic: 'Ortografisk kamera',
+                pan: 'Skroll',
+                panXeokit: 'Visningskontroller: skroll (Shift)',
+                perspe: 'Bytt til perspektiv-visning',
+                perspective: 'Perspektivkamera',
+                resetSlice: 'Tilbakestill deling',
+                resetView: 'Nullstill visning',
+                rotate: 'Roter',
+                rotateXeokit: 'Visningskontroller: roter',
+                save: 'Lagre visning',
+                shortcuts: {
+                    down: 'Rotere nedover',
+                    left: 'Rotere mot venstre',
+                    right: 'Rotere mot høyre',
+                    title: 'Hurtigtaster',
+                    up: 'Rotere oppover',
+                    zoomin: 'Zoom inn',
+                    zoomout: 'Zoom ut'
+                },
+                sideView: 'Sidevisning',
+                threeD: 'Bytt til 3D-visning',
+                topView: 'Toppvisning',
+                twoD: 'Bytt til 2D-visning'
+            },
+            navCube: {
+                back: 'Tilbake',
+                bottom: 'Bunn',
+                front: 'Front',
+                left: 'Venstre',
+                right: 'Høyre',
+                top: 'Topp'
+            },
+            showBimCard: 'Åpne 3D visning',
+            tree: {
+                arrowTooltip: 'Velg element',
+                label: 'Objekter',
+                multipleElements: 'Velg elementer',
+                open_card: 'Åpne relatert kort',
+                root: 'Ifc Root'
+            }
+        },
+        bulkactions: {
+            abort: 'Avbryt valgte',
+            addfields: 'Legg til felter',
+            alertdownloadattachments: 'Enkelte vedlegg kan ikke lastes ned siden de ikke har blitt lagret på server',
+            alertnoattachmentsdownload: 'Vedlegg vil ikke bli lastet ned siden de ikke har blitt lagret på server',
+            cancelselection: 'Avbryt utvalg',
+            confirmabort: 'Du avbryter {0} prosesser. Er du sikker på at du vil fortsette?',
+            confirmdelete: 'Du sletter {0} kort. Er du sikker på at du vil fortsette?',
+            confirmdeleteattachements: 'Du sletter {0} vedlegg. Er du sikker på at du vil fortsette?',
+            confirmedit: 'Du endrer {0} av {1} kort. Er du sikker på at du vil fortsette?',
+            delete: 'Slett valgte',
+            download: 'Last ned valgte vedlegg',
+            downloadall: 'Last ned alle vedlegg',
+            edit: 'Endre valgte',
+            missingfields: 'Følgende felt må legges til for korrekt skjema validering: {0}',
+            noattributeselected: 'Vennligst velg minst ett attributt.',
+            selectall: 'Velg alle'
+        },
+        calendar: {
+            active_expired: 'Aktiv/Utløpt',
+            add: 'Legg til',
+            advancenotification: 'Avanserte varslinger',
+            allcategories: 'Alle kategorier',
+            alldates: 'Alle datoer',
+            associatedcard: 'Assosiert kort',
+            calculated: 'Kalkulert',
+            calendar: 'Kalender',
+            cancel: 'Marker som avbrutt',
+            category: 'Kategori',
+            class: 'Klasse',
+            cm_confirmcancel: 'Er du sikker på at du vil merke de valgte tidsplanene som avbrutt?',
+            cm_confirmcomplete: 'Er du sikker på at du vil merke de valgte tidsplanene som fullført?',
+            cm_markcancelled: 'Merk valgte som avbrutt',
+            cm_markcomplete: 'Merk valgte som fullført',
+            complete: 'Marker som fullført',
+            completed: 'Fullført',
+            date: 'Dato',
+            days: 'Dager',
+            delaybeforedeadline: 'Forsinkelse før frist',
+            delaybeforedeadlinevalue: 'Forsinkelse før frist verdi',
+            description: 'Beskrivelse',
+            editevent: 'Endre tidsplan',
+            enddate: 'Sluttdato',
+            endtype: 'Sluttype',
+            event: 'Tidsplan',
+            execapplyfilter: 'Kan ikke legge på avansert filter fordi det er flere enn èn datalager',
+            execremovefilter: 'Kan ikke fjerne avansert filter fordi det er flere enn èn datalager',
+            executiondate: 'Kjøringsdato',
+            frequency: 'Frekvens',
+            frequencymultiplier: 'Frekvens multiplikator',
+            grid: 'Grid',
+            leftdays: 'Dager igjen',
+            londdescription: 'Full beskrivelse',
+            manual: 'Manuelt',
+            maxactiveevents: 'Maks aktive hendelser',
+            messagebodydelete: 'Ønsker du å fjerne planlagt tidspunkt?',
+            messagebodyplural: 'Det er {0} planlagte tidspunkter',
+            messagebodyrecalculate: 'Vil du beregne tidsplanen på nytt med de nye datoene?',
+            messagebodysingular: 'Det er {0} planlagt tidspunkt',
+            messagetitle: 'Rekalkulerer tidsplan',
+            missingdays: 'Manglende dager',
+            next30days: 'Neste 30 dager',
+            next7days: 'Neste 7 dager',
+            notificationtemplate: 'Mal brukt for varsler',
+            notificationtext: 'Varslingstekst',
+            occurencies: 'Antall oppføringer',
+            operation: 'Operasjon',
+            partecipantgroup: 'Deltakergruppe',
+            partecipantuser: 'Deltaker',
+            priority: 'Prioritet',
+            recalculate: 'Rekalkuler',
+            referent: 'Referent',
+            scheduler: 'Tidsplanlegger',
+            sequencepaneltitle: 'Generer tidsplan',
+            startdate: 'Startdato',
+            status: 'Status',
+            today: 'I dag',
+            type: 'Type',
+            viewevent: 'Vis tidsplan',
+            waiteventgeneration: 'Genererer hendelser. Vent til prosessen er fullført.',
+            widgetcriterion: 'Kalkulasjonskriterier',
+            widgetemails: 'E-poster',
+            widgetgotocard: 'Åpne kildekort',
+            widgetsourcecard: 'Kildekort'
+        },
+        chat: {
+            title: 'Chat'
+        },
+        classes: {
+            cards: {
+                addcard: 'Legg til kort',
+                clone: 'Klone',
+                clonewithrelations: 'Klone kort og relasjoner',
+                deletebeaware: 'Vær obs på at:',
+                deleteblocked: 'Det er ikke mulig å fortsette med slettingen fordi det finnes relasjoner med {0}.',
+                deletecard: 'Slett kort',
+                deleteconfirmation: 'Er du sikker på at du vil slette kortet?',
+                deleterelatedcards: '{0} relaterte kort vil også bli slettet',
+                deleterelations: 'relasjoner med {0} kort vil bli slettet',
+                label: 'Kort',
+                modifycard: 'Endre kort',
+                opencard: 'Åpne kort',
+                print: 'Skriv ut kort'
+            },
+            simple: 'Simple',
+            standard: 'Standard'
+        },
+        common: {
+            actions: {
+                add: 'Legg til',
+                apply: 'Bruk',
+                cancel: 'Avbryt',
+                clear: 'Fjern',
+                close: 'Lukk',
+                copy: 'Kopier',
+                copyerrormessage: 'Kopier feilmeldingen til utklippstavlen',
+                delete: 'Slett',
+                edit: 'Endre',
+                execute: 'Kjør',
+                forward: 'Videresend',
+                help: 'Hjelp',
+                hide: 'Skjul',
+                load: 'Last inn',
+                open: 'Åpne',
+                previous: 'Forrige',
+                refresh: 'Oppfrisk data',
+                remove: 'Fjern',
+                save: 'Lagre',
+                saveandapply: 'Lagre og bruk',
+                saveandclose: 'Lagre og lukk',
+                search: 'Søk',
+                searchaitext: '<em>Search with AI...</em>',
+                searchtext: 'Søk…'
+            },
+            and: 'og',
+            attributes: {
+                boolfalse: '0',
+                booltrue: '1',
+                link: {
+                    errlabel: 'Etikett er nødvendig',
+                    errurl: 'Må inneholde Url når det er lagt inn etikett',
+                    label: 'Etikett',
+                    url: 'Url'
+                },
+                nogroup: 'Basisdata'
+            },
+            dates: {
+                date: 'd.m.Y',
+                datetime: 'd.m.Y H:i:s',
+                time: 'H:i:s'
+            },
+            editor: {
+                clearhtml: 'Rens HTML',
+                expand: 'Utvid editor',
+                reduce: 'Slå sammen editor',
+                signature: 'Legg til signatur',
+                unlink: 'Fjern lenke',
+                unlinkmessage: 'Endre valgte lenke til vanlig tekst.'
+            },
+            grid: {
+                disablemultiselection: 'Deaktiver multivalg',
+                enamblemultiselection: 'Aktiver multivalg',
+                export: 'Eksporter data',
+                filterremoved: 'Gjeldende filter har blitt fjernet',
+                import: 'Importer data',
+                itemnotfound: 'Ingen elementer funnet',
+                lastUpdate: '<em>Last update</em>',
+                list: 'Liste',
+                opencontextualmenu: 'Åpne kontekstmeny',
+                print: 'Skriv ut',
+                printcsv: 'Skriv ut som CSV',
+                printmap: 'Skriv ut kart',
+                printodt: 'Skriv ut som ODT',
+                printpdf: 'Skriv ut som PDF',
+                row: 'Element',
+                rows: 'Elementer',
+                subtype: 'Subtype',
+                thematism: 'Tematisering'
+            },
+            tabs: {
+                activity: 'Aktivitet',
+                attachment: 'Vedlegg',
+                attachments: 'Vedlegg',
+                card: 'Kort',
+                clonerelationmode: 'Klone relasjonsmodus',
+                details: 'Detaljer',
+                emails: 'E-post',
+                history: 'Historikk',
+                notes: 'Notater',
+                relations: 'Relasjoner',
+                schedules: 'Tidsplan',
+                sources: 'Kilder'
+            }
+        },
+        dashboards: {
+            filters: '<em>Filters</em>',
+            list: {
+                showall: 'Vis alle',
+                showingnitems: 'Viser: {0} elementer'
+            },
+            pareto: {
+                cumulative: 'Kumulativ',
+                cumulativeperc: 'Kumulativ %'
+            },
+            tools: {
+                download: 'Last ned diagram',
+                downloaddata: 'Last ned diagramdata',
+                gridhide: 'Skjul datagrid',
+                gridshow: 'Vis datagrid',
+                openinpopup: 'Åpne i forgrunnsvindu',
+                reload: 'Oppfrisk',
+                showall: 'Vis alle'
+            }
+        },
+        dependencytree: {
+            cardinfo: 'Kort',
+            filteredid: 'Gjeldende kort tilhører ikke dette treet',
+            gerarchicview: 'Hierarkisk visning',
+            name: 'Avhengighetstre',
+            nocardselected: 'Ingen kort valgt',
+            opendependencytree: 'Åpne avhengighetstre',
+            printjpeg: 'Skriv ut som JPEG',
+            printpdf: 'Skriv ut som PDF',
+            printpng: 'Skriv ut som PNG',
+            printsvg: 'Skriv ut som SVG',
+            reopengraph: 'Åpne grafen på nytt med ny rot',
+            selectcard: 'Velg startnode',
+            wrongid: 'ID-en du skrev inn, er feil'
+        },
+        emails: {
+            abort: 'Avbryt',
+            addattachmentsfromdocumentarchive: 'Legg til vedlegg fra dokumentarkiv',
+            alredyexistfile: 'Det finnes allerede en fil med dette navnet',
+            archivingdate: 'Arkiveringsdato',
+            attachfile: 'Legg ved fil',
+            attachmentsmessage:
+                'Malen krever at du legger ved vedlegg fra kortet. Du kan ikke bruke den før du lagrer prosessen',
+            bcc: 'Bcc',
+            cc: 'Cc',
+            composeemail: 'Skriv e-post',
+            composefromtemplate: 'Lag fra mal',
+            delay: 'Forsinkelse',
+            delays: {
+                day1: 'Om 1 dag',
+                days2: 'Om 2 dager',
+                days4: 'Om 4 dager',
+                hour1: '1 time',
+                hours2: '2 timer',
+                hours4: '4 timer',
+                month1: 'Om 1 måned',
+                negativeday1: '1 dag før',
+                negativedays2: '2 dager før',
+                negativedays4: '4 dager før',
+                negativehour1: '1 time før',
+                negativehours2: '2 timer før',
+                negativehours4: '4 timer før',
+                negativemonth1: '1 måned før',
+                negativeweek1: '1 uke før',
+                negativeweeks2: '2 uker før',
+                none: 'Ingen',
+                week1: 'Om 1 uke',
+                weeks2: 'Om 2 uker'
+            },
+            dmspaneltitle: 'Velg vedlegg fra database',
+            edit: 'Endre',
+            fileattributesmessage:
+                'Det finnes en avhengighet til et filtypeattributt. Du kan ikke bruke den før du lagrer prosessen',
+            from: 'Fra',
+            gridrefresh: 'Gridoppdatering',
+            groupbystatus: 'Gruppert etter status',
+            keepsynchronization: 'Behold synkronisering',
+            maxsize: 'Maksimum total filstørrelse for vedlegg er {0}',
+            message: 'Melding',
+            regenerateallemails: 'Regenerer alle e-poster',
+            regenerateemail: 'Regenerer e-post',
+            reloadconfirmationmessage: 'E-post med status utkast vil slettes. Ønsker du å fortsette?',
+            remove: 'Fjern',
+            remove_confirmation: 'Er du sikker på at du vil slette e-posten?',
+            reply: 'Svar',
+            replyprefix: 'Den {0} skrev {1}:',
+            searchattachment: 'Søk etter vedlegg',
+            searchcard: 'Søk i kort',
+            selectaclass: 'Velg en klasse',
+            sendemail: 'Send e-post',
+            sendingemail: 'Sender e-post.',
+            signature: 'Signatur',
+            size: 'Størrelse',
+            status: 'Status',
+            statuses: {
+                draft: 'Utkast',
+                error: 'Feil',
+                new: 'Ny',
+                outgoing: 'Utgående',
+                received: 'Mottatt',
+                sent: 'Sendt',
+                skipped: 'Hoppet over'
+            },
+            subject: 'Emne',
+            templateattachments: 'E-posten inneholder vedlegg som er automatisk lastet inn av malen',
+            to: 'Til',
+            view: 'Vis'
+        },
+        errors: {
+            actionnotallowed: 'Handling er ikke gyldig',
+            autherror: 'Feil brukernavn eller passord',
+            classnotfound: 'Finner ikke klasse {0}',
+            fieldrequired: 'Dette feltet må fylles ut',
+            invalidfilter: 'Ugyldig filter',
+            nodatatoexport: 'Diagrammet har ingen data å eksportere',
+            notfound: 'Ingen elementer funnet',
+            value3chars: 'Verdien må være minst 3 tegn lang.'
+        },
+        filters: {
+            actions: 'Handlinger',
+            addfilter: 'Legg til filter',
+            any: 'Minst én',
+            attachments: 'Vedlegg',
+            attachmentssearchtext: 'Vedlegg søketekst',
+            attribute: 'Velg et atributt',
+            attributes: 'Attributter',
+            clearfilter: 'Fjern filter',
+            clone: 'Klone',
+            copyof: 'Kopi av',
+            currentgroup: 'Gjeldende gruppe',
+            currentuser: 'Gjeldende bruker',
+            defaultset: 'Sett som standard',
+            defaultunset: 'Fjern som standard',
+            description: 'Beskrivelse',
+            domain: 'Domene',
+            errorname: 'Filternavn er allerede i bruk',
+            filterdata: 'Filtrer data',
+            fromfilter: 'Fra filter',
+            fromselection: 'Fra seleksjon',
+            group: 'Gruppe',
+            ignore: 'Ignorer',
+            migrate: 'Migrer',
+            name: 'Navn',
+            newfilter: 'Nytt filter',
+            noone: 'Ingen',
+            operator: 'Operatør',
+            operators: {
+                and: 'Og',
+                beginswith: 'Starter med',
+                between: 'Mellom',
+                contained: 'Innenfor',
+                containedorequal: 'Innenfor eller lik',
+                contains: 'Inneholder',
+                containsorequal: 'Inneholder eller lik',
+                descriptionbegin: 'Beskrivelsen begynner med',
+                descriptioncontains: 'Beskrivelsen inneholder',
+                descriptionends: 'Beskrivelsen slutter med',
+                descriptionnotbegin: 'Beskrivelsen begynner ikke med',
+                descriptionnotcontain: 'Beskrivelsen inneholder ikke',
+                descriptionnotends: 'Beskrivelsen slutter ikke med',
+                different: 'Forskjellig fra',
+                doesnotbeginwith: 'Starter ikke med',
+                doesnotcontain: 'Inneholder ikke',
+                doesnotendwith: 'Slutter ikke med',
+                endswith: 'Slutter med',
+                equals: 'Lik',
+                greaterthan: 'Større enn',
+                isnotnull: 'Er ikke null',
+                isnull: 'Er null',
+                lessthan: 'Mindre enn',
+                or: 'Eller'
+            },
+            relations: 'Relasjoner',
+            removeattribute: 'Fjern attributt',
+            removeblock: 'Fjern sperring',
+            type: 'Type',
+            typeinput: 'Inndataparameter',
+            typeorchoosetheattributename: 'Skriv eller velg attributtnavnet',
+            user: 'Bruker',
+            value: 'Verdi'
+        },
+        gis: {
+            card: 'Kort',
+            cardsMenu: 'Kortmeny',
+            code: 'Kode',
+            contextmenu: {
+                coordinates: 'Hent koordinater',
+                coordinatescopiedmessage: 'Koordinater kopiert til utklippstavlen'
+            },
+            description: 'Beskrivelse',
+            extension: {
+                errorCall: 'Feil',
+                noResults: 'Ingen resultater'
+            },
+            externalServices: 'Eksterne tjenester',
+            geographicalAttributes: 'Geo atributter',
+            geoserverLayers: 'Geoserverlag',
+            labels: {
+                all: 'Alle',
+                alltitle: 'Vis alle etiketter',
+                alltitleclass: 'Vis alle etiketter for valgte klasse',
+                clear: 'Tøm søk',
+                hidden: 'Skjult',
+                hiddentitle: 'Skjul etiketter',
+                hideinfowindow: 'Skjul informasjonsvindu',
+                label: 'Etiketter',
+                search: 'Søk på kartet',
+                selected: 'Valgt',
+                selectedtitle: 'Vis etiketter for valgt gjenstand',
+                showinfowindow: 'Vis informasjonsvindu'
+            },
+            layers: 'Kartlag',
+            layersTab: {
+                clearPreferences: 'Tøm innstillingene for lag',
+                preferencesCleared: 'Innstillinger for kartlag er fjernet',
+                preferencesSaved: 'Innstilinger for kartlag er lagret',
+                savePreferences: 'Lagre lag-innstillinger',
+                updatePreferences: 'Oppdater lag-alternativer'
+            },
+            list: 'Liste',
+            longpresstitle: 'Geoelementer i området',
+            map: 'Kart',
+            mapServices: 'Karttjenester',
+            menu: {
+                font: 'Fontstørrelse',
+                options: 'Egenskaper'
+            },
+            position: 'Posisjon',
+            root: 'Rot',
+            sourceMap: {
+                default: 'Bruk standardvisning',
+                satellite: 'Bruk satellittvisning'
+            },
+            tree: 'Tre',
+            type: 'Type',
+            view: 'Visning',
+            zoom: 'Zoom'
+        },
+        history: {
+            activityname: 'Aktivitetsnavn',
+            activityperformer: 'Aktivitetsutøver',
+            attributes: 'Attributt ({0})',
+            begindate: 'Startdato',
+            enddate: 'Sluttdato',
+            fieldname: 'Feltnavn',
+            fulldata: 'Fullstendig data',
+            onlychanges: 'Kun endringer',
+            otherrelations: 'Andre relasjoner',
+            processstatus: 'Status',
+            referencerelation: 'Referanserelasjoner',
+            relation: 'Relasjon',
+            system: 'System',
+            type: 'Type',
+            user: 'Brukerkonto',
+            userdescription: 'Brukerbeskrivelse',
+            value: 'Verdi',
+            viewmode: 'Visningsmodus'
+        },
+        homepage: {
+            search: {
+                airequestproblem:
+                    '<em>A problem occurred while processing the request. Please try again later or contact the administrator.</em>',
+                aisearcherror: '<em>Unable to complete the search</em>',
+                goodafternoon: 'God ettermiddag',
+                goodevening: 'God kveld',
+                goodmorning: 'God morgen',
+                goodnight: 'God natt',
+                noresults: '<em>No results found</em>',
+                noresultshint: '<em>Try different keywords or check the spelling</em>',
+                resultsfor: '<em>Results for: {0}</em>'
+            }
+        },
+        iconscategories: {
+            accessibility: 'Tilgjengelighet',
+            animals: 'Dyr',
+            arrows: 'Piler',
+            audiovideo: 'Lyd video',
+            automotive: 'Kjøretøy',
+            autumn: 'Høst',
+            beverage: 'Drikke',
+            buildings: 'Bygninger',
+            business: 'Forretning',
+            charity: 'Veldedighet',
+            chat: 'Chat',
+            chess: 'Sjakk',
+            childhood: 'Barndom',
+            code: 'Kode',
+            communication: 'Kommunikasjon',
+            computers: 'Datamaskiner',
+            construction: 'Bygging',
+            currency: 'Valuta',
+            datetime: 'Dato tid',
+            design: 'Design',
+            editors: 'Redaktører',
+            education: 'Utdanning',
+            emoji: 'Emoji',
+            energy: 'Energi',
+            files: 'Filer',
+            finance: 'Finans',
+            food: 'Mat',
+            fruitvegetable: 'Frukt grønnsak',
+            games: 'Spill',
+            gamingtabletop: 'Bordspill',
+            gender: 'Kjønn',
+            general: 'Generell',
+            halloween: 'Halloween',
+            hands: 'Hender',
+            hotel: 'Hotell',
+            household: 'Husholdning',
+            images: 'Bilder',
+            interfaces: 'Grensenitt',
+            logistics: 'Logistikk',
+            maps: 'Kart',
+            maritime: 'Maritim',
+            marketing: 'Markedsføring',
+            mathematics: 'Matematikk',
+            medical: 'Medisinsk',
+            moving: 'Flytting',
+            music: 'Musikk',
+            objects: 'Objekter',
+            paymentsshopping: 'Betalinger shopping',
+            political: 'Politisk',
+            religion: 'Religion',
+            sciencefiction: 'Science fiction',
+            security: 'Sikkerhet',
+            shapes: 'Former',
+            shopping: 'Shopping',
+            social: 'Sosial',
+            spinners: 'Spinnere',
+            sports: 'Sport',
+            spring: 'Vår',
+            status: 'Status',
+            toggle: 'Veksel',
+            travel: 'Reise',
+            userspeople: 'Brukere personer',
+            vehicles: 'Kjøretøy',
+            weather: 'Vær',
+            winter: 'Vinter'
+        },
+        importexport: {
+            database: {
+                uri: 'Database URI',
+                user: 'Databasebruker'
+            },
+            downloadreport: 'Last ned rapport',
+            emailfailure: 'En feil oppsto ved sending av e-post!',
+            emailmessage: 'Lagt ved importrapport av fil "{0}" i dato {1}',
+            emailsubject: 'Import datarapport',
+            emailsuccess: 'E-posten ble sendt!',
+            export: 'Eksport',
+            exportalldata: 'Alle data',
+            exportfiltereddata: 'Bare data som matcher gridfiler',
+            gis: {
+                importconfiguration: 'Importer konfigurasjon',
+                shapeimportdisabled: 'Import av shapes er ikke slått på for denne malen',
+                shapeimportenabled: 'Import av figurer er aktivert for denne malen'
+            },
+            ifc: {
+                card: 'Kort',
+                project: 'Prosjekt',
+                sourcetype: 'Importer fra'
+            },
+            import: 'Import',
+            importresponse: 'Importsvar',
+            response: {
+                created: 'Opprettede kort',
+                deleted: 'Slettede kort',
+                errors: 'Feil',
+                linenumber: 'Linjenummer',
+                message: 'Melding',
+                modified: 'Endrede kort',
+                notprocessed: 'Ubehandlede kort',
+                processed: 'Prosesserte rader',
+                recordnumber: 'Antall oppføringer',
+                unchanged: 'Uendrede kort'
+            },
+            sendreport: 'Send rapport',
+            template: 'Mal',
+            templatedefinition: 'Maldefinisjon'
+        },
+        joinviews: {
+            active: 'Aktiv',
+            addview: 'Legg til visning',
+            alias: 'Alias',
+            attribute: 'Attributt',
+            attributecustomization: 'Attributtilpasning',
+            attributes: 'Attributter',
+            attributeschoice: 'Attributtvalg',
+            attributesof: 'Attributter av: {0}',
+            createview: 'Lag visning',
+            datasorting: 'Datasortering',
+            delete: 'Slett',
+            deleteview: 'Slett visning',
+            deleteviewconfirm: 'Er du sikker på at du vil slette denne visningen?',
+            description: 'Beskrivelse',
+            disable: 'Deaktiver',
+            domainalias: 'Domenealias',
+            domainsof: 'Domener av {0}',
+            edit: 'Endre',
+            editview: 'Endre visningskonfigurasjon',
+            enable: 'Aktiver',
+            fieldsets: 'Feltsett',
+            filters: 'Filtre',
+            generalproperties: 'Generelle egenskaper',
+            group: 'Gruppe',
+            innerjoin: 'Inner join',
+            jointype: 'Join type',
+            joinview: 'Vis fra join',
+            klass: 'Klasse',
+            manageview: 'Behandle visning',
+            masterclass: 'Mesterklasse',
+            masterclassalias: 'Mesterklassealias',
+            name: 'Navn',
+            newjoinview: 'Ny visning fra join',
+            outerjoin: 'Outer join',
+            pleaseseleceavalidmasterclass: 'Vennligst velg en gyldig mesterklasse',
+            refreshafteredit: 'Ønsker du å oppdatere siden for se endringene?',
+            selectatleastoneattribute: 'Vennligst velg minst ett attributt',
+            selectdisplayattributegrid:
+                'Vennligst velg minst ett attributt for visning i grid og ett i den reduserte grid',
+            showingrid: 'Vis i grid',
+            showinreducedgrid: 'Vis i redusert grid',
+            targetalias: 'Alias for destinasjonsklasse'
+        },
+        login: {
+            buttons: {
+                login: 'Logg inn',
+                logout: 'Bytt konto'
+            },
+            fields: {
+                group: 'Gruppe',
+                language: 'Språk',
+                password: 'Passord',
+                tenants: 'Tenants',
+                username: 'Brukernavn'
+            },
+            loggedin: 'Logget inn',
+            sso: {
+                loginfailure: 'Innlogging feilet',
+                loginwith: 'Logg inn med {0}',
+                or: 'eller',
+                usernotenabled: 'Bruker er ikke aktivert'
+            },
+            title: 'Logg inn',
+            welcome: 'Velkommen tilbake {0}.'
+        },
+        main: {
+            administrationmodule: 'Administrasjonsmodul',
+            alerts: 'Varsler',
+            baseconfiguration: 'Basiskonfigurasjon',
+            cardlock: {
+                lockedmessage: 'Du kan ikke endre dette kortet fordi {0} redigerer det.',
+                someone: 'noen'
+            },
+            changegroup: 'Endre gruppe',
+            changetenant: 'Endre {0}',
+            confirmchangegroup: 'Er du sikker på at du vil endre gruppen?',
+            confirmchangetenants: 'Er du sikker på at du vil endre aktiv tenant?',
+            confirmdisabletenant: 'Vil du virkelig skru av «Ignorer tenants» statusflagget?',
+            confirmenabletenant: 'Vil du virkelig skru på «Ignorer tenants» statusflagget?',
+            description: 'Beskrivelse',
+            ignoretenants: 'Ignorer {0}',
+            info: 'Info',
+            logo: {
+                cmdbuild: 'CMDBuild logo',
+                cmdbuildready2use: 'CMDBuild READY2USE logo',
+                companylogo: 'Bedriftslogo',
+                hdaitsm: 'HDA ITSM',
+                openmaint: 'openMAINT logo'
+            },
+            logout: 'Logg ut',
+            managementmodule: 'Datahåndteringsmodulen',
+            multigroup: 'Multigruppe',
+            multitenant: 'Multi {0}',
+            navigation: 'Navigasjon',
+            pagenotfound: 'Side ikke funnet',
+            password: {
+                change: 'Endre passord',
+                confirm: 'Gjenta passord',
+                email: 'E-postadresse',
+                err_confirm: 'Passordene er ikke like.',
+                err_diffprevious: 'Passordet kan ikke være likt forrige passord.',
+                err_diffusername: 'Passordet kan ikke være identisk med brukernavn.',
+                err_length: 'Passordet må være minst {0} tegn langt.',
+                err_reqdigit: 'Passordet må inneholde minst ett tall.',
+                err_reqlowercase: 'Passordet må inneholde minst én liten bokstav.',
+                err_requppercase: 'Passordet må inneholde minst én stor bokstav.',
+                expired: 'Passordet har utløpt. Endre det nå.',
+                forgotten: 'Jeg har glemt passordet mitt',
+                new: 'Nytt passord',
+                old: 'Gammel passord',
+                recoverysuccess: 'Vi har sendt deg en e-post med instruksjoner for hvordan du endrer passordet ditt.',
+                reset: 'Sett nytt passord',
+                saved: 'Passordet har blitt lagret!'
+            },
+            pleasecorrecterrors: 'Vennligst rett merkede feil!',
+            preferences: {
+                comma: 'Komma',
+                decimalserror: 'Desimalskille må være tilstede',
+                decimalstousandserror: 'Desimalskille og tusenskille må være forskjellig',
+                default: 'Standard',
+                defaultvalue: 'Standardverdi',
+                favouritemenulocation: 'Lokasjon på favorittmeny',
+                firstdayofweek: 'Første dag i uken',
+                gridpreferencesclear: 'Tøm grid-alternativer',
+                gridpreferencescleared: 'Grid-alternativer tømt!',
+                gridpreferencessave: 'Lagre grid-innstillinger',
+                gridpreferencessaved: 'Grid-alternativer lagret',
+                gridpreferencesupdate: 'Oppdater grid-alternativer',
+                groupemailsbystatus: 'Vis e-post gruppert etter status',
+                labelcsvseparator: 'CSV separator',
+                labeldateformat: 'Datoformat',
+                labeldecimalsseparator: 'Desimalskille',
+                labellanguage: 'Språk',
+                labelthousandsseparator: 'Tusenskille',
+                labeltimeformat: 'Tidsformat',
+                msoffice: 'Microsoft Office',
+                no: 'Nei',
+                notificationslabel: 'Chat & varslinger',
+                notificationssound: 'Spill av varslingslyd',
+                notificationssoundvolume: 'Varslingsvolum',
+                period: 'Punktum',
+                preferredfilecharset: 'CSV encoding',
+                preferredofficesuite: 'Foretrukket Office programpakke',
+                sendcancellationperiod: 'Periode for sendingsavbrytelse (i sekunder)',
+                showcollapsed: 'Vis sammenfoldet',
+                showfovouritesafter: 'Vis etter navigasjonsmeny',
+                showfovouritesbefore: 'Vis før navigasjonsmeny',
+                space: 'Mellomrom',
+                thousandserror: 'Tusenskille må være tilstede',
+                timezone: 'Tidssone',
+                twelvehourformat: '12-timers format',
+                twentyfourhourformat: '24-timers format',
+                yes: 'Ja'
+            },
+            searchinallitems: 'Søk i alle elementer',
+            searchtenant: 'Søk i tenant',
+            selectdeselettenants: 'Marker/Fjern markering',
+            treenavcontenttitle: '{0} av {1}',
+            userpreferences: 'Innstillinger'
+        },
+        menu: {
+            allitems: 'Alle elementer',
+            classes: 'Klasser',
+            custompages: 'Tilpassede sider',
+            dashboards: 'Dashboards',
+            dependencytrees: 'Avhengighetstrær',
+            favourites: 'Favoritter',
+            favouritesadd: 'Legg til i favoritter',
+            favouritesremove: 'Fjernt fra favoritter',
+            homepage: 'Startside',
+            processes: 'Prosesser',
+            reports: 'Rapporter',
+            setasinitialpage: 'Sett som startside',
+            views: 'Visninger'
+        },
+        mobile: {
+            config: {
+                configure: 'Konfigurerer mobil enhet',
+                customercode: 'Kundekode',
+                devicename: 'Enhetsnavn',
+                regenerate: 'Regenerer',
+                serverurl: 'Server URL'
+            }
+        },
+        notes: {
+            edit: 'Endre notater'
+        },
+        notifications: {
+            clearall: '<em>Clear all</em>',
+            clearallSuccess: '<em>All notification have been deleted</em>',
+            delete: 'Slett varselet',
+            emptymessage: 'Det er ingen varsler i vise',
+            label: 'Varsler',
+            viewall: 'Vis alle'
+        },
+        notifier: {
+            attention: 'Advarsel',
+            copied: 'Kopiert',
+            copiedtotheclipboard: 'Tekst kopiert til utklippstavlen',
+            error: 'Feil',
+            genericerror: 'Generisk feil',
+            genericerrormessage: 'For mer informasjon, se systemloggene.',
+            genericinfo: 'Generisk info',
+            genericwarning: 'Generisk advarsel',
+            info: 'Info',
+            more: 'Mer informasjon',
+            success: 'Suksess',
+            warning: 'Advarsel'
+        },
+        patches: {
+            apply: 'Legg inn oppdateringer',
+            category: 'Kategori',
+            description: 'Beskrivelse',
+            name: 'Navn',
+            patches: 'Oppdateringer'
+        },
+        processes: {
+            abortconfirmation: 'Er du sikker på at du vil avbryte prosessen?',
+            abortprocess: 'Avbryt prosess',
+            action: {
+                advance: 'Fortsett',
+                label: 'Handling'
+            },
+            activeprocesses: 'Aktive prosesser',
+            allstatuses: 'Alle',
+            editactivity: 'Endre aktivitet',
+            openactivity: 'Åpne aktivitet',
+            resumeprocesses: 'Prosesser som ikke er suspendert kan ikke gjenopptas',
+            startworkflow: 'Start',
+            workflow: 'Arbeidsflyt'
+        },
+        relationGraph: {
+            activity: 'Aktivitet',
+            allLabelsOnGraph: 'Alle merkelapper på graf',
+            card: 'Kort',
+            cardList: 'Kortliste',
+            cardRelations: 'Kortrelasjoner',
+            choosenaviagationtree: 'Velg navigasjonstre',
+            class: 'Klasse',
+            classList: 'Klasseliste',
+            compoundnode: 'Sammensatt node',
+            disable: 'Deaktiver',
+            edges: 'Kanter',
+            enable: 'Aktiver',
+            labelsOnGraph: 'Infoboble på graf',
+            level: 'Nivå',
+            nodes: 'Noder',
+            openRelationGraph: 'Åpne relasjonsgraf',
+            quantity: 'Mengde',
+            refresh: 'Oppfrisk',
+            relation: 'relasjon',
+            relationGraph: 'Relasjonsgraf',
+            reopengraph: 'Gjenåpne grafen fra denne noden'
+        },
+        relations: {
+            adddetail: 'Legg til detaljer',
+            addrelations: 'Legg til relasjoner',
+            attributes: 'Attributter',
+            begindate: 'Startdato',
+            cardnotpresentmessage:
+                'Relasjonskort er ikke lengre tilgjengelig. Ved fortsettelse krever dette valg av et nytt kort.',
+            code: 'Kode',
+            deletedetail: 'Slett detalj',
+            deleterelation: 'Slett relasjoner',
+            deleterelationconfirm: 'Er du sikker på at du vil slette denne relasjonen?',
+            description: 'Beskrivelse',
+            editcard: 'Endre kort',
+            editdetail: 'Endre detaljer',
+            editrelation: 'Endre relasjon',
+            errorexisting:
+                'Relasjonen "{0}" eksisterer allerede. Endre det eksisterende eller slett det før opprettelse av relasjon.',
+            extendeddata: 'Utvidede data',
+            mditems: 'Elementer',
+            missingattributes: 'Manglende obligatorisk atributt',
+            opencard: 'Åpne relatert kort',
+            opendetail: 'Vis detaljer',
+            relationdata: 'Relasjonsdata',
+            type: 'Type'
+        },
+        reports: {
+            csv: 'CSV',
+            download: 'Last ned',
+            format: 'Format',
+            msgs: {
+                creationerror: 'Noe gikk galt under oppretting av rapport.',
+                creationstarted: 'Rapportgenerering startet. Du blir varslet når den er klar for nedlasting.'
+            },
+            odt: 'ODT',
+            pdf: 'PDF',
+            print: 'Skriv ut',
+            reload: 'Oppfrisk',
+            rtf: 'RTF'
+        },
+        system: {
+            data: {
+                lookup: {
+                    CalendarCategory: {
+                        default: {
+                            description: 'Standard'
+                        }
+                    },
+                    CalendarFrequency: {
+                        daily: {
+                            description: 'Daglig'
+                        },
+                        monthly: {
+                            description: 'Månedlig'
+                        },
+                        once: {
+                            description: 'En gang'
+                        },
+                        weekly: {
+                            description: 'Ukentlig'
+                        },
+                        yearly: {
+                            description: 'Årlig'
+                        }
+                    },
+                    CalendarPriority: {
+                        default: {
+                            description: 'Standard'
+                        }
+                    }
+                },
+                role: {
+                    nobody: {
+                        description: 'Ingen'
+                    }
+                }
+            }
+        },
+        thematism: {
+            addThematism: 'Legg tematikk',
+            analysisType: 'Analysetype',
+            attribute: 'Attributt',
+            bordersIntervals: 'Feil verdi for intervall',
+            calculateRules: 'Generer stilregler',
+            clearThematism: 'Tøm tematikk',
+            color: 'Farge',
+            defineLegend: 'Forklaringsdefinisjon',
+            defineThematism: 'Tematikkdefinisjon',
+            deletethematism: 'Er du sikker på at du vil slette denne tematikken?',
+            editThematism: 'Endre regelkonfigurasjon',
+            function: 'Funksjon',
+            generate: 'Generer',
+            geoAttribute: 'Geo attributt',
+            graduated: 'Graduated',
+            highlightSelected: 'Marker valgte element',
+            intervals: 'Intervaller',
+            legend: 'Forklaring',
+            name: 'navn',
+            newThematism: 'Ny tematikk',
+            punctual: 'Punctual',
+            quantity: 'Mengde',
+            segments: 'Segmenter',
+            source: 'Kilde',
+            table: 'Tabell',
+            thematism: 'Tematikk',
+            value: 'Verdi'
+        },
+        widgets: {
+            ai: {
+                copiedtoattribute: '<em>Message copied in {0} attribute</em>',
+                copytoattribute: '<em>Copy to attribute</em>',
+                errors: {
+                    attributenotfound: '<em>Attribute with name {0} not found</em>',
+                    wrongtype: '<em>The message can only be copied only to a String or Text attribute</em>'
+                },
+                overrideattribute: '<em>This action will override the existing value. Are you sure?</em>'
+            },
+            attachment: {
+                actions: {
+                    exitwithoutsave: 'Avslutt uten å lagre',
+                    stayinedit: 'Tilbake til redigering'
+                },
+                savebeforeexit: 'Det er er ulagrede endringer i vedlegget. Vil du lagre før du går ut?',
+                saveprocessmessage:
+                    'Vedlegg kan kun lagres i eksisterende kort. Ved å trykke på lagre, vil prosessinstansen bli opprettet med dataene som er angitt i skjemaet.'
+            },
+            calendar: {
+                error: 'Parameter {0} er ikke satt',
+                errorwrong: 'Parameter {0} er ikke satt riktig'
+            },
+            customform: {
+                addrow: 'Legg til rad',
+                clonerow: 'Klone rad',
+                datanotvalid: 'Data ikke gyldig',
+                deleterow: 'Slett rad',
+                editrow: 'Endre rad',
+                export: 'Eksport',
+                import: 'Import',
+                importexport: {
+                    expattributes: 'Data å eksportere',
+                    file: 'Fil',
+                    filename: 'Filnavn',
+                    format: 'Format',
+                    importmode: 'Importmodus',
+                    keyattributes: 'Nøkkelatributter',
+                    missingkeyattr: 'Vennligst velg minst ett atributt',
+                    modeadd: 'Legg til',
+                    modemerge: 'Slå sammen',
+                    modereplace: 'Erstatt',
+                    separator: 'Separator'
+                },
+                refresh: 'Oppfrisk til standard'
+            },
+            linkcards: {
+                checkedonly: 'Kun avhuket',
+                editcard: 'Endre kort',
+                opencard: 'Åpne kort',
+                refreshselection: 'Bruk standard seleksjon',
+                removefilterconfirm: 'Denne handlingen fjerner det gjeldende filteret. Vil du fortsette?',
+                selectioncleared: 'Utvalget er tømt',
+                togglefilterdisabled: 'Deaktiver gridfilter',
+                togglefilterenabled: 'Aktiver gridfilter'
+            },
+            notimplemented: 'Widgeten <strong>{0}</strong> er ikke implementert!',
+            notsupportedinline:
+                'Inline-modus er ikke støttet for denne type widget. Vennligst fiks konfigurasjonen for widget.',
+            required: 'Denne widgeten er påkrevet.'
+        }
+    });
+
+    function cleardata(obj) {
+        for (var key in obj) {
+            if (typeof obj[key] === 'string') {
+                obj[key] = obj[key].replace(/^<em>(.+)<\/em>$/, '$1');
+            } else if (typeof obj[key] === 'object') {
+                cleardata(obj[key]);
+            }
+        }
+    }
+    cleardata(CMDBuildUI.locales.Locales);
+})();

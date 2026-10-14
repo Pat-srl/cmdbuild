@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context displayName="CMDBuild" path="/cmdbuild">
+    <JarScanner scanClassPath="false" > <!-- skip jar scanning, improve tomcat startup time -->
+        <JarScanFilter defaultPluggabilityScan="false" defaultTldScan="false" />
+    </JarScanner>
+
+    <Resources className="org.apache.catalina.webresources.StandardRoot">
+        <PreResources className="org.apache.catalina.webresources.DirResourceSet" base="###folder###" webAppMount="/WEB-INF/lib"/>
+    </Resources>
+</Context>

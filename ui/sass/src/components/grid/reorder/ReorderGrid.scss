@@ -1,0 +1,129 @@
+@include extjs-text-field-ui(
+    $ui: "reordergrid-editor-combo",
+    $ui-height: 9,
+    $ui-padding: "5 0 0 0",
+    $ui-textarea-line-height: 10
+) {
+    max-height: 19px;
+    padding-top: 5px !important;
+}
+
+@include extjs-button-small-ui(
+    $ui: "button-like-tool",
+    $border-color: transparent,
+    $border-color-over: transparent,
+    $border-color-focus: transparent,
+    $border-color-pressed: transparent,
+    $border-color-focus-over: transparent,
+    $border-color-focus-pressed: transparent,
+    $border-color-disabled: transparent,
+    $padding: 0,
+    $background-color: #fff,
+    $background-color-over: #fff,
+    $background-color-focus: #fff,
+    $background-color-pressed: #fff,
+    $background-color-focus-over: #fff,
+    $background-color-focus-pressed: #fff,
+    $font-size: 18px,
+    $glyph-font-size: 18px,
+    $color: #8d8d8d,
+    $glyph-color: #8d8d8d,
+    $glyph-opacity: 1,
+    $body-outline-width-focus: transparent,
+    $body-outline-style-focus: transparent,
+    $body-outline-color-focus: transparent
+) {
+}
+
+.#{$prefix}panel {
+    .administration-reorder-grid {
+        table,
+        .#{$prefix}column-header .#{$prefix}column-header-over {
+            background-color: #fff !important;
+            border: 0 !important;
+        }
+
+        table.#{$prefix}grid-item-alt {
+            background-color: #f5f5f5 !important;
+        }
+
+        .#{$prefix}grid-body,
+        .#{$prefix}column-header-inner:after {
+            border: 0 !important;
+        }
+
+        .#{$prefix}column-header-text {
+            color: #707070;
+        }
+
+        .#{$prefix}grid-cell-inner {
+            overflow: hidden;
+            padding: 2px 6px;
+            //white-space: nowrap;
+        }
+
+        .x-form-text-wrap {
+            display: table-cell;
+        }
+
+        .x-grid-row-editor .x-form-item-body-default,
+        .x-editor .x-form-field.x-form-text.x-form-text-default {
+            min-height: unset !important;
+            height: 19px !important;
+            max-height: 19px !important;
+            //padding: 0!important;
+        }
+
+        &&.margin-bottom5 .#{$prefix}grid-item {
+            padding: 3px 6px;
+            //white-space: nowrap;
+        }
+
+        .x-form-trigger-reordergrid-editor-combo {
+            padding-top: 5px !important;
+        }
+        .x-form-clear-trigger:before {
+            content: "\f00d" !important;
+        }
+        .x-form-search-trigger:before {
+            content: "\f002" !important;
+        }
+        .x-grid-row-editor .x-form-text,
+        .x-form-display-field .x-form-action-col-field,
+        .x-grid-row-editor .x-form-display-field {
+            padding: 0 3px !important;
+
+            &&.x-form-action-col-field {
+                text-align: center;
+                padding: 0 !important;
+                // background-color: transparent!important
+            }
+        }
+
+        // .x-form-display-field.x-form-action-col-field {
+        //     text-align: center!important;
+        // }
+        .x-grid-row-editor .x-panel-body {
+            border-top: unset !important;
+            border-bottom: unset !important;
+            padding: 5px 0 5px 0;
+            background: #ffffff !important;
+        }
+
+        // .x-grid-row-editor-buttons {
+        //     display: none;
+        // }
+    }
+}
+
+.x-panel.administration-reorder-grid.margin-bottom5 .#{$prefix}grid-item {
+    padding: 3px 6px;
+    //white-space: nowrap;
+}
+.x-item-disabled .x-form-trigger-wrap-reordergrid-editor-combo {
+    border-width: 0px;
+}
+
+.x-form-item-reordergrid-editor-combo .x-form-display-field-body-reordergrid-editor-combo {
+    background: #fff;
+}

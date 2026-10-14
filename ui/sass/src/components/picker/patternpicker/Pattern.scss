@@ -1,0 +1,32 @@
+.#{$prefix}pattern-picker-item {
+    width: 48px;
+    height: 48px;
+    border-width: 1px;
+    border-color: #fff;
+    border-style: solid;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 2px;
+}
+.#{$prefix}pattern-picker {
+    width: 192px;
+    height: 120px;
+    background-color: #fff;
+    border-color: #fff;
+    border-width: 0;
+    border-style: solid;
+}
+canvas.#{$prefix}pattern-picker-item:hover {
+    border-color: #8bb8f3;
+    background-color: #d9d9d9;
+}
+.#{$prefix}pattern-picker-selected {
+    border-color: #8bb8f3;
+    background-color: #d9d9d9;
+}
+.#{$prefix}pattern-picker-item-inner {
+    line-height: 16px;
+    border-color: #d0d0d0;
+    border-width: 1px;
+    border-style: solid;
+}

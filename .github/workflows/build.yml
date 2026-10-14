@@ -1,0 +1,41 @@
+name: build
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  dco:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check Signed-off-by on every commit
+        run: |
+          missing=0
+          for c in $(git rev-list --no-merges "origin/${{ github.base_ref }}..${{ github.event.pull_request.head.sha }}"); do
+            if ! git log -1 --format=%B "$c" | grep -qE '^Signed-off-by: .+ <.+>$'; then
+              echo "missing Signed-off-by: $(git log -1 --format='%h %s' "$c")"
+              missing=1
+            fi
+          done
+          exit $missing
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "25"
+          cache: maven
+      # The ui and cmdbuild modules need Sencha Cmd, which is not available on the runner
+      - name: Build backend modules
+        run: mvn -B -ntp package -DskipTests -pl '!ui,!cmdbuild'

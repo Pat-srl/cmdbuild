@@ -1,0 +1,1173 @@
+(function () {
+    Ext.define('CMDBuildUI.locales.pt_PT.Locales', {
+        requires: ['CMDBuildUI.locales.pt_PT.LocalesAdministration'],
+        override: 'CMDBuildUI.locales.Locales',
+        singleton: true,
+        localization: 'pt_PT',
+        administration: CMDBuildUI.locales.pt_PT.LocalesAdministration.administration,
+        ai: {
+            clearconversation: '<em>Clear conversation</em>',
+            clearconversationmessage: '<em>Are you sure you want to clear the current conversation?</em>',
+            copiedtoclipboard: '<em>Message copied to clipboard</em>',
+            erroranswer: '<em>Sorry, there where problems in the answer</em>',
+            headertooltip: '<em>CMDBuild chat bot</em>',
+            introtextbody: '<em>To start chatting, describe your request in the appropriate field</em>',
+            introtexttitle: '<em>How I can help you?</em>',
+            loading: '<em>Loading ...</em>',
+            newchat: '<em>New chat</em>',
+            newchattooltip: '<em>Start a new conversation</em>',
+            questionemptytext: '<em>Insert here your question ...</em>',
+            resources: '<em>Sources</em>',
+            viewrelatedcard: '<em>View related card</em>',
+            viewresource: '<em>View resource</em>'
+        },
+        arialabels: {
+            buttonplaceholder: '<em>Button</em>',
+            iframeplaceholder: '<em>Text editor</em>',
+            languageselector: '<em>Language selector</em>',
+            resizepanel: {
+                horizontally: '<em>Resize panels horizontally</em>',
+                vertically: '<em>Resize panels vertically</em>'
+            },
+            usermenu: '<em>User menu</em>'
+        },
+        attachments: {
+            add: 'Adicionar anexo',
+            attachmenthistory: 'Histórico de anexo',
+            author: 'Autor',
+            authordescription: 'Descrição de autor',
+            browse: 'Navegar no &hellip;',
+            category: 'Categoria',
+            code: 'Código',
+            creationdate: 'Data de criação',
+            deleteattachment: 'Eliminar anexo',
+            deleteattachment_confirmation: 'Tem a certeza que deseja eliminar este anexo?',
+            description: 'Descrição',
+            download: 'Descarregar',
+            dropfiles: 'Solte os ficheiros aqui',
+            editattachment: 'Editar anexo',
+            errordms: 'O DMS está desativado e não é possível gravar ficheiros',
+            file: 'Ficheiro',
+            filealreadyinlist: 'O ficheiro {0} já está na lista.',
+            filename: 'Nome do ficheiro',
+            fileview: 'Ver anexo',
+            invalidfiles: 'Remover ficheiros inválidos',
+            majorversion: 'Versão principal',
+            maxsize: 'O tamanho de ficheiro máximo permitido é {0} MB.',
+            metadata: 'Metadados',
+            modificationdate: 'Data de modificação',
+            new: 'Novo anexo',
+            nocategory: 'Sem categoria',
+            preview: 'Antevisão',
+            removefile: 'Remover ficheiro',
+            statuses: {
+                empty: 'Ficheiro vazio',
+                error: 'Erro',
+                extensionNotAllowed: 'Extensão de ficheiro não permitida',
+                loaded: 'Carregado',
+                ready: 'Pronto',
+                toolarge: 'Demasiado grande'
+            },
+            successupload: '{0} anexos carregados.',
+            uploadfile: 'Carregar ficheiro…',
+            version: 'Versão',
+            viewhistory: 'Ver histórico de anexo',
+            viewmetadata: 'Ver metadados do anexo',
+            warningmessages: {
+                atleast: '{0}: foram carregados {1} anexos do tipo "{2}". Esta categoria espera pelo menos {3} anexos.',
+                exactlynumber: '{0}: foram carregados {1} anexos do tipo "{2}". Esta categoria espera {3} anexos.',
+                maxnumber: '{0}: foram carregados {1} anexos do tipo "{2}". Esta categoria espera no máximo {3} anexos.'
+            },
+            wrongfileextension: 'A extensão de ficheiro {0} não é permitida'
+        },
+        bim: {
+            bimViewer: 'Visualizador BIM',
+            card: {
+                label: 'Registo'
+            },
+            ifcproperties: {
+                BOUNDING_BOX_SIZE_ALONG_X: 'Tamanho da caixa de encadernação ao longo do eixo x',
+                BOUNDING_BOX_SIZE_ALONG_Y: 'Tamanho da caixa de encadernação ao longo do eixo y',
+                BOUNDING_BOX_SIZE_ALONG_Z: 'Tamanho da caixa de encadernação ao longo do eixo Z',
+                calculated: 'Calculado',
+                description: 'Descrição',
+                guid: 'GUID',
+                label: 'Propriedades',
+                name: 'Nome',
+                type: 'Tipo',
+                uuid: 'UUID'
+            },
+            layers: {
+                label: 'Camadas',
+                menu: {
+                    hideAll: 'Esconder tudo',
+                    hideAllLayers: 'Esconder todas as camadas',
+                    hideAllXeokit: 'Esconder tudo {0}',
+                    showAll: 'Mostrar tudo',
+                    showAllLayers: 'Mostrar todas as camadas',
+                    showAllXeokit: 'Mostrar tudo {0}'
+                },
+                name: 'Nome',
+                quantity: 'Quantidade',
+                visibility: 'Visibilidade'
+            },
+            menu: {
+                camera: 'Câmara',
+                disableslice: 'Desativar seleção separada',
+                enableslice: 'Ativar seleção separada',
+                frontView: 'Vista Frontal',
+                mod: 'Controlos de visualização',
+                ortho: 'Mudar para vista ortogonal',
+                orthographic: 'Camara Ortográfica',
+                pan: 'Rodar',
+                panXeokit: 'Controles do visualizador: rodar (Shift)',
+                perspe: 'Mudar para vista prespectiva',
+                perspective: 'Camara perspectiva',
+                resetSlice: 'Redefenir separação',
+                resetView: 'Restabelecer vista',
+                rotate: 'Rodar',
+                rotateXeokit: 'Controles do visualizador: rodar',
+                save: 'Gravar vista',
+                shortcuts: {
+                    down: 'Rodar para baixo',
+                    left: 'Rodar para a esquerda',
+                    right: 'Rodar para a direita',
+                    title: 'Atalhos de telcado',
+                    up: 'Rodar para cima',
+                    zoomin: 'Mais Zoom',
+                    zoomout: 'Reduzir Zoom'
+                },
+                sideView: 'Vista lateral',
+                threeD: 'Mudar para visualização 3D',
+                topView: 'Vista de Topo',
+                twoD: 'Mudar para visualização 2D'
+            },
+            navCube: {
+                back: 'Voltar',
+                bottom: 'Fundo',
+                front: 'Frontal',
+                left: 'Esquerda',
+                right: 'Direita',
+                top: 'Topo'
+            },
+            showBimCard: 'Abrir visualizador 3D',
+            tree: {
+                arrowTooltip: 'Selecionar elemento',
+                label: 'Árvore',
+                multipleElements: 'Selecionar elementos',
+                open_card: 'Abrir registo relacionado',
+                root: 'Raiz ifc'
+            }
+        },
+        bulkactions: {
+            abort: 'Abortar itens selecionados',
+            addfields: 'Adicionar campos',
+            alertdownloadattachments:
+                'Alguns anexos não serão descarregados por ainda não terem sido gravados no servidor',
+            alertnoattachmentsdownload:
+                'Nenhuns anexos serão descarregados por ainda não terem sido gravados no servidor',
+            cancelselection: 'Cancelar seleção',
+            confirmabort: 'Está a abortar {0} instâncias de processo. Tem a certeza de que deseja continuar?',
+            confirmdelete: 'Está a eliminar {0} registos. Tem a certeza de que deseja continuar?',
+            confirmdeleteattachements: 'Está a eliminar {0} anexos. Tem a certeza de que deseja continuar?',
+            confirmedit: 'Está modificado de {0} para {1} registos. Tem certeza de que deseja continuar?',
+            delete: 'Eliminar itens selecionados',
+            download: 'Descarregar anexos selecionados',
+            downloadall: 'Descarregar todos os anexos',
+            edit: 'Editar itens selecionados',
+            missingfields: 'Os seguintes campos devem ser acrescentados para correta validação do formulário: {0}',
+            noattributeselected: 'Selecione pelo menos um atributo.',
+            selectall: 'Selecionar todos os itens'
+        },
+        calendar: {
+            active_expired: 'Ativo/Expirado',
+            add: 'Adicionar calendário',
+            advancenotification: 'Notificação antecipada dos dias',
+            allcategories: 'Todas as categorias',
+            alldates: 'Todas as datas',
+            associatedcard: 'Registo associado',
+            calculated: 'Calculado',
+            calendar: 'Calendário',
+            cancel: 'Marcar como cancelado',
+            category: 'Categoria',
+            class: 'Classe',
+            cm_confirmcancel: 'Tem a certeza de que deseja marcar como cancelados os calendários selecionados?',
+            cm_confirmcomplete: 'Tem a certeza de que deseja marcar como completos os calendários selecionados?',
+            cm_markcancelled: 'Marcar como cancelados os calendários selecionados',
+            cm_markcomplete: 'Marcar como completos os calendários selecionados',
+            complete: 'Marcar como concluído',
+            completed: 'Concluído',
+            date: 'Data',
+            days: 'Dias',
+            delaybeforedeadline: 'Atraso antes do prazo',
+            delaybeforedeadlinevalue: 'Atraso antes do valor do prazo',
+            description: 'Descrição',
+            editevent: 'Editar calendário',
+            enddate: 'Data final',
+            endtype: 'Tipo final',
+            event: 'Calendário',
+            execapplyfilter: 'Não é possível executar aplicarFiltroAvançado porque há mais de uma loja',
+            execremovefilter: 'Não é possível executar removerFiltroAvançado porque há mais de uma loja',
+            executiondate: 'Data de execução',
+            frequency: 'Frequência',
+            frequencymultiplier: 'Multiplicador de frequência',
+            grid: 'Grelha',
+            leftdays: 'Dias que faltam',
+            londdescription: 'Descrição completa',
+            manual: 'Manual',
+            maxactiveevents: 'Máx Calendários ativos',
+            messagebodydelete: 'Gostaria de remover a regra de calendários?',
+            messagebodyplural: 'Existem {0} regras de calendário',
+            messagebodyrecalculate: 'Gostaria de recalcular a regra de calendários com a nova data?',
+            messagebodysingular: 'Existe {0} regra de calendário',
+            messagetitle: 'Calendário a recalcular',
+            missingdays: 'Dias faltados',
+            next30days: 'Próximos 30 dias',
+            next7days: 'Próximos 7 dias',
+            notificationtemplate: 'Modelo usado para notificação',
+            notificationtext: 'Texto de Notificação',
+            occurencies: 'Número de ocorrências',
+            operation: 'Operação',
+            partecipantgroup: 'Grupo participante',
+            partecipantuser: 'Utilizador participante',
+            priority: 'Priority',
+            recalculate: 'Recalcular',
+            referent: 'Referente',
+            scheduler: 'Calendário',
+            sequencepaneltitle: 'Gerar calendários',
+            startdate: 'Data de início',
+            status: 'Status',
+            today: 'Hoje',
+            type: 'Tipo',
+            viewevent: 'Ver calendário',
+            waiteventgeneration: '<em>Generating events. Please wait for them to complete</em>',
+            widgetcriterion: 'Critério de cálculo',
+            widgetemails: 'Correios eletrónicos',
+            widgetgotocard: 'Ir para registo de origem',
+            widgetsourcecard: 'Registo de origem'
+        },
+        chat: {
+            title: 'Conversa'
+        },
+        classes: {
+            cards: {
+                addcard: 'Adicionar registo',
+                clone: 'Clonar',
+                clonewithrelations: 'Clonar registo e relações',
+                deletebeaware: 'Esteja ciente que:',
+                deleteblocked: 'Não é possível prosseguir com a eliminação porque há relações com {0}.',
+                deletecard: 'Eliminar registo',
+                deleteconfirmation: 'Tem a certeza que deseja eliminar este registo?',
+                deleterelatedcards: 'também {0} registos relacionados serão eliminados',
+                deleterelations: 'relações com {0} registos serão eliminados',
+                label: 'Registos',
+                modifycard: 'Editar registo',
+                opencard: 'Abrir registo',
+                print: 'Imprimir registo'
+            },
+            simple: 'Simples',
+            standard: 'Standard'
+        },
+        common: {
+            actions: {
+                add: 'Adicionar',
+                apply: 'Aplicar',
+                cancel: 'Cancelar',
+                clear: 'Limpar',
+                close: 'Fechar',
+                copy: '<em>Copy</em>',
+                copyerrormessage: '<em>Copy the error message to the clipboard</em>',
+                delete: 'Eliminar',
+                edit: 'Editar',
+                execute: 'Executar',
+                forward: '<em>Forward</em>',
+                help: 'Ajuda',
+                hide: '<em>Hide</em>',
+                load: 'Carregar',
+                open: 'Abrir',
+                previous: '<em>Previous</em>',
+                refresh: 'Atualizar dados',
+                remove: 'Remover',
+                save: 'Gravar',
+                saveandapply: 'Guardar e aplicar',
+                saveandclose: 'Guardar e fechar',
+                search: 'Pesquisar',
+                searchaitext: '<em>Search with AI...</em>',
+                searchtext: 'Pesquisar…'
+            },
+            and: 'e',
+            attributes: {
+                boolfalse: 'Falso',
+                booltrue: 'Verdade',
+                link: {
+                    errlabel: 'Etiqueta é obrigatória',
+                    errurl: 'O URL é obrigatório quando a etiqueta não está vazia',
+                    label: 'Etiqueta',
+                    url: 'Url'
+                },
+                nogroup: 'Dados base'
+            },
+            dates: {
+                date: 'dd/mm/yyyy',
+                datetime: 'd/m/Y H:i:s',
+                time: 'H:i:s'
+            },
+            editor: {
+                clearhtml: 'Limpar HTML',
+                expand: 'Expandir editor',
+                reduce: 'Reduzir editor',
+                signature: 'Adicionar assinatura',
+                unlink: 'Desvincular',
+                unlinkmessage: 'Transformar a hiperligação selecionada em texto.'
+            },
+            grid: {
+                disablemultiselection: 'Desativar seleção múltipla',
+                enamblemultiselection: 'Ativar seleção múltipla',
+                export: 'Exportar dados',
+                filterremoved: 'O filtro atual foi removido',
+                import: 'Importar dados',
+                itemnotfound: 'Item não localizado',
+                lastUpdate: '<em>Last update</em>',
+                list: 'Lista',
+                opencontextualmenu: 'Abrir menu de contexto',
+                print: 'Imprimir',
+                printcsv: 'Imprimir como CSV',
+                printmap: 'Imprimir Mapa',
+                printodt: 'Imprimir como ODT',
+                printpdf: 'Imprimir como PDF',
+                row: 'Item',
+                rows: 'Itens',
+                subtype: 'Sub Tipo',
+                thematism: '<em>Thematism</em>'
+            },
+            tabs: {
+                activity: 'Atividade',
+                attachment: 'Anexo',
+                attachments: 'Anexos',
+                card: 'Registo',
+                clonerelationmode: 'Modo de relações clone',
+                details: 'Detalhes',
+                emails: 'Correios eletrónicos',
+                history: 'Histórico',
+                notes: 'Notas',
+                relations: 'Relações',
+                schedules: 'Calendários',
+                sources: 'Fontes'
+            }
+        },
+        dashboards: {
+            filters: '<em>Filters</em>',
+            list: {
+                showall: '<em>Show all</em>',
+                showingnitems: '<em>Showing: {0} items</em>'
+            },
+            pareto: {
+                cumulative: '<em>Cumulative</em>',
+                cumulativeperc: '<em>Cumulative %</em>'
+            },
+            tools: {
+                download: 'Descarregar gráfico',
+                downloaddata: '<em>Download chart data</em>',
+                gridhide: 'Ocultar grelha de dados',
+                gridshow: 'Mostrar grelha de dados',
+                openinpopup: 'Aberto em popup',
+                reload: 'Recarregar',
+                showall: '<em>Show all</em>'
+            }
+        },
+        dependencytree: {
+            cardinfo: '<em>Card</em>',
+            filteredid: '<em>Current card does not belong to this tree</em>',
+            gerarchicview: '<em>Hierarchical view</em>',
+            name: '<em>Dependency Tree</em>',
+            nocardselected: '<em>No card selected</em>',
+            opendependencytree: '<em>Open Dependency Tree</em>',
+            printjpeg: '<em>Print as JPEG</em>',
+            printpdf: '<em>Print as PDF</em>',
+            printpng: '<em>Print as PNG</em>',
+            printsvg: '<em>Print as SVG</em>',
+            reopengraph: '<em>Reopen graph with new root</em>',
+            selectcard: '<em>Select starting node</em>',
+            wrongid: '<em>The ID you entered is incorrect</em>'
+        },
+        emails: {
+            abort: 'Cancelar',
+            addattachmentsfromdocumentarchive: 'Adicionar anexos do arquivo de documentos',
+            alredyexistfile: 'Já existe um ficheiro com este nome',
+            archivingdate: 'Data de arquivo',
+            attachfile: 'Anexar ficheiro',
+            attachmentsmessage:
+                "<em>The template requires you to attach card attachments. You won't be able to use it until you save the process</em>",
+            bcc: 'Bcc',
+            cc: 'Cc',
+            composeemail: 'Compor correio eletrónico',
+            composefromtemplate: 'Compor a partir de Modelo',
+            delay: 'Atraso',
+            delays: {
+                day1: 'Em 1 dia',
+                days2: 'Em 2 dias',
+                days4: 'Em 4 dias',
+                hour1: '1 hora',
+                hours2: '2 horas',
+                hours4: '4 horas',
+                month1: 'Em 1 mês',
+                negativeday1: '1 dia antes',
+                negativedays2: '2 dias antes',
+                negativedays4: '4 dias antes',
+                negativehour1: '1 hora antes',
+                negativehours2: '2 horas antes',
+                negativehours4: '4 horas antes',
+                negativemonth1: '1 mês antes',
+                negativeweek1: '1 semana antes',
+                negativeweeks2: '2 semanas antes',
+                none: 'Nenhum',
+                week1: 'Em 1 semana',
+                weeks2: 'Em 2 semanas'
+            },
+            dmspaneltitle: 'Selecionar anexos deste a base de dados',
+            edit: 'Editar',
+            fileattributesmessage:
+                "<em>There is a dependency on a file type attribute. You won't be able to use it until you save the process</em>",
+            from: 'De',
+            gridrefresh: 'Atualizar grelha',
+            groupbystatus: 'Agrupado por status',
+            keepsynchronization: 'Manter sincronizado',
+            maxsize: 'O tamanho total máximo permitido para anexos é {0}.',
+            message: 'Mensagem',
+            regenerateallemails: 'Recriar todos os correios eletrónicos',
+            regenerateemail: 'Recriar correio eletrónico',
+            reloadconfirmationmessage: 'Correios eletrónicos em rascunho serão eliminados. Quer continuar?',
+            remove: 'Remover',
+            remove_confirmation: 'Tem a certeza que deseja eliminar este correio eletrónico?',
+            reply: 'Responder',
+            replyprefix: '{1} wrote:',
+            searchattachment: 'Pesquisar anexo',
+            searchcard: 'Pesquisar registo',
+            selectaclass: 'Selecionar uma classe',
+            sendemail: 'Enviar correio eletrónico',
+            sendingemail: 'A enviar correio eletrónico.',
+            signature: 'Assinatura',
+            size: 'Tamanho',
+            status: 'Status',
+            statuses: {
+                draft: 'Rascunho',
+                error: 'Erro',
+                new: 'Novo',
+                outgoing: 'A Enviar',
+                received: 'Recebido',
+                sent: 'Enviado',
+                skipped: 'Ignorado'
+            },
+            subject: 'Assunto',
+            templateattachments: 'Este correio eletrónico contém anexos carregados automaticamente pelo Modelo',
+            to: 'Para',
+            view: 'Vista'
+        },
+        errors: {
+            actionnotallowed: 'Ação não autorizada',
+            autherror: 'Utilizador ou password incorretos',
+            classnotfound: 'Classe {0} não localizada',
+            fieldrequired: 'Este campo é obrigatório',
+            invalidfilter: 'Filtro inválido',
+            nodatatoexport: '<em>The chart has no data to export</em>',
+            notfound: 'Item não localizado',
+            value3chars: '<em>Value must be at least 3 chars long.</em>'
+        },
+        filters: {
+            actions: 'Ações',
+            addfilter: 'Adicionar filtro',
+            any: '<em>At least one</em>',
+            attachments: 'Anexos',
+            attachmentssearchtext: 'Texto de pesquisa de anexos',
+            attribute: 'Escolher um atributo',
+            attributes: 'Atributos',
+            clearfilter: 'Limpar filtro',
+            clone: 'Clonar',
+            copyof: 'Cópia de',
+            currentgroup: 'Grupo atual',
+            currentuser: 'Utilizador atual',
+            defaultset: 'Marcar como padrão',
+            defaultunset: 'Desmarcar do padrão',
+            description: 'Descrição',
+            domain: 'Domínio',
+            errorname: 'Nome do filtro já em uso',
+            filterdata: 'Filtrar dados',
+            fromfilter: 'Do filtro',
+            fromselection: 'A partir da seleção',
+            group: 'Grupo',
+            ignore: 'Ignorar',
+            migrate: 'Migrar',
+            name: 'Nome',
+            newfilter: 'Novo filtro',
+            noone: 'Ninguém',
+            operator: 'Operador',
+            operators: {
+                and: 'E',
+                beginswith: 'Inicia com',
+                between: 'Entre',
+                contained: 'Contido',
+                containedorequal: 'Contido ou igual',
+                contains: 'Contêm',
+                containsorequal: 'Contêm ou igual',
+                descriptionbegin: 'Descrição começa com',
+                descriptioncontains: 'Descrição contém',
+                descriptionends: 'A descrição termina com',
+                descriptionnotbegin: 'A descrição não começa com',
+                descriptionnotcontain: 'Descrição não contém',
+                descriptionnotends: 'A descrição não termina com',
+                different: 'Diferente',
+                doesnotbeginwith: 'Não inicia com',
+                doesnotcontain: 'Não contém',
+                doesnotendwith: 'Não finaliza com',
+                endswith: 'Finaliza com',
+                equals: 'É igual a',
+                greaterthan: 'Maior que',
+                isnotnull: 'Não é nulo',
+                isnull: 'É nulo',
+                lessthan: 'Menor do que',
+                or: 'Ou'
+            },
+            relations: 'Relações',
+            removeattribute: 'Remover atributo',
+            removeblock: 'Remover bloqueio',
+            type: 'Tipo',
+            typeinput: 'Parâmetro de entrada',
+            typeorchoosetheattributename: 'Escreva ou escolha o nome do atributo',
+            user: 'Utilizador',
+            value: 'Valor'
+        },
+        gis: {
+            card: 'Registo',
+            cardsMenu: 'Menu de registos',
+            code: 'Código',
+            contextmenu: {
+                coordinates: '<em>Get coordinates</em>',
+                coordinatescopiedmessage: '<em>Coordinates copied to clipboard</em>'
+            },
+            description: 'Descrição',
+            extension: {
+                errorCall: 'Erro',
+                noResults: 'Sem resultados'
+            },
+            externalServices: 'Serviços externos',
+            geographicalAttributes: 'Atributos Geo',
+            geoserverLayers: 'Camadas Geoserver',
+            labels: {
+                all: 'Todos',
+                alltitle: 'Mostrar todas as etiquetas',
+                alltitleclass: 'Mostrar todas as etiquetas da classe',
+                clear: '<em>Clear search</em>',
+                hidden: 'Escondido',
+                hiddentitle: 'Ocultar etiqueta',
+                hideinfowindow: 'Ocultar janela de informação',
+                label: 'Etiquetas',
+                search: '<em>Search on the map</em>',
+                selected: 'Selecionado',
+                selectedtitle: 'Mostrar etiqueta do item selecionado',
+                showinfowindow: 'Mostrar janela de informação'
+            },
+            layers: 'Camadas',
+            layersTab: {
+                clearPreferences: 'Limpar camadas de preferências',
+                preferencesCleared: 'Preferências de camadas limpas',
+                preferencesSaved: 'Preferências de camadas guardadas',
+                savePreferences: 'Gravar preferências de camadas',
+                updatePreferences: 'Atualizar preferências de camadas'
+            },
+            list: 'Lista',
+            longpresstitle: 'Geoelementos na área',
+            map: 'Mapa',
+            mapServices: 'Serviços de mapa',
+            menu: {
+                font: 'Tamanho da Fonte',
+                options: 'Opções'
+            },
+            position: 'Posição',
+            root: 'Raiz',
+            sourceMap: {
+                default: 'Usar vista padrão',
+                satellite: 'Usar vista satélite'
+            },
+            tree: 'Árvore',
+            type: 'Tipo',
+            view: 'Vista',
+            zoom: 'Ampliação'
+        },
+        history: {
+            activityname: 'Nome da atividade',
+            activityperformer: 'Executante da atividade',
+            attributes: 'Atributos ({0})',
+            begindate: 'Data de início',
+            enddate: 'Data de fim',
+            fieldname: 'Nome do campo',
+            fulldata: 'Todos os dados',
+            onlychanges: 'Apenas as alterações',
+            otherrelations: 'Outras relações',
+            processstatus: 'Estado',
+            referencerelation: 'Relações de referência',
+            relation: 'Relação',
+            system: 'Sistema',
+            type: 'Tipo',
+            user: 'Utilizador',
+            userdescription: 'Descrição de utilizador',
+            value: 'Valor',
+            viewmode: 'Modo de visualização'
+        },
+        homepage: {
+            search: {
+                airequestproblem:
+                    '<em>A problem occurred while processing the request. Please try again later or contact the administrator.</em>',
+                aisearcherror: '<em>Unable to complete the search</em>',
+                goodafternoon: '<em>Good afternoon</em>',
+                goodevening: '<em>Good evening</em>',
+                goodmorning: '<em>Good morning</em>',
+                goodnight: '<em>Good night</em>',
+                noresults: '<em>No results found</em>',
+                noresultshint: '<em>Try different keywords or check the spelling</em>',
+                resultsfor: '<em>Results for: {0}</em>'
+            }
+        },
+        iconscategories: {
+            accessibility: 'Acessibilidade',
+            animals: 'Animais',
+            arrows: 'Setas',
+            audiovideo: 'Audio video',
+            automotive: 'Automotivo',
+            autumn: 'Outono',
+            beverage: 'Bebida',
+            buildings: 'Edifícios',
+            business: 'Negócio',
+            charity: 'Caridade',
+            chat: 'Conversa',
+            chess: 'Xadrez',
+            childhood: 'Infância',
+            code: 'Código',
+            communication: 'Comunicação',
+            computers: 'Computadores',
+            construction: 'Construção',
+            currency: 'Moeda',
+            datetime: 'Data hora',
+            design: 'Design',
+            editors: 'Editores',
+            education: 'Educação',
+            emoji: 'Emoji',
+            energy: 'Energia',
+            files: 'Ficheiros',
+            finance: 'Finanças',
+            food: 'Comida',
+            fruitvegetable: 'Fruta vegetal',
+            games: 'Jogos',
+            gamingtabletop: 'Mesa de jogo',
+            gender: 'Género',
+            general: 'Genérico',
+            halloween: 'Dia das Bruxas',
+            hands: 'Mãos',
+            hotel: 'Hotel',
+            household: 'Agregado familiar',
+            images: 'Imagens',
+            interfaces: 'Interfaces',
+            logistics: 'Logistica',
+            maps: 'Mapas',
+            maritime: 'Marítimo',
+            marketing: 'Marketing',
+            mathematics: 'Matemática',
+            medical: 'Médico',
+            moving: 'Movimento',
+            music: 'Música',
+            objects: 'Árvore',
+            paymentsshopping: 'Pagamentos Compras',
+            political: 'Política',
+            religion: 'Religião',
+            sciencefiction: 'Ficção Cientifica',
+            security: 'Segurança',
+            shapes: 'Formas',
+            shopping: 'Compras',
+            social: 'Social',
+            spinners: 'Spinners',
+            sports: 'Desportos',
+            spring: 'Primavera',
+            status: 'Status',
+            toggle: 'Alternativo',
+            travel: 'Viagens',
+            userspeople: 'Utilizadores pessoas',
+            vehicles: 'Veículos',
+            weather: 'Tempo',
+            winter: 'Inverno'
+        },
+        importexport: {
+            database: {
+                uri: 'URI da base de dados',
+                user: 'Utilizador da base de dados'
+            },
+            downloadreport: 'Descarregar relatório',
+            emailfailure: 'Ocorreu um erro ao enviar o correio eletrónico!',
+            emailmessage: 'Relatório de importação anexado do ficheiro "{0}" na data {1}',
+            emailsubject: 'Importar relatório de dados',
+            emailsuccess: 'O correio eletrónico foi enviado com sucesso!',
+            export: 'Exportar',
+            exportalldata: 'Todos os dados',
+            exportfiltereddata: 'Apenas dados que correspondem ao filtro da grelha',
+            gis: {
+                importconfiguration: '<em>Import configuration</em>',
+                shapeimportdisabled: 'A importação de formas não está ativada para este modelo',
+                shapeimportenabled: '<em>The import of shapes is enabled for this template</em>'
+            },
+            ifc: {
+                card: 'Registo',
+                project: 'Projeto',
+                sourcetype: 'Importado de'
+            },
+            import: 'Importar',
+            importresponse: 'Importar resposta',
+            response: {
+                created: 'Registos criados',
+                deleted: 'Registos eliminados',
+                errors: 'erros',
+                linenumber: 'Numero da linha',
+                message: 'Mensagem',
+                modified: 'Registos modificados',
+                notprocessed: 'Registos não processados',
+                processed: 'Linhas processadas',
+                recordnumber: 'Número do registo',
+                unchanged: 'Registos inalterados'
+            },
+            sendreport: 'Enviar relatório',
+            template: 'Modelo',
+            templatedefinition: 'Definição de Modelo'
+        },
+        joinviews: {
+            active: 'Ativo',
+            addview: 'Adicionar vista',
+            alias: 'Nome comum',
+            attribute: 'Atributo',
+            attributecustomization: 'Costumização de atributos',
+            attributes: 'Atributos',
+            attributeschoice: 'Escolha de atributos',
+            attributesof: 'Atributos de: {0}',
+            createview: 'Criar visualização',
+            datasorting: 'Ordenação da informação',
+            delete: 'Eliminar',
+            deleteview: 'Eliminar vista',
+            deleteviewconfirm: 'Tem a certeza de que quer eliminar esta vista?',
+            description: 'Descrição',
+            disable: 'Desativar',
+            domainalias: 'Nome comum do domínio',
+            domainsof: 'Domínios de {0}',
+            edit: 'Editar',
+            editview: 'Editar configuração da vista',
+            enable: 'Ativar',
+            fieldsets: 'Conjuntos de campos',
+            filters: 'Filtros',
+            generalproperties: 'Propriedades gerais',
+            group: 'Grupo',
+            innerjoin: 'Junção interna',
+            jointype: 'Tipo de adesão',
+            joinview: 'Vista da adesão',
+            klass: 'Classe',
+            manageview: 'Gerir vista',
+            masterclass: 'Classe mestre',
+            masterclassalias: 'Nome comum da classe mestre',
+            name: 'Nome',
+            newjoinview: 'Nova visão da adesão',
+            outerjoin: 'Adesão externa',
+            pleaseseleceavalidmasterclass: 'Por favor selecione uma master class válida',
+            refreshafteredit: 'Quer refrescar a página para ver as alterações?',
+            selectatleastoneattribute: 'Selecione pelo menos um atributo',
+            selectdisplayattributegrid:
+                'Selecione pelo menos um atributo para exibir na grelha e um na grelha reduzida',
+            showingrid: 'Mostrar na grelha',
+            showinreducedgrid: 'Mostrar na grelha reduzida',
+            targetalias: 'Nome comum do target'
+        },
+        login: {
+            buttons: {
+                login: 'Autenticar',
+                logout: 'Alterar utilizador'
+            },
+            fields: {
+                group: 'Grupo',
+                language: 'Idioma',
+                password: 'Password',
+                tenants: 'Tenants',
+                username: 'Nome do utilizador'
+            },
+            loggedin: 'Autenticado',
+            sso: {
+                loginfailure: 'Falha de login',
+                loginwith: 'Login com {0}',
+                or: 'ou',
+                usernotenabled: 'Utilizador não ativado'
+            },
+            title: 'Autenticar',
+            welcome: 'Bem-vindo {0}.'
+        },
+        main: {
+            administrationmodule: 'Módulo de Administração',
+            alerts: '<em>Alerts</em>',
+            baseconfiguration: 'Configuração base',
+            cardlock: {
+                lockedmessage: 'Não pode editar este registo porque {0} está a editá-lo.',
+                someone: 'alguém'
+            },
+            changegroup: 'Alterar grupo',
+            changetenant: 'Alterar {0}',
+            confirmchangegroup: 'Tem a certeza que deseja alterar o grupo?',
+            confirmchangetenants: 'Tem a certeza que deseja alterar os tenants ativos?',
+            confirmdisabletenant: 'Tem a certeza que deseja desativar a flag "Ignorar tenants"?',
+            confirmenabletenant: 'Tem a certeza que deseja ativar a flag "Ignorar tenants"?',
+            description: 'Descrição',
+            ignoretenants: 'Ignorar {0}',
+            info: 'Informação',
+            logo: {
+                cmdbuild: 'Logótipo CMDBBuild',
+                cmdbuildready2use: 'Logótipo CMDBBuild READY2USE',
+                companylogo: 'Logótipo da empresa',
+                hdaitsm: '<em>HDA ITSM</em>',
+                openmaint: 'logótipo openMAINT'
+            },
+            logout: 'Sair',
+            managementmodule: 'Módulo de Gestão de Dados',
+            multigroup: 'Multi grupo',
+            multitenant: 'Multi {0}',
+            navigation: 'Navegação',
+            pagenotfound: 'Página não encontrada',
+            password: {
+                change: 'Alterar password',
+                confirm: 'Confirmar password',
+                email: 'Endereço de correio eletrónico',
+                err_confirm: 'Senha não correspondida.',
+                err_diffprevious: 'A senha não pode ser idêntica à anterior.',
+                err_diffusername: 'A senha não pode ser idêntica ao nome do utilizador.',
+                err_length: 'A senha deve ter pelo menos {0} carateres.',
+                err_reqdigit: 'A senha deve conter pelo menos um dígito.',
+                err_reqlowercase: 'A senha deve conter pelo menos um caráter minúsculo.',
+                err_requppercase: 'A senha deve conter pelo menos um caráter maiúsculo.',
+                expired: 'A sua senha expirou. Deve alterá-la agora.',
+                forgotten: 'Esqueci a minha senha',
+                new: 'Nova password',
+                old: 'Password Antiga',
+                recoverysuccess: 'Enviámos-lhe um correio eletrónico com instruções para recuperar a sua senha.',
+                reset: 'Redefinir senha',
+                saved: 'Senha gravada corretamente!'
+            },
+            pleasecorrecterrors: 'Por favor corrigir erros indicados',
+            preferences: {
+                comma: 'Vírgula',
+                decimalserror: 'Campo Decimais tem de estar presente',
+                decimalstousandserror: 'Os separadores de decimais e milhares tem de ser diferentes',
+                default: 'Padrão',
+                defaultvalue: 'Valor Padrão',
+                favouritemenulocation: 'Localização do menu de Favoritos',
+                firstdayofweek: 'Primeiro dia da semana',
+                gridpreferencesclear: 'Limpar preferências da grelha',
+                gridpreferencescleared: 'Preferências de grelha apagadas!',
+                gridpreferencessave: 'Gravar preferências da grelha',
+                gridpreferencessaved: 'Preferências da grelha gravadas!',
+                gridpreferencesupdate: 'Atualizar preferências da grelha',
+                groupemailsbystatus: 'Mostrar correios eletrónicos agrupados por status',
+                labelcsvseparator: 'Separador CSV',
+                labeldateformat: 'Formato da data',
+                labeldecimalsseparator: 'Separador de decimais',
+                labellanguage: 'Idioma',
+                labelthousandsseparator: 'Separador de milhares',
+                labeltimeformat: 'Formato da hora',
+                msoffice: 'Microsoft Office',
+                no: 'Não',
+                notificationslabel: 'Conversa & Notificações',
+                notificationssound: 'Reproduzir som para notificações',
+                notificationssoundvolume: '<em>Notification volume</em>',
+                period: 'Período',
+                preferredfilecharset: 'Codificação CSV',
+                preferredofficesuite: 'Suite Office preferida',
+                sendcancellationperiod: 'Periodo de cancelamento de correio eletrónico enviado (segundos)',
+                showcollapsed: 'Mostrar colapsado',
+                showfovouritesafter: 'Mostrar antes do menu de navegação',
+                showfovouritesbefore: 'Mostrar depois do menu de navegação',
+                space: 'Espaço',
+                thousandserror: 'Campo Milhares tem de estar presente',
+                timezone: 'Fuso horário',
+                twelvehourformat: 'Formato 12 horas',
+                twentyfourhourformat: 'Formato 24 horas',
+                yes: 'Sim'
+            },
+            searchinallitems: 'Pesquisar em todos os itens',
+            searchtenant: 'Pesquisar tenant',
+            selectdeselettenants: 'Selecionar/Desmarcar tudo',
+            treenavcontenttitle: '{0} de {1}',
+            userpreferences: 'Preferências'
+        },
+        menu: {
+            allitems: 'Todos os itens',
+            classes: 'Classes',
+            custompages: 'Páginas personalizadas',
+            dashboards: 'Dashboards',
+            dependencytrees: '<em>Dependency trees</em>',
+            favourites: 'Favoritos',
+            favouritesadd: 'Adicionar aos favoritos',
+            favouritesremove: 'Remover dos favoritos',
+            homepage: '<em>Homepage</em>',
+            processes: 'Processos',
+            reports: 'Relatórios',
+            setasinitialpage: 'Marcar como página inicial',
+            views: 'Visualizações'
+        },
+        mobile: {
+            config: {
+                configure: 'Configurar dispositivo móvel',
+                customercode: 'Código do cliente',
+                devicename: 'Nome do dispositivo',
+                regenerate: 'Regenerar',
+                serverurl: 'Endereço do servidor'
+            }
+        },
+        notes: {
+            edit: 'Editar nota'
+        },
+        notifications: {
+            clearall: '<em>Clear all</em>',
+            clearallSuccess: '<em>All notification have been deleted</em>',
+            delete: 'Eliminar notificação',
+            emptymessage: 'Não há notificações para exibir.',
+            label: 'Notificações',
+            viewall: 'Ver tudo'
+        },
+        notifier: {
+            attention: 'Atenção',
+            copied: '<em>Copied</em>',
+            copiedtotheclipboard: '<em>Text copied to the clipboard</em>',
+            error: 'Erro',
+            genericerror: 'Erro Genérico',
+            genericerrormessage: '<em>For more information, please check the system logs.</em>',
+            genericinfo: 'Informação Genérica',
+            genericwarning: 'Aviso Genérico',
+            info: 'Informação',
+            more: '<em>More info</em>',
+            success: 'Sucesso',
+            warning: 'Aviso'
+        },
+        patches: {
+            apply: 'Aplicar Patches',
+            category: 'Categoria',
+            description: 'Descrição',
+            name: 'Nome',
+            patches: 'Patches'
+        },
+        processes: {
+            abortconfirmation: 'Tem a certeza que deseja abortar este processo?',
+            abortprocess: 'Abortar processo',
+            action: {
+                advance: 'Avançar',
+                label: 'Ação'
+            },
+            activeprocesses: 'Processos ativos',
+            allstatuses: 'Todos',
+            editactivity: 'Editar atividade',
+            openactivity: 'Abrir atividade',
+            resumeprocesses: 'Processos que não estão suspensos não podem ser retomados',
+            startworkflow: 'Iniciar',
+            workflow: 'Fluxo de trabalho'
+        },
+        relationGraph: {
+            activity: 'Atividade',
+            allLabelsOnGraph: 'Todas as etiquetas no gráfico',
+            card: 'Registo',
+            cardList: 'Lista de registos',
+            cardRelations: 'Relação entre registos',
+            choosenaviagationtree: 'Alterar árvore de navegação',
+            class: 'Classe',
+            classList: 'Lista de Classes',
+            compoundnode: 'Nó composto',
+            disable: 'Desativar',
+            edges: 'Edges',
+            enable: 'Ativar',
+            labelsOnGraph: 'Dica no gráfico',
+            level: 'Nível',
+            nodes: 'Nodes',
+            openRelationGraph: 'Abrir gráfico de relacionamentos',
+            quantity: 'Quantidade',
+            refresh: 'Atualizar',
+            relation: 'Relação',
+            relationGraph: 'Gráfico de relacionamento',
+            reopengraph: 'Reabrir o gráfico deste nó'
+        },
+        relations: {
+            adddetail: 'Adicionar detalhe',
+            addrelations: 'Adicionar relacionamentos',
+            attributes: 'Atributos',
+            begindate: 'Data de início',
+            cardnotpresentmessage:
+                'O registo relacionado já não está disponível. Ao continuar com a alteração terá de selecionar outro registo.',
+            code: 'Código',
+            deletedetail: 'Eliminar detalhe',
+            deleterelation: 'Eliminar relacionamento',
+            deleterelationconfirm: 'Tem certeza que deseja eliminar esta relação?',
+            description: 'Descrição',
+            editcard: 'Editar registo',
+            editdetail: 'Editar Detalhe',
+            editrelation: 'Editar relacionamento',
+            errorexisting:
+                'A relação "{0}" já existe. Edite ou elimine a relação existente, antes de criar uma nova relação.',
+            extendeddata: 'Informação adicional',
+            mditems: 'Itens',
+            missingattributes: 'Atributos obrigatórios ausentes',
+            opencard: 'Abrir registo relacionado',
+            opendetail: 'mostrar detalhe',
+            relationdata: 'Informação de relação',
+            type: 'Tipo'
+        },
+        reports: {
+            csv: 'CSV',
+            download: 'Descarregar',
+            format: 'Formato',
+            msgs: {
+                creationerror: 'Algo correu mal no arranque da criação do relatório.',
+                creationstarted:
+                    'A criação do relatório foi iniciada. Será notificado quando estiver pronto para descarregar.'
+            },
+            odt: 'ODT',
+            pdf: 'PDF',
+            print: 'Imprimir',
+            reload: 'Recarregar',
+            rtf: 'RTF'
+        },
+        system: {
+            data: {
+                lookup: {
+                    CalendarCategory: {
+                        default: {
+                            description: 'Padrão'
+                        }
+                    },
+                    CalendarFrequency: {
+                        daily: {
+                            description: 'Diário'
+                        },
+                        monthly: {
+                            description: 'Por mês'
+                        },
+                        once: {
+                            description: 'Uma vez'
+                        },
+                        weekly: {
+                            description: 'Semanal'
+                        },
+                        yearly: {
+                            description: 'Anual'
+                        }
+                    },
+                    CalendarPriority: {
+                        default: {
+                            description: 'Padrão'
+                        }
+                    }
+                },
+                role: {
+                    nobody: {
+                        description: 'Ninguém'
+                    }
+                }
+            }
+        },
+        thematism: {
+            addThematism: 'Adicionar Tematismo',
+            analysisType: 'Tipo de análise',
+            attribute: 'Atributo',
+            bordersIntervals: 'Configuração incorreta para limites de intervalos',
+            calculateRules: 'Gerar regras de estilo',
+            clearThematism: 'Clear Thematism',
+            color: 'Cor',
+            defineLegend: 'Definição de legenda',
+            defineThematism: 'Definição de tematismo',
+            deletethematism: 'Tem certeza que deseja eliminar este tematismo?',
+            editThematism: 'Editar configuração das regras',
+            function: 'Função',
+            generate: 'Gerar',
+            geoAttribute: 'Atributo Geográfico',
+            graduated: 'Graduação',
+            highlightSelected: 'Iluminar Item selecionado',
+            intervals: 'intervalos',
+            legend: 'Legenda',
+            name: 'nome',
+            newThematism: 'Novo Tematismo',
+            punctual: 'Pontual',
+            quantity: 'Quantidade',
+            segments: 'Segmentos',
+            source: 'Fonte',
+            table: 'Tabela',
+            thematism: 'Temas',
+            value: 'Valor'
+        },
+        widgets: {
+            ai: {
+                copiedtoattribute: '<em>Message copied in {0} attribute</em>',
+                copytoattribute: '<em>Copy to attribute</em>',
+                errors: {
+                    attributenotfound: '<em>Attribute with name {0} not found</em>',
+                    wrongtype: '<em>The message can only be copied only to a String or Text attribute</em>'
+                },
+                overrideattribute: '<em>This action will override the existing value. Are you sure?</em>'
+            },
+            attachment: {
+                actions: {
+                    exitwithoutsave: 'Sair sem guardar',
+                    stayinedit: 'Voltar para editar'
+                },
+                savebeforeexit: 'Há alterações não guardadas nos anexos. Quer guardá-las antes de sair?',
+                saveprocessmessage:
+                    'Os anexos só podem ser guardados em registos existentes. Ao pressionar em guardar, a instância do processo será criada com os dados introduzidos no formulário.'
+            },
+            calendar: {
+                error: 'O parâmetro {0} não está definido',
+                errorwrong: 'O parâmetro {0} não está definido corretamente'
+            },
+            customform: {
+                addrow: 'Adicionar linha',
+                clonerow: 'Clonar linha',
+                datanotvalid: 'Dados inválidos',
+                deleterow: 'Eliminar linha',
+                editrow: 'Editar linha',
+                export: 'Exportar',
+                import: 'Importar',
+                importexport: {
+                    expattributes: 'Dados para exportar',
+                    file: 'Ficheiro',
+                    filename: 'Nome do ficheiro',
+                    format: 'Formato',
+                    importmode: 'Modo de importação',
+                    keyattributes: 'Chaves de atributo',
+                    missingkeyattr: 'Escolha pelo menos um atributo-chave',
+                    modeadd: 'Adicionar',
+                    modemerge: 'Unir',
+                    modereplace: 'Substituir',
+                    separator: 'Separador'
+                },
+                refresh: 'Atualizar para dados padrão'
+            },
+            linkcards: {
+                checkedonly: 'Apenas os selecionados',
+                editcard: 'Editar registo',
+                opencard: 'Abrir registo',
+                refreshselection: 'Aplicar seleção padrão',
+                removefilterconfirm: '<em>This action will remove the current filter. Do you want to continue?</em>',
+                selectioncleared: '<em>Selection cleared</em>',
+                togglefilterdisabled: 'Desativar filtro da grelha',
+                togglefilterenabled: 'Ativar filtro da grelha'
+            },
+            notimplemented: '<em>Widget <strong>{0}</strong> not implemented!</em>',
+            notsupportedinline:
+                'O modo inline não é compatível com este tipo de widget. Corrija a configuração do widget.',
+            required: 'Este widget é obrigatório.'
+        }
+    });
+
+    function cleardata(obj) {
+        for (var key in obj) {
+            if (typeof obj[key] === 'string') {
+                obj[key] = obj[key].replace(/^<em>(.+)<\/em>$/, '$1');
+            } else if (typeof obj[key] === 'object') {
+                cleardata(obj[key]);
+            }
+        }
+    }
+    cleardata(CMDBuildUI.locales.Locales);
+})();

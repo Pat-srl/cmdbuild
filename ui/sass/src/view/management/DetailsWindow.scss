@@ -1,0 +1,80 @@
+@include extjs-window-ui(
+    $ui: 'management',
+    $ui-header-color: $base-color,
+    $ui-border-color: $main-color-selection,
+    $ui-header-background-color: $main-color-selection,
+    $ui-header-font-weight: 600
+);
+.#{$prefix}window-management {
+    .#{$prefix}toolbar-footer {
+        padding: $window-header-padding;
+    }
+}
+
+@include extjs-tab-panel-ui(
+    $ui: 'management',
+    $ui-bar-background-color: $main-color-selection,
+
+    $ui-tab-glyph-color: $main-neutral-gray-4,
+    $ui-tab-glyph-color-focus: $main-neutral-gray-4,
+    $ui-tab-glyph-color-over: $main-neutral-gray-3,
+    $ui-tab-glyph-color-focus-over: $main-neutral-gray-3,
+    $ui-tab-glyph-color-disabled: $main-neutral-gray-3,
+    $ui-tab-glyph-color-active: $main-color-dark,
+    $ui-tab-glyph-color-focus-active: $main-color-dark,
+
+    $ui-tab-outline-width-focus: 0,
+    $ui-bar-padding: 8px 0 0 8px
+);
+
+@include extjs-tab-panel-ui(
+    $ui: 'light',
+    $ui-tab-color: $color,
+    $ui-tab-color-focus: $color,
+    $ui-tab-color-over: $color,
+    $ui-tab-color-active: $base-color,
+    $ui-tab-color-focus-over: $color,
+    $ui-tab-color-focus-active: $base-color,
+    $ui-bar-background-color: lighten($neutral-color, 10%),
+    $ui-tab-glyph-color-active: lighten($neutral-color, 10%),
+    $ui-tab-font-weight-active: 500,
+    $ui-tab-font-weight-focus-active: bold,
+    $ui-tab-outline-width-focus: 0,
+    $ui-tab-line-height: 15px
+);
+
+.#{$prefix}window-header-management,
+.#{$prefix}panel-header-management {
+    .#{$prefix}tool-tool-el {
+        color: $base-color;
+    }
+}
+
+@include extjs-panel-ui(
+    $ui: 'management',
+
+    $ui-header-color: $color,
+    $ui-header-border-color: $main-color-selection,
+    $ui-header-background-color: $main-color-selection,
+    $ui-header-font-weight: 600,
+    $ui-border-color: $main-color-selection
+);
+
+.#{$prefix}tab-bar-management {
+    .badge {
+        position: absolute;
+        bottom: -5px;
+        right: -5px;
+        font-size: 80%;
+        color: #fff;
+
+        background: $base-color;
+        border-radius: 50%;
+        padding: 0 5px;
+        line-height: 16px;
+    }
+
+    .#{$prefix}tab.#{$prefix}tab-active.#{$prefix}tab-management {
+        border-radius: 6px 0px 0px 6px;
+    }
+}

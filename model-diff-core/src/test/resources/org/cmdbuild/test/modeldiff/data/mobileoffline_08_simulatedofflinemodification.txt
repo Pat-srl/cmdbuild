@@ -1,0 +1,12 @@
+Changes 
+(note: added cards (6) and (11) have an UUID as Id; only after merge them will have e persistent Id):
+1. Class TestRelatedCards_A:
+    - 4 -> TestRelatedCards_B.[9], with reference attribute referenceAttr_A_B;
+    - added Card (6) -> with relation to TestRelatedCards_B.[11], with reference attribute referenceAttr_A_B;
+2. Class TestRelatedCards_B:
+    - added Card (11);
+    - removed Card (7);
+3. Class TestDerivedCards_D:
+    - 15, with changed attributes:
+        filteredValue from value drop to null;
+        canDo (lookup yesNoUndef) from value no to yes;

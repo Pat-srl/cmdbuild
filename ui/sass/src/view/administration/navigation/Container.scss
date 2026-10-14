@@ -1,0 +1,16 @@
+// administration-navigation
+@include extjs-panel-ui(
+    $ui: 'administration-navigation',
+    $ui-header-background-color: $administration-base-color,
+    $ui-body-background-color: $administration-base-color,
+    $ui-body-color: #fff
+);
+
+.#{$prefix}panel-header-administration-navigation {
+    .#{$prefix}tool-collapse-left:before {
+        content: $fa-var-close;
+    }
+    .#{$prefix}tool-expand-right:before {
+        content: $fa-var-bars;
+    }
+}

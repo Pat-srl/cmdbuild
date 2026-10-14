@@ -1,0 +1,49 @@
+{
+  "name" : "DatasetData1",
+  "insertedCards" : [ {
+    "Description" : "added card 11",
+    "User" : null,
+    "_type" : "TestRelatedCards_B",
+    "_id" : "22c1dec4-e3de-4fc7-89b8-b8c9162bd636",
+    "Code" : "addedCard_11",
+    "referenceAttr_B_C" : null
+  }, {
+    "Description" : "added card 6",
+    "User" : null,
+    "_type" : "TestRelatedCards_A",
+    "_id" : "c87add16-79fc-41ae-ab98-990c6e1f108c",
+    "Code" : "addedCard_6",
+    "referenceAttr_A_B" : "22c1dec4-e3de-4fc7-89b8-b8c9162bd636"
+  } ],
+  "removedCards" : [ {
+    "Description" : "derived card 7",
+    "User" : null,
+    "_type" : "TestRelatedCards_B",
+    "_id" : 7,
+    "Code" : "derivedCard_7",
+    "referenceAttr_B_C" : null
+  } ],
+  "changedCards" : [ {
+    "_id" : "15",
+    "Description" : "derived card 15",
+    "_type" : "TestDerivedCards_D",
+    "changed" : [ {
+      "attribute" : "filteredValue",
+      "oldValue" : "drop",
+      "newValue" : null
+    }, {
+      "attribute" : "canDo",
+      "oldValue" : 3011,
+      "newValue" : 3010
+    } ]
+  }, {
+    "_id" : "4",
+    "Description" : "derived card 4",
+    "_type" : "TestRelatedCards_A",
+    "changed" : [ {
+      "attribute" : "referenceAttr_A_B",
+      "oldValue" : null,
+      "newValue" : 9
+    } ]
+  } ]
+}

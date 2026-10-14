@@ -1,0 +1,16 @@
+.#{$prefix}displayfieldwithtriggers {
+    .#{$prefix}form-trigger-wrap-default.#{$prefix}form-trigger-wrap-display {
+        border: 0;
+
+        .#{$prefix}gecko & .#{$prefix}input-wrap {
+            flex: 1
+        }
+
+        .#{$prefix}form-trigger-default {
+            background: transparent;
+            line-height: $form-text-field-font-size;
+            font-size: $form-text-field-font-size;
+            border-left: 0;
+        }
+    }
+}

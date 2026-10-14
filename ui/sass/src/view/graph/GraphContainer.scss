@@ -1,0 +1,15 @@
+.relgraph-tip {
+    padding: 5px;
+    color: $main-color-primary-text;
+    text-align: center;
+    &.relgraph-tip-node {
+        background-color: $base-color;
+    }
+    &.relgraph-tip-relation {
+        background-color: $tip-background-color;
+    }
+    &.relgraph-tip-attributes {
+        margin-top: 5px;
+        font-size: 90%;
+    }
+}

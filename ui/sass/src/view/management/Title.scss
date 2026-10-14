@@ -1,0 +1,7 @@
+.#{$prefix}titlebar-favourites-icon-wrapper {
+    width: $panel-header-line-height;
+
+    .#{$prefix}title-icon {
+        cursor: pointer;
+    }
+}

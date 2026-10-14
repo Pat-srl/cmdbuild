@@ -1,0 +1,38 @@
+<jxb:bindings
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xpdl="http://www.wfmc.org/2008/XPDL2.1"
+    version="2.1">
+
+    <jxb:bindings schemaLocation="bpmnxpdl_31a.xsd">
+        <jxb:schemaBindings>
+            <jxb:package name="org.cmdbuild.river.xpdl.schema.xpdl_21"/>
+        </jxb:schemaBindings>
+        
+        <jxb:bindings node="//xsd:element[@name='Artifact']/xsd:complexType/xsd:attribute[@name='Group']">
+            <jxb:property name="artifactGroup"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:element[@name='LoopMultiInstance']/xsd:complexType/xsd:attribute[@name='MI_Condition']">
+            <jxb:property name="multiInstanceCondition"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:element[@name='LoopMultiInstance']/xsd:complexType/xsd:attribute[@name='ComplexMI_FlowCondition']">
+            <jxb:property name="complexMultiInstanceFlowCondition"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:element[@name='LoopStandard']/xsd:complexType/xsd:attribute[@name='LoopCondition']">
+            <jxb:property name="standardLoopCondition"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:element[@name='TriggerTimer']/xsd:complexType/xsd:attribute[@name='TimeDate']">
+            <jxb:property name="triggerTimeDate"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:element[@name='TriggerTimer']/xsd:complexType/xsd:attribute[@name='TimeCycle']">
+            <jxb:property name="triggerTimeCycle"/>
+        </jxb:bindings>
+    </jxb:bindings>
+    
+    <jxb:bindings schemaLocation="TC-1025_schema_10_xpdl.xsd">
+        <jxb:schemaBindings>
+            <jxb:package name="org.cmdbuild.river.xpdl.schema.xpdl_10"/>
+        </jxb:schemaBindings>
+    </jxb:bindings>
+
+</jxb:bindings>

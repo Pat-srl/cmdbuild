@@ -1,0 +1,48 @@
+.#{$prefix}filters-launcher {
+    border: 1px solid $main-neutral-gray-5;
+    border-radius: $components-border-radius;
+
+    .#{$prefix}btn-management-neutral-action-small {
+        border-width: 0;
+    }
+
+    .#{$prefix}btn-noui-small {
+        padding: $button-small-padding;
+        font-size: $button-small-font-size;
+        line-height: $button-small-line-height;
+    }
+    .#{$prefix}tool {
+        padding-top: $button-small-padding;
+        padding-bottom: $button-small-padding;
+        padding-right: 0;
+        padding-left: 0;
+        .#{$prefix}tool-tool-el {
+            width: $button-small-icon-size;
+            color: $color;
+        }
+    }
+    .#{$prefix}toolbar-spacer {
+        width: $button-small-padding;
+    }
+}
+.#{$prefix}boundlist.#{$prefix}filtermenu {
+    .#{$prefix}boundlist-header {
+        .#{$prefix}box-inner {
+            height: 17px;
+            .#{$prefix}box-target {
+                height: 17px;
+
+                .#{$prefix}tool-tool-el {
+                    color: $form-trigger-glyph-color;
+                }
+            }
+        }
+    }
+    .#{$prefix}panel-body {
+        .#{$prefix}grid-row {
+            .#{$prefix}action-col-icon {
+                margin-left: 7px;
+            }
+        }
+    }
+}

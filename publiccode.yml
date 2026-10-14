@@ -1,0 +1,124 @@
+publiccodeYmlVersion: 0.7.0
+name: CMDBuild
+url: https://github.com/Pat-srl/cmdbuild
+logo: https://raw.githubusercontent.com/Pat-srl/cmdbuild/refs/heads/main/logo.png
+landingURL: https://www.cmdbuild.org/
+softwareVersion: "4.3.0"
+releaseDate: "2026-10-14"
+platforms:
+  - web
+categories:
+  - it-asset-management
+  - workflow-management
+  - document-management
+  - geographic-information-systems
+  - resource-management
+  - inventory-management
+organisation:
+  uri: https://pat.eu/
+  name: Pat srl
+roadmap: https://www.cmdbuild.org/en/project/roadmap
+developmentStatus: stable
+softwareType: standalone/web
+intendedAudience:
+  countries:
+    - IT
+  scope:
+    - government
+    - local-authorities
+    - infrastructures
+description:
+  en:
+    localisedName: CMDBuild
+    shortDescription: Open Source environment for configuring customized
+      applications for the Asset Management
+    longDescription: >-
+      CMDBuild is an open source platform for managing digital and physical
+      assets, services, infrastructures and business processes. Organizations
+      can build custom data models to represent their assets and their
+      relationships, creating a centralized repository of information that
+      supports operational activities, governance and decision-making.
+
+
+      The platform includes workflow automation, document management, reporting,
+      dashboards, GIS capabilities and integration services. CMDBuild can be
+      used as a Configuration Management Database (CMDB), an enterprise asset
+      management solution, a service management platform or a repository for
+      technical and organizational information, adapting to different business
+      and public sector requirements through extensive configuration features.
+
+
+      CMDBuild provides interoperability capabilities through REST APIs, web
+      services, connectors and integration tools, enabling data exchange and
+      process orchestration with external applications, enterprise systems and
+      third-party platforms.
+    documentation: https://docs.cmdbuild.org/
+    apiDocumentation: https://docs.cmdbuild.org/webservice
+    features:
+      - Configuration Management Database (CMDB)
+      - Asset and Inventory Management
+      - Service and Maintenance Management
+      - Workflow Automation
+      - Document Management
+      - Geographic Information System (GIS) Integration
+      - Relationship Mapping Between Assets
+      - Dashboards and Reporting
+      - Role-Based Access Control
+      - REST API Integration
+      - Data Import and Export Tools
+      - Interoperability with external systems
+legal:
+  license: AGPL-3.0-only
+maintenance:
+  type: internal
+  contacts:
+    - name: Pat srl
+      email: helpdesk@pat.eu
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - en
+    - ar
+    - pt-BR
+    - bg
+    - zh
+    - hr
+    - cs
+    - da
+    - nl
+    - pt-PT
+    - fr
+    - de
+    - el
+    - hu
+    - id
+    - it
+    - ja
+    - ko
+    - ms
+    - mn
+    - no
+    - fa
+    - pl
+    - ro
+    - ru
+    - sr-Latn
+    - sr-Cyrl
+    - sk
+    - sl
+    - es
+    - th
+    - tr
+    - uk
+    - vi
+dependsOn:
+  open:
+    - name: Java
+      version: 25.0.x
+      optional: false
+    - name: PostgreSQL
+      version: 17.x
+      optional: false
+    - name: Apache Tomcat
+      version: 11.x
+      optional: false

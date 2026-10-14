@@ -1,0 +1,16 @@
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+  
+	<!-- Uncomment the following line to view defails on CM3Easy encryption  
+        <logger name="org.cmdbuild.utils.crypto" level="DEBUG"/>
+	<logger name="org.cmdbuild.utils.encode" level="DEBUG"/>-->
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

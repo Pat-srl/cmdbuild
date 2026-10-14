@@ -1,0 +1,51 @@
+name: Bug report
+description: Report a problem in CMDBuild
+labels: ["bug"]
+body:
+  - type: textarea
+    id: subject
+    attributes:
+      label: Subject
+      description: Describe the problem.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Application version, for example 4.3.0.
+    validations:
+      required: true
+  - type: dropdown
+    id: database
+    attributes:
+      label: Database
+      options:
+        - CMDBuild
+        - CMDBuild READY2USE
+        - openMAINT
+        - Other
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: Include screenshots or logs if useful. Remove any private data.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: other
+    attributes:
+      label: Other information
+      description: Bug report file, suggestions, related resources.

@@ -1,0 +1,2 @@
+systemctl status postgresql@12-main.service
+

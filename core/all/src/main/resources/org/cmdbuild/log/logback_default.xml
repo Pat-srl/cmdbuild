@@ -1,0 +1,181 @@
+<configuration packagingData="true" ><!-- debug="true"  -->
+    
+    <!-- 
+        note: this variables will be automatically set/overwritten by cmdbuild. 
+        Do not edit these variables. If you want to set custom values, use your own variables.
+    -->
+    <property name="CM_LOG_DIR" value="LOG_DIR_PLACEHOLDER" scope="context" />
+    <property name="CM_LOG_NAME" value="WEBAPP_NAME_PLACEHOLDER" scope="context" />
+    
+    <!-- 
+        note: set CM_AUTO_UPGRADE_CONFIG to false if you've made some custom 
+        changes to this file that you want to keep, otherwise this file will be 
+        automatically upgraded (automatic upgrade will preserve customized logger 
+        levels, and nothing else).
+    -->
+    <property name="CM_AUTO_UPGRADE_CONFIG" value="true" />
+    
+    <!-- 
+        other properties 
+    -->
+    <property name="CM_LOG_ARCHIVE_DIR" value="${CM_LOG_DIR}/archive" scope="context" />
+    <property name="CM_LOG_PATTERN" value="%d{YYYY-MM-dd'T'HH:mm:ss.SSSXXX} [%X{cm_id:-system}] %-5level %logger{36} - %msg%n" scope="context" />
+    <property name="CM_LOG_FILE_SIZE_MAX" value="100MB" />
+    <property name="CM_LOG_ARCHIVE_SIZE_MAX" value="500MB" />
+    <property name="CM_LOG_RETENTION_PERIOD" value="90" />
+	
+    <appender name="CMDBUILD" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${CM_LOG_DIR}/${CM_LOG_NAME}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${CM_LOG_ARCHIVE_DIR}/${CM_LOG_NAME}.log.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxFileSize>${CM_LOG_FILE_SIZE_MAX}</maxFileSize>    
+            <maxHistory>${CM_LOG_RETENTION_PERIOD}</maxHistory>
+            <totalSizeCap>${CM_LOG_ARCHIVE_SIZE_MAX}</totalSizeCap>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${CM_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="JOB" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">      
+            <evaluator> 
+                <expression>return "job".equals(mdc.get("cm_type"));</expression>
+            </evaluator>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>        
+        <file>${CM_LOG_DIR}/${CM_LOG_NAME}_job.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${CM_LOG_ARCHIVE_DIR}/${CM_LOG_NAME}_job.log.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxFileSize>${CM_LOG_FILE_SIZE_MAX}</maxFileSize>    
+            <maxHistory>${CM_LOG_RETENTION_PERIOD}</maxHistory>
+            <totalSizeCap>${CM_LOG_ARCHIVE_SIZE_MAX}</totalSizeCap>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${CM_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="REQ" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">      
+            <evaluator> 
+                <expression>return "req".equals(mdc.get("cm_type"));</expression>
+            </evaluator>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>        
+        <file>${CM_LOG_DIR}/${CM_LOG_NAME}_req.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${CM_LOG_ARCHIVE_DIR}/${CM_LOG_NAME}_req.log.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxFileSize>${CM_LOG_FILE_SIZE_MAX}</maxFileSize>    
+            <maxHistory>${CM_LOG_RETENTION_PERIOD}</maxHistory>
+            <totalSizeCap>${CM_LOG_ARCHIVE_SIZE_MAX}</totalSizeCap>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${CM_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="SYS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">      
+            <evaluator> 
+                <expression>return ! ( "job".equals(mdc.get("cm_type")) || "req".equals(mdc.get("cm_type")) || "mod".equals(mdc.get("cm_type")) );</expression>
+            </evaluator>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>        
+        <file>${CM_LOG_DIR}/${CM_LOG_NAME}_sys.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${CM_LOG_ARCHIVE_DIR}/${CM_LOG_NAME}_sys.log.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxFileSize>${CM_LOG_FILE_SIZE_MAX}</maxFileSize>    
+            <maxHistory>${CM_LOG_RETENTION_PERIOD}</maxHistory>
+            <totalSizeCap>${CM_LOG_ARCHIVE_SIZE_MAX}</totalSizeCap>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${CM_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SQL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${CM_LOG_DIR}/${CM_LOG_NAME}_sql.log</file>        
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${CM_LOG_ARCHIVE_DIR}/${CM_LOG_NAME}_sql.log.%i.gz</fileNamePattern>
+            <minIndex>0</minIndex>
+            <maxIndex>0</maxIndex>
+        </rollingPolicy>    
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>${CM_LOG_FILE_SIZE_MAX}</maxFileSize>
+        </triggeringPolicy>     
+        <encoder>
+            <pattern>%msg%n%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="DDL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${CM_LOG_DIR}/${CM_LOG_NAME}_ddl.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${CM_LOG_ARCHIVE_DIR}/${CM_LOG_NAME}_ddl.log.%i.gz</fileNamePattern>
+            <minIndex>0</minIndex>
+            <maxIndex>9</maxIndex>
+        </rollingPolicy>    
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>${CM_LOG_FILE_SIZE_MAX}</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%msg%n%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="MOD" class="ch.qos.logback.classic.sift.SiftingAppender">
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">      
+            <evaluator> 
+                <expression>return "mod".equals(mdc.get("cm_type"));</expression>
+            </evaluator>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>
+        <discriminator>
+            <key>cm_mod</key>
+            <defaultValue>undefined</defaultValue>
+        </discriminator>
+        <timeout>72 hours</timeout>
+        <sift>
+            <appender name="DDL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <file>${CM_LOG_DIR}/${CM_LOG_NAME}_module_${cm_mod}.log</file>        
+                <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                    <fileNamePattern>${CM_LOG_ARCHIVE_DIR}/${CM_LOG_NAME}_module_${cm_mod}.log.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+                    <maxFileSize>${CM_LOG_FILE_SIZE_MAX}</maxFileSize>    
+                    <maxHistory>${CM_LOG_RETENTION_PERIOD}</maxHistory>
+                    <totalSizeCap>${CM_LOG_ARCHIVE_SIZE_MAX}</totalSizeCap>
+                    <cleanHistoryOnStart>true</cleanHistoryOnStart>
+                </rollingPolicy>
+                <encoder>
+                    <pattern>${CM_LOG_PATTERN}</pattern>
+                </encoder> 
+            </appender>
+        </sift>
+    </appender>
+    
+    <logger name="org.cmdbuild" level="INFO" />
+	
+    <logger name="org.cmdbuild.sql" level="INFO" additivity="false" >
+        <appender-ref ref="SQL" />
+    </logger>
+
+    <logger name="org.cmdbuild.sql_ddl" level="INFO" additivity="false" >
+        <appender-ref ref="DDL" />
+    </logger>
+	
+    <root level="INFO">
+        <appender-ref ref="CMDBUILD" />
+        <appender-ref ref="JOB" />
+        <appender-ref ref="REQ" />
+        <appender-ref ref="SYS" />
+        <appender-ref ref="MOD" />
+    </root>
+</configuration>

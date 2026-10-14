@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://cmdbuild.org/etl/waterway/config/v1/params",
+    "title": "Waterway Config Params V1",
+    "description": "Waterway Config Params V1",
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+        "enabled": {
+            "description": "Enable (or disable) whole config file",
+            "enum": ["true", "false", true, false, null],
+            "default": true
+        },
+        "disabled": {
+            "description": "Disable single config item[s] (by code)",
+            "oneOf": [{
+                    "type": ["string", "null"]        
+                }, {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }]
+        }
+    }
+}
+ 

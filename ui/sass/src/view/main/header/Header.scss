@@ -1,0 +1,47 @@
+@include extjs-button-small-ui(
+    $ui: "header",
+    $color: #ffffff,
+    $glyph-color: #ffffff,
+    $background-color: transparent,
+    $border-width: 0
+);
+
+@include extjs-toolbar-ui(
+    $ui: "main-header",
+    $background-color: $base-color,
+    $border-color: $main-color-dark-border,
+    $text-color: #ffffff
+);
+
+.logo {
+    img {
+        max-height: 30px;
+        width: 100%;
+    }
+    &.hdaWhiteLogo {
+        img {
+            max-height: 20px;
+            margin-top: 5px;
+        }
+    }
+}
+
+.instancename {
+    font-size: 18px;
+    font-weight: 200;
+}
+.header-button-link {
+    text-decoration: none;
+}
+
+.unreadNotificationsMarker {
+    &::after {
+        font-family: "Font Awesome 5 Free" !important;
+        content: "\f111";
+        position: absolute;
+        bottom: 1px;
+        right: 3px;
+        font-size: 90%;
+        color: $notification-alert-color;
+    }
+}

@@ -1,0 +1,68 @@
+.#{$prefix}cmdbuildfilefield {
+    .#{$prefix}tool-tool-el {
+        color: inherit;
+    }
+
+    .status-icon {
+        margin-right: 5px;
+
+        &.status-ready {
+            color: $cmdbuild-status-success;
+        }
+
+        &.status-loaded {
+            color: lighten($color: $color, $amount: 30%);
+        }
+
+        &.status-alreadypresent {
+            color: $cmdbuild-status-error;
+        }
+    }
+}
+
+.#{$prefix}window-management,
+.#{$prefix}panel-management {
+    .#{$prefix}cmdbuildfilefield .#{$prefix}fieldset {
+        border-top-color: $fieldset-border-color !important;
+
+        .#{$prefix}fieldset-header-tool-formpagination {
+            &>.#{$prefix}tool-toggle {
+                color: $form-label-font-color;
+            }
+        }
+
+        .#{$prefix}fieldset-header-formpagination {
+            padding-bottom: 0;
+            padding-top: 0;
+
+            &>.#{$prefix}fieldset-header-text {
+                color: $form-label-font-color;
+                font-weight: normal;
+            }
+        }
+
+        .#{$prefix}fieldset-body {
+            padding-left: 20px;
+        }
+    }
+}
+
+.#{$prefix}filefield-renderer {
+    .infoview {
+        vertical-align: top;
+        cursor: pointer;
+        color: $form-label-font-color;
+    }
+
+    img {
+        max-width: 100px;
+        max-height: 100px;
+        cursor: pointer;
+    }
+
+    .label {
+        cursor: pointer;
+        text-decoration: underline;
+        color: $base-color;
+    }
+}

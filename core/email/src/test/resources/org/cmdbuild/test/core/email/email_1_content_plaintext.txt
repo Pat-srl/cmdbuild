@@ -1,0 +1,45 @@
+In seguito ai startup improvement fatti con commit 5afb444a0e6871ed93878a279df016ae0e000e19
+i tempi di esecuzione sono:
+
+ * Caso 1:
+
+```
+____________________________ RESULTS _______________________________
+the execution time with java 8 hotspot was: 28 seconds
+the execution time with java 9 hotspot was: 31 seconds
+the execution time with java 11 hotspot was: 31 seconds
+the execution time with java 8 openj9 was: 35 seconds
+the execution time with java 9 openj9 was: 36 seconds
+the execution time with java 11 openj9 was: 35 seconds
+
+```
+
+ * Caso 2:
+
+```
+____________________________ RESULTS _______________________________
+the execution time with java 8 hotspot was: 30 seconds
+the execution time with java 9 hotspot was: 32 seconds
+the execution time with java 11 hotspot was: 28 seconds
+the execution time with java 8 openj9 was: 33 seconds
+the execution time with java 9 openj9 was: 35 seconds
+the execution time with java 11 openj9 was: 34 seconds
+
+```
+
+ * Caso 3:
+
+```
+____________________________ RESULTS _______________________________
+the execution time with java 8 hotspot was: 29 seconds
+the execution time with java 9 hotspot was: 29 seconds
+the execution time with java 11 hotspot was: 28 seconds
+the execution time with java 8 openj9 was: 34 seconds
+the execution time with java 9 openj9 was: 34 seconds
+the execution time with java 11 openj9 was: 34 seconds
+
+```
+
+---
+View it on GitLab: http://gitlab.example.com/cmdbuild/cmdbuild/issues/1493#note_10636
+You're receiving this email because of your account on gitlab.example.com.

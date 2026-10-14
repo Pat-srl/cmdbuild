@@ -1,0 +1,272 @@
+    // .stepbar {
+    //     margin-bottom: 10;
+    //     padding: 0;
+
+    //     &::after {
+    //         content: '';
+    //         display: block;
+    //         clear: both;
+    //     }
+
+    //     .stepbar-item {
+    //         float: left;
+    //         padding: 5px 5px 5px 20px;
+    //         background: $cmdbuildui-statuses-progressbar-item-background;
+    //         color: $cmdbuildui-statuses-progressbar-item-color;
+    //         position: relative;
+    //         margin: 1px 1px;
+
+    //         &::after {
+    //             content: '';
+    //             border-top: 13px solid transparent;
+    //             border-bottom: 14px solid transparent;
+    //             border-left: 11px solid $cmdbuildui-statuses-progressbar-item-background;
+    //             position: absolute;
+    //             top: 0;
+    //             left: 100%;
+    //             z-index: 20;
+    //         }
+
+    //         &::before {
+    //             content: '';
+    //             border-top: 13px solid transparent;
+    //             border-bottom: 14px solid transparent;
+    //             border-left: 11px solid #fff;
+    //             position: absolute;
+    //             top: 0;
+    //             left: 0;
+    //         }
+
+    //         &:first-child {
+    //             padding-left: 10px;
+
+    //             &::before {
+    //                 border: 0;
+    //             }
+    //         }
+
+    //         &.#{$prefix}statuses-progress-bar-item-current {
+    //             background-color: $cmdbuildui-statuses-progressbar-current-item-background;
+    //             color: $cmdbuildui-statuses-progressbar-current-item-color;
+    //             font-weight: 600;
+
+    //             &::after {
+    //                 border-left-color: $cmdbuildui-statuses-progressbar-current-item-background;
+    //             }
+    //         }
+    //     }
+    // }
+    //
+// Internal variables
+//
+$step-text-color: #333;
+$step-text-color-disabled: #999;
+
+$step-background-color: #EFEFEF;
+$step-background-color-active: #FFF;
+
+$step-counter-color: #BCBCBC;
+$step-counter-color-active: #22a4bc;
+
+$step-baseline: .5em;
+$step-border: 1px solid #ccc;
+
+$step-breakpoint: 767px;
+
+/**
+ * Ordered list wrapper
+ * 1. Prevents ugly shapes when selecting .steps
+ * 2. Initializing counter
+ */
+/*ol*/.steps {
+  user-select: none; /* 1 */
+  counter-reset: steps; /* 2 */
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 $step-baseline * 2 0;
+}
+
+/**
+ * Steps
+ * 1. Incrementing counter
+ */
+/*li*/.steps_item {
+  counter-increment: steps; /* 1 */
+  background: $step-background-color;
+  border-top: $step-border;
+  border-bottom: $step-border;
+  float: left;
+  position: relative;
+  white-space: nowrap;
+  
+  /**
+   * Defining step width depending on the number of steps
+   */
+  @for $i from 1 through 10 {
+    &:first-child:nth-last-child(#{$i}),
+    &:first-child:nth-last-child(#{$i}) ~ & {
+      width: (100% / $i);
+    }
+  }
+
+  /**
+   * Arrow shapes
+   */
+  &:after {
+    $sqrt-2: if(function-exists('sqrt') == true, sqrt(2), 1.4142135623730951);
+    $step-height: ($step-baseline * 3)  + ($step-baseline * 2) + (1/16 * 1em * 2);
+    $step-arrow-size: $step-height * $sqrt-2 / 2;
+    width: $step-arrow-size;
+    height: $step-arrow-size;
+    position: absolute;
+    top: 1 / $sqrt-2 / 2 * 1em;
+    left: 100%;
+    transform: rotate(45deg);
+    content: '';
+    z-index: 2;
+    background: inherit;
+    border-right: $step-border;
+    border-top: $step-border;
+    margin-left: -$step-arrow-size / 2; 
+  }
+
+  &[disabled] {
+   cursor: not-allowed;
+  }
+  
+  /**
+   * Small width stuff kids
+   */
+  @media (max-width: $step-breakpoint) {
+    width: 100% !important;
+    border: $step-border;
+    border-bottom: none;
+    padding: ($step-baseline * 2) 0;
+    
+    &:after {
+      content: none;
+    }
+  }
+}
+
+/**
+ * Left border on first item
+ */
+.steps_item_first {
+  border-left: $step-border;
+}
+
+/**
+ * Right border on last item
+ */
+.steps_item_last {
+  border-right: $step-border;
+  
+  @media (max-width: $step-breakpoint) {
+    border-bottom: $step-border;
+  }
+
+
+  /**
+   * No left arrow on first item
+   * No right arrow on last item
+   */
+  &:after {
+    content: none;
+  }
+}
+
+/**
+ * Step link
+ */
+/*a|span*/.steps_link {
+  transition: .25s ease-out;
+  color: $step-text-color-disabled;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: $step-baseline 0;  
+
+  /**
+   * Counter
+   */
+  &:before {
+    width: $step-baseline*3;
+    height: $step-baseline*3;
+    display: inline-block;
+    content: counter(steps);
+    text-align: center;
+    background: $step-counter-color;
+    border-radius: 50%;
+    color: white;
+    margin: 0 $step-baseline*2;
+    line-height: $step-baseline*3;
+  }
+  
+
+  /**
+   * Hover stuff
+   */
+  :not([disabled]) > &:hover,
+  :not([disabled]) > &:focus {
+    color: $step-text-color;
+  }
+  
+  @media (max-width: $step-breakpoint) {
+    &:before {
+      float: left;
+      margin-right: 0;
+    }
+  }
+}
+
+/**
+ * Active state
+ */
+/*a*/.steps_item_active {
+  background: $step-background-color-active;
+}
+
+/**
+ * Change link colors
+ */
+.steps_item_done,
+.steps_item_active {
+  .steps_link {
+    color: $step-text-color;
+
+    &:before {
+      background: $step-counter-color-active;
+    }
+  }
+}
+
+/**
+ * Fallback for IE 8
+ * Require Modernizr
+ */
+/*html*/.no-csstransforms {
+  /*li*/.steps_item {
+    border-right: $step-border;
+
+    &:after {
+      content: none !important;
+    }
+  }
+}
+
+/**
+ * Fallback for IE 7
+ * Require Modernizr
+ */
+/*html*/.no-generatedcontent {
+  .steps {
+    list-style-position: inside;
+    list-style-type: decimal;
+  }
+  
+  .steps_link:before {
+    content: none;
+  }
+}

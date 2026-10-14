@@ -1,0 +1,45 @@
+.dashboard-welcome-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .welcome-icon {
+        font-size: 30px;
+        color: $main-color-primary;
+
+        &[src] {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    }
+
+    .welcome-text {
+        font-size: 22px;
+        color: $color-light;
+
+        .welcome-username {
+            color: $main-color-dark;
+            font-weight: 600;
+        }
+    }
+}
+
+.dashboard-info-icon-container {
+    margin-left: 4px;
+    display: flex;
+    align-items: center;
+
+    .info-icon {
+        font-size: 13px;
+        color: $main-neutral-gray-5;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $main-neutral-gray-4;
+        }
+    }
+}

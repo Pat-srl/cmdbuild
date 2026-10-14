@@ -1,0 +1,5 @@
+$cmdbuildui-statuses-progressbar-margin-bottom: dynamic(10px);
+$cmdbuildui-statuses-progressbar-item-background: dynamic(lighten($color, 72%));;
+$cmdbuildui-statuses-progressbar-item-color: $color;
+$cmdbuildui-statuses-progressbar-current-item-background: $base-color;
+$cmdbuildui-statuses-progressbar-current-item-color: dynamic(lighten($base-color, 72%));

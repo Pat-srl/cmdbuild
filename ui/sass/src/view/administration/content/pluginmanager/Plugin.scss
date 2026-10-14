@@ -1,0 +1,95 @@
+.#{$prefix}plugins-cards-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, unquote('1fr')));
+    gap: 16px;
+    align-content: start;
+
+    .#{$prefix}plugins-cards-item {
+        box-sizing: border-box;
+        border: 1px solid $administration-base-color;
+        border-radius: $components-border-radius;
+        background: #fff;
+        align-items: stretch;
+
+        .#{$prefix}card__inner {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .#{$prefix}card__header {
+                display: grid;
+                grid-template-columns: 32px 1fr;
+                grid-gap: 8px;
+                align-items: start;
+                padding: 10px;
+                flex: 1 1 auto;
+
+                .#{$prefix}card__name {
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 1.2;
+                    color: $color;
+                    display: -webkit-box;
+                    line-clamp: 1;
+                    -webkit-line-clamp: 1;
+                }
+
+                .#{$prefix}icon {
+                    width: 32px;
+                    height: 32px;
+                    object-fit: contain;
+
+                    &::before {
+                        content: $fa-var-puzzle-piece;
+                        font-family: 'Font Awesome 5 Free' !important;
+                        font-size: 2em;
+                        position: relative;
+                    }
+                }
+            }
+
+            .#{$prefix}card__body {
+                display: grid;
+                padding-left: 10px;
+                min-height: 50px;
+                align-items: start;
+
+                .#{$prefix}card__date {
+                    white-space: nowrap;
+                    align-content: center;
+                    min-height: 25px;
+                }
+
+                .#{$prefix}card__warnings {
+                    display: flex;
+                    padding-right: 10px;
+                    flex-direction: row;
+                    gap: 5px;
+                    min-height: 25px;
+                    color: darken($color: $cmdbuild-status-warning, $amount: 20%);
+                }
+            }
+
+            .#{$prefix}card__footer {
+                margin-top: 5px;
+                display: grid;
+                grid-template-columns: 1fr auto;
+                align-items: center;
+                padding-bottom: 0;
+                border-top: 1px solid $administration-base-color;
+                flex-shrink: 0;
+                padding: 10px;
+
+                .#{$prefix}card__tags {
+                    display: flex;
+                    gap: 6px;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+
+    .#{$prefix}plugins-cards-item:hover {
+        cursor: pointer;
+    }
+}

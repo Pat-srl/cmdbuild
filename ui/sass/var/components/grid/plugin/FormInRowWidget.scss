@@ -1,0 +1,11 @@
+/**
+ * @var {string/list}
+ * Glyph for the RowExpander's "expand" icon when {@link Global_CSS#$enable-font-icons} is `true`.
+ */
+$row-expander-expand-glyph: dynamic($fa-var-plus-square-o $row-expander-glyph-font-size $font-icon-font-family);
+
+ /**
+  * @var {string/list}
+  * Glyph for the RowExpander's "collapse" icon when {@link Global_CSS#$enable-font-icons} is `true`.
+  */
+$row-expander-collapse-glyph: dynamic($fa-var-minus-square-o $row-expander-glyph-font-size $font-icon-font-family);

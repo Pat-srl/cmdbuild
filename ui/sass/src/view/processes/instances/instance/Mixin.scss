@@ -1,0 +1,17 @@
+.#{$prefix}toolbar-text-tabandtools {
+    &.#{$prefix}process-infotool {
+        margin-right: 1rem;
+
+        .#{$prefix}tool-tool-el {
+            color: lighten($color, 15%);
+        }
+    }
+}
+
+.#{$prefix}toolbar-text.#{$prefix}process-infotool {
+    margin-right: 1rem;
+
+    .#{$prefix}tool-tool-el {
+        color: lighten($color, 15%);
+    }
+}

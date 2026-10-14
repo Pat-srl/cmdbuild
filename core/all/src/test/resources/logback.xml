@@ -1,0 +1,24 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{YYYY-MM-dd'T'HH:mm:ss.SSSXXX} [%X{cm_id:-system}] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="SQL" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%n%msg%n%n</pattern>
+        </encoder>
+    </appender>
+
+  
+    <logger name="org.springframework.jdbc" level="WARN"/>
+   
+    <!--<logger name="org.cmdbuild" level="INFO"/>-->
+    <!-- Uncomment the following line to view Google Firebase notifications debug messages -->
+    <logger name="org.cmdbuild.notification.mobileapp" level="DEBUG"/>
+  
+    <root level="WARN">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.cmdbuild</groupId>
+        <artifactId>cmdbuild-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../parent</relativePath>
+    </parent>
+
+    <artifactId>cmdbuild-core-main</artifactId>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>commons</module>
+        <module>api</module>
+        <module>config</module>
+        <module>configdefs</module>
+        <module>email</module>
+        <module>dashboard</module>
+        <module>calendar</module>
+        <module>template</module>
+        <module>translation</module>
+        <module>view</module>
+        <module>system</module>
+        <module>all</module>
+        <module>chat</module>
+        <module>cardcache</module>
+        <module>everything</module>
+        <module>easytemplate</module>
+        <module>permissions</module>
+        <module>modelobjects</module>
+        <module>ai</module>
+        <module>plugin</module>
+        <module>homepage</module>
+    </modules>
+
+</project>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.cmdbuild</groupId>
+        <artifactId>cmdbuild-core-main</artifactId>
+        <version>${revision}</version>
+    </parent>
+    
+    <artifactId>cmdbuild-core-permissions</artifactId>
+    <packaging>jar</packaging>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-utils-json</artifactId>
+            <version>${project.version}</version>
+        </dependency>                
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cmdbuild-core-modelobjects</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>        
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>groovy-maven-plugin</artifactId>
+                <version>2.1</version>
+                <executions>
+                    <execution>
+                        <id>cm-role-privilege-autorities</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source><![CDATA[
+                                File source = new File("${project.basedir}/../../core/permissions/src/main/java/org/cmdbuild/auth/role/RolePrivilege.java"),
+                                    target = new File("${project.build.sourceDirectory}/org/cmdbuild/auth/role/RolePrivilegeAuthority.java");
+
+                                StringWriter writer = new StringWriter();
+
+                                def lines = target.readLines().iterator();
+                                String line;
+
+                                while( ! (line = lines.next()).matches('\\s*/[*]\\s*BEGIN.*')  ){
+                                    writer.append(line+'\n');
+                                }
+                                writer.append(line+'\n');
+
+                                source.eachLine { String l ->
+                                    if( l.matches('\\s*RP_[A-Z_]+,?\\s*') ){
+                                        writer.append(l.replaceFirst(/\s*RP_([A-Z_]+),?\s*/, '    public static final String $1_AUTHORITY = "$1";\n'));
+                                    }
+                                }
+
+                                while( ! (line = lines.next()).matches('\\s*/[*]\\s*END.*')  ){ }
+                                writer.append(line+'\n');
+
+                                while( lines.hasNext() ){
+                                    writer.append(lines.next()+'\n');
+                                }
+
+                                target.write(writer.toString());
+                            ]]></source>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>            
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,56 @@
+.single-layout-preview {
+    padding: 10px 0;
+}
+
+.preview-hidden {
+    display: none !important;
+}
+
+.mock-card {
+    background-color: #f4f4f4;
+    border: 1px solid #c3c3c3;
+    border-radius: 6px;
+    padding: 12px;
+    width: 300px;
+    height: 100px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.mock-icon {
+    color: #353535;
+    font-size: 18px;
+}
+
+.mock-label {
+    font-size: 12px;
+    color: #999;
+    display: block;
+}
+.mock-value {
+    font-weight: bold;
+    font-size: 16px;
+    color: #222;
+}
+.mock-unit {
+    font-size: 14px;
+    color: #666;
+    margin-left: 6px;
+}
+
+.preview-layout-1 .mock-label {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.preview-layout-2 .mock-label {
+    margin-left: 8px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.preview-layout-2 .mock-value-wrap {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}

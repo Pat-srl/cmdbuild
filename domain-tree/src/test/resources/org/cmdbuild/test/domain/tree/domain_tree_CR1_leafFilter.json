@@ -1,0 +1,79 @@
+{
+    "_id": "CqlTree",
+    "name": "CqlTree",
+    "description": "CqlTree",
+    "_description_translation": "CqlTree",
+    "active": true,
+    "type": "default",
+    "nodes": [
+        {
+            "_id": "ip44po8mk72rjozf5ie4uf2w",
+            "filter": "from Building where Id in (/( SELECT \"Id\" FROM \"Building\" WHERE \"Code\" != 'MI01')/)",
+            "targetClass": "Building",
+            "recursionEnabled": false,
+            "domain": null,
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": "",
+            "ecqlFilter": {
+                "id": "24z91502fmtlthrrx687frfskpzxrtf5f3lggi3mhs6pa9dbuhs5j4xg6cwcb",
+                "bindings": {
+                    "server": [],
+                    "client": []
+                }
+            }
+        },
+        {
+            "_id": "01mzr3k4nmopllhaazo8xf5l",
+            "filter": "from Floor where Id in (/( SELECT \"Id\" FROM \"Floor\" WHERE \"Code\" != '01_RO')/)",
+            "targetClass": "Floor",
+            "recursionEnabled": false,
+            "domain": "BuildingFloor",
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": "",
+            "ecqlFilter": {
+                "id": "24z91502fmtlthrrx687eqdfkx3rjze59aobw5me7zhfdrsekzo0uplb9jnwb",
+                "bindings": {
+                    "server": [],
+                    "client": []
+                }
+            },
+            "parent": "ip44po8mk72rjozf5ie4uf2w",
+            "direction": "_2"
+        },
+        {
+            "_id": "qiagm9d9d92ar4vz7mr4f2fx",
+            "filter": "",
+            "targetClass": "Room",
+            "recursionEnabled": false,
+            "domain": "FloorRoom",
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": "",
+            "parent": "01mzr3k4nmopllhaazo8xf5l",
+            "direction": "_2"
+        },
+        {
+            "_id": "v1exy1cezcc1uquefj66e00q",
+            "filter": "",
+            "targetClass": "CI",
+            "recursionEnabled": false,
+            "domain": "RoomCI",
+            "showOnlyOne": false,
+            "subclassViewMode": "cards",
+            "subclassViewShowIntermediateNodes": true,
+            "description": "",
+            "_description_translation": "",
+            "parent": "qiagm9d9d92ar4vz7mr4f2fx",
+            "direction": "_2"
+        }
+    ],
+    "icon_font": ""
+}

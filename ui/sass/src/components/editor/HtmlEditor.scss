@@ -1,0 +1,36 @@
+.#{$prefix}html-editor-tb .#{$prefix}edit-clearhtml,
+.#{$prefix}menu-item div.#{$prefix}edit-clearhtml {
+    @include font-icon(($fa-var-eraser $html-editor-glyph-font-size $font-icon-font-family));
+    background: none;
+}
+
+.#{$prefix}html-editor-tb .#{$prefix}edit-expandeditor,
+.#{$prefix}menu-item div.#{$prefix}edit-expandeditor {
+    @include font-icon(($fa-var-expand $html-editor-glyph-font-size $font-icon-font-family));
+    background: none;
+}
+
+.#{$prefix}html-editor-tb .#{$prefix}edit-reduceeditor,
+.#{$prefix}menu-item div.#{$prefix}edit-reduceeditor {
+    @include font-icon(($fa-var-compress $html-editor-glyph-font-size $font-icon-font-family));
+    background: none;
+}
+
+.#{$prefix}menu-item-icon-default.#{$prefix}menu-item-icon.fa-unlink,
+.#{$prefix}html-editor-tb .#{$prefix}edit-unlink {
+    font: $html-editor-glyph-font-size $font-icon-font-family;
+    background: none;
+}
+
+.#{$prefix}html-editor-tb .#{$prefix}edit-signature,
+.#{$prefix}menu-item div.#{$prefix}edit-signature {
+    font-size: 20px;
+    background: none;
+    &::before {
+        content: "✎";
+    }
+}
+
+.x-form-trigger-wrap-invalid {
+    border-color: #cf4c35;
+}

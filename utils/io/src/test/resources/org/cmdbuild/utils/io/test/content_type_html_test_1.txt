@@ -1,0 +1,43 @@
+<p><span style="color: #222222; font-family: arial; font-size: small;">La presente per segnalare l'avvenuta ricezione della richiesta numero 2808</span><span style="color: #222222; font-family: arial; font-size: small;">.</span></p>
+<div><span style="color: #222222; font-family: arial; font-size: small;">Azienda: <br /></span></div>
+<div><span style="color: #222222; font-family: arial; font-size: small;">Richiedente: <span style="color: #222222; font-family: arial; font-size: small;"></span><br /></span></div>
+<div><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;">Mail richiedente:&nbsp;Roberto Manzo <rmanzo@comune.vigevano.pv.it></span></span></div>
+<div><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;">Oggetto: Modifiche mini sito Rassegna Letteraria<br /></span></span></span></div>
+<div><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;">Descrizione della richiesta:</span></span></span></div>
+<div><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;">Buongiorno 
+avremo la necessit� di apportare alcune modifiche al mini sito in oggetto: 
+
+- Creare sezione "Luoghi della Rassegna" 
+- Creare sezione "La storia della Rassegna" 
+- Creare sezione "Albo d'oro - Premi alla carriera" 
+- Creare sezione "Albo d'oro - Premio letterario" 
+- Aggiungere la possibilit� di "vista images" 
+- Aggiungere la possibilit� di inserire "Link con immagine" 
+
+Si ringrazia per la collaborazione e si resta a disposizione per ogni eventuale chiarimento. 
+
+Roberto MANZO 
+Responsabile Servizio Sportello alla Citt� 
+Tel.: 0381 299820 
+Cel.: 320 8566721 
+Disclaimer: http://www.comune.vigevano.pv.it/disclaimer/ 
+
+</span></span></span></div>
+<div><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;">&nbsp;</span></span></span></div>
+<div><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;"><span style="color: #222222; font-family: arial; font-size: small;"><span>Per gestire la segnalazione&nbsp;</span><a href="http://cmdbuild.tecnoteca.com/cmdbuild/#processes/GestioneTicket/instances/6007586/">cliccare qui</a><span>.</span></span></span></span></div>
+<div>&nbsp;</div>
+<div>
+<div style="color: #000000; font-family: tahoma, arial, verdana, sans-serif; font-size: 12px;"><span style="color: #222222; font-family: arial; font-size: small;">Cordiali Saluti.</span><br style="color: #222222; font-family: arial; font-size: small;" /><br style="color: #222222; font-family: arial; font-size: small;" /><span style="color: #222222; font-family: arial; font-size: small;">--&nbsp;</span><br style="color: #222222; font-family: arial; font-size: small;" />
+<div style="color: #222222; font-family: arial, sans-serif; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff;">----------------------------------------</div>
+<div style="color: #222222; font-family: arial, sans-serif; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff;">
+<div>
+<div><span style="font-family: Arial; font-size: small;"><b>TECNOTECA</b>&nbsp;<b>srl</b></span></div>
+<div><span style="font-family: Arial; font-size: small;">via L&rsquo;Aquila 1/A - 33010 Tavagnacco UD - Italy</span></div>
+<div><span style="font-family: Arial; font-size: small;">tel. +39 0432.689094 - fax +39 0432.689572</span></div>
+<div><span style="font-family: Arial; font-size: small;"><a style="color: #1155cc;" href="http://www.tecnoteca.com/">www.tecnoteca.com</a>&nbsp;</span></div>
+<div><span style="color: #7a7a7a; font-family: Arial;">C.F. e P.IVA 02166770301</span></div>
+<div><span style="font-family: Arial; font-size: small;">Official Maintainer of:</span></div>
+<div><span style="font-family: Arial; font-size: small;">-CMDBuild&nbsp;<a style="color: #1155cc;" href="http://www.cmdbuild.org/">www.cmdbuild.org</a>&nbsp;&nbsp;</span></div>
+<div><span style="font-family: Arial; font-size: small;"><i>-openMAINT</i>&nbsp;<a style="color: #1155cc;" href="http://www.openmaint.org/">www.openmaint.org</a></span></div>
+</div>
+</div>

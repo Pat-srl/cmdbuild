@@ -1,0 +1,5 @@
+{
+    "CMDBuildUI.locales.Locales.importexport.import": "CMDBuild.Translation.import",
+    "CMDBuildUI.locales.Locales.importexport.export": "CMDBuild.Translation.export",
+    "CMDBuildUI.locales.Locales.importexport.template": "CMDBuild.Translation.template"
+}

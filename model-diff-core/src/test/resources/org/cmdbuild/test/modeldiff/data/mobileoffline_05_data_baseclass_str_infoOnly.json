@@ -1,0 +1,45 @@
+{
+  "name" : "DatasetData1",
+  "data" : {
+    "classes" : [ {
+      "classe" : "TestRelatedCards_A",
+      "cards" : [ {
+        "Code" : "derivedCard_2",
+        "Description" : "derived card 2",
+        "_id" : 2,
+        "_type" : "TestRelatedCards_A"
+      }, {
+        "Code" : "derivedCard_4",
+        "Description" : "derived card 4",
+        "_id" : 4,
+        "_type" : "TestRelatedCards_A"
+      } ]
+    }, {
+      "classe" : "TestRelatedCards_B",
+      "cards" : [ {
+        "Code" : "derivedCard_5",
+        "Description" : "derived card 5",
+        "_id" : 5,
+        "_type" : "TestRelatedCards_B"
+      }, {
+        "Code" : "derivedCard_7",
+        "Description" : "derived card 7",
+        "_id" : 7,
+        "_type" : "TestRelatedCards_B"
+      }, {
+        "Code" : "derivedCard_9",
+        "Description" : "derived card 9",
+        "_id" : 9,
+        "_type" : "TestRelatedCards_B"
+      } ]
+    }, {
+      "classe" : "TestDerivedCards_D",
+      "cards" : [ {
+        "Code" : "derivedCard_13",
+        "Description" : "derived card 13",
+        "_id" : 13,
+        "_type" : "TestDerivedCards_D"
+      } ]
+    } ]
+  }
+}

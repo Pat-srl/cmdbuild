@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.cmdbuild</groupId>
+        <artifactId>cmdbuild-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../parent</relativePath>
+    </parent>
+
+    <groupId>org.cmdbuild</groupId>
+    <artifactId>cmdbuild-ui</artifactId>
+    <version>${revision}</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <extjs.sdk.version>7.0.0</extjs.sdk.version>
+        <sencha.app.version>7.6.0.87</sencha.app.version>
+        <extjs.sdk.location>http://cdn.sencha.com/ext/gpl/ext-7.0.0-gpl.zip</extjs.sdk.location>
+        <extjs.sdk.checksum>1913c58b054858a24fe4738ce38be981394b9711</extjs.sdk.checksum>
+        <extjs.sdk.zipdir>ext-${extjs.sdk.version}</extjs.sdk.zipdir>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>groovy-maven-plugin</artifactId>
+                <version>2.1</version>
+                <executions>
+                    <execution>
+                        <id>sencha-workspace-init-preclean</id>
+                        <phase>pre-clean</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source>
+                                <![CDATA[
+
+                                    def baseDir = new File('${project.basedir}')
+                                    def targetDir = new File(baseDir, 'ext')
+
+                                    if(!targetDir.exists()){
+                                        log.info 'load extjs sdk'
+                                        sdkFile = new File(baseDir, 'downloadedFile.zip')
+                                        URL location = new URL('${extjs.sdk.location}')
+                                        org.apache.commons.io.FileUtils.copyInputStreamToFile(location.openStream(), sdkFile)
+                                        new net.lingala.zip4j.ZipFile(sdkFile).extractAll(baseDir.getAbsolutePath())
+                                        def sdkDir = new File(baseDir, '${extjs.sdk.zipdir}')
+                                        sdkDir.renameTo(targetDir)
+                                    }
+
+                                    L:{
+                                        def cmd = 'sencha which'
+                                        def pout = new StringBuilder()
+                                        def process = cmd.execute(null, baseDir)
+                                        process.waitForProcessOutput pout, pout
+                                        if( process.exitValue() != 0 || ! pout.toString().contains('Sencha Cmd v${sencha.app.version}') ){
+                                            throw new RuntimeException("missing/invalid sencha toolkit : " + pout.toString() + "; required version ${sencha.app.version}");
+                                        }
+                                    }
+
+                                    def senchaAppDir = new File(baseDir, '.sencha/app')
+                                    if( ! senchaAppDir.exists() ){
+
+                                        log.info 'execute sencha app install'
+
+                                        def cmd = 'sencha app install'
+                                        def process = cmd.execute(null, baseDir)
+                                        process.waitForProcessOutput(System.out, System.err)
+                                        if( process.exitValue() != 0 ){
+                                            throw new RuntimeException("error executing sencha app install");
+                                        }
+                                    }
+                                ]]>
+                            </source>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>sencha-workspace-init-prebuild</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source>
+                                <![CDATA[
+
+                                    def baseDir = new File('${project.basedir}')
+                                    def targetDir = new File(baseDir, 'ext')
+
+                                    if(!targetDir.exists()){
+
+                                        log.info 'load extjs sdk from ${extjs.sdk.location}'
+
+                                        def sdkFile = org.cmdbuild.utils.io.CmIoUtils.fetchFileWithCache('${extjs.sdk.checksum}','${extjs.sdk.location}');
+                                        new net.lingala.zip4j.ZipFile(sdkFile).extractAll(baseDir.getAbsolutePath())
+                                        def sdkDir = new File(baseDir, '${extjs.sdk.zipdir}')
+                                        sdkDir.renameTo(targetDir)
+                                    }
+
+                                    L:{
+                                        def cmd = 'sencha which'
+                                        def pout = new StringBuilder()
+                                        def process = cmd.execute(null, baseDir)
+                                        process.waitForProcessOutput pout, pout
+                                        if( process.exitValue() != 0 || ! pout.toString().contains('Sencha Cmd v${sencha.app.version}') ){
+                                            throw new RuntimeException("missing/invalid sencha toolkit : " + pout.toString() + "; required version ${sencha.app.version}");
+                                        }
+                                    }
+
+                                    def senchaAppDir = new File(baseDir, '.sencha/app')
+                                    if( ! senchaAppDir.exists() ){
+
+                                        log.info 'execute sencha app install'
+
+                                        def cmd = 'sencha app install'
+                                        def process = cmd.execute(null, baseDir)
+                                        process.waitForProcessOutput(System.out, System.err)
+                                        if( process.exitValue() != 0 ){
+                                            throw new RuntimeException("error executing sencha app install");
+                                        }
+                                    }
+                                ]]>
+                            </source>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.lingala.zip4j</groupId>
+                        <artifactId>zip4j</artifactId>
+                        <version>${zip4j.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>commons-io</groupId>
+                        <artifactId>commons-io</artifactId>
+                        <version>${commons-io.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.cmdbuild</groupId>
+                        <artifactId>cmdbuild-utils-io</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <executions>
+                    <execution>
+                        <id>sencha-app-clean</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>clean</phase>
+                        <configuration>
+                            <executable>sencha</executable>
+                            <arguments>
+                                <argument>app</argument>
+                                <argument>clean</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <!-- <execution>
+                        <id>sencha-app-build-testing</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <executable>sencha</executable>
+                            <arguments>
+                                <argument>-J-Xmx3072m</argument>
+                                <argument>app</argument>
+                                <argument>build</argument>
+                                <argument>testing</argument>
+                            </arguments>
+                        </configuration>
+                    </execution> -->
+                    <execution>
+                        <id>sencha-app-build-production</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <executable>sencha</executable>
+                            <arguments>
+                                <argument>-J-Xmx3072m</argument>
+                                <argument>app</argument>
+                                <argument>build</argument>
+                                <argument>production</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <packagingExcludes>WEB-INF/lib/*</packagingExcludes>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <webResources>
+                        <!-- <resource>
+                            <directory>build/testing/CMDBuildUI</directory>
+                            <targetPath>ui_dev</targetPath>
+                        </resource> -->
+                        <resource>
+                            <directory>build/production/CMDBuildUI</directory>
+                            <targetPath>ui</targetPath>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
